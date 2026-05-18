@@ -45,3 +45,5 @@ next-env.d.ts
 /public/videos/frame-check.jpg
 /public/videos/Master*
 /public/videos/why-choose-*
+# old unoptimized gallery JPGs (replaced by WebP)
+/public/images/gallery/*.jpg

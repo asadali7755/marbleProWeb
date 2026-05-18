@@ -207,11 +207,24 @@ function ProcessVideo() {
   const wrapRef  = useRef<HTMLDivElement>(null);
   const [muted, setMuted] = useState(true);
 
-  // Play/pause based on visibility; restart from beginning each time section enters view
   useEffect(() => {
     const el = wrapRef.current;
     if (!el) return;
-    const io = new IntersectionObserver(
+
+    // Pre-load when section is 400px away so video is buffered before it's visible
+    const ioPreload = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && videoRef.current) {
+          videoRef.current.load();
+          ioPreload.disconnect();
+        }
+      },
+      { rootMargin: '400px' }
+    );
+    ioPreload.observe(el);
+
+    // Play/pause when actually in view
+    const ioPlay = new IntersectionObserver(
       ([entry]) => {
         const v = videoRef.current;
         if (!v) return;
@@ -224,8 +237,9 @@ function ProcessVideo() {
       },
       { threshold: 0.3 }
     );
-    io.observe(el);
-    return () => io.disconnect();
+    ioPlay.observe(el);
+
+    return () => { ioPreload.disconnect(); ioPlay.disconnect(); };
   }, []);
 
   const toggleMute = () => {
@@ -240,7 +254,8 @@ function ProcessVideo() {
         ref={videoRef}
         muted
         playsInline
-        preload="metadata"
+        preload="none"
+        poster="/videos/marble-polishing-process-dubai-poster.jpg"
         aria-label="Professional marble polishing process in Dubai — MarblePro UAE"
         style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
       >
@@ -331,12 +346,12 @@ function Gallery() {
         </p>
       </div>
       <div className="ba-strip">
-        <BeforeAfter hue={32} vein={0.22} title="Marble floor restoration"        sub="Marble · villa living area"     beforeImg="/images/gallery/ba1-before.jpg" afterImg="/images/gallery/ba1-after.jpg" />
-        <BeforeAfter hue={20} vein={0.30} title="Bathroom stone floor"            sub="Stone tiles · full bathroom"    beforeImg="/images/gallery/ba2-before.jpg" afterImg="/images/gallery/ba2-after.jpg" />
-        <BeforeAfter hue={45} vein={0.18} title="Marble countertop sealing"       sub="Marble · kitchen countertop"    beforeImg="/images/gallery/ba3-before.jpg" afterImg="/images/gallery/ba3-after.jpg" />
-        <BeforeAfter hue={28} vein={0.20} title="Terrazzo floor cleaning"         sub="Terrazzo · commercial kitchen"  beforeImg="/images/gallery/ba4-before.jpg" afterImg="/images/gallery/ba4-after.jpg" />
-        <BeforeAfter hue={50} vein={0.15} title="Travertine floor restoration"    sub="Travertine · villa living room" beforeImg="/images/gallery/ba5-before.jpg" afterImg="/images/gallery/ba5-after.jpg" />
-        <BeforeAfter hue={15} vein={0.34} title="Bathroom marble sink & vanity"   sub="Marble · double sink vanity"    beforeImg="/images/gallery/ba6-before.jpg" afterImg="/images/gallery/ba6-after.jpg" />
+        <BeforeAfter hue={32} vein={0.22} title="Marble floor restoration"        sub="Marble · villa living area"     beforeImg="/images/gallery/ba1-before.webp" afterImg="/images/gallery/ba1-after.webp" />
+        <BeforeAfter hue={20} vein={0.30} title="Bathroom stone floor"            sub="Stone tiles · full bathroom"    beforeImg="/images/gallery/ba2-before.webp" afterImg="/images/gallery/ba2-after.webp" />
+        <BeforeAfter hue={45} vein={0.18} title="Marble countertop sealing"       sub="Marble · kitchen countertop"    beforeImg="/images/gallery/ba3-before.webp" afterImg="/images/gallery/ba3-after.webp" />
+        <BeforeAfter hue={28} vein={0.20} title="Terrazzo floor cleaning"         sub="Terrazzo · commercial kitchen"  beforeImg="/images/gallery/ba4-before.webp" afterImg="/images/gallery/ba4-after.webp" />
+        <BeforeAfter hue={50} vein={0.15} title="Travertine floor restoration"    sub="Travertine · villa living room" beforeImg="/images/gallery/ba5-before.webp" afterImg="/images/gallery/ba5-after.webp" />
+        <BeforeAfter hue={15} vein={0.34} title="Bathroom marble sink & vanity"   sub="Marble · double sink vanity"    beforeImg="/images/gallery/ba6-before.webp" afterImg="/images/gallery/ba6-after.webp" />
       </div>
     </section>
   );
