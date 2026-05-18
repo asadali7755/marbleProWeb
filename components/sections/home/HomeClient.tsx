@@ -1,0 +1,517 @@
+'use client';
+import { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
+import { useRequestCall } from '@/components/marble/RequestCallModal';
+import CityCards from '@/components/marble/CityCards';
+import { marbleSvg } from '@/components/marble/marbleSvg';
+import { PHONE_TEL, WA_LINK, SERVICES } from '@/components/marble/constants';
+
+const STEPS = [
+  { n: '01', h: 'Deep Inspection & Lippage Removal',  p: 'We evaluate the stone, identify cracks, and check for uneven tile edges. Low-speed weighted diamond grinding flattens the floor surface seamlessly.' },
+  { n: '02', h: 'Honing & Scratch Erasing',           p: 'Medium-grit diamond pads systematically erase deep scratches, traffic paths, and superficial yellow stains from your marble floors.' },
+  { n: '03', h: 'High-Gloss Polishing',               p: 'Micro-abrasive diamond powders bring out the natural deep clarity and rich color tones of the stone, preparing it for an ultra-reflective finish.' },
+  { n: '04', h: 'Italian Diamond Crystallization',    p: 'A specialised chemical crystallization creates a microscopic, hardened shield — mirror-reflective, slip-resistant, durable against heavy foot traffic.' },
+  { n: '05', h: 'Impregnating Sealer Application',    p: 'A premium breathable sealer protects against future spills, ensuring your floor restoration services investment lasts for years.' },
+];
+
+const REVIEWS = [
+  { name: 'Ahmed K.',    stars: 5, time: '2 weeks ago',  text: 'MarblePro restored a 12-year-old marble floor in our Palm Jumeirah villa to better than new. The team was punctual, clean, and the price was exactly what was quoted.' },
+  { name: 'Layla R.',    stars: 5, time: '1 month ago',  text: 'Beautiful job on our terrazzo lobby in Sharjah. Tenants noticed within a day. Professional crew, dust-free process.' },
+  { name: 'Mohammed A.', stars: 5, time: '1 month ago',  text: 'Removed yellow stains we\'d lived with for years from our Abu Dhabi villa floor. Worth every dirham.' },
+  { name: 'Priya S.',    stars: 5, time: '2 months ago', text: 'Quartz countertop in our Dubai Marina apartment looks brand new. Booking again for the bathrooms.' },
+];
+
+const FAQS = [
+  { q: 'How long does the marble floor polishing process take in Dubai?', a: 'It depends on the area size and the level of damage. A standard villa living area typically takes 1 to 2 days. We ensure a dust-free marble polishing Dubai process to keep your property clean throughout the work.' },
+  { q: 'How often should I get my marble floors polished?', a: 'For residential villas, we recommend professional marble floor polishing every 1–2 years. High-traffic commercial properties like hotels or offices may require maintenance every 6 months.' },
+  { q: 'Can you fix deep cracks or completely yellowed marble?', a: 'Yes. Our marble floor restoration services include specialized color-matched epoxy crack filling and advanced yellow stain removing procedures that repair deeply neglected natural stone.' },
+  { q: 'Do you offer terrazzo polishing in Dubai for commercial buildings?', a: 'Absolutely. Terrazzo floor polishing Dubai is one of our specialties — we restore classic and modern terrazzo in hotel lobbies, retail showrooms and offices using fine diamond pads.' },
+  { q: 'Is countertop polishing safe for quartz and Corian surfaces?', a: 'Yes. We use technique tailored to each material — gentle abrasives for quartz polishing, and hand-polished routines for Corian countertop polishing & scratch repair, with food-safe sealers.' },
+  { q: 'Which emirates do you cover?', a: 'All 7 — Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Umm Al Quwain and Fujairah. Same crew, same standards, same-week availability.' },
+];
+
+function BeforeAfter({ hue, vein, title, sub, beforeImg, afterImg }: { hue: number; vein: number; title: string; sub: string; beforeImg?: string; afterImg?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [pos, setPos] = useState(50);
+  const dragging = useRef(false);
+  const onMove = (e: MouseEvent | TouchEvent) => {
+    if (!ref.current) return;
+    const r = ref.current.getBoundingClientRect();
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    setPos(Math.max(0, Math.min(100, ((clientX - r.left) / r.width) * 100)));
+  };
+  useEffect(() => {
+    const m = (e: MouseEvent | TouchEvent) => dragging.current && onMove(e);
+    const stop = () => { dragging.current = false; };
+    window.addEventListener('mousemove', m as EventListener);
+    window.addEventListener('touchmove', m as EventListener);
+    window.addEventListener('mouseup', stop);
+    window.addEventListener('touchend', stop);
+    return () => {
+      window.removeEventListener('mousemove', m as EventListener);
+      window.removeEventListener('touchmove', m as EventListener);
+      window.removeEventListener('mouseup', stop);
+      window.removeEventListener('touchend', stop);
+    };
+  }, []);
+  const beforeBg = beforeImg ? `url("${beforeImg}")` : `url("${marbleSvg({ dull: true,  hue, vein })}")`;
+  const afterBg  = afterImg  ? `url("${afterImg}")`  : `url("${marbleSvg({ dull: false, hue, vein })}")`;
+  return (
+    <div>
+      <div className="ba" ref={ref}
+        style={{ '--pos': `${pos}%` } as React.CSSProperties}
+        onMouseDown={(e) => { dragging.current = true; onMove(e.nativeEvent); }}
+        onTouchStart={(e) => { dragging.current = true; onMove(e.nativeEvent); }}
+      >
+        <div className="pane before" style={{ backgroundImage: beforeBg }} />
+        <div className="pane after"  style={{ backgroundImage: afterBg }} />
+        <div className="ba-handle">
+          <div className="grip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 6 3 12 9 18"/><polyline points="15 6 21 12 15 18"/></svg>
+          </div>
+        </div>
+        <span className="ba-tag b">Before</span>
+        <span className="ba-tag a">After</span>
+      </div>
+      <div className="ba-caption">
+        <strong>{title}</strong>
+        <span>{sub}</span>
+      </div>
+    </div>
+  );
+}
+
+function Hero() {
+  const { open } = useRequestCall();
+  const [number, setNumber] = useState('');
+  const [job, setJob] = useState('');
+  const wa = () => {
+    const msg = encodeURIComponent(`Hi MarblePro, I need a quote.\nWork: ${job || 'Marble polishing'}\nNumber: ${number}`);
+    window.open(`${WA_LINK}?text=${msg}`, '_blank');
+  };
+  return (
+    <section className="hero marble-bg" data-screen-label="hero" id="top">
+      <div className="marble-veins" />
+      <div>
+        <span className="eyebrow-pill hero-eyebrow"><span className="pulse" /> Available across UAE · 7 emirates</span>
+        <h1>
+          Professional <em>marble polishing</em><br/>
+          &amp; floor restoration<br/>
+          in Dubai &amp; UAE.
+        </h1>
+        <p className="hero-sub">
+          MarblePro delivers premium stone polishing, deep scratch removal, and diamond
+          crystallization for luxury villas, commercial spaces and apartments across the UAE.
+          Free survey, fixed-price quote, mess-free work.
+        </p>
+        <div className="hero-cta-row">
+          <a className="btn btn-primary" href="#quote">
+            Get a Free On-Site Quote
+            <span className="arr"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </a>
+          <button className="btn btn-secondary" onClick={open}>
+            <span className="arr"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.71 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.71A2 2 0 0 1 22 16.92z"/></svg></span>
+            Request a Call
+          </button>
+        </div>
+      </div>
+      <aside className="hero-card">
+        <div className="veins-d" />
+        <div style={{ position: 'relative', zIndex: 1 }}>
+          <span className="hero-card-label">Two-line quote · WhatsApp in 60 sec</span>
+          <h3 className="hero-card-h">Tell us the job &amp; your number.<br/>That&apos;s it.</h3>
+          <div className="quote-mini">
+            <input value={job} onChange={(e) => setJob(e.target.value)} placeholder="What needs polishing? (e.g. kitchen counter, villa floor)" />
+            <input value={number} onChange={(e) => setNumber(e.target.value)} placeholder="Your mobile number (UAE)" inputMode="tel" />
+            <div className="row">
+              <button className="btn btn-wa" onClick={wa}>
+                <span className="arr" style={{ background: '#082b13' }}>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#25D366" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                </span>
+                WhatsApp
+              </button>
+              <a className="btn-call" href={`tel:${PHONE_TEL}`} style={{ justifyContent: 'center' }}>Call now</a>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+  );
+}
+
+function Marquee() {
+  const items = ['Marble Polishing Dubai','Terrazzo Restoration','Granite Polishing','Quartz Care','Yellow Stain Removing','Kitchen Top Polishing','Corian Repair'];
+  const row = items.flatMap((t, i) => [
+    <span key={`t${i}`}>{t}</span>,
+    <span key={`d${i}`} className="dot">✦</span>,
+  ]);
+  return <div className="marquee"><div className="marquee-track">{row}{row}{row}</div></div>;
+}
+
+const SVC_GRADS = [
+  'linear-gradient(135deg, #1c2c4b 0%, #3a4a6b 50%, #5b6c8e 100%)', // deep navy
+  'linear-gradient(135deg, #2d2a3a 0%, #4a4658 50%, #6e6779 100%)', // plum grey
+  'linear-gradient(135deg, #4a2c1c 0%, #6b4a3a 50%, #8e6c5b 100%)', // warm terracotta
+  'linear-gradient(135deg, #1c4b4a 0%, #3a6b6a 50%, #5b8e8c 100%)', // deep teal
+  'linear-gradient(135deg, #4b3a1c 0%, #6b553a 50%, #8e745b 100%)', // sand amber
+  'linear-gradient(135deg, #1c3a4b 0%, #3a556b 50%, #5b768e 100%)', // steel blue
+  'linear-gradient(135deg, #3a1c1c 0%, #553a3a 50%, #745b5b 100%)', // deep burgundy
+  'linear-gradient(135deg, #1a3040 0%, #2e4d60 50%, #476880 100%)', // midnight blue
+  'linear-gradient(135deg, #2a1c3a 0%, #473058 50%, #624878 100%)', // deep violet
+  'linear-gradient(135deg, #1c3828 0%, #2e5a40 50%, #477a5a 100%)', // forest green
+];
+
+function ServicesGrid() {
+  const sizes = ['lg','md','sm','sm','md','sm','sm','md','sm','sm'];
+  return (
+    <section className="sec" data-screen-label="services" id="services">
+      <div className="sec-head">
+        <div>
+          <span className="sec-eyebrow">02 — What we do</span>
+          <h2 className="sec-title">Marble polishing, terrazzo, granite — <em>every stone, restored.</em></h2>
+        </div>
+        <p className="sec-lead">
+          Ten specialised treatments, one team. From a single counter top to a 4,000 sq ft villa
+          floor — same diamond-grade process, every job backed by a written guarantee.
+          <Link href="/services" style={{ display: 'block', marginTop: 18, fontFamily: 'var(--grot)', fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--ink)' }}>
+            See all services →
+          </Link>
+        </p>
+      </div>
+      <div className="svc-grid">
+        {SERVICES.map((s, i) => (
+          <Link
+            className={`svc ${sizes[i]}`}
+            key={s.num}
+            href={`/services#${s.slug}`}
+            style={{ '--svc-bg': SVC_GRADS[i], '--svc-fg': 'var(--paper)' } as React.CSSProperties}
+          >
+            <div>
+              <span className="svc-num">— {s.num}</span>
+              <h3 className="svc-name">{s.name}</h3>
+              <p className="svc-desc">{s.short}</p>
+            </div>
+            <div className="svc-glyph">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </div>
+            <span className="svc-cta">Read more →</span>
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function ProcessVideo() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const wrapRef  = useRef<HTMLDivElement>(null);
+  const [muted, setMuted] = useState(true);
+
+  // Play/pause based on visibility; restart from beginning each time section enters view
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        const v = videoRef.current;
+        if (!v) return;
+        if (entry.isIntersecting) {
+          v.currentTime = 0;
+          v.play().catch(() => {});
+        } else {
+          v.pause();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  const toggleMute = () => {
+    if (!videoRef.current) return;
+    videoRef.current.muted = !videoRef.current.muted;
+    setMuted(videoRef.current.muted);
+  };
+
+  return (
+    <div ref={wrapRef} style={{ borderRadius: 22, overflow: 'hidden', aspectRatio: '4/5', position: 'relative', background: '#1a1410' }}>
+      <video
+        ref={videoRef}
+        muted
+        playsInline
+        preload="metadata"
+        aria-label="Professional marble polishing process in Dubai — MarblePro UAE"
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+      >
+        <source src="/videos/marble-polishing-process-dubai.webm" type="video/webm" />
+        <source src="/videos/marble-polishing-process-dubai.mp4"  type="video/mp4" />
+      </video>
+
+      {/* Mute / Unmute button */}
+      <button
+        onClick={toggleMute}
+        aria-label={muted ? 'Unmute video' : 'Mute video'}
+        style={{
+          position: 'absolute', top: 16, right: 16, zIndex: 10,
+          width: 40, height: 40, borderRadius: 999,
+          background: 'rgba(11,11,11,0.65)', backdropFilter: 'blur(6px)',
+          border: '1px solid rgba(246,241,232,0.2)',
+          color: 'var(--paper)', display: 'grid', placeItems: 'center',
+          cursor: 'pointer', transition: 'background .2s',
+        }}
+      >
+        {muted ? (
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>
+          </svg>
+        ) : (
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+          </svg>
+        )}
+      </button>
+
+      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.7))' }} />
+      <div style={{ position: 'absolute', left: 24, right: 24, bottom: 24, color: 'var(--paper)' }}>
+        <span style={{ fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', opacity: 0.7 }}>Live polish · 3000 grit</span>
+        <p style={{ fontFamily: 'var(--display)', fontWeight: 380, fontSize: 26, lineHeight: 1.15, letterSpacing: '-0.02em', margin: '10px 0 0' }}>
+          We measure gloss with a meter — <em style={{ color: 'var(--gold)' }}>minimum 85 GU</em> before we leave site.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function Process() {
+  return (
+    <section className="process" data-screen-label="process" id="process">
+      <div className="sec">
+        <div className="sec-head">
+          <div>
+            <span className="sec-eyebrow" style={{ opacity: 0.7, color: 'var(--paper)' }}>03 — Our 5-stage system</span>
+            <h2 className="sec-title" style={{ color: 'var(--paper)' }}>How we restore <em>floor restoration services</em> — zero mess, one polished result.</h2>
+          </div>
+          <p className="sec-lead" style={{ color: 'var(--muted-d)' }}>
+            Most jobs are completed in a single day. We work around your furniture, your family
+            and your business hours — and we never leave dust behind.
+          </p>
+        </div>
+        <div className="process-grid">
+          <div className="process-sticky">
+            <ProcessVideo />
+          </div>
+          <div>
+            {STEPS.map((s) => (
+              <div className="step" key={s.n}>
+                <div className="step-n">{s.n}</div>
+                <div><h4>{s.h}</h4><p>{s.p}</p></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Gallery() {
+  return (
+    <section className="sec" data-screen-label="gallery" id="gallery">
+      <div className="sec-head">
+        <div>
+          <span className="sec-eyebrow">04 — Before &amp; after</span>
+          <h2 className="sec-title">Drag the line. <em>See the difference.</em></h2>
+        </div>
+        <p className="sec-lead">
+          Real jobs across Dubai, Abu Dhabi and Sharjah. Same stone, same lighting — only the
+          finish has changed. Slide the handle to compare before &amp; after.
+        </p>
+      </div>
+      <div className="ba-strip">
+        <BeforeAfter hue={32} vein={0.22} title="Marble floor restoration"        sub="Marble · villa living area"     beforeImg="/images/gallery/ba1-before.jpg" afterImg="/images/gallery/ba1-after.jpg" />
+        <BeforeAfter hue={20} vein={0.30} title="Bathroom stone floor"            sub="Stone tiles · full bathroom"    beforeImg="/images/gallery/ba2-before.jpg" afterImg="/images/gallery/ba2-after.jpg" />
+        <BeforeAfter hue={45} vein={0.18} title="Marble countertop sealing"       sub="Marble · kitchen countertop"    beforeImg="/images/gallery/ba3-before.jpg" afterImg="/images/gallery/ba3-after.jpg" />
+        <BeforeAfter hue={28} vein={0.20} title="Terrazzo floor cleaning"         sub="Terrazzo · commercial kitchen"  beforeImg="/images/gallery/ba4-before.jpg" afterImg="/images/gallery/ba4-after.jpg" />
+        <BeforeAfter hue={50} vein={0.15} title="Travertine floor restoration"    sub="Travertine · villa living room" beforeImg="/images/gallery/ba5-before.jpg" afterImg="/images/gallery/ba5-after.jpg" />
+        <BeforeAfter hue={15} vein={0.34} title="Bathroom marble sink & vanity"   sub="Marble · double sink vanity"    beforeImg="/images/gallery/ba6-before.jpg" afterImg="/images/gallery/ba6-after.jpg" />
+      </div>
+    </section>
+  );
+}
+
+function Coverage() {
+  return (
+    <section className="sec" data-screen-label="coverage" id="coverage" style={{ background: 'var(--paper2)', maxWidth: 'none', padding: '110px 0' }}>
+      <div style={{ maxWidth: 1440, margin: '0 auto', padding: '0 36px' }}>
+        <div className="sec-head" style={{ marginBottom: 30 }}>
+          <div>
+            <span className="sec-eyebrow">05 — Where we work</span>
+            <h2 className="sec-title">All seven <em>emirates.</em> One trusted crew.</h2>
+          </div>
+          <p className="sec-lead">
+            Same-week service across the UAE. Tap any emirate for the full service list and
+            local response times in your area.
+            <Link href="/locations" style={{ display: 'block', marginTop: 18, fontFamily: 'var(--grot)', fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--ink)' }}>
+              View all locations →
+            </Link>
+          </p>
+        </div>
+        <CityCards />
+      </div>
+    </section>
+  );
+}
+
+function GMBReviews() {
+  return (
+    <section className="sec" data-screen-label="reviews" id="reviews">
+      <div className="sec-head">
+        <div>
+          <span className="sec-eyebrow">06 — Google reviews</span>
+          <h2 className="sec-title">Rated 4.9 by <em>UAE homeowners.</em></h2>
+          <div className="gmb-badge">
+            <div className="g-icon">G</div>
+            <div>
+              <div style={{ display: 'flex', gap: 8, alignItems: 'baseline' }}>
+                <span className="rate">4.9</span>
+                <span style={{ color: 'var(--gold)', letterSpacing: 2 }}>★★★★★</span>
+              </div>
+              <div className="lbl">
+                <a href="https://maps.google.com/?cid=9770771076887647238" target="_blank" rel="noopener" style={{ textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+                  Google · Marble Polishing Services Dubai
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p className="sec-lead">
+          The reviews below are from real Google My Business profiles. Tap &quot;View on Google Maps&quot; to see our live listing.
+        </p>
+      </div>
+      <div className="gmb-wrap">
+        <div className="gmb-map">
+          <iframe title="MarblePro on Google Maps" loading="lazy" referrerPolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.8406840897!2d55.459874!3d25.3095562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5f62b0ca5897%3A0x8798c086d38c9406!2sMarble%20polishing%20and%20crystallization%20services!5e0!3m2!1sen!2s!4v1779095340335!5m2!1sen!2s"
+            allowFullScreen />
+        </div>
+        <div className="gmb-reviews">
+          {REVIEWS.map((r, i) => (
+            <article className="gmb-review" key={i}>
+              <div className="top">
+                <div className="avatar">{r.name.split(' ').map((w) => w[0]).slice(0, 2).join('')}</div>
+                <div style={{ flex: 1 }}>
+                  <div className="name">{r.name}</div>
+                  <div className="stars">{'★'.repeat(r.stars)}</div>
+                </div>
+                <div className="g-icon" style={{ width: 28, height: 28, fontSize: 14 }}>G</div>
+              </div>
+              <p>&quot;{r.text}&quot;</p>
+              <span className="time">{r.time}</span>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FAQ() {
+  const [openIdx, setOpenIdx] = useState(0);
+  return (
+    <section className="sec" data-screen-label="faq" id="faq" style={{ background: 'var(--paper)', maxWidth: 'none', padding: '110px 0' }}>
+      <div style={{ maxWidth: 1440, margin: '0 auto', padding: '0 36px' }}>
+        <div className="faq-wrap">
+          <div>
+            <span className="sec-eyebrow">07 — FAQ</span>
+            <h2 className="sec-title" style={{ marginTop: 14 }}>Questions <em>worth asking.</em></h2>
+            <p style={{ maxWidth: '32ch', fontSize: 15, lineHeight: 1.6, opacity: 0.72, marginTop: 24 }}>
+              Couldn&apos;t find what you&apos;re looking for? Drop us a WhatsApp — we usually reply within minutes.
+            </p>
+          </div>
+          <div className="faq-list">
+            {FAQS.map((f, i) => (
+              <div key={i} className={`faq-item ${openIdx === i ? 'open' : ''}`}>
+                <button className="faq-q" onClick={() => setOpenIdx(openIdx === i ? -1 : i)}>
+                  <span>{f.q}</span>
+                  <span className="plus" />
+                </button>
+                <div className="faq-a"><div className="faq-a-inner">{f.a}</div></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function QuoteBand() {
+  const { open } = useRequestCall();
+  const [number, setNumber] = useState('');
+  const [job, setJob] = useState('');
+  const wa = () => {
+    const msg = encodeURIComponent(`Hi MarblePro, I need a quote.\nWork: ${job || 'Marble polishing'}\nNumber: ${number}`);
+    window.open(`${WA_LINK}?text=${msg}`, '_blank');
+  };
+  return (
+    <section className="cta-band" data-screen-label="quote" id="quote">
+      <div className="sec">
+        <div className="cta-inner">
+          <div>
+            <span className="sec-eyebrow">08 — Free quote</span>
+            <h2 className="cta-h">Two lines.<br/>One <em>shine.</em></h2>
+            <p style={{ fontSize: 17, lineHeight: 1.55, opacity: 0.78, maxWidth: '42ch', marginTop: 22 }}>
+              Tell us the job and your number. We&apos;ll WhatsApp a ballpark in minutes — or call you back within the hour. No site fee. No fine print.
+            </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, marginTop: 24, fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase', opacity: 0.7 }}>
+              <span>✦ Same-day quotes</span>
+              <span>✦ Fixed price · no surprises</span>
+              <span>✦ Mon–Sun 8 am – 10 pm</span>
+            </div>
+          </div>
+          <form className="quote-form" onSubmit={(e) => { e.preventDefault(); wa(); }}>
+            <div className="lab">Free Quote Request</div>
+            <h3>Get your free quote.</h3>
+            <div className="qf-row" style={{ marginTop: 24 }}>
+              <label htmlFor="qf-work">The work</label>
+              <input id="qf-work" value={job} onChange={(e) => setJob(e.target.value)} placeholder="e.g. polish marble floor, 200 sq ft" />
+            </div>
+            <div className="qf-row">
+              <label htmlFor="qf-num">Your number</label>
+              <input id="qf-num" value={number} onChange={(e) => setNumber(e.target.value)} placeholder="+971 5X XXX XXXX" inputMode="tel" />
+            </div>
+            <div className="qf-btns">
+              <button type="submit" className="btn btn-wa">
+                <span className="arr" style={{ background: '#082b13' }}>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#25D366" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                </span>
+                Send on WhatsApp
+              </button>
+              <button type="button" className="btn-call" onClick={open} style={{ justifyContent: 'center' }}>Request a Call →</button>
+            </div>
+            <p className="qf-note">&quot;Send&quot; opens WhatsApp with your details pre-filled. &quot;Request a call&quot; — drop just your number and we&apos;ll dial back fast.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default function HomeClient() {
+  return (
+    <>
+      <Hero />
+      <Marquee />
+      <ServicesGrid />
+      <Process />
+      <Gallery />
+      <Coverage />
+      <GMBReviews />
+      <FAQ />
+      <QuoteBand />
+    </>
+  );
+}

@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# raw source assets (large originals)
+/public/raw/
+/public/videos/frame-check.jpg
+/public/videos/Master*
