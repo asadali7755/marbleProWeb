@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useRequestCall } from '@/components/marble/RequestCallModal';
-import { PHONE_DISPLAY, PHONE_TEL, EMAIL, WA_LINK, EMIRATES, SERVICES } from '@/components/marble/constants';
+import { PHONE_DISPLAY, PHONE_TEL, EMAIL, WA_LINK, EMIRATES, SERVICES, CITY_IMG } from '@/components/marble/constants';
 
 const EMIRATE_RESPONSE = [
   { slug:'dubai',          name:'Dubai',          time:'Within 90 min' },
@@ -231,11 +231,17 @@ function ResponseTimes() {
       <div className="c-resp-grid">
         {EMIRATE_RESPONSE.map((e, i) => (
           <Link key={e.slug} href={`/locations#${e.slug}`} className="c-resp-card">
-            <div className="meta">0{i + 1} — Service area</div>
-            <div className="name">{e.name}</div>
-            <div className="time">
-              Response time
-              <strong>{e.time}</strong>
+            <div className="c-img" style={{ backgroundImage: `url("${CITY_IMG[e.slug]}")` }} />
+            <div className="c-overlay" />
+            <div className="c-content">
+              <div className="meta">0{i + 1} — Service area</div>
+              <div>
+                <div className="name">{e.name}</div>
+                <div className="time">
+                  Response time
+                  <strong>{e.time}</strong>
+                </div>
+              </div>
             </div>
           </Link>
         ))}
