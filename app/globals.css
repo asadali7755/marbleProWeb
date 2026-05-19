@@ -215,10 +215,6 @@ section[data-screen-label] { scroll-margin-top:90px; }
 .svc-detail .preview .lbl .sm { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; opacity:.7; }
 .svc-detail .preview .lbl strong { font-family:var(--display); font-weight:380; font-size:22px; line-height:1.1; letter-spacing:-0.015em; display:block; margin-top:6px; }
 @media (max-width:980px) {
-  .svc-detail { display:flex; flex-direction:column; padding:44px 0; gap:24px; }
-  .svc-detail .svc-top { order:1; }
-  .svc-detail .preview { order:2; position:relative !important; aspect-ratio:16/10 !important; border-radius:16px; width:100%; height:auto; }
-  .svc-detail .svc-bot { order:3; }
   .svc-detail h2 { font-size:clamp(24px,7vw,40px); }
 }
 
@@ -792,14 +788,19 @@ section.loc-section:nth-child(even) .loc-body { background:var(--paper2); }
   .foot-bot { flex-direction: column; gap: 8px; font-size: 10px; }
 
   /* Services page */
-  .svc-hero { padding: 96px 20px 36px; background: var(--ink) !important; background-image: none !important; }
+  .svc-hero { padding: 96px 20px 36px; }
   .svc-hero::before { display: none !important; }
-  .svc-hero .marble-veins { display: none; }
+  .svc-hero .marble-veins { display: none !important; }
   .svc-hero h1 { font-size: clamp(30px, 10vw, 56px); }
   .svc-toc { padding: 0 20px; margin-top: 28px; grid-template-columns: 1fr 1fr; gap: 6px; }
   .svc-toc a { padding: 10px 12px; font-size: 11px; }
   .svc-page { padding: 0 20px; }
   .svc-welcome-grid { grid-template-columns: 1fr !important; }
+  /* service detail mobile: heading → image → features */
+  .svc-detail { display:flex !important; flex-direction:column !important; padding:36px 0 !important; gap:20px !important; }
+  .svc-detail .svc-top { order:1 !important; }
+  .svc-detail .preview { order:2 !important; position:relative !important; aspect-ratio:16/10 !important; width:100% !important; height:auto !important; border-radius:16px !important; }
+  .svc-detail .svc-bot { order:3 !important; }
   .stats-band { padding: 48px 20px; }
   .why { padding: 56px 20px; }
   .why-grid { gap: 16px; }
