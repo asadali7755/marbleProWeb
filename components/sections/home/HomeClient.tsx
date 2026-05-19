@@ -157,7 +157,7 @@ const SVC_CARDS: { img: string; overlay: string }[] = [
   { img:'https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=600&q=60', overlay:'linear-gradient(180deg,rgba(30,14,8,0.32) 0%,rgba(30,14,8,0.65) 100%)' }, // emperador
   { img:'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=600&q=60', overlay:'linear-gradient(180deg,rgba(14,22,44,0.28) 0%,rgba(14,22,44,0.62) 100%)' }, // marble
   { img:'https://images.unsplash.com/photo-1600566753151-384129cf4d3a?auto=format&fit=crop&w=600&q=60', overlay:'linear-gradient(180deg,rgba(28,24,38,0.30) 0%,rgba(28,24,38,0.62) 100%)' }, // floor restoration
-  { img:'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=600&q=60', overlay:'linear-gradient(180deg,rgba(52,28,16,0.28) 0%,rgba(52,28,16,0.60) 100%)' }, // countertop
+  { img:'https://images.unsplash.com/photo-1556912167-f556ea5e9b89?auto=format&fit=crop&w=600&q=60', overlay:'linear-gradient(180deg,rgba(52,28,16,0.28) 0%,rgba(52,28,16,0.60) 100%)' }, // countertop
   { img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=60', overlay:'linear-gradient(180deg,rgba(14,44,44,0.28) 0%,rgba(14,44,44,0.62) 100%)' }, // terrazzo
   { img:'https://images.unsplash.com/photo-1564540583246-934409427776?auto=format&fit=crop&w=600&q=60', overlay:'linear-gradient(180deg,rgba(14,32,44,0.28) 0%,rgba(14,32,44,0.62) 100%)' }, // granite
   { img:'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=600&q=60', overlay:'linear-gradient(180deg,rgba(40,14,14,0.28) 0%,rgba(40,14,14,0.62) 100%)' }, // quartz
