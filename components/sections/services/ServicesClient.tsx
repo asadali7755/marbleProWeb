@@ -97,11 +97,24 @@ function ServiceDetail({ s }: { s: ServiceDetail }) {
   const bgImg = SVC_DETAIL_IMGS[s.slug] || svgFallback;
   return (
     <article className="svc-detail" id={s.slug}>
-      <div>
+      {/* top: heading + intro — shows first on mobile */}
+      <div className="svc-top">
         <span className="svc-detail-num">— {s.num}</span>
         <span className="kw">{s.kw}</span>
         <h2>{s.h2}</h2>
         <p style={{ fontSize: 18, fontFamily: 'var(--display)', fontWeight: 380, letterSpacing: '-0.01em', lineHeight: 1.4, opacity: 1 }}>{s.intro}</p>
+      </div>
+      {/* image — shows second on mobile */}
+      <div className="preview">
+        <div className="ph" style={{ backgroundImage: `url("${bgImg}")` }} />
+        <div className="ovr" />
+        <div className="lbl">
+          <span className="sm">After · MarblePro finish</span>
+          <strong>{s.name}</strong>
+        </div>
+      </div>
+      {/* bottom: body + features + buttons — shows third on mobile */}
+      <div className="svc-bot">
         {s.body.map((p, i) => <p key={i}>{p}</p>)}
         <ul className="feat">
           {s.feat.map((f, i) => (
@@ -117,14 +130,6 @@ function ServiceDetail({ s }: { s: ServiceDetail }) {
             <span className="arr"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </Link>
           <a href={`tel:${PHONE_TEL}`} className="btn btn-secondary">Call {PHONE_DISPLAY}</a>
-        </div>
-      </div>
-      <div className="preview">
-        <div className="ph" style={{ backgroundImage: `url("${bgImg}")` }} />
-        <div className="ovr" />
-        <div className="lbl">
-          <span className="sm">After · MarblePro finish</span>
-          <strong>{s.name}</strong>
         </div>
       </div>
     </article>
@@ -596,7 +601,7 @@ function Welcome() {
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         <span className="sec-eyebrow">— Welcome to MarblePro</span>
         <h2 className="sec-title" style={{ maxWidth: '22ch', marginTop: 18 }}>The UAE&apos;s <em>stone care experts.</em></h2>
-        <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 60, marginTop: 40 }}>
+        <div className="svc-welcome-grid" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 60, marginTop: 40 }}>
           <div>
             <p style={{ fontFamily: 'var(--display)', fontWeight: 380, fontSize: 22, lineHeight: 1.4, letterSpacing: '-0.01em', margin: '0 0 22px', maxWidth: '40ch' }}>
               At MarblePro, we transform dull, scratched or stained surfaces back into pristine,

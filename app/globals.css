@@ -194,8 +194,12 @@ section[data-screen-label] { scroll-margin-top:90px; }
 @media (max-width:820px) { .faq-wrap { grid-template-columns:1fr; gap:30px; } .faq-a-inner { padding-right:30px; } }
 
 /* ─── svc-detail ─── */
-.svc-detail { display:grid; grid-template-columns:1fr 1.2fr; gap:60px; padding:100px 0; border-top:1px solid var(--line); align-items:start; scroll-margin-top:100px; }
+.svc-detail { display:grid; grid-template-columns:1fr 1.2fr; grid-template-rows:auto 1fr; grid-template-areas:"top img" "bot img"; gap:60px; padding:100px 0; border-top:1px solid var(--line); scroll-margin-top:100px; }
 .svc-detail:first-of-type { border-top:none; }
+.svc-detail .svc-top { grid-area:top; }
+.svc-detail .svc-bot { grid-area:bot; }
+.svc-detail .preview { grid-area:img; aspect-ratio:4/5; border-radius:22px; overflow:hidden; background:#1a1410; position:sticky; top:110px; box-shadow:0 20px 60px rgba(11,11,11,0.15); }
+.svc-detail:nth-child(even) { grid-template-areas:"img top" "img bot"; }
 .svc-detail-num { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; opacity:.55; }
 .svc-detail h2 { font-family:var(--display); font-weight:350; font-size:clamp(34px,4.4vw,60px); line-height:1.0; letter-spacing:-0.025em; margin:14px 0 24px; }
 .svc-detail h2 em { font-style:italic; color:var(--gold); }
@@ -205,15 +209,18 @@ section[data-screen-label] { scroll-margin-top:90px; }
 .svc-detail .feat li { list-style:none; padding:16px 18px; border:1px solid var(--line); border-radius:12px; background:var(--paper); font-size:14px; line-height:1.5; display:grid; grid-template-columns:22px 1fr; gap:12px; align-items:start; }
 .svc-detail .feat li .chk { color:var(--gold); flex-shrink:0; }
 .svc-detail .feat li strong { display:block; font-family:var(--grot); font-weight:700; font-size:13px; letter-spacing:0.04em; margin-bottom:2px; }
-.svc-detail .preview { aspect-ratio:4/5; border-radius:22px; overflow:hidden; background:#1a1410; position:relative; box-shadow:0 20px 60px rgba(11,11,11,0.15); position:sticky; top:110px; }
 .svc-detail .preview .ph { position:absolute; inset:0; background-size:cover; background-position:center; }
 .svc-detail .preview .ovr { position:absolute; inset:0; background:linear-gradient(180deg,transparent 50%,rgba(11,11,11,0.8) 100%); }
 .svc-detail .preview .lbl { position:absolute; left:24px; right:24px; bottom:24px; color:var(--paper); }
 .svc-detail .preview .lbl .sm { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; opacity:.7; }
 .svc-detail .preview .lbl strong { font-family:var(--display); font-weight:380; font-size:22px; line-height:1.1; letter-spacing:-0.015em; display:block; margin-top:6px; }
-.svc-detail:nth-child(even) { direction:rtl; }
-.svc-detail:nth-child(even) > * { direction:ltr; }
-@media (max-width:980px) { .svc-detail { grid-template-columns:1fr; padding:60px 0; gap:30px; } .svc-detail:nth-child(even) { direction:ltr; } .svc-detail .preview { position:static; aspect-ratio:16/10; } }
+@media (max-width:980px) {
+  .svc-detail { display:flex; flex-direction:column; padding:44px 0; gap:24px; }
+  .svc-detail .svc-top { order:1; }
+  .svc-detail .preview { order:2; position:static; aspect-ratio:16/10; border-radius:16px; width:100%; }
+  .svc-detail .svc-bot { order:3; }
+  .svc-detail h2 { font-size:clamp(24px,7vw,40px); }
+}
 
 /* ─── GMB ─── */
 .gmb-badge { display:inline-flex; align-items:center; gap:14px; padding:16px 22px; border-radius:16px; background:var(--paper); border:1px solid var(--line); margin-top:22px; }
@@ -785,13 +792,13 @@ section.loc-section:nth-child(even) .loc-body { background:var(--paper2); }
   .foot-bot { flex-direction: column; gap: 8px; font-size: 10px; }
 
   /* Services page */
-  .svc-hero { padding: 96px 20px 36px; }
+  .svc-hero { padding: 96px 20px 36px; background: var(--ink) !important; }
+  .svc-hero .marble-veins { display: none; }
   .svc-hero h1 { font-size: clamp(30px, 10vw, 56px); }
   .svc-toc { padding: 0 20px; margin-top: 28px; grid-template-columns: 1fr 1fr; gap: 6px; }
   .svc-toc a { padding: 10px 12px; font-size: 11px; }
   .svc-page { padding: 0 20px; }
-  .svc-detail { padding: 44px 0; gap: 20px; }
-  .svc-detail h2 { font-size: clamp(24px, 7vw, 40px); }
+  .svc-welcome-grid { grid-template-columns: 1fr !important; }
   .stats-band { padding: 48px 20px; }
   .why { padding: 56px 20px; }
   .why-grid { gap: 16px; }
