@@ -130,6 +130,92 @@ function ServicesHero() {
   );
 }
 
+function TravertineFeature() {
+  const { open } = useRequestCall();
+  const cities = ['Dubai','Abu Dhabi','Sharjah','Ajman','Ras Al Khaimah','Fujairah'];
+  return (
+    <section className="trav-section" id="travertine-polishing-dubai" data-screen-label="travertine">
+      <div className="trav-inner">
+
+        {/* ── Left: Content ── */}
+        <div className="trav-content">
+          <span className="sec-eyebrow" style={{ color: 'var(--gold)' }}>— Featured · UAE&apos;s Most Loved Stone</span>
+          <h2 className="trav-h2">
+            Travertine Polishing &amp; Restoration<br/>
+            <em>in Dubai, Abu Dhabi &amp; UAE.</em>
+          </h2>
+          <p className="trav-intro">
+            Travertine is the most widely used natural stone in UAE villas, hotel lobbies and
+            commercial spaces — and also the most misunderstood when it comes to maintenance.
+            MarblePro specialises in <strong>travertine polishing Dubai</strong>, deep pore-filling,
+            lippage correction and crystallization that returns this ancient stone to its full,
+            natural beauty.
+          </p>
+          <p style={{ fontSize: 15, lineHeight: 1.7, opacity: 0.82, marginTop: 16 }}>
+            Unlike marble, travertine has natural holes and voids that require specialist epoxy
+            filling before polishing — a step many generic companies skip. Our <strong>travertine
+            restoration UAE</strong> process fills every void, grinds flush, hones through fine grits
+            and seals with an impregnating breathable sealer rated for the UAE&apos;s extreme heat cycle.
+            From <strong>travertine floor polishing Abu Dhabi</strong> high-rises to
+            <strong> travertine cleaning Sharjah</strong> heritage villas and
+            <strong> travertine sealing Ajman</strong> beachfront homes — we cover every emirate
+            with the same certified crew.
+          </p>
+
+          {/* Feature grid */}
+          <div className="trav-feats">
+            {[
+              { t: 'Void & pore filling',         d: 'Epoxy colour-matched to your travertine fills every hole before we polish — no pitting left behind.' },
+              { t: 'Lippage grinding',             d: 'Uneven travertine tiles ground perfectly flat with heavy diamond abrasives — zero trip hazards.' },
+              { t: 'High-gloss crystallization',  d: 'Italian crystallizer creates a permanent mirror-finish on travertine without masking its natural veining.' },
+              { t: 'Breathable sealing',           d: 'Impregnating sealer rated for UAE heat — lets the stone breathe while blocking oil, water & stains.' },
+              { t: 'Outdoor travertine care',      d: 'UV-resistant sealers for pool surrounds, driveways and external walkways across Dubai & Abu Dhabi.' },
+              { t: 'Same-week availability',       d: 'Direct scheduling for residential & commercial travertine jobs across all 7 UAE emirates.' },
+            ].map((f) => (
+              <div className="trav-feat" key={f.t}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--gold)', flexShrink: 0, marginTop: 2 }}><polyline points="20 6 9 17 4 12"/></svg>
+                <div><strong>{f.t}</strong><span>{f.d}</span></div>
+              </div>
+            ))}
+          </div>
+
+          {/* City coverage */}
+          <div className="trav-cities">
+            {cities.map((c) => (
+              <span key={c} className="trav-city">{c}</span>
+            ))}
+          </div>
+
+          {/* CTAs */}
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 28 }}>
+            <Link href="/#quote" className="btn btn-primary">
+              Get a Travertine Quote
+              <span className="arr"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            </Link>
+            <button className="btn btn-secondary" onClick={open}>Request a Call</button>
+          </div>
+        </div>
+
+        {/* ── Right: Image ── */}
+        <div className="trav-img-wrap">
+          <div className="trav-img" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=75")' }} />
+          <div className="trav-img-overlay" />
+          {/* Floating stat badge */}
+          <div className="trav-badge">
+            <span className="trav-badge-num">3,200+</span>
+            <span className="trav-badge-lbl">m² of travertine<br/>restored this year</span>
+          </div>
+          {/* SEO keyword chip */}
+          <div className="trav-chip">
+            <span>Travertine Polishing · Dubai · UAE</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
 function Welcome() {
   return (
     <section className="sec" data-screen-label="welcome" style={{ padding: '100px 36px 60px' }}>
@@ -296,6 +382,7 @@ export default function ServicesClient() {
       <ServicesHero />
       <Welcome />
       <Stats />
+      <TravertineFeature />
       <section className="svc-page" data-screen-label="services-list" style={{ paddingBottom: 60 }}>
         {SERVICE_DETAIL.map((s) => <ServiceDetail key={s.slug} s={s} />)}
       </section>
