@@ -217,7 +217,7 @@ section[data-screen-label] { scroll-margin-top:90px; }
 @media (max-width:980px) {
   .svc-detail { display:flex; flex-direction:column; padding:44px 0; gap:24px; }
   .svc-detail .svc-top { order:1; }
-  .svc-detail .preview { order:2; position:static; aspect-ratio:16/10; border-radius:16px; width:100%; }
+  .svc-detail .preview { order:2; position:relative !important; aspect-ratio:16/10 !important; border-radius:16px; width:100%; height:auto; }
   .svc-detail .svc-bot { order:3; }
   .svc-detail h2 { font-size:clamp(24px,7vw,40px); }
 }
@@ -792,7 +792,8 @@ section.loc-section:nth-child(even) .loc-body { background:var(--paper2); }
   .foot-bot { flex-direction: column; gap: 8px; font-size: 10px; }
 
   /* Services page */
-  .svc-hero { padding: 96px 20px 36px; background: var(--ink) !important; }
+  .svc-hero { padding: 96px 20px 36px; background: var(--ink) !important; background-image: none !important; }
+  .svc-hero::before { display: none !important; }
   .svc-hero .marble-veins { display: none; }
   .svc-hero h1 { font-size: clamp(30px, 10vw, 56px); }
   .svc-toc { padding: 0 20px; margin-top: 28px; grid-template-columns: 1fr 1fr; gap: 6px; }
