@@ -74,8 +74,27 @@ const SERVICE_DETAIL: ServiceDetail[] = [
     feat:[{t:'Calcium & water mark removal',d:'Hard-water deposits removed chemically — bright white marks on dark stone disappear.'},{t:'Chocolate tone revival',d:'Dull, grey-toned Emperador restored to original rich dark brown depth.'},{t:'90+ GU gloss achievable',d:"Emperador's dense structure responds exceptionally to diamond polishing — highest gloss of any stone."},{t:'Marine-grade wet area sealing',d:'Bathroom & pool installations sealed against permanent moisture exposure.'}]},
 ];
 
+const SVC_DETAIL_IMGS: Record<string, string> = {
+  'travertine-polishing-dubai':       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=75',
+  'onyx-marble-polishing-dubai':      'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=75',
+  'crema-marfil-polishing-dubai':     'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=900&q=75',
+  'calacatta-marble-polishing-dubai': 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=900&q=75',
+  'emperador-marble-polishing-dubai': 'https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=900&q=75',
+  'marble-polishing-dubai':           'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=900&q=75',
+  'marble-floor-restoration':         'https://images.unsplash.com/photo-1600566753151-384129cf4d3a?auto=format&fit=crop&w=900&q=75',
+  'marble-countertop-polishing':      'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=75',
+  'terrazzo-polishing-dubai':         'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=75',
+  'granite-polishing':                'https://images.unsplash.com/photo-1564540583246-934409427776?auto=format&fit=crop&w=900&q=75',
+  'quartz-polishing':                 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=900&q=75',
+  'corian-countertop-polishing':      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=75',
+  'yellow-stain-removing':            'https://images.unsplash.com/photo-1617042375876-a13e36732a04?auto=format&fit=crop&w=900&q=75',
+  'kitchen-top-polishing':            'https://images.unsplash.com/photo-1556909172-54557c7e4fb7?auto=format&fit=crop&w=900&q=75',
+  'crystallization-sealing':          'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=75',
+};
+
 function ServiceDetail({ s }: { s: ServiceDetail }) {
-  const after = marbleSvg({ dull: false, hue: s.hue, vein: s.vein });
+  const svgFallback = marbleSvg({ dull: false, hue: s.hue, vein: s.vein });
+  const bgImg = SVC_DETAIL_IMGS[s.slug] || svgFallback;
   return (
     <article className="svc-detail" id={s.slug}>
       <div>
@@ -101,7 +120,7 @@ function ServiceDetail({ s }: { s: ServiceDetail }) {
         </div>
       </div>
       <div className="preview">
-        <div className="ph" style={{ backgroundImage: `url("${after}")` }} />
+        <div className="ph" style={{ backgroundImage: `url("${bgImg}")` }} />
         <div className="ovr" />
         <div className="lbl">
           <span className="sm">After · MarblePro finish</span>
