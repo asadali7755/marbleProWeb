@@ -5,9 +5,9 @@ import Fab from '@/components/marble/Fab';
 import ServicesClient from '@/components/sections/services/ServicesClient';
 
 export const metadata: Metadata = {
-  title: 'Marble & Travertine Polishing Dubai · Terrazzo, Granite, Quartz & Corian — MarblePro UAE',
-  description: 'Expert marble polishing Dubai, travertine polishing Dubai, travertine restoration UAE, floor polishing Abu Dhabi, Sharjah & Ajman. Terrazzo, granite, quartz, Corian & yellow stain removing across all 7 UAE emirates. Free on-site quote.',
-  keywords: 'marble polishing dubai, travertine polishing dubai, travertine restoration dubai, travertine floor polishing abu dhabi, travertine cleaning sharjah, travertine sealing ajman, travertine marble dubai, marble floor polishing, floor polishing dubai, countertop polishing, kitchen top polishing, floor restoration services, marble floor restoration services, terrazzo floor polishing dubai, terrazzo polishing dubai, quartz polishing, corian countertop polishing, yellow stain removing, granite polishing, floor polishing uae',
+  title: 'Calacatta, Emperador, Travertine & Onyx Marble Polishing Dubai — MarblePro UAE',
+  description: 'Expert marble polishing Dubai — Calacatta, Emperador, Crema Marfil, travertine & onyx specialists. Floor restoration Abu Dhabi, Sharjah & Ajman. Free on-site quote across all 7 UAE emirates.',
+  keywords: 'emperador marble polishing dubai, emperador marble restoration uae, emperador marble polishing abu dhabi, emperador cleaning sharjah, emperador marble sealing ajman, dark marble polishing dubai, spanish marble polishing dubai, calacatta marble polishing dubai, calacatta marble restoration uae, calacatta marble cleaning abu dhabi, crema marfil polishing dubai, crema marfil restoration uae, travertine polishing dubai, travertine floor polishing abu dhabi, onyx marble polishing dubai, onyx restoration uae, marble polishing dubai, marble floor polishing, floor polishing dubai, floor restoration services, terrazzo floor polishing dubai, quartz polishing, yellow stain removing, granite polishing',
 };
 
 export default function ServicesPage() {

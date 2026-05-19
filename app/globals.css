@@ -264,14 +264,17 @@ body[data-theme="rosegold"]{ --gold:#B26E55;--amber:#B26E55; }
 .marquee-track span.dot { color:var(--gold); margin:0 4px; font-style:normal; }
 @keyframes marq { to{transform:translateX(-50%);} }
 .svc-grid { display:grid; grid-template-columns:repeat(12,1fr); gap:1px; background:rgba(11,11,11,0.18); border:1px solid rgba(11,11,11,0.15); border-radius:24px; overflow:hidden; }
-.svc { background:var(--svc-bg, var(--paper)); color:var(--svc-fg, var(--ink)); padding:32px 28px 28px; position:relative; transition:background .3s,color .3s; min-height:220px; display:flex; flex-direction:column; justify-content:space-between; text-decoration:none; }
-.svc:hover { background:var(--ink) !important; color:var(--paper); }
-.svc-num { font-family:var(--mono); font-size:11px; letter-spacing:0.18em; opacity:.55; }
-.svc-name { font-family:var(--display); font-size:26px; line-height:1.05; letter-spacing:-0.02em; margin:16px 0 0; font-weight:400; }
-.svc-desc { font-size:13px; line-height:1.55; opacity:.68; margin-top:12px; max-width:28ch; }
+.svc { background:var(--svc-bg, var(--paper)); background-size:cover; background-position:center; color:var(--svc-fg, var(--ink)); padding:32px 28px 28px; position:relative; transition:transform .3s,box-shadow .3s; min-height:240px; display:flex; flex-direction:column; justify-content:space-between; text-decoration:none; overflow:hidden; }
+.svc::before { content:''; position:absolute; inset:0; background:var(--svc-overlay,transparent); transition:opacity .3s; z-index:0; }
+.svc:hover::before { opacity:1.15; }
+.svc > * { position:relative; z-index:1; }
+.svc:hover { transform:scale(1.01); box-shadow:0 8px 32px rgba(0,0,0,0.35); z-index:2; }
+.svc-num { font-family:var(--mono); font-size:11px; letter-spacing:0.18em; opacity:.6; }
+.svc-name { font-family:var(--display); font-size:26px; line-height:1.05; letter-spacing:-0.02em; margin:16px 0 0; font-weight:400; text-shadow:0 1px 6px rgba(0,0,0,0.4); }
+.svc-desc { font-size:13px; line-height:1.55; opacity:.78; margin-top:12px; max-width:28ch; }
 .svc-cta { display:inline-flex; align-items:center; gap:8px; font-family:var(--grot); font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; margin-top:18px; opacity:0; transform:translateY(4px); transition:opacity .25s,transform .25s; }
 .svc:hover .svc-cta { opacity:1; transform:translateY(0); color:var(--gold); }
-.svc-glyph { position:absolute; top:28px; right:28px; opacity:.35; transition:opacity .3s,transform .3s; }
+.svc-glyph { position:absolute; top:28px; right:28px; opacity:.5; transition:opacity .3s,transform .3s; }
 .svc:hover .svc-glyph { opacity:1; color:var(--gold); transform:rotate(45deg); }
 .svc.lg { grid-column:span 6; } .svc.md { grid-column:span 4; } .svc.sm { grid-column:span 3; }
 @media (max-width:1024px) { .svc.lg,.svc.md,.svc.sm { grid-column:span 6; } }
@@ -357,6 +360,98 @@ body[data-theme="rosegold"]{ --gold:#B26E55;--amber:#B26E55; }
 @media (max-width:980px) { .trav-inner { grid-template-columns:1fr; gap:40px; } .trav-img-wrap { aspect-ratio:16/10; } }
 @media (max-width:640px) { .trav-feats { grid-template-columns:1fr; } .trav-section { padding:56px 20px; } }
 /* ── End Travertine ── */
+
+/* ── Onyx Feature Section ── */
+.onyx-section { background:var(--ink); color:var(--paper); padding:110px 36px; }
+.onyx-inner { max-width:1280px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+.onyx-h2 { font-family:var(--display); font-weight:320; font-size:clamp(32px,4.2vw,58px); line-height:1.0; letter-spacing:-0.03em; margin:18px 0 0; }
+.onyx-h2 em { font-style:italic; color:var(--gold); }
+.onyx-intro { font-family:var(--display); font-weight:380; font-size:18px; line-height:1.5; letter-spacing:-0.01em; margin:22px 0 0; opacity:.95; }
+.onyx-feats { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:28px; }
+.onyx-feat { display:flex; gap:10px; align-items:flex-start; padding:14px; border:1px solid rgba(246,241,232,0.1); border-radius:12px; background:rgba(246,241,232,0.04); }
+.onyx-feat strong { display:block; font-family:var(--grot); font-size:12px; font-weight:700; letter-spacing:0.02em; margin-bottom:4px; color:var(--paper); }
+.onyx-feat span { font-size:13px; line-height:1.5; opacity:.65; }
+.onyx-img-wrap { position:relative; border-radius:24px; overflow:hidden; aspect-ratio:4/5; box-shadow:0 24px 80px rgba(0,0,0,0.5); }
+.onyx-img { position:absolute; inset:0; background-size:cover; background-position:center; transition:transform .5s; }
+.onyx-img-wrap:hover .onyx-img { transform:scale(1.04); }
+.onyx-img-overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(11,11,11,0.2) 0%, rgba(11,11,11,0.65) 100%); }
+.onyx-badge { position:absolute; top:24px; right:24px; z-index:2; background:rgba(195,155,78,0.15); backdrop-filter:blur(10px); border:1px solid rgba(195,155,78,0.4); border-radius:14px; padding:14px 18px; color:var(--paper); text-align:right; }
+.onyx-badge-label { font-family:var(--mono); font-size:9px; letter-spacing:0.2em; text-transform:uppercase; opacity:.7; display:block; }
+.onyx-badge-num { font-family:var(--display); font-size:36px; font-weight:350; letter-spacing:-0.02em; line-height:1; color:var(--gold); display:block; margin-top:2px; }
+.onyx-badge-sub { font-family:var(--mono); font-size:9px; letter-spacing:0.12em; text-transform:uppercase; opacity:.6; display:block; margin-top:4px; }
+.onyx-chip { position:absolute; bottom:24px; left:24px; right:24px; z-index:2; background:rgba(11,11,11,0.7); backdrop-filter:blur(8px); border:1px solid rgba(246,241,232,0.1); border-radius:10px; padding:10px 14px; color:var(--paper); font-family:var(--mono); font-size:10px; letter-spacing:0.16em; text-transform:uppercase; opacity:.9; text-align:center; }
+@media (max-width:980px) { .onyx-inner { grid-template-columns:1fr; gap:40px; } .onyx-img-wrap { aspect-ratio:16/10; } }
+@media (max-width:640px) { .onyx-feats { grid-template-columns:1fr; } .onyx-section { padding:56px 20px; } }
+/* ── End Onyx ── */
+
+/* ── Crema Marfil Feature Section ── */
+.crema-section { background:linear-gradient(135deg, #f5ede0 0%, #f0e8d6 50%, #e8dcc8 100%); padding:110px 36px; border-top:1px solid rgba(195,155,78,0.15); }
+.crema-inner { max-width:1280px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+.crema-h2 { font-family:var(--display); font-weight:320; font-size:clamp(32px,4.2vw,58px); line-height:1.0; letter-spacing:-0.03em; margin:18px 0 0; color:var(--ink); }
+.crema-h2 em { font-style:italic; color:var(--gold); }
+.crema-intro { font-family:var(--display); font-weight:380; font-size:18px; line-height:1.5; letter-spacing:-0.01em; margin:22px 0 0; color:var(--ink); }
+.crema-feats { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:28px; }
+.crema-feat { display:flex; gap:10px; align-items:flex-start; padding:14px; border:1px solid rgba(195,155,78,0.25); border-radius:12px; background:rgba(255,255,255,0.6); backdrop-filter:blur(4px); }
+.crema-feat strong { display:block; font-family:var(--grot); font-size:12px; font-weight:700; letter-spacing:0.02em; margin-bottom:4px; color:var(--ink); }
+.crema-feat span { font-size:13px; line-height:1.5; opacity:.72; color:var(--ink); }
+.crema-content .trav-city { border-color:rgba(11,11,11,0.2); color:var(--ink); }
+.crema-img-wrap { position:relative; border-radius:24px; overflow:hidden; aspect-ratio:4/5; box-shadow:0 24px 60px rgba(11,11,11,0.18); }
+.crema-img { position:absolute; inset:0; background-size:cover; background-position:center; transition:transform .5s; }
+.crema-img-wrap:hover .crema-img { transform:scale(1.04); }
+.crema-img-overlay { position:absolute; inset:0; background:linear-gradient(180deg, transparent 40%, rgba(11,11,11,0.72) 100%); }
+.crema-badge { position:absolute; top:24px; left:24px; z-index:2; background:rgba(255,255,255,0.88); backdrop-filter:blur(8px); border:1px solid rgba(195,155,78,0.35); border-radius:14px; padding:14px 18px; color:var(--ink); }
+.crema-badge-num { font-family:var(--display); font-size:48px; font-weight:350; letter-spacing:-0.03em; line-height:1; color:var(--gold); display:block; }
+.crema-badge-lbl { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; opacity:.65; display:block; margin-top:4px; line-height:1.4; }
+.crema-img-wrap .trav-chip { background:rgba(11,11,11,0.7); }
+@media (max-width:980px) { .crema-inner { grid-template-columns:1fr; gap:40px; } .crema-img-wrap { aspect-ratio:16/10; order:-1; } }
+@media (max-width:640px) { .crema-feats { grid-template-columns:1fr; } .crema-section { padding:56px 20px; } }
+/* ── End Crema Marfil ── */
+
+/* ── Calacatta Feature Section ── */
+.cala-section { background:linear-gradient(135deg, #f4f4f2 0%, #edecea 50%, #e6e4e0 100%); padding:110px 36px; border-top:1px solid rgba(11,11,11,0.08); }
+.cala-inner { max-width:1280px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+.cala-h2 { font-family:var(--display); font-weight:320; font-size:clamp(32px,4.2vw,58px); line-height:1.0; letter-spacing:-0.03em; margin:18px 0 0; color:var(--ink); }
+.cala-h2 em { font-style:italic; color:var(--gold); }
+.cala-intro { font-family:var(--display); font-weight:380; font-size:18px; line-height:1.5; letter-spacing:-0.01em; margin:22px 0 0; color:var(--ink); }
+.cala-feats { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:28px; }
+.cala-feat { display:flex; gap:10px; align-items:flex-start; padding:14px; border:1px solid rgba(11,11,11,0.1); border-radius:12px; background:rgba(255,255,255,0.7); backdrop-filter:blur(4px); }
+.cala-feat strong { display:block; font-family:var(--grot); font-size:12px; font-weight:700; letter-spacing:0.02em; margin-bottom:4px; color:var(--ink); }
+.cala-feat span { font-size:13px; line-height:1.5; opacity:.72; color:var(--ink); }
+.cala-content .trav-city { border-color:rgba(11,11,11,0.2); color:var(--ink); }
+.cala-img-wrap { position:relative; border-radius:24px; overflow:hidden; aspect-ratio:4/5; box-shadow:0 24px 60px rgba(11,11,11,0.14); }
+.cala-img { position:absolute; inset:0; background-size:cover; background-position:center; transition:transform .5s; }
+.cala-img-wrap:hover .cala-img { transform:scale(1.04); }
+.cala-img-overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(11,11,11,0.15) 0%, rgba(11,11,11,0.68) 100%); }
+.cala-badge { position:absolute; top:24px; right:24px; z-index:2; background:rgba(11,11,11,0.6); backdrop-filter:blur(10px); border:1px solid rgba(195,155,78,0.4); border-radius:14px; padding:14px 18px; color:var(--paper); text-align:right; }
+.cala-badge-label { font-family:var(--mono); font-size:9px; letter-spacing:0.2em; text-transform:uppercase; opacity:.7; display:block; }
+.cala-badge-num { font-family:var(--display); font-size:32px; font-weight:350; letter-spacing:-0.02em; line-height:1; color:var(--gold); display:block; margin-top:2px; }
+.cala-badge-sub { font-family:var(--mono); font-size:9px; letter-spacing:0.12em; text-transform:uppercase; opacity:.6; display:block; margin-top:4px; }
+@media (max-width:980px) { .cala-inner { grid-template-columns:1fr; gap:40px; } .cala-img-wrap { aspect-ratio:16/10; } }
+@media (max-width:640px) { .cala-feats { grid-template-columns:1fr; } .cala-section { padding:56px 20px; } }
+/* ── End Calacatta ── */
+
+/* ── Emperador Feature Section ── */
+.emp-section { background:linear-gradient(135deg, #2a1810 0%, #3d2414 50%, #4e2e18 100%); color:var(--paper); padding:110px 36px; }
+.emp-inner { max-width:1280px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+.emp-h2 { font-family:var(--display); font-weight:320; font-size:clamp(32px,4.2vw,58px); line-height:1.0; letter-spacing:-0.03em; margin:18px 0 0; }
+.emp-h2 em { font-style:italic; color:var(--gold); }
+.emp-intro { font-family:var(--display); font-weight:380; font-size:18px; line-height:1.5; letter-spacing:-0.01em; margin:22px 0 0; opacity:.95; }
+.emp-feats { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:28px; }
+.emp-feat { display:flex; gap:10px; align-items:flex-start; padding:14px; border:1px solid rgba(195,155,78,0.18); border-radius:12px; background:rgba(255,255,255,0.05); }
+.emp-feat strong { display:block; font-family:var(--grot); font-size:12px; font-weight:700; letter-spacing:0.02em; margin-bottom:4px; color:var(--paper); }
+.emp-feat span { font-size:13px; line-height:1.5; opacity:.65; }
+.emp-city { font-family:var(--mono); font-size:10px; letter-spacing:0.16em; text-transform:uppercase; padding:6px 12px; border:1px solid rgba(246,241,232,0.2); border-radius:999px; opacity:.7; }
+.emp-img-wrap { position:relative; border-radius:24px; overflow:hidden; aspect-ratio:4/5; box-shadow:0 24px 80px rgba(0,0,0,0.5); }
+.emp-img { position:absolute; inset:0; background-size:cover; background-position:center; transition:transform .5s; }
+.emp-img-wrap:hover .emp-img { transform:scale(1.04); }
+.emp-img-overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(11,11,11,0.2) 0%, rgba(42,24,16,0.8) 100%); }
+.emp-badge { position:absolute; top:24px; left:24px; z-index:2; background:rgba(42,24,16,0.8); backdrop-filter:blur(10px); border:1px solid rgba(195,155,78,0.4); border-radius:14px; padding:14px 18px; color:var(--paper); }
+.emp-badge-label { font-family:var(--mono); font-size:9px; letter-spacing:0.2em; text-transform:uppercase; opacity:.7; display:block; }
+.emp-badge-num { font-family:var(--display); font-size:32px; font-weight:350; letter-spacing:-0.02em; line-height:1; color:var(--gold); display:block; margin-top:2px; }
+.emp-badge-sub { font-family:var(--mono); font-size:9px; letter-spacing:0.12em; text-transform:uppercase; opacity:.6; display:block; margin-top:4px; }
+@media (max-width:980px) { .emp-inner { grid-template-columns:1fr; gap:40px; } .emp-img-wrap { aspect-ratio:16/10; } }
+@media (max-width:640px) { .emp-feats { grid-template-columns:1fr; } .emp-section { padding:56px 20px; } }
+/* ── End Emperador ── */
 
 .why { background:var(--paper2); padding:100px 36px; }
 .why-inner { max-width:1280px; margin:0 auto; }
@@ -654,8 +749,9 @@ section.loc-section:nth-child(even) .loc-body { background:var(--paper2); }
   .marquee-track { font-size: 24px; gap: 28px; }
 
   /* Services grid */
-  .svc { padding: 22px 18px 18px; min-height: 160px; }
+  .svc { padding: 22px 18px 18px; min-height: 180px; }
   .svc-name { font-size: 20px; }
+  .svc:hover { transform:none; box-shadow:none; }
 
   /* Process */
   .step { grid-template-columns: 48px 1fr; gap: 14px; padding: 22px 0; }
