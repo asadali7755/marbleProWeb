@@ -81,7 +81,7 @@ const SVC_DETAIL_IMGS: Record<string, string> = {
   'calacatta-marble-polishing-dubai': 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=900&q=75',
   'emperador-marble-polishing-dubai': 'https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=900&q=75',
   'marble-polishing-dubai':           'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=900&q=75',
-  'marble-floor-restoration':         'https://images.unsplash.com/photo-1600566753151-384129cf4d3a?auto=format&fit=crop&w=900&q=75',
+  'marble-floor-restoration':         'https://images.unsplash.com/photo-1564078516393-cf04bd966897?auto=format&fit=crop&w=900&q=75',
   'marble-countertop-polishing':      'https://images.unsplash.com/photo-1556912167-f556ea5e9b89?auto=format&fit=crop&w=900&q=75',
   'terrazzo-polishing-dubai':         'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=75',
   'granite-polishing':                'https://images.unsplash.com/photo-1564540583246-934409427776?auto=format&fit=crop&w=900&q=75',
