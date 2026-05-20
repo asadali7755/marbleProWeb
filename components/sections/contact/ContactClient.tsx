@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useRequestCall } from '@/components/marble/RequestCallModal';
 import { PHONE_DISPLAY, PHONE_TEL, EMAIL, WA_LINK, EMIRATES, SERVICES, CITY_IMG } from '@/components/marble/constants';
+import { sendEnquiry } from '@/lib/sendEmail';
 
 const EMIRATE_RESPONSE = [
   { slug:'dubai',          name:'Dubai',          time:'Within 90 min' },
@@ -28,22 +29,27 @@ function QuoteFormBand() {
   const [emirate, setEmirate] = useState('Dubai');
   const [service, setService] = useState('Marble Polishing');
   const [job, setJob] = useState('');
+  const [phoneErr, setPhoneErr] = useState('');
 
-  const sendWa = () => {
+  const sendWa = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!phone.trim()) { setPhoneErr('Phone number is required'); return; }
+    setPhoneErr('');
     const msg = encodeURIComponent(`Hi MarblePro, I need a quote.\n\nName: ${name}\nNumber: ${phone}\nEmirate: ${emirate}\nService: ${service}\nDetails: ${job || '(see attached photo)'}`);
     window.open(`${WA_LINK}?text=${msg}`, '_blank');
+    sendEnquiry({ type: 'Quote Request (Contact Page)', phone, work: `${service} — ${emirate}${job ? ` — ${job}` : ''}`, name }).catch(() => {});
   };
-  const sendMail = () => {
-    const subject = encodeURIComponent(`Free Quote — ${service} — ${emirate}`);
-    const body = encodeURIComponent(`Name: ${name}\nNumber: ${phone}\nEmirate: ${emirate}\nService: ${service}\n\nDetails:\n${job}`);
-    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+  const sendMail = async () => {
+    if (!phone.trim()) { setPhoneErr('Phone number is required'); return; }
+    setPhoneErr('');
+    try { await sendEnquiry({ type: 'Email Quote (Contact Page)', phone, work: `${service} — ${emirate}${job ? ` — ${job}` : ''}`, name }); } catch {}
+    setDone(true);
   };
-  const requestCall = (e: React.FormEvent) => {
+  const requestCall = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!phone.trim()) return;
-    const subject = encodeURIComponent('Request a Call — MarblePro');
-    const body = encodeURIComponent(`Please call me back.\nNumber: ${phone}\nName: ${name || '(not given)'}\nEmirate: ${emirate}`);
-    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+    if (!phone.trim()) { setPhoneErr('Phone number is required'); return; }
+    setPhoneErr('');
+    try { await sendEnquiry({ type: 'Request a Call (Contact Page)', phone, work: emirate, name }); } catch {}
     setDone(true);
   };
 
@@ -55,19 +61,19 @@ function QuoteFormBand() {
           <h2>Tell us about <em>your floor.</em></h2>
           <p className="sub">Pick a tab — full quote or just leave your number. Either way we read it within an hour during working hours.</p>
           <div className="c-tabs" role="tablist">
-            <button className={`c-tab ${tab === 'quote' ? 'active' : ''}`} onClick={() => { setTab('quote'); setDone(false); }}>Full quote</button>
-            <button className={`c-tab ${tab === 'call' ? 'active' : ''}`} onClick={() => { setTab('call'); setDone(false); }}>Request a call</button>
+            <button className={`c-tab ${tab === 'quote' ? 'active' : ''}`} onClick={() => { setTab('quote'); setDone(false); setPhoneErr(''); }}>Full quote</button>
+            <button className={`c-tab ${tab === 'call' ? 'active' : ''}`} onClick={() => { setTab('call'); setDone(false); setPhoneErr(''); }}>Request a call</button>
           </div>
           {done ? (
             <div className="c-success">
               <div className="tick">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
-              <h3 style={{ fontFamily:'var(--display)', fontWeight:380, fontSize:24, margin:'0 0 8px' }}>You&apos;re on the list.</h3>
-              <p style={{ margin:0, opacity:.65, fontSize:14 }}>Your email app should open. If not, dial <a style={{ color:'var(--gold)' }} href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>.</p>
+              <h3 style={{ fontFamily:'var(--display)', fontWeight:380, fontSize:24, margin:'0 0 8px' }}>We got your message!</h3>
+              <p style={{ margin:0, opacity:.65, fontSize:14 }}>We&apos;ll be in touch shortly. Can&apos;t wait? Dial <a style={{ color:'var(--gold)' }} href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>.</p>
             </div>
           ) : tab === 'quote' ? (
-            <form onSubmit={(e) => { e.preventDefault(); sendWa(); }}>
+            <form onSubmit={sendWa}>
               <div className="c-field">
                 <div className="row">
                   <div className="c-field">
@@ -75,8 +81,9 @@ function QuoteFormBand() {
                     <input id="cf-name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Ahmed K." />
                   </div>
                   <div className="c-field">
-                    <label htmlFor="cf-phone">UAE number</label>
-                    <input id="cf-phone" inputMode="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="+971 5X XXX XXXX" />
+                    <label htmlFor="cf-phone">UAE number *</label>
+                    <input id="cf-phone" inputMode="tel" value={phone} onChange={(e) => { setPhone(e.target.value); setPhoneErr(''); }} placeholder="+971 5X XXX XXXX" style={phoneErr ? { borderColor:'#e53e3e' } : {}} />
+                    {phoneErr && <span style={{ color:'#e53e3e', fontSize:12, marginTop:4, display:'block' }}>{phoneErr}</span>}
                   </div>
                 </div>
               </div>
@@ -109,7 +116,7 @@ function QuoteFormBand() {
                 </button>
                 <button type="button" className="btn btn-secondary on-dark" onClick={sendMail}>Send by email</button>
               </div>
-              <p className="c-note">&quot;WhatsApp&quot; opens chat with your details pre-filled. &quot;Email&quot; opens your mail app to <strong style={{ color:'var(--gold)' }}>{EMAIL}</strong>.</p>
+              <p className="c-note">&quot;WhatsApp&quot; opens chat with your details pre-filled. &quot;Email&quot; sends your details directly to <strong style={{ color:'var(--gold)' }}>{EMAIL}</strong>.</p>
             </form>
           ) : (
             <form onSubmit={requestCall}>
@@ -117,8 +124,9 @@ function QuoteFormBand() {
               <div className="c-field">
                 <div className="row">
                   <div className="c-field">
-                    <label htmlFor="cf-call-phone">Your UAE number</label>
-                    <input id="cf-call-phone" inputMode="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="+971 5X XXX XXXX" autoFocus />
+                    <label htmlFor="cf-call-phone">Your UAE number *</label>
+                    <input id="cf-call-phone" inputMode="tel" value={phone} onChange={(e) => { setPhone(e.target.value); setPhoneErr(''); }} placeholder="+971 5X XXX XXXX" autoFocus style={phoneErr ? { borderColor:'#e53e3e' } : {}} />
+                    {phoneErr && <span style={{ color:'#e53e3e', fontSize:12, marginTop:4, display:'block' }}>{phoneErr}</span>}
                   </div>
                   <div className="c-field">
                     <label htmlFor="cf-call-em">Emirate (optional)</label>
@@ -131,7 +139,7 @@ function QuoteFormBand() {
               <button type="submit" className="btn btn-primary" style={{ width:'100%', justifyContent:'center', padding:18, background:'var(--gold)', color:'var(--ink)' }}>
                 Call me back →
               </button>
-              <p className="c-note">Your number is emailed to <strong style={{ color:'var(--gold)' }}>{EMAIL}</strong> — that&apos;s it. No spam, no list.</p>
+              <p className="c-note">Drop your number and we&apos;ll call you back during working hours — usually within an hour. No spam, no list.</p>
             </form>
           )}
         </div>
