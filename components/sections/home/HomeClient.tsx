@@ -82,19 +82,25 @@ function BeforeAfter({ hue, vein, title, sub, beforeImg, afterImg }: { hue: numb
   );
 }
 
+const onDesktop = () => window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+
 function Hero() {
   const { open } = useRequestCall();
   const showToast = useToast();
   const [number, setNumber] = useState('');
   const [job, setJob] = useState('');
   const [err, setErr] = useState('');
+  const [desktop, setDesktop] = useState(false);
+  useEffect(() => { setDesktop(onDesktop()); }, []);
   const wa = async () => {
     if (!number.trim()) { setErr('Please enter your phone number'); return; }
     setErr('');
-    try { await sendEnquiry({ type: 'WhatsApp Quote (Hero)', phone: number, work: job }); } catch {}
-    showToast('Enquiry sent! We\'ll WhatsApp you back shortly.');
-    const msg = encodeURIComponent(`Hi MarblePro, I need a quote.\nWork: ${job || 'Marble polishing'}\nNumber: ${number}`);
-    window.open(`${WA_LINK}?text=${msg}`, '_blank');
+    try { await sendEnquiry({ type: 'WhatsApp Quote (Hero)', phone: number, work: job }); } catch (e) { console.error('EmailJS:', e); }
+    showToast('Enquiry sent! We\'ll be in touch shortly.');
+    if (!onDesktop()) {
+      const msg = encodeURIComponent(`Hi MarblePro, I need a quote.\nWork: ${job || 'Marble polishing'}\nNumber: ${number}`);
+      window.open(`${WA_LINK}?text=${msg}`, '_blank');
+    }
   };
   return (
     <section className="hero marble-bg" data-screen-label="hero" id="top">
@@ -136,7 +142,7 @@ function Hero() {
                 <span className="arr" style={{ background: '#082b13' }}>
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#25D366" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
                 </span>
-                WhatsApp
+                {desktop ? 'Send Enquiry' : 'WhatsApp'}
               </button>
               <a className="btn-call" href={`tel:${PHONE_TEL}`} style={{ justifyContent: 'center' }}>Call now</a>
             </div>
@@ -488,15 +494,19 @@ function QuoteBand() {
   const [job, setJob] = useState('');
   const [err, setErr] = useState('');
   const [sent, setSent] = useState(false);
+  const [desktop, setDesktop] = useState(false);
+  useEffect(() => { setDesktop(onDesktop()); }, []);
   const wa = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!number.trim()) { setErr('Phone number is required'); return; }
     setErr('');
-    try { await sendEnquiry({ type: 'WhatsApp Quote (Section 8)', phone: number, work: job }); } catch {}
+    try { await sendEnquiry({ type: 'WhatsApp Quote (Section 8)', phone: number, work: job }); } catch (e) { console.error('EmailJS:', e); }
     setSent(true);
-    showToast('Enquiry sent! We\'ll WhatsApp you back shortly.');
-    const msg = encodeURIComponent(`Hi MarblePro, I need a quote.\nWork: ${job || 'Marble polishing'}\nNumber: ${number}`);
-    window.open(`${WA_LINK}?text=${msg}`, '_blank');
+    showToast('Enquiry sent! We\'ll be in touch shortly.');
+    if (!onDesktop()) {
+      const msg = encodeURIComponent(`Hi MarblePro, I need a quote.\nWork: ${job || 'Marble polishing'}\nNumber: ${number}`);
+      window.open(`${WA_LINK}?text=${msg}`, '_blank');
+    }
   };
   return (
     <section className="cta-band" data-screen-label="quote" id="quote">
@@ -531,7 +541,7 @@ function QuoteBand() {
                 <span className="arr" style={{ background: '#082b13' }}>
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#25D366" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
                 </span>
-                {sent ? 'Sent ✓' : 'Send on WhatsApp'}
+                {sent ? 'Sent ✓' : desktop ? 'Send Enquiry' : 'Send on WhatsApp'}
               </button>
               <button type="button" className="btn-call" onClick={open} style={{ justifyContent: 'center' }}>Request a Call →</button>
             </div>

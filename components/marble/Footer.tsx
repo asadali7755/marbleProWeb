@@ -1,10 +1,13 @@
 'use client';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRequestCall } from './RequestCallModal';
 import { PHONE_DISPLAY, PHONE_TEL, EMAIL, WA_LINK, SERVICES, EMIRATES } from './constants';
 
 export default function Footer() {
   const { open } = useRequestCall();
+  const [desktop, setDesktop] = useState(false);
+  useEffect(() => { setDesktop(window.matchMedia('(hover:hover) and (pointer:fine)').matches); }, []);
   return (
     <footer className="foot" data-screen-label="footer">
       <div className="foot-inner">
@@ -49,7 +52,11 @@ export default function Footer() {
               <li style={{ opacity: 0.65 }}>Dubai · Abu Dhabi · Sharjah</li>
             </ul>
             <div style={{ display: 'flex', gap: 10, marginTop: 18, flexWrap: 'wrap' }}>
-              <a href={WA_LINK} target="_blank" rel="noopener" style={{ padding: '8px 12px', border: '1px solid var(--line-d)', borderRadius: 999, fontSize: 11, fontFamily: 'var(--grot)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' }}>WhatsApp</a>
+              {desktop ? (
+                <button onClick={open} style={{ padding: '8px 12px', border: '1px solid var(--line-d)', borderRadius: 999, fontSize: 11, fontFamily: 'var(--grot)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', background: 'transparent', color: 'inherit', cursor: 'pointer' }}>Request a Call</button>
+              ) : (
+                <a href={WA_LINK} target="_blank" rel="noopener" style={{ padding: '8px 12px', border: '1px solid var(--line-d)', borderRadius: 999, fontSize: 11, fontFamily: 'var(--grot)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' }}>WhatsApp</a>
+              )}
               <a href="https://maps.google.com/?cid=9770771076887647238" target="_blank" rel="noopener" style={{ padding: '8px 12px', border: '1px solid var(--line-d)', borderRadius: 999, fontSize: 11, fontFamily: 'var(--grot)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Google</a>
             </div>
           </div>

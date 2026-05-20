@@ -1,10 +1,11 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useRequestCall } from '@/components/marble/RequestCallModal';
+import { useRequestCall, useToast } from '@/components/marble/RequestCallModal';
 import { PHONE_DISPLAY, PHONE_TEL, EMAIL, WA_LINK, EMIRATES, SERVICES, CITY_IMG } from '@/components/marble/constants';
 import { sendEnquiry } from '@/lib/sendEmail';
-import { useToast } from '@/components/marble/RequestCallModal';
+
+const onDesktop = () => window.matchMedia('(hover:hover) and (pointer:fine)').matches;
 
 const EMIRATE_RESPONSE = [
   { slug:'dubai',          name:'Dubai',          time:'Within 90 min' },
@@ -32,19 +33,24 @@ function QuoteFormBand() {
   const [service, setService] = useState('Marble Polishing');
   const [job, setJob] = useState('');
   const [phoneErr, setPhoneErr] = useState('');
+  const [desktop, setDesktop] = useState(false);
+  useEffect(() => { setDesktop(onDesktop()); }, []);
 
-  const sendWa = (e: React.FormEvent) => {
+  const sendWa = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!phone.trim()) { setPhoneErr('Phone number is required'); return; }
     setPhoneErr('');
-    const msg = encodeURIComponent(`Hi MarblePro, I need a quote.\n\nName: ${name}\nNumber: ${phone}\nEmirate: ${emirate}\nService: ${service}\nDetails: ${job || '(see attached photo)'}`);
-    window.open(`${WA_LINK}?text=${msg}`, '_blank');
-    sendEnquiry({ type: 'Quote Request (Contact Page)', phone, work: `${service} — ${emirate}${job ? ` — ${job}` : ''}`, name }).catch(() => {});
+    try { await sendEnquiry({ type: 'Quote Request (Contact Page)', phone, work: `${service} — ${emirate}${job ? ` — ${job}` : ''}`, name }); } catch (e) { console.error('EmailJS:', e); }
+    showToast('Enquiry sent! We\'ll be in touch shortly.');
+    if (!onDesktop()) {
+      const msg = encodeURIComponent(`Hi MarblePro, I need a quote.\n\nName: ${name}\nNumber: ${phone}\nEmirate: ${emirate}\nService: ${service}\nDetails: ${job || '(see attached photo)'}`);
+      window.open(`${WA_LINK}?text=${msg}`, '_blank');
+    }
   };
   const sendMail = async () => {
     if (!phone.trim()) { setPhoneErr('Phone number is required'); return; }
     setPhoneErr('');
-    try { await sendEnquiry({ type: 'Email Quote (Contact Page)', phone, work: `${service} — ${emirate}${job ? ` — ${job}` : ''}`, name }); } catch {}
+    try { await sendEnquiry({ type: 'Email Quote (Contact Page)', phone, work: `${service} — ${emirate}${job ? ` — ${job}` : ''}`, name }); } catch (e) { console.error('EmailJS:', e); }
     setDone(true);
     showToast('Enquiry received! We\'ll reply within the hour.');
   };
@@ -52,7 +58,7 @@ function QuoteFormBand() {
     e.preventDefault();
     if (!phone.trim()) { setPhoneErr('Phone number is required'); return; }
     setPhoneErr('');
-    try { await sendEnquiry({ type: 'Request a Call (Contact Page)', phone, work: emirate, name }); } catch {}
+    try { await sendEnquiry({ type: 'Request a Call (Contact Page)', phone, work: emirate, name }); } catch (e) { console.error('EmailJS:', e); }
     setDone(true);
     showToast('We got your number! Expect a call back shortly.');
   };
@@ -116,7 +122,7 @@ function QuoteFormBand() {
                   <span className="arr" style={{ background:'#082b13' }}>
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#25D366" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
                   </span>
-                  Send on WhatsApp
+                  {desktop ? 'Send Enquiry' : 'Send on WhatsApp'}
                 </button>
                 <button type="button" className="btn btn-secondary on-dark" onClick={sendMail}>Send by email</button>
               </div>
@@ -264,6 +270,8 @@ function ResponseTimes() {
 
 export default function ContactClient() {
   const { open } = useRequestCall();
+  const [desktop, setDesktop] = useState(false);
+  useEffect(() => { setDesktop(onDesktop()); }, []);
   return (
     <>
       <section className="c-hero marble-bg" data-screen-label="contact-hero">
@@ -284,12 +292,21 @@ export default function ContactClient() {
               <span className="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.71 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.71A2 2 0 0 1 22 16.92z"/></svg></span>
               <span className="det"><span className="l">Phone · UAE</span><span className="v">{PHONE_DISPLAY}</span></span>
             </a>
-            <a href={`${WA_LINK}?text=${encodeURIComponent("Hi MarblePro, I'd like a quote.")}`} target="_blank" rel="noopener">
-              <span className="ico" style={{ background:'#25D366', color:'#082b13' }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.6-.8-2.6-1.4-3.7-3.3-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5s-.6-1.5-.9-2.1c-.2-.5-.5-.5-.7-.5h-.5c-.2 0-.5.1-.7.4-.3.3-1 .9-1 2.3s1 2.7 1.1 2.9c.1.2 2 3.1 4.9 4.3 1.8.8 2.5.8 3.4.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.8-1.5C8.3 21.5 10.1 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
-              </span>
-              <span className="det"><span className="l">WhatsApp · Photo OK</span><span className="v">{PHONE_DISPLAY}</span></span>
-            </a>
+            {desktop ? (
+              <button style={{ background:'none', border:'none', cursor:'pointer', display:'contents' }} onClick={open}>
+                <span className="ico" style={{ background:'#25D366', color:'#082b13' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.6-.8-2.6-1.4-3.7-3.3-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5s-.6-1.5-.9-2.1c-.2-.5-.5-.5-.7-.5h-.5c-.2 0-.5.1-.7.4-.3.3-1 .9-1 2.3s1 2.7 1.1 2.9c.1.2 2 3.1 4.9 4.3 1.8.8 2.5.8 3.4.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.8-1.5C8.3 21.5 10.1 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+                </span>
+                <span className="det"><span className="l">WhatsApp · Request a Call</span><span className="v">{PHONE_DISPLAY}</span></span>
+              </button>
+            ) : (
+              <a href={`${WA_LINK}?text=${encodeURIComponent("Hi MarblePro, I'd like a quote.")}`} target="_blank" rel="noopener">
+                <span className="ico" style={{ background:'#25D366', color:'#082b13' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.6-.8-2.6-1.4-3.7-3.3-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5s-.6-1.5-.9-2.1c-.2-.5-.5-.5-.7-.5h-.5c-.2 0-.5.1-.7.4-.3.3-1 .9-1 2.3s1 2.7 1.1 2.9c.1.2 2 3.1 4.9 4.3 1.8.8 2.5.8 3.4.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.8-1.5C8.3 21.5 10.1 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+                </span>
+                <span className="det"><span className="l">WhatsApp · Photo OK</span><span className="v">{PHONE_DISPLAY}</span></span>
+              </a>
+            )}
             <a href={`mailto:${EMAIL}`}>
               <span className="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
               <span className="det"><span className="l">Email support</span><span className="v" style={{ fontSize:16, letterSpacing:0, fontFamily:'var(--sans)' }}>{EMAIL}</span></span>
