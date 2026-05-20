@@ -1,6 +1,7 @@
 'use client';
 import { createContext, useContext, useState, useEffect, useRef, ReactNode } from 'react';
 import { EMAIL, PHONE_DISPLAY, PHONE_TEL, WA_LINK } from './constants';
+import { sendEnquiry } from '@/lib/sendEmail';
 
 interface ModalCtxType { open: () => void; close: () => void; }
 const ModalCtx = createContext<ModalCtxType>({ open: () => {}, close: () => {} });
@@ -27,12 +28,12 @@ function RequestCallModal({ onClose }: { onClose: () => void }) {
   const [done, setDone] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   useEffect(() => { inputRef.current?.focus(); }, []);
-  const submit = (e: React.FormEvent) => {
+  const [err, setErr] = useState('');
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!phone.trim()) return;
-    const subject = encodeURIComponent('Request a Call — MarblePro');
-    const body = encodeURIComponent(`Please call me back.\nNumber: ${phone}`);
-    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+    if (!phone.trim()) { setErr('Phone number is required'); return; }
+    setErr('');
+    try { await sendEnquiry({ type: 'Request a Call', phone }); } catch {}
     setDone(true);
   };
   return (
@@ -47,7 +48,8 @@ function RequestCallModal({ onClose }: { onClose: () => void }) {
             <h3>Drop your number.<br/>We&apos;ll call you back.</h3>
             <p>One field. No name, no email, no fuss. Free quote on the call.</p>
             <form onSubmit={submit}>
-              <input ref={inputRef} type="tel" inputMode="tel" placeholder="+971 5X XXX XXXX" value={phone} onChange={(e) => setPhone(e.target.value)} />
+              <input ref={inputRef} type="tel" inputMode="tel" placeholder="+971 5X XXX XXXX *" value={phone} onChange={(e) => { setPhone(e.target.value); setErr(''); }} style={err ? { borderColor:'#e53e3e' } : {}} />
+              {err && <span style={{ color:'#e53e3e', fontSize:12, marginTop:4, display:'block' }}>{err}</span>}
               <button type="submit" className="submit">Call me back →</button>
             </form>
             <div className="or">Or reach us instantly</div>
@@ -61,9 +63,9 @@ function RequestCallModal({ onClose }: { onClose: () => void }) {
             <div className="tick">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
-            <h3 style={{ textAlign: 'center', margin: '0 0 8px' }}>You&apos;re on the list.</h3>
+            <h3 style={{ textAlign: 'center', margin: '0 0 8px' }}>We got your number!</h3>
             <p style={{ textAlign: 'center', margin: 0, opacity: 0.65 }}>
-              Your email app should open. If it didn&apos;t, dial{' '}
+              We&apos;ll call you back shortly. Can&apos;t wait? Dial us on{' '}
               <a style={{ color: 'var(--gold)' }} href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>.
             </p>
           </div>

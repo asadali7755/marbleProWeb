@@ -5,6 +5,7 @@ import { useRequestCall } from '@/components/marble/RequestCallModal';
 import CityCards from '@/components/marble/CityCards';
 import { marbleSvg } from '@/components/marble/marbleSvg';
 import { PHONE_TEL, WA_LINK, SERVICES } from '@/components/marble/constants';
+import { sendEnquiry } from '@/lib/sendEmail';
 
 const STEPS = [
   { n: '01', h: 'Deep Inspection & Lippage Removal',  p: 'We evaluate the stone, identify cracks, and check for uneven tile edges. Low-speed weighted diamond grinding flattens the floor surface seamlessly.' },
@@ -85,7 +86,11 @@ function Hero() {
   const { open } = useRequestCall();
   const [number, setNumber] = useState('');
   const [job, setJob] = useState('');
-  const wa = () => {
+  const [err, setErr] = useState('');
+  const wa = async () => {
+    if (!number.trim()) { setErr('Please enter your phone number'); return; }
+    setErr('');
+    try { await sendEnquiry({ type: 'WhatsApp Quote (Hero)', phone: number, work: job }); } catch {}
     const msg = encodeURIComponent(`Hi MarblePro, I need a quote.\nWork: ${job || 'Marble polishing'}\nNumber: ${number}`);
     window.open(`${WA_LINK}?text=${msg}`, '_blank');
   };
@@ -122,7 +127,8 @@ function Hero() {
           <h3 className="hero-card-h">Tell us the job &amp; your number.<br/>That&apos;s it.</h3>
           <div className="quote-mini">
             <input value={job} onChange={(e) => setJob(e.target.value)} placeholder="What needs polishing? (e.g. kitchen counter, villa floor)" />
-            <input value={number} onChange={(e) => setNumber(e.target.value)} placeholder="Your mobile number (UAE)" inputMode="tel" />
+            <input value={number} onChange={(e) => { setNumber(e.target.value); setErr(''); }} placeholder="Your mobile number (UAE)*" inputMode="tel" style={err ? { borderColor: '#e53e3e' } : {}} />
+            {err && <span style={{ color:'#e53e3e', fontSize:12, marginTop:4, display:'block' }}>{err}</span>}
             <div className="row">
               <button className="btn btn-wa" onClick={wa}>
                 <span className="arr" style={{ background: '#082b13' }}>
@@ -477,7 +483,14 @@ function QuoteBand() {
   const { open } = useRequestCall();
   const [number, setNumber] = useState('');
   const [job, setJob] = useState('');
-  const wa = () => {
+  const [err, setErr] = useState('');
+  const [sent, setSent] = useState(false);
+  const wa = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!number.trim()) { setErr('Phone number is required'); return; }
+    setErr('');
+    try { await sendEnquiry({ type: 'WhatsApp Quote (Section 8)', phone: number, work: job }); } catch {}
+    setSent(true);
     const msg = encodeURIComponent(`Hi MarblePro, I need a quote.\nWork: ${job || 'Marble polishing'}\nNumber: ${number}`);
     window.open(`${WA_LINK}?text=${msg}`, '_blank');
   };
@@ -497,7 +510,7 @@ function QuoteBand() {
               <span>✦ Mon–Sun 8 am – 10 pm</span>
             </div>
           </div>
-          <form className="quote-form" onSubmit={(e) => { e.preventDefault(); wa(); }}>
+          <form className="quote-form" onSubmit={wa}>
             <div className="lab">Free Quote Request</div>
             <h3>Get your free quote.</h3>
             <div className="qf-row" style={{ marginTop: 24 }}>
@@ -505,19 +518,20 @@ function QuoteBand() {
               <input id="qf-work" value={job} onChange={(e) => setJob(e.target.value)} placeholder="e.g. polish marble floor, 200 sq ft" />
             </div>
             <div className="qf-row">
-              <label htmlFor="qf-num">Your number</label>
-              <input id="qf-num" value={number} onChange={(e) => setNumber(e.target.value)} placeholder="+971 5X XXX XXXX" inputMode="tel" />
+              <label htmlFor="qf-num">Your number <span style={{ color:'#e53e3e' }}>*</span></label>
+              <input id="qf-num" value={number} onChange={(e) => { setNumber(e.target.value); setErr(''); }} placeholder="+971 5X XXX XXXX" inputMode="tel" required style={err ? { borderColor:'#e53e3e' } : {}} />
+              {err && <span style={{ color:'#e53e3e', fontSize:12, marginTop:4, display:'block' }}>{err}</span>}
             </div>
             <div className="qf-btns">
-              <button type="submit" className="btn btn-wa">
+              <button type="submit" className="btn btn-wa" disabled={sent}>
                 <span className="arr" style={{ background: '#082b13' }}>
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#25D366" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
                 </span>
-                Send on WhatsApp
+                {sent ? 'Sent ✓' : 'Send on WhatsApp'}
               </button>
               <button type="button" className="btn-call" onClick={open} style={{ justifyContent: 'center' }}>Request a Call →</button>
             </div>
-            <p className="qf-note">&quot;Send&quot; opens WhatsApp with your details pre-filled. &quot;Request a call&quot; — drop just your number and we&apos;ll dial back fast.</p>
+            <p className="qf-note">{sent ? 'We received your enquiry — expect a WhatsApp from us shortly!' : '"Send" opens WhatsApp and notifies us instantly. "Request a call" — we\'ll dial back fast.'}</p>
           </form>
         </div>
       </div>
