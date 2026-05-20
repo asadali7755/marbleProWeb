@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRequestCall } from '@/components/marble/RequestCallModal';
 import { PHONE_DISPLAY, PHONE_TEL, EMAIL, WA_LINK, EMIRATES, SERVICES, CITY_IMG } from '@/components/marble/constants';
 import { sendEnquiry } from '@/lib/sendEmail';
+import { useToast } from '@/components/marble/RequestCallModal';
 
 const EMIRATE_RESPONSE = [
   { slug:'dubai',          name:'Dubai',          time:'Within 90 min' },
@@ -22,6 +23,7 @@ const REVIEWS = [
 ];
 
 function QuoteFormBand() {
+  const showToast = useToast();
   const [tab, setTab] = useState<'quote'|'call'>('quote');
   const [done, setDone] = useState(false);
   const [phone, setPhone] = useState('');
@@ -44,6 +46,7 @@ function QuoteFormBand() {
     setPhoneErr('');
     try { await sendEnquiry({ type: 'Email Quote (Contact Page)', phone, work: `${service} — ${emirate}${job ? ` — ${job}` : ''}`, name }); } catch {}
     setDone(true);
+    showToast('Enquiry received! We\'ll reply within the hour.');
   };
   const requestCall = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,6 +54,7 @@ function QuoteFormBand() {
     setPhoneErr('');
     try { await sendEnquiry({ type: 'Request a Call (Contact Page)', phone, work: emirate, name }); } catch {}
     setDone(true);
+    showToast('We got your number! Expect a call back shortly.');
   };
 
   return (

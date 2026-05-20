@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { useRequestCall } from '@/components/marble/RequestCallModal';
+import { useRequestCall, useToast } from '@/components/marble/RequestCallModal';
 import CityCards from '@/components/marble/CityCards';
 import { marbleSvg } from '@/components/marble/marbleSvg';
 import { PHONE_TEL, WA_LINK, SERVICES } from '@/components/marble/constants';
@@ -84,6 +84,7 @@ function BeforeAfter({ hue, vein, title, sub, beforeImg, afterImg }: { hue: numb
 
 function Hero() {
   const { open } = useRequestCall();
+  const showToast = useToast();
   const [number, setNumber] = useState('');
   const [job, setJob] = useState('');
   const [err, setErr] = useState('');
@@ -91,6 +92,7 @@ function Hero() {
     if (!number.trim()) { setErr('Please enter your phone number'); return; }
     setErr('');
     try { await sendEnquiry({ type: 'WhatsApp Quote (Hero)', phone: number, work: job }); } catch {}
+    showToast('Enquiry sent! We\'ll WhatsApp you back shortly.');
     const msg = encodeURIComponent(`Hi MarblePro, I need a quote.\nWork: ${job || 'Marble polishing'}\nNumber: ${number}`);
     window.open(`${WA_LINK}?text=${msg}`, '_blank');
   };
@@ -481,6 +483,7 @@ function FAQ() {
 
 function QuoteBand() {
   const { open } = useRequestCall();
+  const showToast = useToast();
   const [number, setNumber] = useState('');
   const [job, setJob] = useState('');
   const [err, setErr] = useState('');
@@ -491,6 +494,7 @@ function QuoteBand() {
     setErr('');
     try { await sendEnquiry({ type: 'WhatsApp Quote (Section 8)', phone: number, work: job }); } catch {}
     setSent(true);
+    showToast('Enquiry sent! We\'ll WhatsApp you back shortly.');
     const msg = encodeURIComponent(`Hi MarblePro, I need a quote.\nWork: ${job || 'Marble polishing'}\nNumber: ${number}`);
     window.open(`${WA_LINK}?text=${msg}`, '_blank');
   };
