@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRequestCall } from '@/components/marble/RequestCallModal';
 import { marbleSvg } from '@/components/marble/marbleSvg';
 import { PHONE_DISPLAY, PHONE_TEL, WA_LINK } from '@/components/marble/constants';
+import { PageFaqCta } from '@/components/marble/FaqCta';
 
 interface Feat { t: string; d: string; }
 interface ServiceDetail {
@@ -32,23 +33,23 @@ const SERVICE_DETAIL: ServiceDetail[] = [
     intro:"Renowned for its hardness, granite needs professional-grade machinery and high-grade industrial diamond discs to polish to a brilliant, glass-like reflection. MarblePro delivers slip-safe granite gloss for villas, hotels and retail floors.",
     body:["Granite polishing is technically harder than marble polishing — that's why generic floor polishing companies often skip it. We use specialised heavy-weight machinery to grind down uneven tiles (lippage) and polish granite to a brilliant, mirror-like finish.","For commercial granite polishing services Dubai — hotels, malls, premium retail — we schedule overnight and weekend work to ensure zero downtime for your business."],
     feat:[{t:'Heavy industrial diamond discs',d:"Required for granite's high silica content — generic pads simply skid."},{t:'Weather-proof sealing',d:'Granite outdoors? We seal against UV and moisture penetration.'},{t:'Slip-resistant finish',d:'Polished granite is slip-safe with our textured crystallizer.'},{t:'Annual maintenance plans',d:'Quarterly buffering keeps commercial granite at peak gloss.'}]},
-  { num:'06', slug:'quartz-polishing', name:'Quartz Polishing', h2:'Premium Quartz Polishing & Stain Protection', kw:'quartz polishing', hue:50, vein:0.15,
+  { num:'06', slug:'quartz-polishing', name:'Quartz Polishing', h2:'Premium Quartz Polishing & Stain Protection — Abu Dhabi & Dubai', kw:'quartz polishing and stain protection Abu Dhabi · Dubai', hue:50, vein:0.15,
     intro:'Engineered quartz is one of the most popular surfaces in modern UAE kitchens — but it does scratch, dull and absorb stains over time. Our specialised quartz polishing buffs out light abrasions and restores the factory-slick sheen.',
     body:['Quartz polishing is different from marble or granite polishing — quartz contains resin binders that need precise, low-heat technique. The wrong tool can melt or burn the surface permanently.','We also offer quartz polishing and stain protection Abu Dhabi for new installations: a hydrophobic resin sealer that prevents wine, oil and curry from penetrating during the first year of use.'],
     feat:[{t:'Low-heat resin-safe technique',d:"Specific to engineered stone — won't melt the binder."},{t:'Factory-slick sheen restored',d:'Light abrasions and dull spots completely erased.'},{t:'Stain-block resin sealer',d:'Optional add-on — repels oil, wine, juice for 12+ months.'},{t:'No etching from foods',d:'Quartz already acid-resistant, our finish keeps it that way.'}]},
-  { num:'07', slug:'corian-countertop-polishing', name:'Corian Countertop Polishing', h2:'Professional Corian Countertop Polishing & Scratch Repair Dubai', kw:'corian countertop polishing', hue:42, vein:0.10,
+  { num:'07', slug:'corian-countertop-polishing', name:'Corian Countertop Polishing', h2:'Professional Corian Countertop Polishing & Scratch Repair Dubai', kw:'corian countertop polishing and scratch repair Dubai', hue:42, vein:0.10,
     intro:'Corian and other solid-surface materials are repairable in ways stone is not — burns, scratches and even small holes can be invisibly fixed. Our hand-polished Corian countertop polishing and scratch repair service makes worn Corian look completely brand new.',
     body:['Corian countertop polishing and scratch repair Dubai is a craft, not a mass-produced service. Each Corian surface is sanded by hand through fine grits, then finished to your preferred sheen — matte, satin or full gloss.','We also repair Corian sinks, seam-rejoining, burn marks and chips on the original integrated installations.'],
     feat:[{t:'Hand-sand to fine grit',d:'Deep scratches and burns sanded out by hand — no machine marks.'},{t:'Matte / satin / gloss choice',d:'You pick the final finish. Each looks completely brand new.'},{t:'Seam repair & rejoin',d:'Lifted or yellowed seams re-bonded and re-polished invisibly.'},{t:'Sink & integrated repair',d:'Burns, chips, hairline cracks fixed on Corian integrated sinks.'}]},
-  { num:'08', slug:'yellow-stain-removing', name:'Yellow Stain Removing', h2:'Professional Yellow Stain Removing for Natural Stone UAE', kw:'yellow stain removing', hue:48, vein:0.16,
+  { num:'08', slug:'yellow-stain-removing', name:'Yellow Stain Removing', h2:'Professional Yellow Stain Removing for Natural Stone UAE', kw:'yellow stain removing Dubai · professional stone stain removal UAE', hue:48, vein:0.16,
     intro:'Yellow stains on marble are caused by iron oxidation, organic seepage, or improper cleaning chemicals — and they go deep. Our chemical poultice treatments target yellow stain removing from deep within the stone pores without damaging the surface.',
     body:['Yellow stain removing is one of our most-requested specialty services. We diagnose the cause first — rust, oil, urine, citrus, wax — then apply a stain-specific poultice that draws the pigment out over 24–48 hours.','How to remove yellow stains from marble floor Dubai is not a DIY job; aggressive bleach or acid only sets the stain deeper. Our process is professional, repeatable, and guaranteed.'],
     feat:[{t:'Stain type diagnosis',d:'Iron, organic, oil, biological — each needs a different poultice.'},{t:'Drawn out, not bleached',d:'Pigment is physically pulled from the pores — no chemical hiding.'},{t:'No surface damage',d:"We re-polish after treatment so you'd never know it was there."},{t:'24–48 hour treatment cycle',d:'Poultice applied, left to draw, removed, repeated if needed.'}]},
-  { num:'09', slug:'kitchen-top-polishing', name:'Kitchen Top Polishing', h2:'Kitchen Top Polishing & Sealing Services UAE', kw:'kitchen top polishing', hue:40, vein:0.18,
+  { num:'09', slug:'kitchen-top-polishing', name:'Kitchen Top Polishing', h2:'Kitchen Top Polishing & Sealing Services UAE', kw:'kitchen top polishing and sealing services UAE · Dubai', hue:40, vein:0.18,
     intro:'Your kitchen counter is the centerpiece of your home — and the most punished surface in it. Kitchen top polishing and sealing services UAE delivers daily-use-grade protection that actually lasts.',
     body:['We offer kitchen top polishing for marble, granite, quartz, Corian, terrazzo and engineered stone tops. Each material gets a tailored polishing technique plus a food-safe sealant suited to its porosity.','Best kitchen top polishing company near me? We service all of Dubai, Abu Dhabi and Sharjah with same-week appointments — kitchen tops done in half a day, ready for use that night.'],
     feat:[{t:'Oil & water repellent',d:'Hydrophobic sealer rated for direct food prep contact.'},{t:'Hot-pan & ring removal',d:'Burn marks and glass rings polished out invisibly.'},{t:'Edge & cut-out polish',d:'Sink and hob cut-outs treated with the same precision as the surface.'},{t:'Half-day completion',d:'Cook on it the same evening. No fumes, no residue.'}]},
-  { num:'10', slug:'crystallization-sealing', name:'Crystallization & Sealing', h2:'Italian Diamond Crystallization & Impregnating Sealing', kw:'marble polishing dubai · floor restoration services', hue:36, vein:0.20,
+  { num:'10', slug:'crystallization-sealing', name:'Crystallization & Sealing', h2:'Italian Diamond Crystallization & Sealing — Dubai & UAE', kw:'Italian marble polishing and crystallization Dubai · floor sealing UAE', hue:36, vein:0.20,
     intro:"After polishing, the right sealant is what makes the finish last 5 years instead of 5 months. We apply true Italian diamond crystallization plus an impregnating breathable sealer to protect against future spills.",
     body:["Italian marble polishing and crystallization Dubai is the gold-standard finish for premium villas and luxury hotels. The chemistry creates a microscopic, hardened shield on top of the stone — highly mirror-reflective, slip-resistant and durable against heavy foot traffic.","We don't use cheap wax coatings that wear off in weeks. Real crystallization is a chemical bond, not a coating."],
     feat:[{t:'Italian crystallization compound',d:'Real chemical bond — not a wax or acrylic film.'},{t:'Impregnating breathable sealer',d:'Stops liquid penetration without trapping stone moisture.'},{t:'Slip-resistance rated',d:'Surprisingly grippy underfoot despite the mirror finish.'},{t:'Multi-year shine',d:'Professionally crystallized floors hold their gloss for years.'}]},
@@ -144,7 +145,7 @@ function ServicesHero() {
         <div className="marble-veins" />
         <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative', zIndex: 2 }}>
           <span className="eyebrow-pill"><span className="pulse" /> Services · across all 7 emirates</span>
-          <h1>Professional <em>marble polishing</em> &amp; <em>floor restoration services</em> in Dubai &amp; UAE.</h1>
+          <h1>15 Specialised <em>Stone Polishing Services</em> in Dubai &amp; UAE — Marble, Terrazzo, Granite &amp; <em>More.</em></h1>
           <p className="lead">
             Fifteen specialised treatments. One certified team. From Travertine and Onyx to Crema Marfil,
             Calacatta and Emperador — every natural stone, every emirate, same diamond-grade process backed
@@ -449,25 +450,65 @@ function EmperadorFeature() {
   );
 }
 
+const CORE_SERVICES = [
+  {
+    group: 'Premium Marble Polishing & Restoration',
+    icon: '✦',
+    items: [
+      { name: 'Marble Polishing Dubai', desc: 'Over time, heavy foot traffic and desert sand cause marble to lose its luster. Our multi-stage diamond polishing process restores a high-gloss, premium reflective finish.' },
+      { name: 'Marble Floor Restoration Services', desc: 'From deep scratch removal to seamless crack filling and joint leveling, we completely rejuvenate old or damaged natural stone.' },
+      { name: 'Terrazzo Floor Polishing Dubai', desc: 'We specialise in classic terrazzo polishing in Dubai, bringing out the vibrant glass and marble chips embedded in your terrazzo surfaces.' },
+    ],
+  },
+  {
+    group: 'Luxury Countertop & Vanity Polishing',
+    icon: '◈',
+    items: [
+      { name: 'Countertop & Kitchen Top Polishing', desc: 'Kitchen counters face constant exposure to oils, acids, and water marks. We buff away imperfections and apply food-safe waterproof sealers.' },
+      { name: 'Quartz & Corian Countertop Polishing', desc: 'Synthetic and engineered stones require precise care. We offer specialised quartz polishing and custom Corian countertop polishing to erase surface abrasions smoothly.' },
+    ],
+  },
+  {
+    group: 'Advanced Stain & Problem Solving',
+    icon: '◉',
+    items: [
+      { name: 'Yellow Stain Removing', desc: 'Got stubborn discolorations? Our deep chemical poultice treatments target yellow stain removing from deep within the stone pores without damaging the surface.' },
+      { name: 'Granite Polishing', desc: 'Renowned for its hardness, granite needs professional-grade equipment. Our grinding and weather-protection sealing make your granite surfaces exceptionally durable and brilliant.' },
+    ],
+  },
+];
+
 function Welcome() {
   return (
-    <section className="sec" data-screen-label="welcome" style={{ padding: '100px 36px 60px' }}>
+    <section className="sec" data-screen-label="core-services" style={{ padding: '100px 36px' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-        <span className="sec-eyebrow">— Welcome to MarblePro</span>
-        <h2 className="sec-title" style={{ maxWidth: '22ch', marginTop: 18 }}>The UAE&apos;s <em>stone care experts.</em></h2>
-        <div className="svc-welcome-grid" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 60, marginTop: 40 }}>
-          <div>
-            <p style={{ fontFamily: 'var(--display)', fontWeight: 380, fontSize: 22, lineHeight: 1.4, letterSpacing: '-0.01em', margin: '0 0 22px', maxWidth: '40ch' }}>
-              At MarblePro, we transform dull, scratched or stained surfaces back into pristine,
-              mirror-like masterpieces. Natural stone flooring is a premium investment for your UAE
-              property — and it deserves specialised care.
-            </p>
-            <p style={{ fontSize: 16, lineHeight: 1.7, opacity: 0.78, maxWidth: '54ch', margin: 0 }}>
-              Whether you need routine floor polishing in Dubai, intensive marble floor restoration
-              services, or specialised countertop care, our certified technicians use state-of-the-art
-              diamond grinding machinery and eco-friendly compounds to achieve flawless results.
-            </p>
-          </div>
+        <span className="sec-eyebrow">02 — Our core services</span>
+        <h2 className="sec-title" style={{ marginTop: 14, maxWidth: '28ch' }}>
+          Premium Stone Care Services — <em>Every Surface, Every Emirate.</em>
+        </h2>
+        <p style={{ marginTop: 20, fontSize: 17, lineHeight: 1.65, opacity: 0.75, maxWidth: '62ch' }}>
+          From affordable marble floor polishing to emergency residential marble floor restoration
+          services Dubai — our certified technicians use state-of-the-art diamond grinding machinery
+          and eco-friendly compounds to achieve flawless results across all UAE properties.
+        </p>
+
+        <div style={{ marginTop: 60, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32 }}>
+          {CORE_SERVICES.map((group) => (
+            <div key={group.group} style={{ background: 'var(--paper2)', borderRadius: 16, padding: '32px 28px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 24 }}>
+                <span style={{ fontFamily: 'var(--mono)', fontSize: 18, color: 'var(--gold)' }}>{group.icon}</span>
+                <h3 style={{ fontFamily: 'var(--grot)', fontSize: 13, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', margin: 0 }}>{group.group}</h3>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+                {group.items.map((item) => (
+                  <div key={item.name} style={{ borderTop: '1px solid var(--line)', paddingTop: 20 }}>
+                    <div style={{ fontFamily: 'var(--grot)', fontSize: 14, fontWeight: 700, marginBottom: 8, color: 'var(--ink)' }}>{item.name}</div>
+                    <p style={{ margin: 0, fontSize: 14, lineHeight: 1.65, opacity: 0.72 }}>{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -506,24 +547,25 @@ const WHY_GRADS = [
 
 function WhyUs() {
   const items = [
-    { num: '01', h: 'UAE-Wide',       em: 'coverage',       p: 'Centrally located in Dubai, our mobile teams quickly service Abu Dhabi, Sharjah, Ajman and all northern emirates with same-week availability.' },
-    { num: '02', h: 'Diamond grinding &', em: 'crystallization', p: "We don't use cheap wax coatings that wear off. We utilise true mechanical diamond abrasives followed by Italian crystallization for long-lasting protection." },
-    { num: '03', h: 'Tailored',       em: 'stone solutions', p: 'From Italian Carrara marble to technical quartz, we understand the specific chemistry of every material before we touch it.' },
-    { num: '04', h: 'Transparent',    em: 'pricing',         p: 'No hidden fees. We offer free on-site evaluations to provide a precise quotation tailored to your floor\'s exact condition.' },
-    { num: '05', h: 'Dust-free',      em: 'process',         p: 'Furniture is covered, edges masked, and our wet process keeps the air clear so your home or office stays liveable through the job.' },
-    { num: '06', h: 'Written',        em: 'guarantee',       p: 'Every job is backed by a written workmanship guarantee. We come back and fix anything that doesn\'t meet our published gloss standard.' },
+    { num: '01', h: 'UAE-Wide',         em: 'Coverage',        p: 'Centrally located in Dubai, our mobile teams quickly service Abu Dhabi, Sharjah, Ajman, and all northern emirates — same-week availability across all 7 emirates.' },
+    { num: '02', h: 'Advanced Diamond Grinding &', em: 'Crystallization', p: "We don't just use cheap wax coatings that wear off. We utilise true mechanical diamond abrasives followed by premium Italian crystallization for long-lasting protection." },
+    { num: '03', h: 'Tailored',         em: 'Stone Solutions',  p: 'From Italian Carrara marble to technical quartz, we understand the specific chemistry of every material — the right technique for every stone type.' },
+    { num: '04', h: 'Transparent',      em: 'Pricing',          p: 'No hidden fees. We offer free on-site evaluations to provide a precise quotation tailored to your floor\'s exact condition and size.' },
+    { num: '05', h: 'Dust-Free',        em: 'Process',          p: 'Furniture is covered, edges masked, and our wet process keeps the air clear so your home or office stays completely liveable throughout the job.' },
+    { num: '06', h: 'Written',          em: 'Guarantee',        p: 'Every job is backed by a written workmanship guarantee. We return and fix anything that doesn\'t meet our published 85+ GU gloss standard.' },
   ];
   return (
     <section className="why" data-screen-label="why">
       <div className="why-inner">
         <div className="sec-head" style={{ marginBottom: 0 }}>
           <div>
-            <span className="sec-eyebrow">— Why MarblePro</span>
-            <h2 className="sec-title" style={{ maxWidth: '22ch', marginTop: 18 }}>The best marble polishing company <em>in Dubai.</em></h2>
+            <span className="sec-eyebrow">03 — Why Choose MarblePro</span>
+            <h2 className="sec-title" style={{ maxWidth: '24ch', marginTop: 18 }}>Why Choose MarblePro — <em>The Best Marble Polishing Company in Dubai.</em></h2>
           </div>
           <p className="sec-lead">
-            We&apos;re not a generic cleaning crew with a polishing add-on. We&apos;re stone specialists —
-            it&apos;s all we do, and we do it better than anyone else in the UAE.
+            We&apos;re not a generic cleaning crew with a polishing add-on. We&apos;re certified stone
+            specialists — affordable marble floor polishing services UAE-wide, backed by Italian
+            diamond technology and a written gloss guarantee on every job.
           </p>
         </div>
         <div className="why-grid">
@@ -625,6 +667,7 @@ export default function ServicesClient() {
       </section>
       <WhyUs />
       <Commercial />
+      <PageFaqCta />
       <CTAFooter />
     </>
   );

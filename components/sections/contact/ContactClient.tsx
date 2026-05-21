@@ -4,17 +4,18 @@ import Link from 'next/link';
 import { useRequestCall, useToast } from '@/components/marble/RequestCallModal';
 import { PHONE_DISPLAY, PHONE_TEL, EMAIL, WA_LINK, EMIRATES, SERVICES, CITY_IMG } from '@/components/marble/constants';
 import { sendEnquiry } from '@/lib/sendEmail';
+import { PageFaqCta } from '@/components/marble/FaqCta';
 
 const onDesktop = () => window.matchMedia('(hover:hover) and (pointer:fine)').matches;
 
 const EMIRATE_RESPONSE = [
-  { slug:'dubai',          name:'Dubai',          time:'Within 90 min' },
-  { slug:'abu-dhabi',      name:'Abu Dhabi',      time:'Within 48 hours' },
-  { slug:'sharjah',        name:'Sharjah',        time:'Within 72 hours' },
-  { slug:'ajman',          name:'Ajman',          time:'3–5 days' },
-  { slug:'ras-al-khaimah', name:'Ras Al Khaimah', time:'Within 7 days' },
-  { slug:'umm-al-quwain',  name:'Umm Al Quwain',  time:'Within 7 days' },
-  { slug:'fujairah',       name:'Fujairah',       time:'Within 10 days' },
+  { slug:'dubai',          name:'Dubai',          time:'Within 30 min' },
+  { slug:'abu-dhabi',      name:'Abu Dhabi',      time:'Within 2 hours' },
+  { slug:'sharjah',        name:'Sharjah',        time:'Within 1 hour' },
+  { slug:'ajman',          name:'Ajman',          time:'Within 1 hour' },
+  { slug:'ras-al-khaimah', name:'Ras Al Khaimah', time:'4–5 hours' },
+  { slug:'umm-al-quwain',  name:'Umm Al Quwain',  time:'Same day' },
+  { slug:'fujairah',       name:'Fujairah',       time:'Same day' },
 ];
 
 const REVIEWS = [
@@ -321,6 +322,7 @@ export default function ContactClient() {
       <QuoteFormBand />
       <SupportBand />
       <ResponseTimes />
+      <PageFaqCta />
     </>
   );
 }

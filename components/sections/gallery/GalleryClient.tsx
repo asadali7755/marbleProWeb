@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRequestCall } from '@/components/marble/RequestCallModal';
 import { marbleSvg } from '@/components/marble/marbleSvg';
 import { WA_LINK } from '@/components/marble/constants';
+import { PageFaqCta } from '@/components/marble/FaqCta';
 
 interface Project { city: string; spec: string; hue: number; vein: number; }
 interface GalleryItem {
@@ -52,9 +53,9 @@ const GALLERY: GalleryItem[] = [
     body:'Property managers across Dubai, Abu Dhabi and Sharjah call us for emergency residential marble floor restoration services. Most jobs are walk-on-ready within 24 hours.',
     projects:[{city:'Saadiyat Island',spec:'Severe lippage & cracks · 320 m²',hue:30,vein:0.30},{city:'Abu Dhabi Corniche',spec:'Acid-etched lobby · 80 m²',hue:36,vein:0.22},{city:'Sharjah villa',spec:'Full restoration · 12 years old',hue:24,vein:0.28}],
     meta:['Crack & chip filling','Lippage leveling','Acid-etch reversal','Written guarantee']},
-  { slug:'marble-countertop-polishing', num:'08', name:'Countertop Polishing', kw:'countertop polishing · kitchen top polishing', h2:'Premium countertop polishing in Dubai & UAE',
-    intro:'Kitchen counters and bathroom vanities face daily exposure to oils, acids, water and heat. Our countertop polishing service buffs the surface back, removes burns and rings, then applies a food-safe sealant.',
-    body:'Edges, cut-outs and undermount sinks are hand-polished separately so the join is invisible — even kitchen islands stay seamless from above and below.',
+  { slug:'marble-countertop-polishing', num:'08', name:'Countertop Polishing', kw:'premium marble countertop polishing Dubai · kitchen top polishing and sealing services UAE', h2:'Premium marble countertop polishing Dubai & kitchen top sealing UAE',
+    intro:'Kitchen counters and bathroom vanities face daily exposure to oils, acids, water and heat. Our premium marble countertop polishing Dubai service buffs the surface back, removes burns and rings, then applies a food-safe sealant — same-day kitchen top polishing and sealing services UAE-wide.',
+    body:'Edges, cut-outs and undermount sinks are hand-polished separately so the join is invisible. We also offer Corian countertop polishing and scratch repair Dubai — even kitchen islands stay seamless from above and below.',
     projects:[{city:'Marina apartment',spec:'Carrara kitchen island · 6 m²',hue:38,vein:0.18},{city:'DIFC penthouse',spec:'Black marble vanity · 4 m²',hue:18,vein:0.30},{city:'Jumeirah villa',spec:'Bathroom counter set · 8 m²',hue:42,vein:0.16}],
     meta:['Half-day completion','Food-safe sealer','Edge hand-polish','Burn & ring removal']},
   { slug:'terrazzo-polishing-dubai', num:'09', name:'Terrazzo Polishing', kw:'terrazzo polishing dubai · terrazzo floor polishing dubai', h2:'Terrazzo polishing Dubai — vintage and modern terrazzo restored',
@@ -67,9 +68,9 @@ const GALLERY: GalleryItem[] = [
     body:'Slip-safe finish, weatherproof seal for outdoor areas, and annual maintenance contracts for commercial buildings. Saadiyat Island and Yas Island resorts are regular clients.',
     projects:[{city:'DIFC reception',spec:'Black granite · 60 m²',hue:18,vein:0.30},{city:'Al Barsha staircase',spec:'Granite stairs · 40 steps',hue:22,vein:0.26},{city:'Saadiyat villa',spec:'Outdoor patio · 180 m²',hue:24,vein:0.24}],
     meta:['Industrial diamond discs','Slip-safe finish','Weather-proof seal','AMC available']},
-  { slug:'quartz-polishing', num:'11', name:'Quartz Polishing', kw:'quartz polishing', h2:'Quartz polishing — factory-slick sheen restored',
-    intro:"Engineered quartz contains resin binders that need low-heat technique — the wrong tool melts or burns the surface permanently. We buff out scratches and dull spots without damaging the binder.",
-    body:'Our quartz polishing is also available for new installations as a stain-block resin sealer — wine, oil and curry repelled for 12+ months.',
+  { slug:'quartz-polishing', num:'11', name:'Quartz Polishing', kw:'quartz polishing and stain protection Abu Dhabi · quartz polishing Dubai', h2:'Quartz polishing and stain protection Abu Dhabi & Dubai',
+    intro:"Engineered quartz contains resin binders that need low-heat technique — the wrong tool melts or burns the surface permanently. Our quartz polishing and stain protection Abu Dhabi service buffs out scratches and dull spots without damaging the binder.",
+    body:'Available UAE-wide — quartz polishing for new installations includes a stain-block resin sealer protecting against wine, oil and curry for 12+ months.',
     projects:[{city:'Marina kitchen',spec:'White quartz island · 5 m²',hue:50,vein:0.15},{city:'JBR apartment',spec:'Quartz vanity tops · 7 m²',hue:55,vein:0.12},{city:'Business Bay',spec:'Quartz reception · 14 m²',hue:48,vein:0.16}],
     meta:['Low-heat technique','Stain-block sealer','No etching','Same-day']},
   { slug:'corian-countertop-polishing', num:'12', name:'Corian Countertop Polishing', kw:'corian countertop polishing', h2:'Corian countertop polishing & scratch repair Dubai',
@@ -224,10 +225,11 @@ export default function GalleryClient() {
         <div className="marble-veins" />
         <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative', zIndex: 2 }}>
           <span className="eyebrow-pill"><span className="pulse" /> Before &amp; after · 45 real UAE projects</span>
-          <h1>The proof.<br/><em>Drag the line.</em></h1>
+          <h1>Before &amp; After: Real <em>Marble Polishing</em> &amp; Floor Restoration Results — <em>Dubai &amp; UAE.</em></h1>
           <p className="lead">
-            Real before &amp; after results from MarblePro across Dubai, Abu Dhabi, Sharjah, Ajman,
-            RAK, Umm Al Quwain and Fujairah. Same stone, same lighting, same camera — only the finish has changed.
+            Professional yellow stain removing for natural stone UAE, deep scratch removal and marble crack filling Dubai,
+            Italian marble polishing and crystallization — real before &amp; after results across all 7 emirates.
+            Same stone, same lighting, same camera — only the finish has changed.
           </p>
           <div className="gstats">
             <div className="gstat"><div className="n"><em>15</em></div><div className="l">Services covered</div></div>
@@ -239,6 +241,7 @@ export default function GalleryClient() {
       </section>
       <GalleryRail />
       {GALLERY.map((s, i) => <GallerySection key={s.slug} s={s} even={i % 2 !== 0} total={GALLERY.length} />)}
+      <PageFaqCta />
     </>
   );
 }

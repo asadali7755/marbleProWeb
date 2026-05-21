@@ -5,9 +5,9 @@ import Fab from '@/components/marble/Fab';
 import HomeClient from '@/components/sections/home/HomeClient';
 
 export const metadata: Metadata = {
-  title: 'MarblePro — Professional Marble Polishing & Floor Restoration Services in Dubai & UAE',
-  description: "MarblePro — UAE's specialist team for marble polishing Dubai, terrazzo polishing Dubai, granite polishing, quartz polishing, Corian countertop polishing & yellow stain removing across Dubai, Abu Dhabi, Sharjah & all 7 emirates. Call 054 556 77 99.",
-  keywords: 'marble polishing dubai, marble floor polishing, floor polishing dubai, countertop polishing, kitchen top polishing, floor restoration services, marble floor restoration services, terrazzo floor polishing dubai, terrazzo polishing dubai, quartz polishing, corian countertop polishing, yellow stain removing, granite polishing',
+  title: 'Best Marble Polishing Company in Dubai | Affordable Floor Restoration UAE — MarblePro',
+  description: "MarblePro — best marble polishing company in Dubai offering affordable marble floor polishing services UAE-wide. Italian marble polishing and crystallization Dubai, emergency residential marble floor restoration, terrazzo, granite & quartz polishing across all 7 emirates. Call 054 556 77 99.",
+  keywords: 'best marble polishing company in Dubai, affordable marble floor polishing services UAE, Italian marble polishing and crystallization Dubai, emergency residential marble floor restoration services Dubai, marble polishing dubai, marble floor polishing, floor polishing dubai, countertop polishing, kitchen top polishing, floor restoration services, marble floor restoration services, terrazzo floor polishing dubai, terrazzo polishing dubai, quartz polishing, corian countertop polishing, yellow stain removing, granite polishing, multi type floor polishing company UAE',
 };
 
 export default function HomePage() {

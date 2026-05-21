@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useRequestCall, useToast } from '@/components/marble/RequestCallModal';
+import { PageFaqCta } from '@/components/marble/FaqCta';
 import CityCards from '@/components/marble/CityCards';
 import { marbleSvg } from '@/components/marble/marbleSvg';
 import { PHONE_TEL, WA_LINK, SERVICES } from '@/components/marble/constants';
@@ -23,12 +24,14 @@ const REVIEWS = [
 ];
 
 const FAQS = [
-  { q: 'How long does the marble floor polishing process take in Dubai?', a: 'It depends on the area size and the level of damage. A standard villa living area typically takes 1 to 2 days. We ensure a dust-free marble polishing Dubai process to keep your property clean throughout the work.' },
-  { q: 'How often should I get my marble floors polished?', a: 'For residential villas, we recommend professional marble floor polishing every 1–2 years. High-traffic commercial properties like hotels or offices may require maintenance every 6 months.' },
-  { q: 'Can you fix deep cracks or completely yellowed marble?', a: 'Yes. Our marble floor restoration services include specialized color-matched epoxy crack filling and advanced yellow stain removing procedures that repair deeply neglected natural stone.' },
-  { q: 'Do you offer terrazzo polishing in Dubai for commercial buildings?', a: 'Absolutely. Terrazzo floor polishing Dubai is one of our specialties — we restore classic and modern terrazzo in hotel lobbies, retail showrooms and offices using fine diamond pads.' },
-  { q: 'Is countertop polishing safe for quartz and Corian surfaces?', a: 'Yes. We use technique tailored to each material — gentle abrasives for quartz polishing, and hand-polished routines for Corian countertop polishing & scratch repair, with food-safe sealers.' },
-  { q: 'Which emirates do you cover?', a: 'All 7 — Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Umm Al Quwain and Fujairah. Same crew, same standards, same-week availability.' },
+  { q: 'Why is MarblePro the best marble polishing company in Dubai?', a: 'MarblePro uses Italian diamond crystallization technology — the same system used in 5-star hotels across the UAE. Every job comes with a written gloss guarantee (minimum 85 GU) and a fixed-price quote, making us the most trusted and affordable marble floor polishing services provider across UAE.' },
+  { q: 'How long does the marble floor polishing process take in Dubai?', a: 'A standard villa living area typically takes 1 to 2 days. Emergency residential marble floor restoration services in Dubai can be scheduled same-day or next-day. We work around your schedule and ensure a completely dust-free process.' },
+  { q: 'Can you remove yellow stains from marble floors in Dubai?', a: 'Yes. Professional yellow stain removing for natural stone UAE is one of our core specialties. We use chemically targeted treatments to lift deep-set yellowing, rust marks and watermarks that regular cleaning cannot fix — restoring the original bright tone of your stone.' },
+  { q: 'Do you do deep scratch removal and marble crack filling in Dubai?', a: 'Absolutely. Deep scratch removal and marble crack filling Dubai is handled using colour-matched epoxy fillers and progressive diamond pads. We can restore heavily scratched, chipped or cracked natural stone to near-new condition.' },
+  { q: 'What is the price for terrazzo floor polishing in Dubai?', a: 'Terrazzo floor polishing Dubai price depends on the area size, current condition and finish required. We offer free on-site assessments with no-obligation fixed quotes. As terrazzo polishing and restoration contractors UAE businesses and homeowners trust, we price fairly with no hidden charges.' },
+  { q: 'Do you offer premium marble countertop polishing in Dubai?', a: 'Yes. Premium marble countertop polishing Dubai covers kitchen tops, bathroom vanities, island benches and feature walls. We also offer kitchen top polishing and sealing services UAE-wide, Corian countertop polishing and scratch repair Dubai, and quartz polishing and stain protection Abu Dhabi.' },
+  { q: 'Do you provide commercial granite polishing services in Dubai?', a: 'Yes — commercial granite polishing services Dubai is available for retail showrooms, hotel lobbies, office buildings and residential complexes. As a multi-type floor polishing company UAE, we handle marble, granite, terrazzo, quartz and Corian in one visit.' },
+  { q: 'Which emirates do you cover?', a: 'All 7 — Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Umm Al Quwain and Fujairah. Same crew, same standards, same-week availability. Italian marble polishing and crystallization Dubai is our flagship service, available across all regions.' },
 ];
 
 function BeforeAfter({ hue, vein, title, sub, beforeImg, afterImg }: { hue: number; vein: number; title: string; sub: string; beforeImg?: string; afterImg?: string }) {
@@ -113,9 +116,9 @@ function Hero() {
           in Dubai &amp; UAE.
         </h1>
         <p className="hero-sub">
-          MarblePro delivers premium stone polishing, deep scratch removal, and diamond
-          crystallization for luxury villas, commercial spaces and apartments across the UAE.
-          Free survey, fixed-price quote, mess-free work.
+          Restore the timeless brilliance of your floors. MarblePro delivers premium stone polishing,
+          deep scratch removal, and diamond crystallization for luxury villas, commercial spaces,
+          and apartments across the UAE.
         </p>
         <div className="hero-cta-row">
           <a className="btn btn-primary" href="#quote">
@@ -162,6 +165,7 @@ function Marquee() {
   return <div className="marquee"><div className="marquee-track">{row}{row}{row}</div></div>;
 }
 
+
 // background: dark-overlay gradient + stone image for each card
 const SVC_CARDS: { img: string; overlay: string }[] = [
   { img:'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=60', overlay:'linear-gradient(180deg,rgba(44,28,10,0.30) 0%,rgba(44,28,10,0.62) 100%)' }, // travertine
@@ -185,18 +189,24 @@ function ServicesGrid() {
   const sizes = ['lg','md','sm','sm','md','sm','sm','md','sm','sm','lg','md','sm','sm','md'];
   return (
     <section className="sec" data-screen-label="services" id="services">
-      <div className="sec-head">
-        <div>
-          <span className="sec-eyebrow">02 — What we do</span>
-          <h2 className="sec-title">Marble polishing, terrazzo, granite — <em>every stone, restored.</em></h2>
-        </div>
-        <p className="sec-lead">
-          Ten specialised treatments, one team. From a single counter top to a 4,000 sq ft villa
-          floor — same diamond-grade process, every job backed by a written guarantee.
-          <Link href="/services" style={{ display: 'block', marginTop: 18, fontFamily: 'var(--grot)', fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--ink)' }}>
-            See all services →
-          </Link>
+      <div style={{ marginBottom: 60 }}>
+        <span className="sec-eyebrow">02 — What we do</span>
+        <h2 className="sec-title" style={{ marginTop: 14, maxWidth: '22ch' }}>Welcome to MarblePro — <em>The UAE&apos;s Stone Care Experts.</em></h2>
+        <p style={{ marginTop: 22, fontSize: 17, lineHeight: 1.65, opacity: 0.78, maxWidth: '70ch' }}>
+          At MarblePro, we transform dull, scratched, or stained surfaces back into pristine,
+          mirror-like masterpieces. Natural stone flooring is a premium investment for your UAE
+          property, and it deserves specialised care.
         </p>
+        <p style={{ marginTop: 16, fontSize: 17, lineHeight: 1.65, fontWeight: 600, maxWidth: '70ch' }}>
+          Whether you need routine floor polishing in Dubai, intensive marble floor restoration
+          services, or specialised countertop care, our certified technicians use state-of-the-art
+          diamond grinding machinery and eco-friendly compounds to achieve flawless results.
+          We serve residential and commercial clients all over the UAE, delivering unparalleled
+          craftsmanship with minimal disruption to your day.
+        </p>
+        <Link href="/services" style={{ display: 'inline-block', marginTop: 20, fontFamily: 'var(--grot)', fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--ink)' }}>
+          See all services →
+        </Link>
       </div>
       <div className="svc-grid">
         {SERVICES.map((s, i) => (
@@ -362,11 +372,12 @@ function Gallery() {
       <div className="sec-head">
         <div>
           <span className="sec-eyebrow">04 — Before &amp; after</span>
-          <h2 className="sec-title">Drag the line. <em>See the difference.</em></h2>
+          <h2 className="sec-title">Real Marble Polishing Results Across Dubai &amp; UAE — <em>Before &amp; After.</em></h2>
         </div>
         <p className="sec-lead">
-          Real jobs across Dubai, Abu Dhabi and Sharjah. Same stone, same lighting — only the
-          finish has changed. Slide the handle to compare before &amp; after.
+          Real marble floor restoration, deep scratch removal and yellow stain removing results from
+          Dubai, Abu Dhabi and Sharjah. Same stone, same lighting — only the finish has changed.
+          Slide the handle to compare.
         </p>
       </div>
       <div className="ba-strip">
@@ -388,11 +399,12 @@ function Coverage() {
         <div className="sec-head" style={{ marginBottom: 30 }}>
           <div>
             <span className="sec-eyebrow">05 — Where we work</span>
-            <h2 className="sec-title">All seven <em>emirates.</em> One trusted crew.</h2>
+            <h2 className="sec-title">Marble Polishing Services Across All 7 UAE Emirates — <em>Dubai to Fujairah.</em></h2>
           </div>
           <p className="sec-lead">
-            Same-week service across the UAE. Tap any emirate for the full service list and
-            local response times in your area.
+            From Dubai to Fujairah — affordable marble floor polishing services UAE-wide. Same crew,
+            same diamond-grade standards, same-week availability across all 7 emirates. Tap your emirate
+            for local response times.
             <Link href="/locations" style={{ display: 'block', marginTop: 18, fontFamily: 'var(--grot)', fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--ink)' }}>
               View all locations →
             </Link>
@@ -410,7 +422,7 @@ function GMBReviews() {
       <div className="sec-head">
         <div>
           <span className="sec-eyebrow">06 — Google reviews</span>
-          <h2 className="sec-title">Rated 4.9 by <em>UAE homeowners.</em></h2>
+          <h2 className="sec-title">Trusted by UAE Homeowners — 4.9 Stars on Google for <em>Marble Polishing Dubai.</em></h2>
           <div className="gmb-badge">
             <div className="g-icon">G</div>
             <div>
@@ -427,7 +439,7 @@ function GMBReviews() {
           </div>
         </div>
         <p className="sec-lead">
-          The reviews below are from real Google My Business profiles. Tap &quot;View on Google Maps&quot; to see our live listing.
+          Real Google reviews from UAE villa owners, hotels and commercial clients across Dubai, Abu Dhabi and Sharjah. See why MarblePro is the best marble polishing company in Dubai.
         </p>
       </div>
       <div className="gmb-wrap">
@@ -513,14 +525,14 @@ function QuoteBand() {
       <div className="sec">
         <div className="cta-inner">
           <div>
-            <span className="sec-eyebrow">08 — Free quote</span>
-            <h2 className="cta-h">Two lines.<br/>One <em>shine.</em></h2>
+            <span className="sec-eyebrow">08 — Free quote · all UAE emirates</span>
+            <h2 className="cta-h">Affordable marble floor polishing services — <em>free quote today.</em></h2>
             <p style={{ fontSize: 17, lineHeight: 1.55, opacity: 0.78, maxWidth: '42ch', marginTop: 22 }}>
-              Tell us the job and your number. We&apos;ll WhatsApp a ballpark in minutes — or call you back within the hour. No site fee. No fine print.
+              As the best marble polishing company in Dubai, we give you a fixed-price quote in minutes — no site fee, no fine print. Italian marble polishing and crystallization, floor restoration, countertop polishing and yellow stain removing across all 7 UAE emirates.
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, marginTop: 24, fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase', opacity: 0.7 }}>
-              <span>✦ Same-day quotes</span>
-              <span>✦ Fixed price · no surprises</span>
+              <span>✦ Same-day emergency service</span>
+              <span>✦ Fixed price · written guarantee</span>
               <span>✦ Mon–Sun 8 am – 10 pm</span>
             </div>
           </div>
@@ -563,7 +575,7 @@ export default function HomeClient() {
       <Gallery />
       <Coverage />
       <GMBReviews />
-      <FAQ />
+      <PageFaqCta />
       <QuoteBand />
     </>
   );
