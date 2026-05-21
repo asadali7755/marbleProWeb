@@ -69,7 +69,7 @@ function QuoteFormBand() {
       <div className="c-quote-inner">
         <div className="c-form">
           <span className="lab">Free quote — no obligation</span>
-          <h2>Tell us about <em>your floor.</em></h2>
+          <h2>Request Your Free <em>Marble Polishing Quote</em> — Dubai &amp; All UAE Emirates.</h2>
           <p className="sub">Pick a tab — full quote or just leave your number. Either way we read it within an hour during working hours.</p>
           <div className="c-tabs" role="tablist">
             <button className={`c-tab ${tab === 'quote' ? 'active' : ''}`} onClick={() => { setTab('quote'); setDone(false); setPhoneErr(''); }}>Full quote</button>
@@ -202,7 +202,7 @@ function SupportBand() {
     <section className="c-support" data-screen-label="support">
       <div className="c-support-inner">
         <span className="sec-eyebrow" style={{ color:'var(--paper)', opacity:.7 }}>— Support &amp; channels</span>
-        <h2>How &amp; when we <em>get back to you.</em></h2>
+        <h2>How We Respond — <em>Marble Polishing Services UAE,</em> 7 Days a Week.</h2>
         <div className="c-support-grid">
           <div className="c-support-card">
             <div className="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
@@ -245,7 +245,7 @@ function ResponseTimes() {
     <section className="c-resp" data-screen-label="response-times">
       <div>
         <span className="sec-eyebrow">— Response by emirate</span>
-        <h2 className="sec-title" style={{ marginTop:14 }}>How fast we <em>reach you.</em></h2>
+        <h2 className="sec-title" style={{ marginTop:14 }}>Marble Polishing Response Times Across <em>All 7 UAE Emirates.</em></h2>
       </div>
       <div className="c-resp-grid">
         {EMIRATE_RESPONSE.map((e, i) => (
@@ -280,7 +280,7 @@ export default function ContactClient() {
         <div className="c-hero-inner">
           <div>
             <span className="eyebrow-pill"><span className="pulse" /> Mon–Sun · 8:00 am — 10:00 pm</span>
-            <h1>Quote, call,<br/>WhatsApp — <em>your pick.</em></h1>
+            <h1>Get a Free Quote for <em>Marble Polishing</em> &amp; Floor Restoration — <em>Dubai &amp; UAE.</em></h1>
             <p className="lead">
               Free on-site inspection across all 7 emirates. WhatsApp a photo and we&apos;ll
               ballpark in minutes — or pick a slot and we&apos;ll be at your door for the proper quote.
