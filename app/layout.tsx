@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Inter, Archivo, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Providers from "@/components/marble/Providers";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -25,10 +26,63 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const SITE_URL = 'https://www.marblepro.ae';
+const OG_IMAGE = '/raw/twittercard.jpg'; // 1200×630 social card in /public/raw/
+
 export const metadata: Metadata = {
-  title: "Best Marble Polishing Company in Dubai | Affordable Floor Restoration UAE — MarblePro",
+  // metadataBase is REQUIRED — without it, Next.js cannot build absolute
+  // URLs for canonical tags, OG images, or Twitter cards.
+  metadataBase: new URL(SITE_URL),
+
+  title: {
+    default: 'Best Marble Polishing Company in Dubai | Affordable Floor Restoration UAE — MarblePro',
+    // Individual pages supply their own full title — no template suffix needed.
+    template: '%s',
+  },
   description:
-    "MarblePro — best marble polishing company in Dubai. Affordable marble floor polishing services UAE, Italian marble polishing and crystallization, emergency residential marble floor restoration, terrazzo, granite & quartz polishing across all 7 emirates. Call 054 556 77 99.",
+    'MarblePro — best marble polishing company in Dubai. Affordable marble floor polishing services UAE, Italian marble polishing and crystallization, emergency residential marble floor restoration, terrazzo, granite & quartz polishing across all 7 emirates. Call 054 556 77 99.',
+
+  // Explicit robots directives — tells Google to fully index & follow links.
+  // Individual pages (e.g. not-found) can override this with noindex.
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+
+  // Open Graph — shown when pages are shared on social / WhatsApp / messaging apps.
+  openGraph: {
+    type: 'website',
+    locale: 'en_AE',
+    url: SITE_URL,
+    siteName: 'MarblePro UAE',
+    title: 'Best Marble Polishing Company in Dubai | MarblePro UAE',
+    description:
+      'MarblePro — best marble polishing company in Dubai. Affordable marble floor polishing services UAE, Italian marble polishing and crystallization, emergency residential marble floor restoration, terrazzo, granite & quartz polishing across all 7 emirates.',
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: 'MarblePro — Best Marble Polishing Company in Dubai UAE',
+      },
+    ],
+  },
+
+  // Twitter / X card
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Best Marble Polishing Company in Dubai | MarblePro UAE',
+    description:
+      'MarblePro — best marble polishing company in Dubai. Affordable marble floor polishing services UAE, Italian marble polishing and crystallization, emergency residential marble floor restoration.',
+    images: [OG_IMAGE],
+  },
 };
 
 const schemaOrg = {
@@ -40,7 +94,7 @@ const schemaOrg = {
   "telephone": "+971545567799",
   "email": "marbleprodxb@gmail.com",
   "priceRange": "$$",
-  "image": "https://www.marblepro.ae/og-image.jpg",
+  "image": "https://www.marblepro.ae/raw/twittercard.jpg",
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "AE",
@@ -91,6 +145,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body data-theme="default">
+        <GoogleTagManager gtmId="GTM-W4GMWCRL" />
         <Providers>{children}</Providers>
       </body>
     </html>
