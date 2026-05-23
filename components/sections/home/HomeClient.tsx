@@ -135,7 +135,7 @@ function Hero() {
         <div className="veins-d" />
         <div style={{ position: 'relative', zIndex: 1 }}>
           <span className="hero-card-label">Two-line quote · WhatsApp in 60 sec</span>
-          <h3 className="hero-card-h">Tell us the job &amp; your number.<br/>That&apos;s it.</h3>
+          <h2 className="hero-card-h">Tell us the job &amp; your number.<br/>That&apos;s it.</h2>
           <div className="quote-mini">
             <input value={job} onChange={(e) => setJob(e.target.value)} placeholder="What needs polishing? (e.g. kitchen counter, villa floor)" />
             <input value={number} onChange={(e) => { setNumber(e.target.value); setErr(''); }} placeholder="Your mobile number (UAE)*" inputMode="tel" style={err ? { borderColor: '#e53e3e' } : {}} />
@@ -356,7 +356,7 @@ function Process() {
             {STEPS.map((s) => (
               <div className="step" key={s.n}>
                 <div className="step-n">{s.n}</div>
-                <div><h4>{s.h}</h4><p>{s.p}</p></div>
+                <div><h3>{s.h}</h3><p>{s.p}</p></div>
               </div>
             ))}
           </div>

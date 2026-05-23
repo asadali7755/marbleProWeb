@@ -16,7 +16,7 @@ export default function Footer() {
             <Link href="/" className="logo" style={{ color: 'var(--paper)' }}>
               Marble<span className="dot">.</span>Pro<span className="pro">UAE</span>
             </Link>
-            <h3 className="foot-brand-h">Stone polishing, <em>perfected</em> in the UAE.</h3>
+            <h2 className="foot-brand-h">Stone polishing, <em>perfected</em> in the UAE.</h2>
             <button onClick={open} className="foot-call" style={{ background: 'transparent', color: 'var(--paper)', cursor: 'pointer' }}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.71 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.71A2 2 0 0 1 22 16.92z"/>
@@ -28,7 +28,7 @@ export default function Footer() {
             </button>
           </div>
           <div>
-            <h5>Services</h5>
+            <h3>Services</h3>
             <ul>
               {SERVICES.slice(0, 8).map((s) => (
                 <li key={s.slug}><Link href={`/services#${s.slug}`}>{s.name}</Link></li>
@@ -36,7 +36,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h5>Service Areas</h5>
+            <h3>Service Areas</h3>
             <ul>
               {EMIRATES.map((e) => (
                 <li key={e.slug}><Link href={`/locations#${e.slug}`}>{e.name}</Link></li>
@@ -44,7 +44,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h5>Contact</h5>
+            <h3>Contact</h3>
             <ul>
               <li><a href={`tel:${PHONE_TEL}`}><strong style={{ fontFamily: 'var(--display)', fontSize: 22, fontWeight: 400, letterSpacing: '-0.01em' }}>{PHONE_DISPLAY}</strong></a></li>
               <li><a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
