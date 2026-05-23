@@ -35,12 +35,12 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
 
   title: {
-    default: 'Best Marble Polishing Company in Dubai | Affordable Floor Restoration UAE — MarblePro',
+    default: 'Marble Polishing Dubai | Floor Restoration UAE | MarblePro',
     // Individual pages supply their own full title — no template suffix needed.
     template: '%s',
   },
   description:
-    'MarblePro — best marble polishing company in Dubai. Affordable marble floor polishing services UAE, Italian marble polishing and crystallization, emergency residential marble floor restoration, terrazzo, granite & quartz polishing across all 7 emirates. Call 054 556 77 99.',
+    "MarblePro — Dubai's best marble polishing company. Expert floor polishing, Italian crystallization, terrazzo & granite restoration across all 7 UAE emirates. Free quote · 054 556 77 99.",
 
   // Explicit robots directives — tells Google to fully index & follow links.
   // Individual pages (e.g. not-found) can override this with noindex.

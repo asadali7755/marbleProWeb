@@ -185,6 +185,58 @@ const SVC_CARDS: { img: string; overlay: string }[] = [
   { img:'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600&q=60', overlay:'linear-gradient(180deg,rgba(42,32,14,0.28) 0%,rgba(42,32,14,0.62) 100%)' }, // crystallization
 ];
 
+// Lazy-load Unsplash background images — only fetch when card enters viewport.
+// First 4 cards (likely above-fold on desktop) load eagerly to avoid LCP delay.
+function LazySvcCard({ s, size, card, eager }: {
+  s: (typeof SERVICES)[number];
+  size: string;
+  card: { img: string; overlay: string };
+  eager: boolean;
+}) {
+  const ref = useRef<HTMLAnchorElement>(null);
+  const [imgUrl, setImgUrl] = useState(eager ? card.img : '');
+
+  useEffect(() => {
+    if (eager || imgUrl) return;
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setImgUrl(card.img);
+          io.disconnect();
+        }
+      },
+      { rootMargin: '400px' }, // pre-load 400 px before visible
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [eager, imgUrl, card.img]);
+
+  return (
+    <Link
+      ref={ref}
+      className={`svc ${size}`}
+      href={`/services#${s.slug}`}
+      style={{
+        '--svc-bg': imgUrl ? `${card.overlay}, url("${imgUrl}")` : card.overlay,
+        '--svc-overlay': 'rgba(0,0,0,0.18)',
+        '--svc-fg': 'var(--paper)',
+      } as React.CSSProperties}
+    >
+      <div>
+        <span className="svc-num">— {s.num}</span>
+        <h3 className="svc-name">{s.name}</h3>
+        <p className="svc-desc">{s.short}</p>
+      </div>
+      <div className="svc-glyph">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+      </div>
+      <span className="svc-cta">Read more →</span>
+    </Link>
+  );
+}
+
 function ServicesGrid() {
   const sizes = ['lg','md','sm','sm','md','sm','sm','md','sm','sm','lg','md','sm','sm','md'];
   return (
@@ -210,26 +262,13 @@ function ServicesGrid() {
       </div>
       <div className="svc-grid">
         {SERVICES.map((s, i) => (
-          <Link
-            className={`svc ${sizes[i]}`}
+          <LazySvcCard
             key={s.num}
-            href={`/services#${s.slug}`}
-            style={{
-              '--svc-bg': `${SVC_CARDS[i].overlay}, url("${SVC_CARDS[i].img}")`,
-              '--svc-overlay': 'rgba(0,0,0,0.18)',
-              '--svc-fg': 'var(--paper)',
-            } as React.CSSProperties}
-          >
-            <div>
-              <span className="svc-num">— {s.num}</span>
-              <h3 className="svc-name">{s.name}</h3>
-              <p className="svc-desc">{s.short}</p>
-            </div>
-            <div className="svc-glyph">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-            </div>
-            <span className="svc-cta">Read more →</span>
-          </Link>
+            s={s}
+            size={sizes[i]}
+            card={SVC_CARDS[i]}
+            eager={i < 4}
+          />
         ))}
       </div>
     </section>
