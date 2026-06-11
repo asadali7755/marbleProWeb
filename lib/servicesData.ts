@@ -92,8 +92,10 @@ export const SVC_DETAIL_IMGS: Record<string, string> = {
 };
 
 // SEO alt text per service — descriptive + keyword + brand/location.
+// Strip any "Dubai"/"UAE" already in the name so the alt doesn't repeat them.
 export function serviceImgAlt(s: ServiceDetail): string {
-  return `${s.name} in Dubai & UAE — professional ${s.name.toLowerCase()} result by MarblePro`;
+  const label = s.name.replace(/\s*(Dubai|UAE)\s*/gi, ' ').replace(/\s+/g, ' ').trim();
+  return `${label} in Dubai & UAE — professional ${label.toLowerCase()} result by MarblePro`;
 }
 
 export function getServiceDetail(slug: string): ServiceDetail | undefined {
