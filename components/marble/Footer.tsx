@@ -30,8 +30,8 @@ export default function Footer() {
           <div>
             <h3>Services</h3>
             <ul>
-              {SERVICES.slice(0, 8).map((s) => (
-                <li key={s.slug}><Link href={`/services#${s.slug}`}>{s.name}</Link></li>
+              {SERVICES.map((s) => (
+                <li key={s.slug}><Link href={`/services/${s.slug}`}>{s.name}</Link></li>
               ))}
             </ul>
           </div>
@@ -39,7 +39,7 @@ export default function Footer() {
             <h3>Service Areas</h3>
             <ul>
               {EMIRATES.map((e) => (
-                <li key={e.slug}><Link href={`/locations#${e.slug}`}>{e.name}</Link></li>
+                <li key={e.slug}><Link href={`/locations/${e.slug}`}>{e.name}</Link></li>
               ))}
             </ul>
           </div>

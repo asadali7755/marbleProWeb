@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRequestCall } from './RequestCallModal';
+import { SERVICES, EMIRATES } from './constants';
 
 interface NavProps {
   active: 'home' | 'services' | 'locations' | 'gallery' | 'contact';
@@ -43,8 +44,25 @@ export default function Nav({ active, theme }: NavProps) {
         {/* Desktop links */}
         <nav className="nav-links">
           <Link href="/"          className={active === 'home'      ? 'active' : ''}>Home</Link>
-          <Link href="/services"  className={active === 'services'  ? 'active' : ''}>Services</Link>
-          <Link href="/locations" className={active === 'locations' ? 'active' : ''}>Locations</Link>
+
+          <span className="nav-dd">
+            <Link href="/services" className={active === 'services' ? 'active' : ''}>Services<span className="nav-dd-caret">▾</span></Link>
+            <div className="nav-dd-panel" role="menu">
+              {SERVICES.map((s) => (
+                <Link key={s.slug} href={`/services/${s.slug}`} role="menuitem">{s.name}</Link>
+              ))}
+            </div>
+          </span>
+
+          <span className="nav-dd">
+            <Link href="/locations" className={active === 'locations' ? 'active' : ''}>Locations<span className="nav-dd-caret">▾</span></Link>
+            <div className="nav-dd-panel nav-dd-panel--narrow" role="menu">
+              {EMIRATES.map((e) => (
+                <Link key={e.slug} href={`/locations/${e.slug}`} role="menuitem">{e.name}</Link>
+              ))}
+            </div>
+          </span>
+
           <Link href="/gallery"   className={active === 'gallery'   ? 'active' : ''}>Gallery</Link>
           <Link href="/contact"   className={active === 'contact'   ? 'active' : ''}>Contact</Link>
         </nav>
@@ -79,7 +97,17 @@ export default function Nav({ active, theme }: NavProps) {
           <nav className="nav-drawer-links" onClick={(e) => e.stopPropagation()}>
             <Link href="/"          className={active === 'home'      ? 'active' : ''} onClick={closeMenu}>Home</Link>
             <Link href="/services"  className={active === 'services'  ? 'active' : ''} onClick={closeMenu}>Services</Link>
+            <div className="nav-drawer-sub">
+              {SERVICES.map((s) => (
+                <Link key={s.slug} href={`/services/${s.slug}`} onClick={closeMenu}>{s.name}</Link>
+              ))}
+            </div>
             <Link href="/locations" className={active === 'locations' ? 'active' : ''} onClick={closeMenu}>Locations</Link>
+            <div className="nav-drawer-sub">
+              {EMIRATES.map((e) => (
+                <Link key={e.slug} href={`/locations/${e.slug}`} onClick={closeMenu}>{e.name}</Link>
+              ))}
+            </div>
             <Link href="/gallery"   className={active === 'gallery'   ? 'active' : ''} onClick={closeMenu}>Gallery</Link>
             <Link href="/contact"   className={active === 'contact'   ? 'active' : ''} onClick={closeMenu}>Contact</Link>
             <div className="nav-drawer-ctas">
