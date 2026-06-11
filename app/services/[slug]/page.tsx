@@ -58,7 +58,12 @@ export default async function ServicePage(
     name: s.h2,
     description: s.intro,
     url,
-    image: img.startsWith('http') ? img : `${SITE}${img}`,
+    image: {
+      '@type': 'ImageObject',
+      url: img.startsWith('http') ? img : `${SITE}${img}`,
+      caption: serviceImgAlt(s),
+      representativeOfPage: true,
+    },
     provider: {
       '@type': 'LocalBusiness',
       name: 'MarblePro UAE',
