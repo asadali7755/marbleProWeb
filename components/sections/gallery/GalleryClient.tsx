@@ -98,12 +98,17 @@ const GALLERY: GalleryItem[] = [
 // Real before/after job photos wired into the most relevant gallery sliders.
 // Files in /public/images/gallery/<prefix>-before.webp + -after.webp
 const REAL_BA: Record<string, string> = {
-  'marble-polishing-dubai':      'ba1',
-  'marble-countertop-polishing': 'ba2',
-  'marble-floor-restoration':    'ba3',
-  'kitchen-top-polishing':       'ba4',
-  'yellow-stain-removing':       'ba5',
-  'crystallization-sealing':     'ba6',
+  'marble-polishing-dubai':           'marble-villa',
+  'marble-countertop-polishing':      'ba2',
+  'marble-floor-restoration':         'ba3',
+  'kitchen-top-polishing':            'ba4',
+  'yellow-stain-removing':            'ba5',
+  'crystallization-sealing':          'ba6',
+  'travertine-polishing-dubai':       'travertine',
+  'calacatta-marble-polishing-dubai': 'calacatta',
+  'granite-polishing':                'granite',
+  'terrazzo-polishing-dubai':         'terrazzo',
+  'crema-marfil-polishing-dubai':     'whitemarble',
 };
 
 interface RealPair { before: string; after: string; alt: string; }
