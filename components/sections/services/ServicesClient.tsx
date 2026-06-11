@@ -5,7 +5,7 @@ import { useRequestCall } from '@/components/marble/RequestCallModal';
 import { marbleSvg } from '@/components/marble/marbleSvg';
 import { PHONE_DISPLAY, PHONE_TEL, WA_LINK } from '@/components/marble/constants';
 import { PageFaqCta } from '@/components/marble/FaqCta';
-import { SERVICE_DETAIL, SVC_DETAIL_IMGS, type ServiceDetail } from '@/lib/servicesData';
+import { SERVICE_DETAIL, SVC_DETAIL_IMGS, serviceImgAlt, type ServiceDetail } from '@/lib/servicesData';
 
 function ServiceDetail({ s }: { s: ServiceDetail }) {
   const svgFallback = marbleSvg({ dull: false, hue: s.hue, vein: s.vein });
@@ -21,7 +21,7 @@ function ServiceDetail({ s }: { s: ServiceDetail }) {
       </div>
       {/* image — shows second on mobile */}
       <div className="preview">
-        <div className="ph" style={{ backgroundImage: `url("${bgImg}")` }} />
+        <img className="ph" src={bgImg} alt={serviceImgAlt(s)} title={`${s.name} — MarblePro UAE`} width={1280} height={720} loading="lazy" decoding="async" />
         <div className="ovr" />
         <div className="lbl">
           <span className="sm">After · MarblePro finish</span>
@@ -127,7 +127,7 @@ function TravertineFeature() {
 
         {/* ── Right: Image ── */}
         <div className="trav-img-wrap">
-          <div className="trav-img" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=75")' }} />
+          <div className="trav-img" style={{ backgroundImage: 'url("/images/services/travertine-polishing-dubai.webp")' }} />
           <div className="trav-img-overlay" />
           {/* Floating stat badge */}
           <div className="trav-badge">
@@ -154,7 +154,7 @@ function OnyxFeature() {
 
         {/* ── Left: Image ── */}
         <div className="onyx-img-wrap">
-          <div className="onyx-img" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=75")' }} />
+          <div className="onyx-img" style={{ backgroundImage: 'url("/images/services/onyx-marble-polishing-dubai.webp")' }} />
           <div className="onyx-img-overlay" />
           <div className="onyx-badge">
             <span className="onyx-badge-label">Ultra-Premium</span>
@@ -238,7 +238,7 @@ function CremaMarfilFeature() {
 
         {/* ── Right: Image ── */}
         <div className="crema-img-wrap">
-          <div className="crema-img" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=900&q=75")' }} />
+          <div className="crema-img" style={{ backgroundImage: 'url("/images/services/crema-marfil-polishing-dubai.webp")' }} />
           <div className="crema-img-overlay" />
           <div className="crema-badge">
             <span className="crema-badge-num">40%</span>
@@ -263,7 +263,7 @@ function CalacattaFeature() {
 
         {/* ── Left: Image ── */}
         <div className="cala-img-wrap">
-          <div className="cala-img" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=900&q=75")' }} />
+          <div className="cala-img" style={{ backgroundImage: 'url("/images/services/calacatta-marble-polishing-dubai.webp")' }} />
           <div className="cala-img-overlay" />
           <div className="cala-badge">
             <span className="cala-badge-label">Italian Masterpiece</span>
@@ -347,7 +347,7 @@ function EmperadorFeature() {
 
         {/* ── Right: Image ── */}
         <div className="emp-img-wrap">
-          <div className="emp-img" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=900&q=75")' }} />
+          <div className="emp-img" style={{ backgroundImage: 'url("/images/services/emperador-marble-polishing-dubai.webp")' }} />
           <div className="emp-img-overlay" />
           <div className="emp-badge">
             <span className="emp-badge-label">Spanish Origin</span>

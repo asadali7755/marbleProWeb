@@ -6,7 +6,7 @@ import Footer from '@/components/marble/Footer';
 import Fab from '@/components/marble/Fab';
 import { PageFaqCta } from '@/components/marble/FaqCta';
 import { PHONE_DISPLAY, PHONE_TEL, EMIRATES } from '@/components/marble/constants';
-import { SERVICE_DETAIL, SVC_DETAIL_IMGS, getServiceDetail } from '@/lib/servicesData';
+import { SERVICE_DETAIL, SVC_DETAIL_IMGS, getServiceDetail, serviceImgAlt } from '@/lib/servicesData';
 
 const SITE = 'https://www.marblepro.ae';
 
@@ -58,7 +58,7 @@ export default async function ServicePage(
     name: s.h2,
     description: s.intro,
     url,
-    image: img,
+    image: img.startsWith('http') ? img : `${SITE}${img}`,
     provider: {
       '@type': 'LocalBusiness',
       name: 'MarblePro UAE',
@@ -129,7 +129,7 @@ export default async function ServicePage(
               <p style={{ fontSize: 18, fontFamily: 'var(--display)', fontWeight: 380, letterSpacing: '-0.01em', lineHeight: 1.4 }}>{s.intro}</p>
             </div>
             <div className="preview">
-              <div className="ph" style={{ backgroundImage: `url("${img}")` }} />
+              <img className="ph" src={img} alt={serviceImgAlt(s)} title={`${s.name} — MarblePro UAE`} width={1280} height={720} loading="lazy" decoding="async" />
               <div className="ovr" />
               <div className="lbl">
                 <span className="sm">After · MarblePro finish</span>

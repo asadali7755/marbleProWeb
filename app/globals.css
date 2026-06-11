@@ -247,6 +247,7 @@ section[data-screen-label] { scroll-margin-top:90px; }
 .svc-detail .feat li .chk { color:var(--gold); flex-shrink:0; }
 .svc-detail .feat li strong { display:block; font-family:var(--grot); font-weight:700; font-size:13px; letter-spacing:0.04em; margin-bottom:2px; }
 .svc-detail .preview .ph { position:absolute; inset:0; background-size:cover; background-position:center; }
+.svc-detail .preview img.ph { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
 .svc-detail .preview .ovr { position:absolute; inset:0; background:linear-gradient(180deg,transparent 50%,rgba(11,11,11,0.8) 100%); }
 .svc-detail .preview .lbl { position:absolute; left:24px; right:24px; bottom:24px; color:var(--paper); }
 .svc-detail .preview .lbl .sm { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; opacity:.7; }

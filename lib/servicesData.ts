@@ -71,23 +71,30 @@ export const SERVICE_DETAIL: ServiceDetail[] = [
     feat:[{t:'Calcium & water mark removal',d:'Hard-water deposits removed chemically — bright white marks on dark stone disappear.'},{t:'Chocolate tone revival',d:'Dull, grey-toned Emperador restored to original rich dark brown depth.'},{t:'90+ GU gloss achievable',d:"Emperador's dense structure responds exceptionally to diamond polishing — highest gloss of any stone."},{t:'Marine-grade wet area sealing',d:'Bathroom & pool installations sealed against permanent moisture exposure.'}]},
 ];
 
+// Real MarblePro project photos, optimised to WebP. Filenames are the service
+// slug (keyword-rich for image SEO). Served locally from /public/images/services.
 export const SVC_DETAIL_IMGS: Record<string, string> = {
-  'travertine-polishing-dubai':       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=75',
-  'onyx-marble-polishing-dubai':      'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=75',
-  'crema-marfil-polishing-dubai':     'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=900&q=75',
-  'calacatta-marble-polishing-dubai': 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=900&q=75',
-  'emperador-marble-polishing-dubai': 'https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=900&q=75',
-  'marble-polishing-dubai':           'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=900&q=75',
-  'marble-floor-restoration':         'https://images.unsplash.com/photo-1564078516393-cf04bd966897?auto=format&fit=crop&w=900&q=75',
-  'marble-countertop-polishing':      'https://images.unsplash.com/photo-1556912167-f556ea5e9b89?auto=format&fit=crop&w=900&q=75',
-  'terrazzo-polishing-dubai':         'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=75',
-  'granite-polishing':                'https://images.unsplash.com/photo-1564540583246-934409427776?auto=format&fit=crop&w=900&q=75',
-  'quartz-polishing':                 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=900&q=75',
-  'corian-countertop-polishing':      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=75',
-  'yellow-stain-removing':            'https://images.unsplash.com/photo-1617042375876-a13e36732a04?auto=format&fit=crop&w=900&q=75',
-  'kitchen-top-polishing':            'https://images.unsplash.com/photo-1556909172-54557c7e4fb7?auto=format&fit=crop&w=900&q=75',
-  'crystallization-sealing':          'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=75',
+  'travertine-polishing-dubai':       '/images/services/travertine-polishing-dubai.webp',
+  'onyx-marble-polishing-dubai':      '/images/services/onyx-marble-polishing-dubai.webp',
+  'crema-marfil-polishing-dubai':     '/images/services/crema-marfil-polishing-dubai.webp',
+  'calacatta-marble-polishing-dubai': '/images/services/calacatta-marble-polishing-dubai.webp',
+  'emperador-marble-polishing-dubai': '/images/services/emperador-marble-polishing-dubai.webp',
+  'marble-polishing-dubai':           '/images/services/marble-polishing-dubai.webp',
+  'marble-floor-restoration':         '/images/services/marble-floor-restoration.webp',
+  'marble-countertop-polishing':      '/images/services/marble-countertop-polishing.webp',
+  'terrazzo-polishing-dubai':         '/images/services/terrazzo-polishing-dubai.webp',
+  'granite-polishing':                '/images/services/granite-polishing.webp',
+  'quartz-polishing':                 '/images/services/quartz-polishing.webp',
+  'corian-countertop-polishing':      '/images/services/corian-countertop-polishing.webp',
+  'yellow-stain-removing':            '/images/services/yellow-stain-removing.webp',
+  'kitchen-top-polishing':            '/images/services/kitchen-top-polishing.webp',
+  'crystallization-sealing':          '/images/services/crystallization-sealing.webp',
 };
+
+// SEO alt text per service — descriptive + keyword + brand/location.
+export function serviceImgAlt(s: ServiceDetail): string {
+  return `${s.name} in Dubai & UAE — professional ${s.name.toLowerCase()} result by MarblePro`;
+}
 
 export function getServiceDetail(slug: string): ServiceDetail | undefined {
   return SERVICE_DETAIL.find((s) => s.slug === slug);
