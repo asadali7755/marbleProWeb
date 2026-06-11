@@ -95,7 +95,20 @@ const GALLERY: GalleryItem[] = [
     meta:['Real chemical bond','Mirror-reflective','Slip-resistant','Multi-year shine']},
 ];
 
-function BeforeAfterSlider({ projects, activeIdx, onSelect }: { projects: Project[]; activeIdx: number; onSelect: (i: number) => void }) {
+// Real before/after job photos wired into the most relevant gallery sliders.
+// Files in /public/images/gallery/<prefix>-before.webp + -after.webp
+const REAL_BA: Record<string, string> = {
+  'marble-polishing-dubai':      'ba1',
+  'marble-countertop-polishing': 'ba2',
+  'marble-floor-restoration':    'ba3',
+  'kitchen-top-polishing':       'ba4',
+  'yellow-stain-removing':       'ba5',
+  'crystallization-sealing':     'ba6',
+};
+
+interface RealPair { before: string; after: string; alt: string; }
+
+function BeforeAfterSlider({ projects, activeIdx, onSelect, real }: { projects: Project[]; activeIdx: number; onSelect: (i: number) => void; real?: RealPair }) {
   const ref = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState(50);
   const dragging = useRef(false);
@@ -132,8 +145,17 @@ function BeforeAfterSlider({ projects, activeIdx, onSelect }: { projects: Projec
         onMouseDown={(e) => { dragging.current = true; onMove(e.nativeEvent); }}
         onTouchStart={(e) => { dragging.current = true; onMove(e.nativeEvent); }}
       >
-        <div className="pane before" style={{ backgroundImage: `url("${before}")` }} />
-        <div className="pane after"  style={{ backgroundImage: `url("${after}")` }} />
+        {real ? (
+          <>
+            <img className="pane before" src={real.before} alt={`${real.alt} — before polishing`} loading="lazy" decoding="async" />
+            <img className="pane after"  src={real.after}  alt={`${real.alt} — after MarblePro polishing`} loading="lazy" decoding="async" />
+          </>
+        ) : (
+          <>
+            <div className="pane before" style={{ backgroundImage: `url("${before}")` }} />
+            <div className="pane after"  style={{ backgroundImage: `url("${after}")` }} />
+          </>
+        )}
         <div className="g-ba-handle">
           <div className="grip">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 6 3 12 9 18"/><polyline points="15 6 21 12 15 18"/></svg>
@@ -142,20 +164,22 @@ function BeforeAfterSlider({ projects, activeIdx, onSelect }: { projects: Projec
         <span className="g-ba-tag b">Before</span>
         <span className="g-ba-tag a">After · MarblePro</span>
       </div>
-      <div className="g-thumbs">
-        {projects.map((proj, i) => {
-          const thumb = marbleSvg({ dull: false, hue: proj.hue, vein: proj.vein });
-          return (
-            <button key={i} className={`g-thumb ${activeIdx === i ? 'active' : ''}`}
-              onClick={() => onSelect(i)}
-              style={{ backgroundImage: `url("${thumb}")`, border: 'none' }}
-            >
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.6))' }} />
-              <span className="tn">{proj.city}</span>
-            </button>
-          );
-        })}
-      </div>
+      {!real && (
+        <div className="g-thumbs">
+          {projects.map((proj, i) => {
+            const thumb = marbleSvg({ dull: false, hue: proj.hue, vein: proj.vein });
+            return (
+              <button key={i} className={`g-thumb ${activeIdx === i ? 'active' : ''}`}
+                onClick={() => onSelect(i)}
+                style={{ backgroundImage: `url("${thumb}")`, border: 'none' }}
+              >
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.6))' }} />
+                <span className="tn">{proj.city}</span>
+              </button>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
@@ -163,6 +187,14 @@ function BeforeAfterSlider({ projects, activeIdx, onSelect }: { projects: Projec
 function GallerySection({ s, even, total }: { s: GalleryItem; even: boolean; total: number }) {
   const { open } = useRequestCall();
   const [idx, setIdx] = useState(0);
+  const baPrefix = REAL_BA[s.slug];
+  const real: RealPair | undefined = baPrefix
+    ? {
+        before: `/images/gallery/${baPrefix}-before.webp`,
+        after: `/images/gallery/${baPrefix}-after.webp`,
+        alt: `${s.name} in ${s.projects[0].city}, UAE — real MarblePro project`,
+      }
+    : undefined;
   return (
     <div className="g-section-wrap" style={{ background: even ? 'var(--paper2)' : 'var(--paper)' }}>
       <section className="g-section" id={s.slug} data-screen-label={`gallery-${s.slug}`}>
@@ -189,7 +221,7 @@ function GallerySection({ s, even, total }: { s: GalleryItem; even: boolean; tot
             </div>
           </div>
           <div className="g-media">
-            <BeforeAfterSlider projects={s.projects} activeIdx={idx} onSelect={setIdx} />
+            <BeforeAfterSlider projects={s.projects} activeIdx={idx} onSelect={setIdx} real={real} />
           </div>
         </div>
       </section>

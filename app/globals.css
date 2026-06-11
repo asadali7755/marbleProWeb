@@ -594,6 +594,7 @@ section.loc-section:nth-child(even) .loc-body { background:var(--paper2); }
 .g-content .gbtns { display:flex; gap:12px; margin-top:22px; flex-wrap:wrap; }
 .g-ba { position:relative; aspect-ratio:5/4; border-radius:22px; overflow:hidden; cursor:ew-resize; box-shadow:0 20px 60px rgba(11,11,11,0.22); }
 .g-ba .pane { position:absolute; inset:0; background-size:cover; background-position:center; }
+.g-ba img.pane { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
 .g-ba .pane.after { clip-path:inset(0 0 0 var(--pos,50%)); }
 .g-ba-handle { position:absolute; top:0; bottom:0; left:var(--pos,50%); width:2px; background:var(--paper); box-shadow:0 0 0 1px rgba(0,0,0,.18); transform:translateX(-50%); pointer-events:none; }
 .g-ba-handle .grip { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:56px; height:56px; border-radius:999px; background:var(--paper); color:var(--ink); display:grid; place-items:center; box-shadow:0 8px 24px rgba(0,0,0,.3); transition:background .2s,color .2s; }
