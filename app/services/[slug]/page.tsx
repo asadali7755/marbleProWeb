@@ -48,6 +48,8 @@ export default async function ServicePage(
   const url = `${SITE}/services/${s.slug}`;
   const img = SVC_DETAIL_IMGS[s.slug] || '/raw/twittercard.jpg';
   const related = SERVICE_DETAIL.filter((x) => x.slug !== s.slug).slice(0, 6);
+  // Service name without "Dubai"/"UAE" so city chips read cleanly, e.g. "Marble Polishing Abu Dhabi"
+  const svcLabel = s.name.replace(/\s*(Dubai|UAE)\s*/gi, ' ').replace(/\s+/g, ' ').trim();
 
   const serviceSchema = {
     '@context': 'https://schema.org',
@@ -99,9 +101,14 @@ export default async function ServicePage(
               <span>/</span>
               <span style={{ color: 'var(--gold)' }}>{s.name}</span>
             </nav>
-            <span className="eyebrow-pill"><span className="pulse" /> {s.kw}</span>
+            <span className="eyebrow-pill"><span className="pulse" /> Available across all 7 UAE emirates</span>
             <h1>{s.h2}</h1>
             <p className="lead">{s.intro}</p>
+            <p style={{ fontSize: 15, lineHeight: 1.6, opacity: 0.82, marginTop: 14, maxWidth: '64ch' }}>
+              MarblePro delivers {svcLabel.toLowerCase()} across{' '}
+              <strong>Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Umm Al Quwain &amp; Fujairah</strong> — same certified
+              crew, same diamond-grade process and written gloss guarantee in every emirate.
+            </p>
             <div className="cta-row">
               <Link href="/#quote" className="btn btn-primary">
                 Get a Free On-Site Quote
@@ -155,12 +162,15 @@ export default async function ServicePage(
           <div style={{ maxWidth: 1100, margin: '0 auto' }}>
             <span className="sec-eyebrow">— Coverage</span>
             <h2 className="sec-title" style={{ marginTop: 12, fontSize: 'clamp(26px,4vw,40px)' }}>
-              {s.name} <em>across all 7 UAE emirates.</em>
+              {svcLabel} <em>across all 7 UAE emirates.</em>
             </h2>
+            <p style={{ marginTop: 12, fontSize: 15, lineHeight: 1.6, opacity: 0.75, maxWidth: '60ch' }}>
+              Pick your emirate to see local coverage, areas and response times — same crew and gloss standard everywhere.
+            </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginTop: 24 }}>
               {EMIRATES.map((e) => (
                 <Link key={e.slug} href={`/locations/${e.slug}`} className="area" style={{ textDecoration: 'none' }}>
-                  {s.name} {e.name}
+                  {svcLabel} {e.name}
                 </Link>
               ))}
             </div>
