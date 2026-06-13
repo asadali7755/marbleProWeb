@@ -59,6 +59,7 @@ export default function Footer() {
                 <a href={WA_LINK} target="_blank" rel="noopener" style={{ padding: '8px 12px', border: '1px solid var(--line-d)', borderRadius: 999, fontSize: 11, fontFamily: 'var(--grot)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' }}>WhatsApp</a>
               )}
               <a href="https://maps.google.com/?cid=9770771076887647238" target="_blank" rel="noopener" style={{ padding: '8px 12px', border: '1px solid var(--line-d)', borderRadius: 999, fontSize: 11, fontFamily: 'var(--grot)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Google</a>
+              <a href="https://maps.google.com/?cid=9770771076887647238" target="_blank" rel="noopener" style={{ padding: '8px 12px', border: '1px solid var(--gold)', borderRadius: 999, fontSize: 11, fontFamily: 'var(--grot)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--gold)' }}>Review us ★</a>
             </div>
           </div>
         </div>

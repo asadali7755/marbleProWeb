@@ -183,7 +183,7 @@ function QuoteFormBand() {
             </div>
             <div className="c-gmb-cta">
               <a href="https://maps.google.com/?cid=9770771076887647238" target="_blank" rel="noopener">View on Google Maps →</a>
-              <a href="https://www.google.com/search?q=marble+polishing+services+dubai" target="_blank" rel="noopener">Leave a review</a>
+              <a href="https://maps.google.com/?cid=9770771076887647238" target="_blank" rel="noopener">Leave a Google review ★</a>
             </div>
           </div>
           <div className="c-map">
