@@ -323,6 +323,19 @@ function ProcessVideo() {
 
   return (
     <div ref={wrapRef} style={{ borderRadius: 22, overflow: 'hidden', aspectRatio: '4/5', position: 'relative', background: '#1a1410' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'VideoObject',
+          name: 'Professional Marble Polishing Process in Dubai — MarblePro UAE',
+          description: 'Watch MarblePro restore a dull marble floor to a mirror gloss using diamond grinding and Italian crystallization, across Dubai and the UAE.',
+          thumbnailUrl: 'https://www.marblepro.ae/videos/marble-polishing-process-dubai-poster.jpg',
+          contentUrl: 'https://www.marblepro.ae/videos/marble-polishing-process-dubai.mp4',
+          uploadDate: '2026-05-01',
+          publisher: { '@type': 'Organization', name: 'MarblePro UAE', logo: { '@type': 'ImageObject', url: 'https://www.marblepro.ae/raw/twittercard.jpg' } },
+        }) }}
+      />
       <video
         ref={videoRef}
         muted

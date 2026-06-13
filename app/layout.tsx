@@ -95,6 +95,10 @@ const schemaOrg = {
   "email": "marbleprodxb@gmail.com",
   "priceRange": "$$",
   "image": "https://www.marblepro.ae/raw/twittercard.jpg",
+  "hasMap": "https://maps.google.com/?cid=9770771076887647238",
+  "sameAs": [
+    "https://maps.google.com/?cid=9770771076887647238"
+  ],
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "AE",
