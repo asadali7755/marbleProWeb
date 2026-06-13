@@ -109,6 +109,10 @@ const REAL_BA: Record<string, string> = {
   'granite-polishing':                'granite',
   'terrazzo-polishing-dubai':         'terrazzo',
   'crema-marfil-polishing-dubai':     'whitemarble',
+  'onyx-marble-polishing-dubai':      'onyx',
+  'emperador-marble-polishing-dubai': 'emperador',
+  'quartz-polishing':                 'quartz',
+  'corian-countertop-polishing':      'corian',
 };
 
 interface RealPair { before: string; after: string; alt: string; }
