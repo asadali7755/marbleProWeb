@@ -162,6 +162,139 @@ export const GUIDES: Guide[] = [
       { label: 'Get a free quote', href: '/contact' },
     ],
   },
+  {
+    slug: 'marble-polishing-vs-crystallization',
+    title: 'Marble Polishing vs Crystallization: What\'s the Difference? | MarblePro',
+    h1: 'Marble Polishing vs Crystallization: What\'s the Difference?',
+    description: 'Marble polishing and crystallization are not the same thing. A clear explanation of how each works, when you need which, and why crystallization makes the shine last.',
+    keywords: 'marble polishing vs crystallization, what is marble crystallization, marble crystallization dubai, difference polishing crystallization',
+    date: '2026-06-13', readMins: 5, category: 'Process',
+    excerpt: 'Polishing and crystallization are often confused but do different jobs. Here is what each one is, when you need it, and why the combination lasts longest.',
+    intro: 'People often use "polishing" and "crystallization" to mean the same thing — but they are two separate steps. In short: polishing physically restores the surface, and crystallization chemically hardens and protects it. The best, longest-lasting results use both, in order.',
+    sections: [
+      { h2: 'What is marble polishing?', body: [
+        'Polishing is a <strong>mechanical</strong> process. Diamond abrasives are worked across the marble through a sequence of grits (from coarse to very fine, typically 50 up to 3000), removing scratches, etch marks and dullness and gradually bringing the surface up to a smooth, reflective finish. It physically reshapes the top layer of the stone.',
+      ]},
+      { h2: 'What is crystallization?', body: [
+        'Crystallization is a <strong>chemical</strong> process applied after polishing. A crystallizing compound reacts with the calcium in the marble under a buffing pad, forming a thin, hardened, highly reflective layer that is chemically bonded into the stone — not sitting on top like a wax or coating. This is what gives that deep, mirror-like gloss and makes the finish far more durable.',
+      ]},
+      { h2: 'Polishing vs crystallization — the key difference', body: [
+        'Polishing <em>restores</em> the marble; crystallization <em>protects and intensifies</em> it. Polishing alone will look great but dull faster under foot traffic. Crystallization on un-restored marble cannot fix scratches or etching. That is why a quality job does both: grind and polish first, then crystallize and seal.',
+      ]},
+      { h2: 'Why not just use wax?', body: [
+        'Cheap wax or acrylic coatings can fake a shine for a few weeks, then wear off in patches and trap dirt. Genuine Italian crystallization is a chemical bond, not a film — it is slip-resistant, holds its gloss for years, and does not yellow. If a quote is unusually cheap, ask whether they are crystallizing or just waxing.',
+      ]},
+    ],
+    faqs: [
+      { q: 'Do I need both polishing and crystallization?', a: 'For the best, longest-lasting result, yes. Polishing restores the surface; crystallization hardens and protects it. Crystallization cannot fix scratches, and polishing alone dulls faster.' },
+      { q: 'How long does crystallization last?', a: 'Professionally crystallized marble holds its gloss for years with normal care — far longer than wax coatings, which wear off in weeks.' },
+      { q: 'Is crystallization slippery?', a: 'No — done correctly it is slip-resistant underfoot despite the mirror finish.' },
+    ],
+    related: [
+      { label: 'Crystallization & Sealing', href: '/services/crystallization-sealing' },
+      { label: 'Marble Polishing Dubai', href: '/services/marble-polishing-dubai' },
+      { label: 'Get a free quote', href: '/contact' },
+    ],
+  },
+  {
+    slug: 'how-to-care-for-marble-floors-uae',
+    title: 'How to Care for Marble Floors in the UAE Climate | MarblePro',
+    h1: 'How to Care for Marble Floors in the UAE Climate',
+    description: 'Practical marble floor care for Dubai and the UAE — the right cleaner, what to avoid, dealing with sand, sun and hard water, and a simple maintenance routine.',
+    keywords: 'marble floor care uae, how to clean marble dubai, marble maintenance, ph neutral cleaner marble',
+    date: '2026-06-13', readMins: 6, category: 'Maintenance',
+    excerpt: 'Sand, sun and hard water are tough on marble. A simple, UAE-specific routine to keep your floors glossy and avoid the mistakes that dull or etch them.',
+    intro: 'Marble is a stunning but sensitive stone, and the UAE climate is demanding — fine desert sand, strong sun and hard water all work against it. The good news: a simple daily-and-weekly routine keeps marble looking new and dramatically extends the time between professional polishes.',
+    sections: [
+      { h2: 'The single most important rule', body: [
+        'Only ever clean marble with a <strong>pH-neutral stone cleaner</strong>. Never use vinegar, lemon, bleach or general acidic/abrasive cleaners — they etch the surface and leave permanent dull spots. This one habit prevents most of the marble damage we are called to repair.',
+      ]},
+      { h2: 'Deal with sand — your floor\'s biggest enemy', body: [
+        'In the UAE, fine sand is constantly tracked indoors and acts like sandpaper underfoot, micro-scratching marble every day. Place quality mats at every entrance, dust-mop daily with a soft microfibre mop, and encourage a shoes-off habit where practical.',
+      ]},
+      { h2: 'Spills, sun and hard water', body: [
+        'Wipe spills immediately — especially coffee, wine, citrus and oils, which stain and etch fast. In sunny rooms, rotate rugs and furniture occasionally so the floor ages evenly. For hard-water marks in bathrooms, use a stone-safe cleaner and dry surfaces after use rather than letting deposits build up.',
+      ]},
+      { h2: 'A simple maintenance routine', body: [
+        '<strong>Daily:</strong> dust-mop and wipe spills. <strong>Weekly:</strong> damp-mop with a pH-neutral cleaner. <strong>Yearly (or 6 months for busy areas):</strong> professional polish and re-seal. A breathable impregnating sealer adds an extra layer of protection against stains and moisture between visits.',
+      ]},
+    ],
+    faqs: [
+      { q: 'What is the best cleaner for marble floors?', a: 'A pH-neutral stone cleaner only. Avoid vinegar, lemon, bleach and abrasive or acidic products — they etch and dull marble permanently.' },
+      { q: 'How do I protect marble from sand scratches?', a: 'Use entrance mats, dust-mop daily with microfibre, and keep grit off the floor. Periodic professional polishing reverses the fine scratching sand causes.' },
+      { q: 'Should marble floors be sealed?', a: 'Yes — a breathable impregnating sealer helps block stains and moisture, especially useful in the UAE climate. Re-seal during your regular polishing visit.' },
+    ],
+    related: [
+      { label: 'Marble Polishing Dubai', href: '/services/marble-polishing-dubai' },
+      { label: 'Crystallization & Sealing', href: '/services/crystallization-sealing' },
+      { label: 'Get a free quote', href: '/contact' },
+    ],
+  },
+  {
+    slug: 'travertine-vs-marble',
+    title: 'Travertine vs Marble: Care & Polishing Differences | MarblePro',
+    h1: 'Travertine vs Marble: What\'s the Difference?',
+    description: 'Travertine and marble look similar but behave differently. How to tell them apart, how care and polishing differ, and what each needs in the UAE.',
+    keywords: 'travertine vs marble, difference travertine marble, travertine polishing dubai, is travertine marble',
+    date: '2026-06-13', readMins: 5, category: 'Stone Guide',
+    excerpt: 'Travertine and marble are often confused. How to tell them apart, why travertine needs void-filling, and how polishing differs for each.',
+    intro: 'Travertine and marble are both natural stones and can look similar, but they are not the same — and they need different care. The biggest practical difference is that travertine has natural holes that must be filled before polishing. Here is how to tell them apart and what each needs.',
+    sections: [
+      { h2: 'Are travertine and marble the same?', body: [
+        'No. Both form from calcium carbonate, but travertine is a type of limestone formed around mineral springs, while marble is metamorphic (formed under heat and pressure). The easiest visual giveaway: travertine has small natural <strong>holes and voids</strong> and a warm, banded look; marble has flowing veins and a denser, glossier surface.',
+      ]},
+      { h2: 'Why travertine needs void-filling', body: [
+        'Those natural holes are travertine\'s defining feature — and its weak point. Before polishing, every void should be filled with colour-matched epoxy; otherwise the surface pits, traps dirt and cannot reach a flat, high gloss. Many generic companies skip this step, which is why poorly-done travertine looks rough soon after.',
+      ]},
+      { h2: 'How polishing differs', body: [
+        'Marble polishes to a deep mirror gloss relatively easily. Travertine needs the extra void-filling and lippage-grinding stage first, then a finer finish and a breathable sealer rated for UAE heat. Both finish beautifully — travertine just takes an extra, specialist step.',
+      ]},
+      { h2: 'Which is better for UAE homes?', body: [
+        'Travertine suits warm, natural, Mediterranean-style interiors and outdoor areas like pool surrounds (with the right sealer). Marble suits a more luxurious, high-gloss look. Both perform well when properly maintained — the choice is mostly about the look you want.',
+      ]},
+    ],
+    faqs: [
+      { q: 'Is travertine a type of marble?', a: 'No. Travertine is a form of limestone with natural holes; marble is a denser metamorphic stone with veins. They need different polishing techniques.' },
+      { q: 'Does travertine need to be filled before polishing?', a: 'Yes — its natural voids should be filled with colour-matched epoxy before polishing, or the surface pits and cannot reach a smooth, high gloss.' },
+      { q: 'Can you polish travertine to a shine like marble?', a: 'Yes. With proper void-filling, grinding and sealing, travertine reaches a beautiful high-gloss finish.' },
+    ],
+    related: [
+      { label: 'Travertine Polishing Dubai', href: '/services/travertine-polishing-dubai' },
+      { label: 'Marble Polishing Dubai', href: '/services/marble-polishing-dubai' },
+      { label: 'Get a free quote', href: '/contact' },
+    ],
+  },
+  {
+    slug: 'signs-marble-floor-needs-restoration',
+    title: '7 Signs Your Marble Floor Needs Professional Restoration | MarblePro',
+    h1: '7 Signs Your Marble Floor Needs Professional Restoration',
+    description: 'How to know when your marble floor needs more than cleaning. Seven clear signs — dullness, etching, cracks, yellowing, lippage — and what restoration fixes.',
+    keywords: 'marble restoration signs, when to restore marble floor, dull etched cracked marble, marble floor restoration dubai',
+    date: '2026-06-13', readMins: 5, category: 'Restoration',
+    excerpt: 'Not sure if your marble just needs cleaning or full restoration? Seven clear signs to look for — and why catching them early saves money.',
+    intro: 'Marble does not fail overnight — it declines gradually, so many owners do not notice until it looks badly worn. Catching the signs early means a lighter, cheaper refresh instead of a full restoration later. Here are seven clear signals that your floor needs professional attention.',
+    sections: [
+      { h2: 'The 7 warning signs', body: [
+        '<strong>1. Loss of reflection</strong> — the floor no longer mirrors light the way it used to. <strong>2. Traffic paths</strong> — visibly duller lanes where people walk most. <strong>3. Etch marks</strong> — dull, cloudy spots from spills like citrus, coffee or cleaners. <strong>4. Scratches</strong> that catch the light across the surface. <strong>5. Yellowing or discolouration</strong> spreading across tiles. <strong>6. Cracks or chips</strong> in the stone or along edges. <strong>7. Lippage</strong> — uneven tiles you can feel underfoot or that catch a heel.',
+      ]},
+      { h2: 'Cleaning vs restoration — what\'s the difference?', body: [
+        'Cleaning removes dirt from the surface. Restoration fixes the stone itself — grinding out scratches and lippage, filling cracks, reversing etching and yellowing, then re-polishing and sealing. If your floor is clean but still looks dull, damaged or uneven, it needs restoration, not more cleaning.',
+      ]},
+      { h2: 'Why act early', body: [
+        'Light dullness can be corrected with a quick polish. Left for years, the same floor may need full grinding, crack filling and stain treatment — more time and cost. A free inspection tells you exactly where your floor stands and the lightest fix that will work.',
+      ]},
+    ],
+    faqs: [
+      { q: 'How do I know if my marble needs restoration or just cleaning?', a: 'If the floor is clean but still looks dull, etched, scratched, yellowed, cracked or uneven, it needs restoration — cleaning only removes surface dirt, not damage to the stone.' },
+      { q: 'Can badly damaged marble be saved?', a: 'Usually yes. Cracks, deep scratches, etching, yellowing and lippage can almost always be restored without replacing the floor.' },
+      { q: 'Is restoration cheaper than replacing marble?', a: 'Far cheaper — restoration costs a fraction of removing and re-laying marble, and the result can look better than new.' },
+    ],
+    related: [
+      { label: 'Marble Floor Restoration', href: '/services/marble-floor-restoration' },
+      { label: 'Yellow Stain Removing', href: '/services/yellow-stain-removing' },
+      { label: 'Book an inspection', href: '/contact' },
+    ],
+  },
 ];
 
 export function getGuide(slug: string): Guide | undefined {
