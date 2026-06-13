@@ -99,6 +99,13 @@ const schemaOrg = {
   "sameAs": [
     "https://maps.google.com/?cid=9770771076887647238"
   ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.3",
+    "reviewCount": "6",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "AE",

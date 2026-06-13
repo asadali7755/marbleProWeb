@@ -474,12 +474,12 @@ function GMBReviews() {
       <div className="sec-head">
         <div>
           <span className="sec-eyebrow">06 — Google reviews</span>
-          <h2 className="sec-title">Trusted by UAE Homeowners — 4.9 Stars on Google for <em>Marble Polishing Dubai.</em></h2>
+          <h2 className="sec-title">Trusted by UAE Homeowners — 4.3 Stars on Google for <em>Marble Polishing Dubai.</em></h2>
           <div className="gmb-badge">
             <div className="g-icon">G</div>
             <div>
               <div style={{ display: 'flex', gap: 8, alignItems: 'baseline' }}>
-                <span className="rate">4.9</span>
+                <span className="rate">4.3</span>
                 <span style={{ color: 'var(--gold)', letterSpacing: 2 }}>★★★★★</span>
               </div>
               <div className="lbl">

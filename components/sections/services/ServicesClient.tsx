@@ -434,7 +434,7 @@ function Stats() {
     { n: '500+',  l: 'Villas restored' },
     { n: '85+ GU', l: 'Average gloss reading' },
     { n: '10 yr',  l: 'Service guarantee' },
-    { n: '4.9 ★',  l: 'Google rating' },
+    { n: '4.3 ★',  l: 'Google rating (6)' },
   ];
   return (
     <section className="stats-band" data-screen-label="stats">
