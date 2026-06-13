@@ -5,7 +5,7 @@ import { useRequestCall } from './RequestCallModal';
 import { SERVICES, EMIRATES } from './constants';
 
 interface NavProps {
-  active: 'home' | 'services' | 'locations' | 'gallery' | 'contact';
+  active: 'home' | 'services' | 'locations' | 'gallery' | 'contact' | 'blog';
   theme?: 'dark' | 'light';
 }
 
@@ -64,6 +64,7 @@ export default function Nav({ active, theme }: NavProps) {
           </span>
 
           <Link href="/gallery"   className={active === 'gallery'   ? 'active' : ''}>Gallery</Link>
+          <Link href="/blog"      className={active === 'blog'      ? 'active' : ''}>Guides</Link>
           <Link href="/contact"   className={active === 'contact'   ? 'active' : ''}>Contact</Link>
         </nav>
 
@@ -109,6 +110,7 @@ export default function Nav({ active, theme }: NavProps) {
               ))}
             </div>
             <Link href="/gallery"   className={active === 'gallery'   ? 'active' : ''} onClick={closeMenu}>Gallery</Link>
+            <Link href="/blog"      className={active === 'blog'      ? 'active' : ''} onClick={closeMenu}>Guides</Link>
             <Link href="/contact"   className={active === 'contact'   ? 'active' : ''} onClick={closeMenu}>Contact</Link>
             <div className="nav-drawer-ctas">
               <button className="btn btn-primary" onClick={() => { open(); closeMenu(); }}>

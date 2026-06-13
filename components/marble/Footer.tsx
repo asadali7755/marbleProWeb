@@ -46,6 +46,7 @@ export default function Footer() {
           <div>
             <h3>Contact</h3>
             <ul>
+              <li><Link href="/blog">Marble Care Guides</Link></li>
               <li><a href={`tel:${PHONE_TEL}`}><strong style={{ fontFamily: 'var(--display)', fontSize: 22, fontWeight: 400, letterSpacing: '-0.01em' }}>{PHONE_DISPLAY}</strong></a></li>
               <li><a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
               <li style={{ opacity: 0.65, marginTop: 8 }}>Mon — Sun · 8:00 am — 10:00 pm</li>
