@@ -46,21 +46,24 @@ export default async function LocationPage(
 
   const url = `${SITE}/locations/${l.slug}`;
 
+  // Service schema (not a 2nd LocalBusiness) — avoids duplicate-business ambiguity
+  // on the page; the canonical LocalBusiness lives in the root layout.
   const businessSchema = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: `MarblePro — Marble Polishing ${l.name}`,
+    '@type': 'Service',
+    serviceType: 'Marble Polishing & Floor Restoration',
+    name: l.h1,
     description: l.intro,
     url,
-    telephone: PHONE_TEL,
-    priceRange: '$$',
     image: `${SITE}/raw/twittercard.jpg`,
     areaServed: { '@type': 'City', name: l.name },
-    address: { '@type': 'PostalAddress', addressLocality: l.name, addressRegion: l.name, addressCountry: 'AE' },
-    openingHoursSpecification: {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      opens: '08:00', closes: '22:00',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'MarblePro UAE',
+      telephone: PHONE_TEL,
+      url: SITE,
+      priceRange: '$$',
+      image: `${SITE}/raw/twittercard.jpg`,
     },
   };
 
