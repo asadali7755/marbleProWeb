@@ -34,3 +34,10 @@ export const RESULTS_VIDEO = {
   name: 'Real Marble Polishing Results in a Dubai Villa — MarblePro UAE',
   description: 'A walkthrough of a real MarblePro project: marble floors restored to a deep mirror gloss in a Dubai villa, UAE.',
 };
+
+export const PROCESS_VIDEO = {
+  mp4: '/videos/marble-polishing-process-closeup-dubai.mp4',
+  poster: '/videos/marble-polishing-process-closeup-dubai-poster.jpg',
+  name: 'Marble Polishing in Progress — Close-Up | MarblePro Dubai',
+  description: 'A close-up of MarblePro diamond-polishing marble to a high-gloss mirror finish on a real Dubai project.',
+};

@@ -1,23 +1,29 @@
-import { PROJECTS, RESULTS_VIDEO } from '@/lib/projectsData';
+import { PROJECTS, RESULTS_VIDEO, PROCESS_VIDEO } from '@/lib/projectsData';
 
 const SITE = 'https://www.marblepro.ae';
 
-// Server component — real client job photos + a results video. No client hooks.
-export default function RealProjects() {
-  const videoSchema = {
+function videoLd(v: { mp4: string; poster: string; name: string; description: string }) {
+  return {
     '@context': 'https://schema.org',
     '@type': 'VideoObject',
-    name: RESULTS_VIDEO.name,
-    description: RESULTS_VIDEO.description,
-    thumbnailUrl: `${SITE}${RESULTS_VIDEO.poster}`,
-    contentUrl: `${SITE}${RESULTS_VIDEO.mp4}`,
+    name: v.name,
+    description: v.description,
+    thumbnailUrl: `${SITE}${v.poster}`,
+    contentUrl: `${SITE}${v.mp4}`,
     uploadDate: '2026-06-13',
     publisher: { '@type': 'Organization', name: 'MarblePro UAE', logo: { '@type': 'ImageObject', url: `${SITE}/raw/twittercard.jpg` } },
   };
+}
+
+// Server component — real client job photos + results & process videos. No client hooks.
+export default function RealProjects() {
+  const videoSchema = videoLd(RESULTS_VIDEO);
+  const processSchema = videoLd(PROCESS_VIDEO);
 
   return (
     <section className="sec" style={{ padding: '70px 36px', background: 'var(--paper2)' }} data-screen-label="real-projects">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(processSchema) }} />
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
         <span className="sec-eyebrow">— Real projects · actual MarblePro jobs</span>
         <h2 className="sec-title" style={{ marginTop: 12, maxWidth: '24ch' }}>
@@ -61,6 +67,23 @@ export default function RealProjects() {
               )}
             </figure>
           ))}
+        </div>
+
+        {/* Process video — shown below the photo grid */}
+        <h3 style={{ fontFamily: 'var(--display)', fontWeight: 380, fontSize: 'clamp(20px,3vw,28px)', letterSpacing: '-0.01em', margin: '40px 0 14px' }}>
+          See the <em style={{ color: 'var(--gold)', fontStyle: 'italic' }}>polishing in action.</em>
+        </h3>
+        <div style={{ borderRadius: 18, overflow: 'hidden', boxShadow: '0 20px 60px rgba(11,11,11,0.18)', background: '#1a1410' }}>
+          <video
+            controls
+            playsInline
+            preload="none"
+            poster={PROCESS_VIDEO.poster}
+            aria-label={PROCESS_VIDEO.name}
+            style={{ display: 'block', width: '100%', height: 'auto', maxHeight: 520, objectFit: 'cover' }}
+          >
+            <source src={PROCESS_VIDEO.mp4} type="video/mp4" />
+          </video>
         </div>
       </div>
     </section>
