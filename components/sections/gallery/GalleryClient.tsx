@@ -5,6 +5,7 @@ import { useRequestCall } from '@/components/marble/RequestCallModal';
 import { marbleSvg } from '@/components/marble/marbleSvg';
 import { WA_LINK } from '@/components/marble/constants';
 import { PageFaqCta } from '@/components/marble/FaqCta';
+import RealProjects from './RealProjects';
 
 interface Project { city: string; spec: string; hue: number; vein: number; }
 interface GalleryItem {
@@ -280,6 +281,7 @@ export default function GalleryClient() {
           </div>
         </div>
       </section>
+      <RealProjects />
       <GalleryRail />
       {GALLERY.map((s, i) => <GallerySection key={s.slug} s={s} even={i % 2 !== 0} total={GALLERY.length} />)}
       <PageFaqCta />

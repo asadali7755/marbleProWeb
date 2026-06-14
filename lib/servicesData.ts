@@ -76,11 +76,11 @@ export const SERVICE_DETAIL: ServiceDetail[] = [
 export const SVC_DETAIL_IMGS: Record<string, string> = {
   'travertine-polishing-dubai':       '/images/services/travertine-polishing-dubai.webp',
   'onyx-marble-polishing-dubai':      '/images/services/onyx-marble-polishing-dubai.webp',
-  'crema-marfil-polishing-dubai':     '/images/services/crema-marfil-polishing-dubai.webp',
+  'crema-marfil-polishing-dubai':     '/images/projects/polished-marble-floor-dubai-3.webp',
   'calacatta-marble-polishing-dubai': '/images/services/calacatta-marble-polishing-dubai.webp',
   'emperador-marble-polishing-dubai': '/images/services/emperador-marble-polishing-dubai.webp',
-  'marble-polishing-dubai':           '/images/services/marble-polishing-dubai.webp',
-  'marble-floor-restoration':         '/images/services/marble-floor-restoration.webp',
+  'marble-polishing-dubai':           '/images/projects/polished-marble-floor-dubai-1.webp',
+  'marble-floor-restoration':         '/images/projects/polished-marble-floor-dubai-6.webp',
   'marble-countertop-polishing':      '/images/services/marble-countertop-polishing.webp',
   'terrazzo-polishing-dubai':         '/images/services/terrazzo-polishing-dubai.webp',
   'granite-polishing':                '/images/services/granite-polishing.webp',
@@ -88,7 +88,7 @@ export const SVC_DETAIL_IMGS: Record<string, string> = {
   'corian-countertop-polishing':      '/images/services/corian-countertop-polishing.webp',
   'yellow-stain-removing':            '/images/services/yellow-stain-removing.webp',
   'kitchen-top-polishing':            '/images/services/kitchen-top-polishing.webp',
-  'crystallization-sealing':          '/images/services/crystallization-sealing.webp',
+  'crystallization-sealing':          '/images/projects/polished-marble-floor-dubai-10.webp',
 };
 
 // SEO alt text per service — descriptive + keyword + brand/location.
