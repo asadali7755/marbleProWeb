@@ -20,14 +20,15 @@ export const EMIRATES: Emirate[] = [
   { slug: "fujairah",       name: "Fujairah",       tagline: "East-coast marble polishing", ar: "الفجيرة" },
 ];
 
+// Real MarblePro project photos behind each emirate banner (tinted by CITY_GRAD).
 export const CITY_IMG: Record<string, string> = {
-  "dubai":           "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1400&q=70",
-  "abu-dhabi":       "https://images.unsplash.com/photo-1512632578888-169bbbc64f33?auto=format&fit=crop&w=1400&q=70",
-  "sharjah":         "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=1400&q=70",
-  "ajman":           "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=1400&q=70",
-  "ras-al-khaimah":  "https://images.unsplash.com/photo-1542317854-86dabacde36b?auto=format&fit=crop&w=1400&q=70",
-  "umm-al-quwain":   "https://images.unsplash.com/photo-1539635278303-d4002c07eae3?auto=format&fit=crop&w=1400&q=70",
-  "fujairah":        "https://images.unsplash.com/photo-1546412414-e1885259563a?auto=format&fit=crop&w=1400&q=70",
+  "dubai":           "/images/projects/decorative-marble-medallion-dubai-1.webp",
+  "abu-dhabi":       "/images/projects/polished-marble-floor-dubai-2.webp",
+  "sharjah":         "/images/projects/polished-marble-floor-dubai-4.webp",
+  "ajman":           "/images/projects/polished-marble-floor-dubai-5.webp",
+  "ras-al-khaimah":  "/images/projects/polished-marble-floor-dubai-7.webp",
+  "umm-al-quwain":   "/images/projects/polished-marble-floor-dubai-8.webp",
+  "fujairah":        "/images/projects/polished-marble-floor-dubai-9.webp",
 };
 
 export const CITY_GRAD: Record<string, string> = {

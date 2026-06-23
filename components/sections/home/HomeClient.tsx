@@ -169,21 +169,21 @@ function Marquee() {
 
 // background: dark-overlay gradient + stone image for each card
 const SVC_CARDS: { img: string; overlay: string }[] = [
-  { img:'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=60', overlay:'linear-gradient(180deg,rgba(44,28,10,0.30) 0%,rgba(44,28,10,0.62) 100%)' }, // travertine
-  { img:'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=60', overlay:'linear-gradient(180deg,rgba(10,10,22,0.32) 0%,rgba(10,10,22,0.65) 100%)' }, // onyx
-  { img:'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=60', overlay:'linear-gradient(180deg,rgba(52,36,16,0.28) 0%,rgba(52,36,16,0.60) 100%)' }, // crema marfil
-  { img:'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=600&q=60', overlay:'linear-gradient(180deg,rgba(11,11,11,0.30) 0%,rgba(11,11,11,0.62) 100%)' }, // calacatta
-  { img:'https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=600&q=60', overlay:'linear-gradient(180deg,rgba(30,14,8,0.32) 0%,rgba(30,14,8,0.65) 100%)' }, // emperador
-  { img:'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=600&q=60', overlay:'linear-gradient(180deg,rgba(14,22,44,0.28) 0%,rgba(14,22,44,0.62) 100%)' }, // marble
-  { img:'https://images.unsplash.com/photo-1564078516393-cf04bd966897?auto=format&fit=crop&w=600&q=60', overlay:'linear-gradient(180deg,rgba(28,24,38,0.30) 0%,rgba(28,24,38,0.62) 100%)' }, // floor restoration
-  { img:'https://images.unsplash.com/photo-1556912167-f556ea5e9b89?auto=format&fit=crop&w=600&q=60', overlay:'linear-gradient(180deg,rgba(52,28,16,0.28) 0%,rgba(52,28,16,0.60) 100%)' }, // countertop
-  { img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=60', overlay:'linear-gradient(180deg,rgba(14,44,44,0.28) 0%,rgba(14,44,44,0.62) 100%)' }, // terrazzo
-  { img:'https://images.unsplash.com/photo-1564540583246-934409427776?auto=format&fit=crop&w=600&q=60', overlay:'linear-gradient(180deg,rgba(14,32,44,0.28) 0%,rgba(14,32,44,0.62) 100%)' }, // granite
-  { img:'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=600&q=60', overlay:'linear-gradient(180deg,rgba(40,14,14,0.28) 0%,rgba(40,14,14,0.62) 100%)' }, // quartz
-  { img:'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=60', overlay:'linear-gradient(180deg,rgba(14,28,46,0.30) 0%,rgba(14,28,46,0.62) 100%)' }, // corian
-  { img:'https://images.unsplash.com/photo-1617042375876-a13e36732a04?auto=format&fit=crop&w=600&q=60', overlay:'linear-gradient(180deg,rgba(28,16,44,0.30) 0%,rgba(28,16,44,0.62) 100%)' }, // yellow stain
-  { img:'https://images.unsplash.com/photo-1556909172-54557c7e4fb7?auto=format&fit=crop&w=600&q=60', overlay:'linear-gradient(180deg,rgba(14,36,24,0.28) 0%,rgba(14,36,24,0.62) 100%)' }, // kitchen top
-  { img:'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600&q=60', overlay:'linear-gradient(180deg,rgba(42,32,14,0.28) 0%,rgba(42,32,14,0.62) 100%)' }, // crystallization
+  { img:'/images/services/travertine-polishing-dubai.webp', overlay:'linear-gradient(180deg,rgba(44,28,10,0.30) 0%,rgba(44,28,10,0.62) 100%)' }, // travertine
+  { img:'/images/services/onyx-marble-polishing-dubai.webp', overlay:'linear-gradient(180deg,rgba(10,10,22,0.32) 0%,rgba(10,10,22,0.65) 100%)' }, // onyx
+  { img:'/images/projects/polished-marble-floor-dubai-3.webp', overlay:'linear-gradient(180deg,rgba(52,36,16,0.28) 0%,rgba(52,36,16,0.60) 100%)' }, // crema marfil
+  { img:'/images/services/calacatta-marble-polishing-dubai.webp', overlay:'linear-gradient(180deg,rgba(11,11,11,0.30) 0%,rgba(11,11,11,0.62) 100%)' }, // calacatta
+  { img:'/images/services/emperador-marble-polishing-dubai.webp', overlay:'linear-gradient(180deg,rgba(30,14,8,0.32) 0%,rgba(30,14,8,0.65) 100%)' }, // emperador
+  { img:'/images/projects/polished-marble-floor-dubai-1.webp', overlay:'linear-gradient(180deg,rgba(14,22,44,0.28) 0%,rgba(14,22,44,0.62) 100%)' }, // marble
+  { img:'/images/projects/polished-marble-floor-dubai-6.webp', overlay:'linear-gradient(180deg,rgba(28,24,38,0.30) 0%,rgba(28,24,38,0.62) 100%)' }, // floor restoration
+  { img:'/images/services/marble-countertop-polishing.webp', overlay:'linear-gradient(180deg,rgba(52,28,16,0.28) 0%,rgba(52,28,16,0.60) 100%)' }, // countertop
+  { img:'/images/services/terrazzo-polishing-dubai.webp', overlay:'linear-gradient(180deg,rgba(14,44,44,0.28) 0%,rgba(14,44,44,0.62) 100%)' }, // terrazzo
+  { img:'/images/services/granite-polishing.webp', overlay:'linear-gradient(180deg,rgba(14,32,44,0.28) 0%,rgba(14,32,44,0.62) 100%)' }, // granite
+  { img:'/images/services/quartz-polishing.webp', overlay:'linear-gradient(180deg,rgba(40,14,14,0.28) 0%,rgba(40,14,14,0.62) 100%)' }, // quartz
+  { img:'/images/services/corian-countertop-polishing.webp', overlay:'linear-gradient(180deg,rgba(14,28,46,0.30) 0%,rgba(14,28,46,0.62) 100%)' }, // corian
+  { img:'/images/services/yellow-stain-removing.webp', overlay:'linear-gradient(180deg,rgba(28,16,44,0.30) 0%,rgba(28,16,44,0.62) 100%)' }, // yellow stain
+  { img:'/images/services/kitchen-top-polishing.webp', overlay:'linear-gradient(180deg,rgba(14,36,24,0.28) 0%,rgba(14,36,24,0.62) 100%)' }, // kitchen top
+  { img:'/images/projects/polished-marble-floor-dubai-10.webp', overlay:'linear-gradient(180deg,rgba(42,32,14,0.28) 0%,rgba(42,32,14,0.62) 100%)' }, // crystallization
 ];
 
 // Lazy-load Unsplash background images — only fetch when card enters viewport.
