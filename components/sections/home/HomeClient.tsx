@@ -6,6 +6,7 @@ import { PageFaqCta } from '@/components/marble/FaqCta';
 import CityCards from '@/components/marble/CityCards';
 import { marbleSvg } from '@/components/marble/marbleSvg';
 import { PHONE_TEL, WA_LINK, SERVICES } from '@/components/marble/constants';
+import { SVC_DETAIL_IMGS } from '@/lib/servicesData';
 import { sendEnquiry } from '@/lib/sendEmail';
 
 const STEPS = [
@@ -194,7 +195,9 @@ function LazySvcCard({ s, size, card, eager }: {
   eager: boolean;
 }) {
   const ref = useRef<HTMLAnchorElement>(null);
-  const [imgUrl, setImgUrl] = useState(eager ? card.img : '');
+  // Use the SAME image as the service page (single source of truth), fall back to card.img.
+  const imgSrc = SVC_DETAIL_IMGS[s.slug] ?? card.img;
+  const [imgUrl, setImgUrl] = useState(eager ? imgSrc : '');
 
   useEffect(() => {
     if (eager || imgUrl) return;
@@ -203,7 +206,7 @@ function LazySvcCard({ s, size, card, eager }: {
     const io = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setImgUrl(card.img);
+          setImgUrl(imgSrc);
           io.disconnect();
         }
       },
@@ -211,13 +214,13 @@ function LazySvcCard({ s, size, card, eager }: {
     );
     io.observe(el);
     return () => io.disconnect();
-  }, [eager, imgUrl, card.img]);
+  }, [eager, imgUrl, imgSrc]);
 
   return (
     <Link
       ref={ref}
       className={`svc ${size}`}
-      href={`/services#${s.slug}`}
+      href={`/services/${s.slug}`}
       style={{
         '--svc-bg': imgUrl ? `${card.overlay}, url("${imgUrl}")` : card.overlay,
         '--svc-overlay': 'rgba(0,0,0,0.18)',
