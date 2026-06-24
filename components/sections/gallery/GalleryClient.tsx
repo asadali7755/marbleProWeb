@@ -128,6 +128,12 @@ const SERVICE_VIDEOS: Record<string, SvcVideo> = {
     name: 'Travertine Polishing in a Dubai Villa — MarblePro UAE',
     description: 'Travertine floor polished and crystallized to a high-gloss mirror finish in a Dubai villa by MarblePro — void filling, honing and crystallization.',
   },
+  'onyx-marble-polishing-dubai': {
+    mp4: '/videos/onyx-marble-polishing-dubai-process.mp4',
+    poster: '/videos/onyx-marble-polishing-dubai-process-poster.jpg',
+    name: 'Onyx Marble Polishing in a Dubai Villa — MarblePro UAE',
+    description: 'MarblePro polishing onyx and dark marble to a deep, high-gloss mirror finish on a real Dubai villa project.',
+  },
 };
 
 function BeforeAfterSlider({ projects, activeIdx, onSelect, real }: { projects: Project[]; activeIdx: number; onSelect: (i: number) => void; real?: RealPair }) {
