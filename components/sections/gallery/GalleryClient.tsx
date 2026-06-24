@@ -118,6 +118,17 @@ const REAL_BA: Record<string, string> = {
 
 interface RealPair { before: string; after: string; alt: string; }
 
+// Real process videos per service — shown in place of the before/after slider.
+interface SvcVideo { mp4: string; poster: string; name: string; description: string; }
+const SERVICE_VIDEOS: Record<string, SvcVideo> = {
+  'travertine-polishing-dubai': {
+    mp4: '/videos/travertine-polishing-dubai-process.mp4',
+    poster: '/videos/travertine-polishing-dubai-process-poster.jpg',
+    name: 'Travertine Polishing in a Dubai Villa — MarblePro UAE',
+    description: 'Travertine floor polished and crystallized to a high-gloss mirror finish in a Dubai villa by MarblePro — void filling, honing and crystallization.',
+  },
+};
+
 function BeforeAfterSlider({ projects, activeIdx, onSelect, real }: { projects: Project[]; activeIdx: number; onSelect: (i: number) => void; real?: RealPair }) {
   const ref = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState(50);
@@ -205,6 +216,7 @@ function GallerySection({ s, even, total }: { s: GalleryItem; even: boolean; tot
         alt: `${s.name} in ${s.projects[0].city}, UAE — real MarblePro project`,
       }
     : undefined;
+  const video = SERVICE_VIDEOS[s.slug];
   return (
     <div className="g-section-wrap" style={{ background: even ? 'var(--paper2)' : 'var(--paper)' }}>
       <section className="g-section" id={s.slug} data-screen-label={`gallery-${s.slug}`}>
@@ -223,7 +235,7 @@ function GallerySection({ s, even, total }: { s: GalleryItem; even: boolean; tot
               {s.meta.map((m, i) => <span key={i}>{m}</span>)}
             </div>
             <div className="gbtns">
-              <Link className="btn btn-primary" href={`/services#${s.slug}`}>
+              <Link className="btn btn-primary" href={`/services/${s.slug}`}>
                 Read about {s.name}
                 <span className="arr"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
               </Link>
@@ -231,7 +243,25 @@ function GallerySection({ s, even, total }: { s: GalleryItem; even: boolean; tot
             </div>
           </div>
           <div className="g-media">
-            <BeforeAfterSlider projects={s.projects} activeIdx={idx} onSelect={setIdx} real={real} />
+            {video ? (
+              <>
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                  '@context': 'https://schema.org', '@type': 'VideoObject',
+                  name: video.name, description: video.description,
+                  thumbnailUrl: `https://www.marblepro.ae${video.poster}`,
+                  contentUrl: `https://www.marblepro.ae${video.mp4}`, uploadDate: '2026-06-24',
+                  publisher: { '@type': 'Organization', name: 'MarblePro UAE', logo: { '@type': 'ImageObject', url: 'https://www.marblepro.ae/raw/twittercard.jpg' } },
+                }) }} />
+                <div style={{ aspectRatio: '5/4', borderRadius: 22, overflow: 'hidden', boxShadow: '0 20px 60px rgba(11,11,11,0.22)', background: '#1a1410' }}>
+                  <video controls playsInline preload="none" poster={video.poster} aria-label={video.name} title={video.name}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}>
+                    <source src={video.mp4} type="video/mp4" />
+                  </video>
+                </div>
+              </>
+            ) : (
+              <BeforeAfterSlider projects={s.projects} activeIdx={idx} onSelect={setIdx} real={real} />
+            )}
           </div>
         </div>
       </section>
