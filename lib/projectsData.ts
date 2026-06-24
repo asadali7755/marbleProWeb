@@ -7,11 +7,9 @@ const FLOOR_ALT = 'Polished marble floor restored to a high-gloss mirror finish 
 const MEDALLION_ALT = 'Decorative marble medallion inlay polished to a mirror finish by MarblePro — luxury villa entrance in Dubai, UAE';
 
 export const PROJECTS: Project[] = [
-  // Featured: decorative medallion inlay work (signature jobs)
+  // Featured: decorative medallion inlay work (signature job)
   { src: '/images/projects/decorative-marble-medallion-dubai-1.webp', alt: MEDALLION_ALT, medallion: true },
-  { src: '/images/projects/decorative-marble-medallion-dubai-2.webp', alt: MEDALLION_ALT, medallion: true },
-  { src: '/images/projects/decorative-marble-medallion-dubai-3.webp', alt: MEDALLION_ALT, medallion: true },
-  { src: '/images/projects/decorative-marble-medallion-dubai-4.webp', alt: MEDALLION_ALT, medallion: true },
+  { src: '/images/projects/decorative-marble-medallion-dubai-4.webp', alt: FLOOR_ALT, medallion: false },
   // Polished marble floors & halls
   { src: '/images/projects/polished-marble-floor-dubai-1.webp',  alt: FLOOR_ALT, medallion: false },
   { src: '/images/projects/polished-marble-floor-dubai-2.webp',  alt: FLOOR_ALT, medallion: false },
