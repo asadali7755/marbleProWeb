@@ -1,7 +1,7 @@
 const SITE = 'https://www.marblepro.ae';
 
 const SHOWCASE = {
-  mp4: '/videos/marblepro-showcase-uae.mp4',
+  mp4: '/videos/marblepro-showcase-uae.mp4?v=2',
   poster: '/videos/marblepro-showcase-uae-poster.jpg',
   name: 'MarblePro UAE — Marble Polishing & Floor Restoration Showcase',
   description: 'A 90-second showcase of MarblePro: real marble polishing, crystallization and floor restoration projects, our services and coverage across all 7 UAE emirates.',
