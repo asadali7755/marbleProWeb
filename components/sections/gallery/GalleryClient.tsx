@@ -122,8 +122,8 @@ interface RealPair { before: string; after: string; alt: string; }
 interface SvcVideo { mp4: string; poster: string; name: string; description: string; }
 const SERVICE_VIDEOS: Record<string, SvcVideo> = {
   'travertine-polishing-dubai': {
-    mp4: '/videos/travertine-polishing-dubai-process.mp4',
-    poster: '/videos/travertine-polishing-dubai-process-poster.jpg',
+    mp4: '/videos/travertine-polishing-dubai-process.mp4?v=2',
+    poster: '/videos/travertine-polishing-dubai-process-poster.jpg?v=2',
     name: 'Travertine Polishing in a Dubai Villa — MarblePro UAE',
     description: 'Travertine floor polished and crystallized to a high-gloss mirror finish in a Dubai villa by MarblePro — void filling, honing and crystallization.',
   },
