@@ -6,6 +6,7 @@ import { marbleSvg } from '@/components/marble/marbleSvg';
 import { WA_LINK } from '@/components/marble/constants';
 import { PageFaqCta } from '@/components/marble/FaqCta';
 import RealProjects from './RealProjects';
+import ShowcaseVideo from './ShowcaseVideo';
 
 interface Project { city: string; spec: string; hue: number; vein: number; }
 interface GalleryItem {
@@ -293,6 +294,7 @@ function GalleryRail() {
 export default function GalleryClient() {
   return (
     <>
+      <ShowcaseVideo />
       <section className="g-hero marble-bg" data-screen-label="gallery-hero">
         <div className="marble-veins" />
         <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative', zIndex: 2 }}>
