@@ -134,7 +134,64 @@ const SERVICE_VIDEOS: Record<string, SvcVideo> = {
     name: 'Onyx Marble Polishing in a Dubai Villa — MarblePro UAE',
     description: 'MarblePro polishing onyx and dark marble to a deep, high-gloss mirror finish on a real Dubai villa project.',
   },
+  'calacatta-marble-polishing-dubai': {
+    mp4: '/videos/calacatta-marble-polishing-dubai-process.mp4',
+    poster: '/videos/calacatta-marble-polishing-dubai-process-poster.jpg',
+    name: 'Calacatta Marble Polishing in a Dubai Villa — MarblePro UAE',
+    description: 'MarblePro polishing a white Calacatta marble floor to a pure, high-gloss mirror finish in a Dubai villa.',
+  },
+  'crema-marfil-polishing-dubai': {
+    mp4: '/videos/crema-marfil-polishing-dubai-process.mp4',
+    poster: '/videos/crema-marfil-polishing-dubai-process-poster.jpg',
+    name: 'Crema Marfil Marble Polishing & Decorative Inlay — MarblePro UAE',
+    description: 'MarblePro restoring a cream Crema Marfil marble floor with decorative inlay to a high-gloss finish in a Dubai villa.',
+  },
+  'marble-polishing-dubai': {
+    mp4: '/videos/marble-polishing-results-dubai.mp4',
+    poster: '/videos/marble-polishing-results-dubai-poster.jpg',
+    name: 'Marble Polishing Results in a Dubai Villa — MarblePro UAE',
+    description: 'A real MarblePro project: a marble floor polished to a deep mirror gloss in a Dubai villa.',
+  },
+  'marble-floor-restoration': {
+    mp4: '/videos/marble-floor-restoration-process.mp4',
+    poster: '/videos/marble-floor-restoration-process-poster.jpg',
+    name: 'Marble Floor Restoration in a Dubai Villa — MarblePro UAE',
+    description: 'MarblePro restoring a marble floor to a flawless high-gloss finish in a Dubai villa.',
+  },
+  'crystallization-sealing': {
+    mp4: '/videos/marble-polishing-process-closeup-dubai.mp4',
+    poster: '/videos/marble-polishing-process-closeup-dubai-poster.jpg',
+    name: 'Marble Crystallization & Sealing — MarblePro UAE',
+    description: 'MarblePro crystallizing and sealing marble to a durable mirror finish on a real Dubai project.',
+  },
 };
+
+// Service video that autoplays (muted) when scrolled into view and pauses when out — no play button.
+function ScrollVideo({ video }: { video: SvcVideo }) {
+  const ref = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) { el.play().catch(() => {}); }
+        else { el.pause(); }
+      },
+      { threshold: 0.45 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  return (
+    <div style={{ aspectRatio: '5/4', borderRadius: 22, overflow: 'hidden', boxShadow: '0 20px 60px rgba(11,11,11,0.22)', background: '#1a1410' }}>
+      <video ref={ref} muted loop playsInline preload="none" poster={video.poster}
+        aria-label={video.name} title={video.name}
+        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}>
+        <source src={video.mp4} type="video/mp4" />
+      </video>
+    </div>
+  );
+}
 
 function BeforeAfterSlider({ projects, activeIdx, onSelect, real }: { projects: Project[]; activeIdx: number; onSelect: (i: number) => void; real?: RealPair }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -259,12 +316,7 @@ function GallerySection({ s, even, total }: { s: GalleryItem; even: boolean; tot
                   contentUrl: `https://www.marblepro.ae${video.mp4}`, uploadDate: '2026-06-24',
                   publisher: { '@type': 'Organization', name: 'MarblePro UAE', logo: { '@type': 'ImageObject', url: 'https://www.marblepro.ae/raw/twittercard.jpg' } },
                 }) }} />
-                <div style={{ aspectRatio: '5/4', borderRadius: 22, overflow: 'hidden', boxShadow: '0 20px 60px rgba(11,11,11,0.22)', background: '#1a1410' }}>
-                  <video controls playsInline preload="none" poster={video.poster} aria-label={video.name} title={video.name}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}>
-                    <source src={video.mp4} type="video/mp4" />
-                  </video>
-                </div>
+                <ScrollVideo video={video} />
               </>
             ) : (
               <BeforeAfterSlider projects={s.projects} activeIdx={idx} onSelect={setIdx} real={real} />
