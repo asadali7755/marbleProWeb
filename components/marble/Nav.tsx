@@ -12,6 +12,8 @@ interface NavProps {
 export default function Nav({ active, theme }: NavProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [svcOpen, setSvcOpen] = useState(false);
+  const [locOpen, setLocOpen] = useState(false);
   const { open } = useRequestCall();
 
   useEffect(() => {
@@ -31,7 +33,7 @@ export default function Nav({ active, theme }: NavProps) {
     return () => { document.body.style.overflow = ''; };
   }, [menuOpen]);
 
-  const closeMenu = () => setMenuOpen(false);
+  const closeMenu = () => { setMenuOpen(false); setSvcOpen(false); setLocOpen(false); };
   const cls = `nav${scrolled ? ' scrolled' : ''}${theme === 'dark' ? ' dark-page' : ''}${menuOpen ? ' menu-open' : ''}`;
 
   return (
@@ -96,22 +98,44 @@ export default function Nav({ active, theme }: NavProps) {
       {menuOpen && (
         <div className="nav-drawer" onClick={closeMenu}>
           <nav className="nav-drawer-links" onClick={(e) => e.stopPropagation()}>
-            <Link href="/"          className={active === 'home'      ? 'active' : ''} onClick={closeMenu}>Home</Link>
-            <Link href="/services"  className={active === 'services'  ? 'active' : ''} onClick={closeMenu}>Services</Link>
-            <div className="nav-drawer-sub">
-              {SERVICES.map((s) => (
-                <Link key={s.slug} href={`/services/${s.slug}`} onClick={closeMenu}>{s.name}</Link>
-              ))}
-            </div>
-            <Link href="/locations" className={active === 'locations' ? 'active' : ''} onClick={closeMenu}>Locations</Link>
-            <div className="nav-drawer-sub">
-              {EMIRATES.map((e) => (
-                <Link key={e.slug} href={`/locations/${e.slug}`} onClick={closeMenu}>{e.name}</Link>
-              ))}
-            </div>
-            <Link href="/gallery"   className={active === 'gallery'   ? 'active' : ''} onClick={closeMenu}>Gallery</Link>
-            <Link href="/blog"      className={active === 'blog'      ? 'active' : ''} onClick={closeMenu}>Guides</Link>
-            <Link href="/contact"   className={active === 'contact'   ? 'active' : ''} onClick={closeMenu}>Contact</Link>
+            <Link href="/" className={active === 'home' ? 'active' : ''} onClick={closeMenu}>Home</Link>
+
+            {/* Services — tap to expand */}
+            <button
+              className={`nav-drawer-toggle${active === 'services' ? ' active' : ''}`}
+              onClick={() => setSvcOpen((v) => !v)}
+              aria-expanded={svcOpen}
+            >
+              Services<span className={`nav-drawer-caret${svcOpen ? ' open' : ''}`}>&#9662;</span>
+            </button>
+            {svcOpen && (
+              <div className="nav-drawer-sub">
+                {SERVICES.map((s) => (
+                  <Link key={s.slug} href={`/services/${s.slug}`} onClick={closeMenu}>{s.name}</Link>
+                ))}
+              </div>
+            )}
+
+            {/* Locations — tap to expand */}
+            <button
+              className={`nav-drawer-toggle${active === 'locations' ? ' active' : ''}`}
+              onClick={() => setLocOpen((v) => !v)}
+              aria-expanded={locOpen}
+            >
+              Locations<span className={`nav-drawer-caret${locOpen ? ' open' : ''}`}>&#9662;</span>
+            </button>
+            {locOpen && (
+              <div className="nav-drawer-sub">
+                {EMIRATES.map((e) => (
+                  <Link key={e.slug} href={`/locations/${e.slug}`} onClick={closeMenu}>{e.name}</Link>
+                ))}
+              </div>
+            )}
+
+            <Link href="/gallery" className={active === 'gallery' ? 'active' : ''} onClick={closeMenu}>Gallery</Link>
+            <Link href="/blog" className={active === 'blog' ? 'active' : ''} onClick={closeMenu}>Guides</Link>
+            <Link href="/contact" className={active === 'contact' ? 'active' : ''} onClick={closeMenu}>Contact</Link>
+
             <div className="nav-drawer-ctas">
               <button className="btn btn-primary" onClick={() => { open(); closeMenu(); }}>
                 <span className="ring" style={{ width: 22, height: 22, borderRadius: 999, background: 'var(--gold)', display: 'grid', placeItems: 'center' }}>
