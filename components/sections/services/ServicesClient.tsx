@@ -127,7 +127,7 @@ function TravertineFeature() {
 
         {/* ── Right: Image ── */}
         <div className="trav-img-wrap">
-          <div className="trav-img" style={{ backgroundImage: 'url("/images/services/travertine-polishing-dubai.webp")' }} />
+          <div className="trav-img" style={{ backgroundImage: 'url("/images/services/travertine-polishing-dubai.jpg")' }} />
           <div className="trav-img-overlay" />
           {/* Floating stat badge */}
           <div className="trav-badge">

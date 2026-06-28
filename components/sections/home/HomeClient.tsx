@@ -169,7 +169,7 @@ function Marquee() {
 
 // background: dark-overlay gradient + stone image for each card
 const SVC_CARDS: { img: string; overlay: string }[] = [
-  { img:'/images/services/travertine-polishing-dubai.webp', overlay:'linear-gradient(180deg,rgba(44,28,10,0.30) 0%,rgba(44,28,10,0.62) 100%)' }, // travertine
+  { img:'/images/services/travertine-polishing-dubai.jpg', overlay:'linear-gradient(180deg,rgba(44,28,10,0.30) 0%,rgba(44,28,10,0.62) 100%)' }, // travertine
   { img:'/images/services/onyx-marble-polishing-dubai.webp', overlay:'linear-gradient(180deg,rgba(10,10,22,0.32) 0%,rgba(10,10,22,0.65) 100%)' }, // onyx
   { img:'/images/projects/polished-marble-floor-dubai-3.webp', overlay:'linear-gradient(180deg,rgba(52,36,16,0.28) 0%,rgba(52,36,16,0.60) 100%)' }, // crema marfil
   { img:'/images/services/calacatta-marble-polishing-dubai.webp', overlay:'linear-gradient(180deg,rgba(11,11,11,0.30) 0%,rgba(11,11,11,0.62) 100%)' }, // calacatta

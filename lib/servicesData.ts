@@ -74,7 +74,7 @@ export const SERVICE_DETAIL: ServiceDetail[] = [
 // Real MarblePro project photos, optimised to WebP. Filenames are the service
 // slug (keyword-rich for image SEO). Served locally from /public/images/services.
 export const SVC_DETAIL_IMGS: Record<string, string> = {
-  'travertine-polishing-dubai':       '/images/services/travertine-polishing-dubai.webp',
+  'travertine-polishing-dubai':       '/images/services/travertine-polishing-dubai.jpg',
   'onyx-marble-polishing-dubai':      '/images/services/onyx-marble-polishing-dubai.webp',
   'crema-marfil-polishing-dubai':     '/images/projects/polished-marble-floor-dubai-3.webp',
   'calacatta-marble-polishing-dubai': '/images/services/calacatta-marble-polishing-dubai.webp',
