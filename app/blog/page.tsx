@@ -47,18 +47,22 @@ export default function BlogHub() {
           </div>
         </section>
 
-        <section className="sec" style={{ padding: '70px 36px' }} data-screen-label="blog-list">
-          <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 22 }}>
+        <section data-screen-label="blog-list">
+          <div className="blog-grid">
             {GUIDES.map((g) => (
-              <Link key={g.slug} href={`/blog/${g.slug}`}
-                style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', background: 'var(--paper2)', border: '1px solid var(--line)', borderRadius: 16, padding: '26px 24px' }}>
-                <span style={{ fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--gold)' }}>{g.category} · {g.readMins} min read</span>
-                <h2 style={{ fontFamily: 'var(--display)', fontWeight: 380, fontSize: 22, lineHeight: 1.2, letterSpacing: '-0.01em', margin: '12px 0 10px', color: 'var(--ink)' }}>{g.h1}</h2>
-                <p style={{ margin: 0, fontSize: 14.5, lineHeight: 1.6, opacity: 0.75, flexGrow: 1 }}>{g.excerpt}</p>
-                <span style={{ marginTop: 16, fontFamily: 'var(--grot)', fontWeight: 600, fontSize: 13, color: 'var(--ink)', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                  Read guide
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </span>
+              <Link key={g.slug} href={`/blog/${g.slug}`} className="blog-card">
+                <span className="blog-card-cat">{g.category} · {g.readMins} min read</span>
+                <h2>{g.h1}</h2>
+                <p>{g.excerpt}</p>
+                <div className="blog-card-footer">
+                  <span className="blog-card-read">
+                    Read guide
+                    <span className="arr">
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </span>
+                  </span>
+                  <span className="blog-card-time">{g.date}</span>
+                </div>
               </Link>
             ))}
           </div>

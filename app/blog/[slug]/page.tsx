@@ -72,31 +72,30 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
       <Nav active="blog" />
 
       <main>
-        <article style={{ maxWidth: 760, margin: '0 auto', padding: '130px 24px 40px' }}>
-          <nav aria-label="Breadcrumb" style={{ fontSize: 13, opacity: 0.7, marginBottom: 18, display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-            <Link href="/" style={{ color: 'inherit' }}>Home</Link><span>/</span>
-            <Link href="/blog" style={{ color: 'inherit' }}>Guides</Link><span>/</span>
+        <article className="blog-article">
+          <nav aria-label="Breadcrumb" className="blog-breadcrumb">
+            <Link href="/">Home</Link><span>/</span>
+            <Link href="/blog">Guides</Link><span>/</span>
             <span style={{ color: 'var(--gold)' }}>{g.category}</span>
           </nav>
 
-          <span style={{ fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--gold)' }}>{g.category} · {g.readMins} min read</span>
-          <h1 style={{ fontFamily: 'var(--display)', fontWeight: 360, fontSize: 'clamp(30px,5vw,46px)', lineHeight: 1.08, letterSpacing: '-0.02em', margin: '12px 0 18px' }}>{g.h1}</h1>
-          <p style={{ fontSize: 19, lineHeight: 1.55, fontFamily: 'var(--display)', fontWeight: 380, opacity: 0.92, marginBottom: 8 }}>{g.intro}</p>
+          <span className="blog-article-cat">{g.category} · {g.readMins} min read</span>
+          <h1>{g.h1}</h1>
+          <p className="blog-intro">{g.intro}</p>
 
           {g.sections.map((s, i) => (
-            <section key={i} style={{ marginTop: 34 }}>
-              <h2 style={{ fontFamily: 'var(--display)', fontWeight: 380, fontSize: 'clamp(22px,3vw,30px)', letterSpacing: '-0.015em', lineHeight: 1.15, marginBottom: 12 }}>{s.h2}</h2>
+            <section key={i} className="blog-section">
+              <h2>{s.h2}</h2>
               {s.body.map((p, j) => (
-                <p key={j} style={{ fontSize: 16, lineHeight: 1.72, opacity: 0.85, marginBottom: 14 }} dangerouslySetInnerHTML={{ __html: p }} />
+                <p key={j} dangerouslySetInnerHTML={{ __html: p }} />
               ))}
             </section>
           ))}
 
-          {/* Inline CTA */}
-          <div style={{ margin: '40px 0', padding: '26px 28px', background: 'var(--paper2)', border: '1px solid var(--line)', borderRadius: 16 }}>
-            <h3 style={{ fontFamily: 'var(--display)', fontWeight: 380, fontSize: 22, margin: '0 0 8px' }}>Want an exact price for your floor?</h3>
-            <p style={{ margin: '0 0 16px', fontSize: 15, lineHeight: 1.6, opacity: 0.8 }}>Free on-site inspection, fixed-price quote and a written gloss guarantee — across all 7 UAE emirates.</p>
-            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+          <div className="blog-cta-box">
+            <h3>Want an exact price for your floor?</h3>
+            <p>Free on-site inspection, fixed-price quote and a written gloss guarantee — across all 7 UAE emirates.</p>
+            <div className="blog-cta-btns">
               <Link href="/contact" className="btn btn-primary">Get a Free Quote
                 <span className="arr"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
               </Link>
@@ -104,39 +103,36 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
             </div>
           </div>
 
-          {/* FAQs (visible) */}
           {g.faqs.length > 0 && (
-            <section style={{ marginTop: 20 }}>
-              <h2 style={{ fontFamily: 'var(--display)', fontWeight: 380, fontSize: 'clamp(22px,3vw,30px)', letterSpacing: '-0.015em', marginBottom: 16 }}>Frequently asked</h2>
+            <section className="blog-faqs">
+              <h2>Frequently asked</h2>
               {g.faqs.map((f, i) => (
-                <div key={i} style={{ borderTop: '1px solid var(--line)', padding: '16px 0' }}>
-                  <h3 style={{ fontFamily: 'var(--grot)', fontWeight: 700, fontSize: 15.5, margin: '0 0 6px' }}>{f.q}</h3>
-                  <p style={{ margin: 0, fontSize: 15, lineHeight: 1.65, opacity: 0.82 }}>{f.a}</p>
+                <div key={i} className="blog-faq">
+                  <h3>{f.q}</h3>
+                  <p>{f.a}</p>
                 </div>
               ))}
             </section>
           )}
 
-          {/* Related services / links */}
-          <section style={{ marginTop: 34 }}>
-            <h2 style={{ fontFamily: 'var(--display)', fontWeight: 380, fontSize: 20, marginBottom: 14 }}>Related</h2>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
+          <section className="blog-related">
+            <h2>Related</h2>
+            <div className="blog-related-tags">
               {g.related.map((r) => (
-                <Link key={r.href} href={r.href} className="area" style={{ textDecoration: 'none' }}>{r.label}</Link>
+                <Link key={r.href} href={r.href} className="area">{r.label}</Link>
               ))}
             </div>
           </section>
         </article>
 
-        {/* More guides */}
-        <section className="sec" style={{ padding: '50px 36px', background: 'var(--paper2)' }} data-screen-label="more-guides">
-          <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+        <section className="blog-more" data-screen-label="more-guides">
+          <div className="blog-more-inner">
             <span className="sec-eyebrow">— More guides</span>
-            <div style={{ marginTop: 20, display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 16 }}>
+            <div className="blog-more-grid">
               {more.map((m) => (
-                <Link key={m.slug} href={`/blog/${m.slug}`} style={{ textDecoration: 'none', color: 'inherit', background: 'var(--paper)', border: '1px solid var(--line)', borderRadius: 14, padding: '20px 22px' }}>
-                  <span style={{ fontFamily: 'var(--mono)', fontSize: 10.5, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--gold)' }}>{m.category}</span>
-                  <div style={{ fontFamily: 'var(--display)', fontWeight: 380, fontSize: 18, lineHeight: 1.2, marginTop: 8, color: 'var(--ink)' }}>{m.h1}</div>
+                <Link key={m.slug} href={`/blog/${m.slug}`} className="blog-more-card">
+                  <span className="cat">{m.category}</span>
+                  <div className="title">{m.h1}</div>
                 </Link>
               ))}
             </div>
