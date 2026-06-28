@@ -183,10 +183,10 @@ function ScrollVideo({ video }: { video: SvcVideo }) {
     return () => io.disconnect();
   }, []);
   return (
-    <div style={{ aspectRatio: '5/4', borderRadius: 22, overflow: 'hidden', boxShadow: '0 20px 60px rgba(11,11,11,0.22)', background: '#1a1410' }}>
+    <div style={{ aspectRatio: '16/9', borderRadius: 22, overflow: 'hidden', boxShadow: '0 20px 60px rgba(11,11,11,0.22)', background: '#1a1410' }}>
       <video ref={ref} muted loop playsInline preload="none" poster={video.poster}
         aria-label={video.name} title={video.name}
-        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}>
+        style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}>
         <source src={video.mp4} type="video/mp4" />
       </video>
     </div>
