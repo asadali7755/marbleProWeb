@@ -164,7 +164,7 @@ function QuoteFormBand() {
               </div>
             </div>
             <div className="c-gmb-rating">
-              <span className="rate">4.3</span>
+              <span className="rate">4.4</span>
               <div>
                 <div className="stars">★★★★★</div>
                 <div className="meta">Based on 6 Google reviews</div>
