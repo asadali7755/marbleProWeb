@@ -8,15 +8,15 @@ import { GUIDES } from '@/lib/guidesData';
 const SITE = 'https://www.marblepro.ae';
 
 export const metadata: Metadata = {
-  title: 'Marble Care Guides — Polishing Cost, Stain Removal & Maintenance | MarblePro UAE',
+  title: 'Marble Care Blogs — Polishing Cost, Stain Removal & Maintenance | MarblePro UAE',
   description: 'Practical marble care guides for UAE homes: marble polishing cost in Dubai, removing yellow stains, marble vs granite, and how often to polish marble floors.',
   keywords: 'marble polishing guides dubai, marble care uae, marble polishing cost, yellow stain removal, marble maintenance',
   alternates: { canonical: `${SITE}/blog` },
   openGraph: {
-    title: 'Marble Care Guides — MarblePro UAE',
+    title: 'Marble Care Blogs — MarblePro UAE',
     description: 'Practical marble care guides for UAE homes: polishing cost, stain removal, marble vs granite, and maintenance.',
     url: `${SITE}/blog`,
-    images: [{ url: '/raw/twittercard.jpg', width: 1200, height: 630, alt: 'MarblePro Marble Care Guides' }],
+    images: [{ url: '/raw/twittercard.jpg', width: 1200, height: 630, alt: 'MarblePro Marble Care Blogs' }],
   },
 };
 
@@ -37,8 +37,8 @@ export default function BlogHub() {
         <section className="svc-hero marble-bg" data-screen-label="blog-hero">
           <div className="marble-veins" />
           <div style={{ maxWidth: 1100, margin: '0 auto', position: 'relative', zIndex: 2 }}>
-            <span className="eyebrow-pill"><span className="pulse" /> Guides &amp; advice</span>
-            <h1>Marble Care Guides for <em>UAE Homes.</em></h1>
+            <span className="eyebrow-pill"><span className="pulse" /> Blogs &amp; advice</span>
+            <h1>Marble Care Blogs for <em>UAE Homes.</em></h1>
             <p className="lead">
               Straight answers to the questions UAE homeowners actually ask — what marble polishing
               costs in Dubai, how to remove yellow stains, marble vs granite, and how to keep your

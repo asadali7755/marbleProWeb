@@ -66,7 +66,7 @@ export default function Nav({ active, theme }: NavProps) {
           </span>
 
           <Link href="/gallery"   className={active === 'gallery'   ? 'active' : ''}>Gallery</Link>
-          <Link href="/blog"      className={active === 'blog'      ? 'active' : ''}>Guides</Link>
+          <Link href="/blog"      className={active === 'blog'      ? 'active' : ''}>Blogs</Link>
           <Link href="/contact"   className={active === 'contact'   ? 'active' : ''}>Contact</Link>
         </nav>
 

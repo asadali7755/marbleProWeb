@@ -54,7 +54,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
     '@context': 'https://schema.org', '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
-      { '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE}/blog` },
+      { '@type': 'ListItem', position: 2, name: 'Blogs', item: `${SITE}/blog` },
       { '@type': 'ListItem', position: 3, name: g.h1, item: url },
     ],
   };
@@ -75,7 +75,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
         <article className="blog-article">
           <nav aria-label="Breadcrumb" className="blog-breadcrumb">
             <Link href="/">Home</Link><span>/</span>
-            <Link href="/blog">Guides</Link><span>/</span>
+            <Link href="/blog">Blogs</Link><span>/</span>
             <span style={{ color: 'var(--gold)' }}>{g.category}</span>
           </nav>
 
