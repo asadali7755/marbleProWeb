@@ -164,6 +164,12 @@ const SERVICE_VIDEOS: Record<string, SvcVideo> = {
     name: 'Marble Crystallization & Sealing — MarblePro UAE',
     description: 'MarblePro crystallizing and sealing marble to a durable mirror finish on a real Dubai project.',
   },
+  'kitchen-top-polishing': {
+    mp4: '/videos/kitchen-top-polishing-dubai-process.mp4',
+    poster: '/videos/kitchen-top-polishing-dubai-process-poster.jpg',
+    name: 'Kitchen Top Polishing & Sealing in Dubai — MarblePro UAE',
+    description: 'Professional kitchen countertop polishing and food-safe sealing by MarblePro — marble, granite and quartz kitchen tops restored to a high-gloss finish in Dubai.',
+  },
 };
 
 // Service video that autoplays (muted) when scrolled into view and pauses when out — no play button.
