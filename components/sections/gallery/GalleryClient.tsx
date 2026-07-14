@@ -170,6 +170,18 @@ const SERVICE_VIDEOS: Record<string, SvcVideo> = {
     name: 'Kitchen Top Polishing & Sealing in Dubai — MarblePro UAE',
     description: 'Professional kitchen countertop polishing and food-safe sealing by MarblePro — marble, granite and quartz kitchen tops restored to a high-gloss finish in Dubai.',
   },
+  'granite-polishing': {
+    mp4: '/videos/granite-countertop-polishing-dubai-process.mp4',
+    poster: '/videos/granite-countertop-polishing-dubai-process-poster.jpg',
+    name: 'Granite Countertop Polishing in Dubai — MarblePro UAE',
+    description: 'Professional granite kitchen countertop polished to a smooth, high-gloss finish by MarblePro — dark grey granite restoration in a Dubai apartment.',
+  },
+  'marble-countertop-polishing': {
+    mp4: '/videos/volakas-marble-countertop-polishing-dubai-process.mp4',
+    poster: '/videos/volakas-marble-countertop-polishing-dubai-process-poster.jpg',
+    name: 'Volakas Marble Countertop Polishing in Dubai — MarblePro UAE',
+    description: 'MarblePro polishing a Volakas white marble kitchen countertop to a pristine high-gloss finish in a modern Dubai kitchen.',
+  },
 };
 
 // Service video that autoplays (muted) when scrolled into view and pauses when out — no play button.

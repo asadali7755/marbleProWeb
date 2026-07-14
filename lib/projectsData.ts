@@ -24,6 +24,19 @@ export const PROJECTS: Project[] = [
   { src: '/images/projects/polished-marble-floor-dubai-11.webp', alt: FLOOR_ALT, medallion: false },
   { src: '/images/projects/polished-marble-floor-dubai-12.webp', alt: FLOOR_ALT, medallion: false },
   { src: '/images/projects/polished-marble-floor-dubai-13.webp', alt: FLOOR_ALT, medallion: false },
+  // Dark Emperador marble floor — lounge/bar area
+  { src: '/images/projects/dark-emperador-floor-polishing-dubai.jpg', alt: 'Dark Emperador marble floor polished to a deep gloss in a Dubai lounge by MarblePro — rich chocolate-brown stone restoration', medallion: false },
+  // Fusion WOW quartz countertop polishing — luxury villa
+  { src: '/images/projects/fusion-quartz-countertop-polishing-dubai-1.jpg', alt: 'Fusion WOW quartz kitchen island countertop polished to a mirror finish by MarblePro — luxury villa in Dubai, UAE', medallion: false },
+  { src: '/images/projects/fusion-quartz-countertop-polishing-dubai-2.jpg', alt: 'Fusion WOW quartz countertop polishing by MarblePro — dramatic veining pattern restored on luxury villa kitchen island, Dubai', medallion: false },
+  { src: '/images/projects/fusion-quartz-countertop-polishing-dubai-3.jpg', alt: 'Fusion WOW quartz bathroom vanity countertop polished by MarblePro — luxury villa bathroom in Dubai with gold fixtures', medallion: false },
+  { src: '/images/projects/fusion-quartz-countertop-polishing-dubai-4.jpg', alt: 'Fusion WOW quartz kitchen countertop detail polished by MarblePro — swirling burgundy and grey veining, Dubai villa', medallion: false },
+  // Granite kitchen countertop polishing
+  { src: '/images/projects/granite-kitchen-countertop-polishing-dubai.jpg', alt: 'Dark grey granite kitchen countertop polished by MarblePro — professional countertop restoration in Dubai apartment', medallion: false },
+  // Honey onyx bathroom vanity
+  { src: '/images/projects/honey-onyx-bathroom-vanity-polishing-dubai.jpg', alt: 'Honey onyx bathroom vanity polished to a translucent high-gloss finish by MarblePro — luxury bathroom in Dubai, UAE', medallion: false },
+  // Crema Marfil floor polishing in progress
+  { src: '/images/projects/crema-marfil-floor-polishing-apartment-dubai.jpg', alt: 'Crema Marfil marble floor being polished with professional grinding machine by MarblePro — apartment with sea view in Dubai', medallion: false },
 ];
 
 export const RESULTS_VIDEO = {
