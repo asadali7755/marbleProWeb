@@ -1,0 +1,21 @@
+# MarblePro.ae — Robots.txt
+# Only block WordPress system files that have no SEO value.
+# /tag/ and /feed/ URLs are NOT blocked here — we WANT Google to crawl them
+# so it sees the 410 Gone response from middleware and permanently drops them.
+
+User-agent: *
+Allow: /
+
+# WordPress system files — no reason to crawl these
+Disallow: /wp-admin/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+Disallow: /wp-json/
+Disallow: /wp-login.php
+Disallow: /wp-cron.php
+Disallow: /wp-signup.php
+Disallow: /wp-sitemap.xml
+Disallow: /xmlrpc.php
+
+# Sitemap
+Sitemap: https://www.marblepro.ae/sitemap.xml
