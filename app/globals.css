@@ -594,6 +594,33 @@ section.loc-section:nth-child(even) .loc-body { background:var(--paper2); }
 .g-hero .gstat .n em { font-style:italic; }
 .g-hero .gstat .l { font-family:var(--mono); font-size:10px; letter-spacing:0.18em; text-transform:uppercase; opacity:.65; margin-top:6px; }
 @media (max-width:640px) { .g-hero .gstats { grid-template-columns:1fr 1fr; } }
+
+/* Before & After Video Section */
+.ba-vid-section { padding:70px 36px; background:var(--paper); }
+.ba-vid-inner { max-width:1280px; margin:0 auto; }
+.ba-vid-row { display:grid; grid-template-columns:1fr minmax(260px,0.8fr) 1fr; gap:32px; align-items:center; margin-top:40px; }
+.ba-vid-card { position:relative; border-radius:18px; overflow:hidden; background:#1a1410; box-shadow:0 16px 48px rgba(11,11,11,0.18); }
+.ba-vid-player { width:100%; display:block; max-height:60vh; object-fit:contain; }
+.ba-vid-tag { position:absolute; top:14px; left:14px; z-index:2; padding:5px 14px; border-radius:999px; font-family:var(--grot); font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; }
+.ba-vid-tag.before { background:rgba(180,60,60,0.85); color:#fff; }
+.ba-vid-tag.after { background:var(--gold); color:var(--ink); }
+.ba-vid-content { text-align:center; }
+.ba-vid-content h3 { font-family:var(--display); font-weight:360; font-size:clamp(22px,2.6vw,32px); line-height:1.1; letter-spacing:-0.02em; }
+.ba-vid-content p { font-size:15px; line-height:1.6; opacity:0.78; margin-top:14px; }
+.ba-vid-content ul { list-style:none; padding:0; margin:18px 0 0; display:flex; flex-direction:column; gap:8px; }
+.ba-vid-content ul li { font-family:var(--grot); font-size:12px; font-weight:600; letter-spacing:0.04em; opacity:0.8; }
+.ba-vid-content ul li::before { content:''; display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--gold); margin-right:8px; vertical-align:middle; }
+.ba-vid-content .btn { margin-top:22px; }
+@media (max-width:900px) {
+  .ba-vid-row { grid-template-columns:1fr 1fr; gap:20px; }
+  .ba-vid-content { grid-column:1 / -1; order:-1; text-align:left; }
+}
+@media (max-width:520px) {
+  .ba-vid-section { padding:50px 20px; }
+  .ba-vid-row { grid-template-columns:1fr; gap:16px; }
+  .ba-vid-content { order:-1; text-align:left; }
+}
+
 .g-rail { position:sticky; top:0; z-index:30; background:rgba(246,241,232,0.9); backdrop-filter:blur(12px); border-bottom:1px solid var(--line); }
 .g-rail-inner { max-width:1440px; margin:0 auto; display:flex; overflow-x:auto; padding:0 36px; scrollbar-width:none; }
 .g-rail-inner::-webkit-scrollbar { display:none; }

@@ -6,6 +6,7 @@ import { marbleSvg } from '@/components/marble/marbleSvg';
 import { WA_LINK } from '@/components/marble/constants';
 import { PageFaqCta } from '@/components/marble/FaqCta';
 import RealProjects from './RealProjects';
+import BeforeAfterVideos from './BeforeAfterVideos';
 import ShowcaseVideo from './ShowcaseVideo';
 
 interface Project { city: string; spec: string; hue: number; vein: number; }
@@ -181,6 +182,18 @@ const SERVICE_VIDEOS: Record<string, SvcVideo> = {
     poster: '/videos/volakas-marble-countertop-polishing-dubai-process-poster.jpg',
     name: 'Volakas Marble Countertop Polishing in Dubai — MarblePro UAE',
     description: 'MarblePro polishing a Volakas white marble kitchen countertop to a pristine high-gloss finish in a modern Dubai kitchen.',
+  },
+  'quartz-polishing': {
+    mp4: '/videos/quartz-countertop-polishing-dubai-process.mp4',
+    poster: '/videos/quartz-countertop-polishing-dubai-process-poster.jpg',
+    name: 'Fusion Quartzite Countertop Polishing in Dubai — MarblePro UAE',
+    description: 'MarblePro polishing a Fusion quartzite kitchen countertop to a deep mirror-gloss finish in a luxury Dubai villa — professional quartz polishing and stain protection.',
+  },
+  'corian-countertop-polishing': {
+    mp4: '/videos/corian-countertop-polishing-dubai-process.mp4',
+    poster: '/videos/corian-countertop-polishing-dubai-process-poster.jpg',
+    name: 'Corian Countertop Polishing & Scratch Repair in Dubai — MarblePro UAE',
+    description: 'Professional Corian countertop polished to a flawless gloss finish by MarblePro — scratch repair and surface restoration for white Corian table tops in Dubai.',
   },
 };
 
@@ -390,6 +403,7 @@ export default function GalleryClient() {
         </div>
       </section>
       <RealProjects />
+      <BeforeAfterVideos />
       <GalleryRail />
       {GALLERY.map((s, i) => <GallerySection key={s.slug} s={s} even={i % 2 !== 0} total={GALLERY.length} />)}
       <PageFaqCta />
