@@ -16,12 +16,15 @@ export interface Guide {
   category: string;
   excerpt: string;      // hub card text
   intro: string;
+  image?: string;        // optional featured image path (e.g. /images/services/...)
   sections: GuideSection[];
   faqs: GuideFaq[];
   related: GuideLink[];
 }
 
-export const GUIDES: Guide[] = [
+import generatedGuides from './generated-blog-posts.json'
+
+const handWrittenGuides: Guide[] = [
   {
     slug: 'marble-polishing-cost-dubai',
     title: 'How Much Does Marble Polishing Cost in Dubai? (2026 Price Guide) | MarblePro',
@@ -296,6 +299,11 @@ export const GUIDES: Guide[] = [
     ],
   },
 ];
+
+export const GUIDES: Guide[] = [
+  ...handWrittenGuides,
+  ...(generatedGuides as Guide[]),
+]
 
 export function getGuide(slug: string): Guide | undefined {
   return GUIDES.find((g) => g.slug === slug);

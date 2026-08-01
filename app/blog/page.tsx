@@ -51,6 +51,11 @@ export default function BlogHub() {
           <div className="blog-grid">
             {GUIDES.map((g) => (
               <Link key={g.slug} href={`/blog/${g.slug}`} className="blog-card">
+                {g.image && (
+                  <div className="blog-card-image-wrap">
+                    <img src={g.image} alt={g.h1} loading="lazy" />
+                  </div>
+                )}
                 <span className="blog-card-cat">{g.category} · {g.readMins} min read</span>
                 <h2>{g.h1}</h2>
                 <p>{g.excerpt}</p>

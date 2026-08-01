@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     alternates: { canonical: url },
     openGraph: {
       type: 'article', title: g.h1, description: g.description, url,
-      images: [{ url: '/raw/twittercard.jpg', width: 1200, height: 630, alt: g.h1 }],
+      images: [{ url: g.image ?? '/raw/twittercard.jpg', width: 1200, height: 630, alt: g.h1 }],
     },
   };
 }
@@ -46,7 +46,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
     datePublished: g.date,
     dateModified: g.date,
     mainEntityOfPage: url,
-    image: `${SITE}/raw/twittercard.jpg`,
+    image: g.image ? `${SITE}${g.image}` : `${SITE}/raw/twittercard.jpg`,
     author: { '@type': 'Organization', name: 'MarblePro UAE', url: SITE },
     publisher: { '@type': 'Organization', name: 'MarblePro UAE', logo: { '@type': 'ImageObject', url: `${SITE}/raw/twittercard.jpg` } },
   };
@@ -82,6 +82,12 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
           <span className="blog-article-cat">{g.category} · {g.readMins} min read</span>
           <h1>{g.h1}</h1>
           <p className="blog-intro">{g.intro}</p>
+
+          {g.image && (
+            <div className="blog-hero-image-wrap">
+              <img src={g.image} alt={g.h1} />
+            </div>
+          )}
 
           {g.sections.map((s, i) => (
             <section key={i} className="blog-section">
