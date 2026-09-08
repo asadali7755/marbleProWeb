@@ -859,7 +859,7 @@ section.loc-section:nth-child(even) .loc-body { background:var(--paper2); }
   .hero-cta-row .btn { width: 100%; justify-content: center; padding: 14px 18px; }
   .hero-card { padding: 22px 18px; border-radius: 18px; }
   .hero-card-h { font-size: 20px; }
-  .quote-mini .row { grid-template-columns: 1fr; }
+  .quote-mini .row { grid-template-columns: 1fr; margin-bottom: 96px; }
 
   /* Marquee */
   .marquee-track { font-size: 24px; gap: 28px; }
