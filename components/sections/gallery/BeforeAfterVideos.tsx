@@ -10,6 +10,8 @@ interface BAVideoEntry {
   cta: string;
   before: { mp4: string; poster: string; label: string };
   after:  { mp4: string; poster: string; label: string };
+  /** Defaults to '2026-07-26' (the original 3 entries' real upload date) when omitted. */
+  uploadDate?: string;
 }
 
 const ENTRIES: BAVideoEntry[] = [
@@ -82,6 +84,54 @@ const ENTRIES: BAVideoEntry[] = [
       label: 'After — mirror-polished Crema Marfil floor by MarblePro',
     },
   },
+  {
+    slug: 'marble-bathroom-countertop-polishing-before-after',
+    service: 'Marble Bathroom Countertop Polishing',
+    uploadDate: '2026-09-09',
+    h2: 'Marble Bathroom Countertop Polishing Before & After — Dubai Villa',
+    lead: 'Bathroom marble countertops take daily wear from soap scum, hard water and toiletries, leaving scratches and a dull, cloudy finish. Watch MarblePro restore a heavily etched black marble vanity countertop to a deep mirror gloss — filmed on site, same counter, no filters.',
+    bullets: [
+      'Surface scratches, water etching and soap-scum haze removed',
+      'Deep mirror gloss restored right up to the sink cutout and edges',
+      'Sealer applied to resist future staining and etching',
+      'Completed in a single visit with no fixture removal',
+    ],
+    cta: 'Get a free countertop polishing quote',
+    before: {
+      mp4: '/videos/marble-bathroom-countertop-polishing-before.mp4',
+      poster: '/videos/marble-bathroom-countertop-polishing-before-poster.jpg',
+      label: 'Before — scratched, etched black marble bathroom countertop',
+    },
+    after: {
+      mp4: '/videos/marble-bathroom-countertop-polishing-after.mp4',
+      poster: '/videos/marble-bathroom-countertop-polishing-after-poster.jpg',
+      label: 'After — mirror-polished black marble bathroom countertop by MarblePro',
+    },
+  },
+  {
+    slug: 'brown-marble-countertop-polishing-before-after',
+    service: 'Brown Marble Countertop Polishing',
+    uploadDate: '2026-09-09',
+    h2: 'Brown Marble Countertop Polishing Before & After — Dubai Bathroom',
+    lead: 'This dark, veined marble vanity countertop had lost its shine to years of water spotting and everyday wear. Watch MarblePro bring back its natural depth and gloss around the basin — filmed on the same job, same lighting.',
+    bullets: [
+      'Water spots and dull patches polished out completely',
+      'Natural veining and colour depth brought back to life',
+      'Edges and basin cutout finished to the same mirror gloss',
+      'Eco-friendly polishing compounds — no harsh chemicals',
+    ],
+    cta: 'Get a free marble polishing quote',
+    before: {
+      mp4: '/videos/brown-marble-countertop-polishing-before.mp4',
+      poster: '/videos/brown-marble-countertop-polishing-before-poster.jpg',
+      label: 'Before — dull, water-spotted brown marble bathroom countertop',
+    },
+    after: {
+      mp4: '/videos/brown-marble-countertop-polishing-after.mp4',
+      poster: '/videos/brown-marble-countertop-polishing-after-poster.jpg',
+      label: 'After — mirror-polished brown marble bathroom countertop by MarblePro',
+    },
+  },
 ];
 
 function AutoVideo({ mp4, poster, label }: { mp4: string; poster: string; label: string }) {
@@ -128,7 +178,7 @@ export default function BeforeAfterVideos() {
               description: e.lead,
               thumbnailUrl: `https://www.marblepro.ae${e.after.poster}`,
               contentUrl: `https://www.marblepro.ae${e.after.mp4}`,
-              uploadDate: '2026-07-26',
+              uploadDate: e.uploadDate ?? '2026-07-26',
               publisher: { '@type': 'Organization', name: 'MarblePro UAE', logo: { '@type': 'ImageObject', url: 'https://www.marblepro.ae/raw/twittercard.jpg' } },
             }) }} />
 
