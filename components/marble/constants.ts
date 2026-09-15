@@ -29,7 +29,7 @@ export const CITY_IMG: Record<string, string> = {
   "ras-al-khaimah":  "/images/projects/polished-marble-floor-dubai-7.webp",
   "umm-al-quwain":   "/images/projects/polished-marble-floor-dubai-8.webp",
   "fujairah":        "/images/projects/polished-marble-floor-dubai-9.webp",
-  "dibba":           "/images/projects/polished-marble-floor-dubai-3.webp",
+  "dibba":           "/images/locations/dibba-government-building-uae.webp",
 };
 
 export const CITY_GRAD: Record<string, string> = {
