@@ -29,6 +29,7 @@ export const CITY_IMG: Record<string, string> = {
   "ras-al-khaimah":  "/images/projects/polished-marble-floor-dubai-7.webp",
   "umm-al-quwain":   "/images/projects/polished-marble-floor-dubai-8.webp",
   "fujairah":        "/images/projects/polished-marble-floor-dubai-9.webp",
+  "dibba":           "/images/projects/polished-marble-floor-dubai-3.webp",
 };
 
 export const CITY_GRAD: Record<string, string> = {
@@ -39,6 +40,7 @@ export const CITY_GRAD: Record<string, string> = {
   "ras-al-khaimah":  "linear-gradient(135deg, #4b3a1c 0%, #6b553a 50%, #8e745b 100%)",
   "umm-al-quwain":   "linear-gradient(135deg, #1c3a4b 0%, #3a556b 50%, #5b768e 100%)",
   "fujairah":        "linear-gradient(135deg, #3a1c1c 0%, #553a3a 50%, #745b5b 100%)",
+  "dibba":           "linear-gradient(135deg, #1c3a2f 0%, #3a5c4e 50%, #5b8072 100%)",
 };
 
 export interface Service {

@@ -43,6 +43,11 @@ export const LOCATIONS: Location[] = [
     body:['Every MarblePro service is available in Fujairah: marble polishing, marble floor polishing, floor restoration services, terrazzo polishing, granite polishing, quartz polishing, Corian countertop polishing, kitchen top polishing and yellow stain removing. Resorts on the Indian Ocean side benefit from our coastal-grade impregnating sealer as standard.','Hotels and large residences typically book 10–14 days ahead. Smaller residential jobs can usually be combined into our regular Fujairah route within a week or two.'],
     areas:['Dibba','Al Faseel','Al Ghurfa','Sakamkam','Madhab','Al Bidiyah','Khor Fakkan','Fujairah City'],
     stats:[{l:'Response time',v:'Same day'},{l:'Avg job size',v:'300 m² resort'},{l:'Specialty',v:'Coastal-grade seal'},{l:'Top service',v:'Hotel maintenance'}]},
+  { slug:'dibba', name:'Dibba', ar:'دبا', h1:'Marble Polishing Dibba — East Coast, Two Emirates', eyebrow:'08 — Dibba Service',
+    intro:"Dibba is split across Fujairah and Sharjah on the UAE's east coast — and we cover both sides, Dibba Al-Fujairah and Dibba Al-Hisn, as one combined route. Villas and holiday homes here need stone care that handles the same humidity, salt and sand as the rest of the east coast.",
+    body:['Every MarblePro service is available in Dibba: marble polishing, marble floor polishing, floor restoration services, terrazzo polishing, granite polishing, quartz polishing, Corian countertop polishing, kitchen top polishing and yellow stain removing. Coastal properties get our marine-grade impregnating sealer free of charge as a standard upgrade, the same as our other east-coast routes.','Dibba is served on our regular Fujairah / east-coast route — residential jobs typically combine with nearby bookings within a week or two, and larger villa jobs are scheduled with a dedicated time block.'],
+    areas:['Dibba Al-Fujairah','Dibba Al-Hisn','Dibba Port','Al Aqah'],
+    stats:[{l:'Response time',v:'Same day'},{l:'Avg job size',v:'220 m² villa'},{l:'Specialty',v:'Coastal-grade seal'},{l:'Top service',v:'Marble polishing'}]},
 ];
 
 export function getLocation(slug: string): Location | undefined {
