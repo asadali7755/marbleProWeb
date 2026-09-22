@@ -684,7 +684,7 @@ function QuoteBand() {
         <div className="cta-inner">
           <div>
             <span className="sec-eyebrow">08 — Quote request · all UAE emirates</span>
-            <h2 className="cta-h">Affordable marble floor polishing services — <em>get your quote today.</em></h2>
+            <h2 className="cta-h">Affordable marble floor polishing and restoration services — <em>get your quote today.</em></h2>
             <p style={{ fontSize: 17, lineHeight: 1.55, opacity: 0.78, maxWidth: '42ch', marginTop: 22 }}>
               As the best marble polishing company in Dubai, we give you a fixed-price quote in minutes — no site fee, no fine print. Italian marble polishing and crystallization, floor restoration, countertop polishing and yellow stain removing across all 7 UAE emirates.
             </p>
