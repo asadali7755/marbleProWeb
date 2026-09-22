@@ -7,7 +7,6 @@ import CityCards from '@/components/marble/CityCards';
 import { marbleSvg } from '@/components/marble/marbleSvg';
 import { PHONE_TEL, WA_LINK, SERVICES } from '@/components/marble/constants';
 import { SVC_DETAIL_IMGS } from '@/lib/servicesData';
-import { sendEnquiry } from '@/lib/sendEmail';
 
 const STEPS = [
   { n: '01', h: 'Deep Inspection & Lippage Removal',  p: 'We evaluate the stone, identify cracks, and check for uneven tile edges. Low-speed weighted diamond grinding flattens the floor surface seamlessly.' },
@@ -86,7 +85,7 @@ function BeforeAfter({ hue, vein, title, sub, beforeImg, afterImg }: { hue: numb
   );
 }
 
-const onDesktop = () => window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+const HERO_PENDING_KEY = 'mp_hero_quote_pending';
 
 function Hero() {
   const { open } = useRequestCall();
@@ -94,17 +93,62 @@ function Hero() {
   const [number, setNumber] = useState('');
   const [job, setJob] = useState('');
   const [err, setErr] = useState('');
-  const [desktop, setDesktop] = useState(false);
-  useEffect(() => { setDesktop(onDesktop()); }, []);
+  const [loading, setLoading] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [waLink, setWaLink] = useState('');
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const quote = params.get('quote');
+    const source = params.get('source');
+    if (source === 'hero_card') {
+      if (quote === 'success') {
+        setSent(true);
+        showToast("Payment received! We'll be in touch shortly.");
+        try {
+          const pending = sessionStorage.getItem(HERO_PENDING_KEY);
+          if (pending) {
+            const { job: j, number: num } = JSON.parse(pending);
+            const msg = encodeURIComponent(`Hi MarblePro, I need a quote.\nWork: ${j || 'Marble polishing'}\nNumber: ${num}`);
+            setWaLink(`${WA_LINK}?text=${msg}`);
+            sessionStorage.removeItem(HERO_PENDING_KEY);
+          }
+        } catch {}
+      } else if (quote === 'cancelled') {
+        showToast('Payment cancelled. You can try again anytime.');
+      }
+      if (quote) {
+        params.delete('quote');
+        params.delete('source');
+        params.delete('session_id');
+        const query = params.toString();
+        window.history.replaceState({}, '', window.location.pathname + (query ? `?${query}` : ''));
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const wa = async () => {
     if (!number.trim()) { setErr('Please enter your phone number'); return; }
     setErr('');
-    try { await sendEnquiry({ type: 'WhatsApp Quote (Hero)', phone: number, work: job }); } catch (e) { console.error('EmailJS:', e); }
-    showToast('Enquiry sent! We\'ll be in touch shortly.');
-    if (!onDesktop()) {
-      const msg = encodeURIComponent(`Hi MarblePro, I need a quote.\nWork: ${job || 'Marble polishing'}\nNumber: ${number}`);
-      window.open(`${WA_LINK}?text=${msg}`, '_blank');
+    setLoading(true);
+    try { sessionStorage.setItem(HERO_PENDING_KEY, JSON.stringify({ job, number })); } catch {}
+    try {
+      const res = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'WhatsApp Quote (Hero)', phone: number, work: job || 'Marble polishing', source: 'hero_card', returnPath: window.location.pathname }),
+      });
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+        return;
+      }
+      showToast('Could not start payment. Please try again.');
+    } catch {
+      showToast('Could not start payment. Please try again.');
     }
+    setLoading(false);
   };
   return (
     <section className="hero marble-bg" data-screen-label="hero" id="top">
@@ -135,22 +179,36 @@ function Hero() {
       <aside className="hero-card">
         <div className="veins-d" />
         <div style={{ position: 'relative', zIndex: 1 }}>
-          <span className="hero-card-label">Two-line quote · WhatsApp in 60 sec</span>
-          <h2 className="hero-card-h">Tell us the job &amp; your number.<br/>That&apos;s it.</h2>
-          <div className="quote-mini">
-            <input value={job} onChange={(e) => setJob(e.target.value)} placeholder="What needs polishing? (e.g. kitchen counter, villa floor)" />
-            <input value={number} onChange={(e) => { setNumber(e.target.value); setErr(''); }} placeholder="Your mobile number (UAE)*" inputMode="tel" style={err ? { borderColor: '#e53e3e' } : {}} />
-            {err && <span style={{ color:'#e53e3e', fontSize:12, marginTop:4, display:'block' }}>{err}</span>}
-            <div className="row">
-              <button className="btn btn-wa" onClick={wa}>
-                <span className="arr" style={{ background: '#082b13' }}>
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#25D366" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-                </span>
-                {desktop ? 'Send Enquiry' : 'WhatsApp'}
-              </button>
-              <a className="btn-call" href={`tel:${PHONE_TEL}`} style={{ justifyContent: 'center' }}>Call now</a>
+          <span className="hero-card-label">Two-line quote · AED 50</span>
+          <h2 className="hero-card-h">Tell us the job &amp; your number.<br/>Adjustable against your booking.</h2>
+          {sent ? (
+            <div className="quote-mini" style={{ textAlign: 'center' }}>
+              <p style={{ marginBottom: 12 }}>Payment received! We&apos;ll be in touch shortly.</p>
+              {waLink && (
+                <a className="btn btn-wa" href={waLink} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'inline-flex' }}>
+                  <span className="arr" style={{ background: '#082b13' }}>
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#25D366" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                  </span>
+                  Continue on WhatsApp
+                </a>
+              )}
             </div>
-          </div>
+          ) : (
+            <div className="quote-mini">
+              <input value={job} onChange={(e) => setJob(e.target.value)} placeholder="What needs polishing? (e.g. kitchen counter, villa floor)" />
+              <input value={number} onChange={(e) => { setNumber(e.target.value); setErr(''); }} placeholder="Your mobile number (UAE)*" inputMode="tel" style={err ? { borderColor: '#e53e3e' } : {}} />
+              {err && <span style={{ color:'#e53e3e', fontSize:12, marginTop:4, display:'block' }}>{err}</span>}
+              <div className="row">
+                <button className="btn btn-wa" onClick={wa} disabled={loading}>
+                  <span className="arr" style={{ background: '#082b13' }}>
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#25D366" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                  </span>
+                  {loading ? 'Redirecting...' : 'Pay AED 50 & Get Quote'}
+                </button>
+                <a className="btn-call" href={`tel:${PHONE_TEL}`} style={{ justifyContent: 'center' }}>Call now</a>
+              </div>
+            </div>
+          )}
         </div>
       </aside>
     </section>
@@ -554,6 +612,8 @@ function FAQ() {
   );
 }
 
+const BAND_PENDING_KEY = 'mp_band_quote_pending';
+
 function QuoteBand() {
   const { open } = useRequestCall();
   const showToast = useToast();
@@ -561,27 +621,70 @@ function QuoteBand() {
   const [job, setJob] = useState('');
   const [err, setErr] = useState('');
   const [sent, setSent] = useState(false);
-  const [desktop, setDesktop] = useState(false);
-  useEffect(() => { setDesktop(onDesktop()); }, []);
+  const [loading, setLoading] = useState(false);
+  const [waLink, setWaLink] = useState('');
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const quote = params.get('quote');
+    const source = params.get('source');
+    if (source === 'quote_band') {
+      if (quote === 'success') {
+        setSent(true);
+        showToast("Payment received! We'll be in touch shortly.");
+        try {
+          const pending = sessionStorage.getItem(BAND_PENDING_KEY);
+          if (pending) {
+            const { job: j, number: num } = JSON.parse(pending);
+            const msg = encodeURIComponent(`Hi MarblePro, I need a quote.\nWork: ${j || 'Marble polishing'}\nNumber: ${num}`);
+            setWaLink(`${WA_LINK}?text=${msg}`);
+            sessionStorage.removeItem(BAND_PENDING_KEY);
+          }
+        } catch {}
+      } else if (quote === 'cancelled') {
+        showToast('Payment cancelled. You can try again anytime.');
+      }
+      if (quote) {
+        params.delete('quote');
+        params.delete('source');
+        params.delete('session_id');
+        const query = params.toString();
+        window.history.replaceState({}, '', window.location.pathname + (query ? `?${query}` : ''));
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const wa = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!number.trim()) { setErr('Phone number is required'); return; }
     setErr('');
-    try { await sendEnquiry({ type: 'WhatsApp Quote (Section 8)', phone: number, work: job }); } catch (e) { console.error('EmailJS:', e); }
-    setSent(true);
-    showToast('Enquiry sent! We\'ll be in touch shortly.');
-    if (!onDesktop()) {
-      const msg = encodeURIComponent(`Hi MarblePro, I need a quote.\nWork: ${job || 'Marble polishing'}\nNumber: ${number}`);
-      window.open(`${WA_LINK}?text=${msg}`, '_blank');
+    setLoading(true);
+    try { sessionStorage.setItem(BAND_PENDING_KEY, JSON.stringify({ job, number })); } catch {}
+    try {
+      const res = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'WhatsApp Quote (Section 8)', phone: number, work: job || 'Marble polishing', source: 'quote_band', returnPath: window.location.pathname }),
+      });
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+        return;
+      }
+      showToast('Could not start payment. Please try again.');
+    } catch {
+      showToast('Could not start payment. Please try again.');
     }
+    setLoading(false);
   };
   return (
     <section className="cta-band" data-screen-label="quote" id="quote">
       <div className="sec">
         <div className="cta-inner">
           <div>
-            <span className="sec-eyebrow">08 — Free quote · all UAE emirates</span>
-            <h2 className="cta-h">Affordable marble floor polishing services — <em>free quote today.</em></h2>
+            <span className="sec-eyebrow">08 — Quote request · all UAE emirates</span>
+            <h2 className="cta-h">Affordable marble floor polishing services — <em>get your quote today.</em></h2>
             <p style={{ fontSize: 17, lineHeight: 1.55, opacity: 0.78, maxWidth: '42ch', marginTop: 22 }}>
               As the best marble polishing company in Dubai, we give you a fixed-price quote in minutes — no site fee, no fine print. Italian marble polishing and crystallization, floor restoration, countertop polishing and yellow stain removing across all 7 UAE emirates.
             </p>
@@ -592,27 +695,43 @@ function QuoteBand() {
             </div>
           </div>
           <form className="quote-form" onSubmit={wa}>
-            <div className="lab">Free Quote Request</div>
-            <h3>Get your free quote.</h3>
-            <div className="qf-row" style={{ marginTop: 24 }}>
-              <label htmlFor="qf-work">The work</label>
-              <input id="qf-work" value={job} onChange={(e) => setJob(e.target.value)} placeholder="e.g. polish marble floor, 200 sq ft" />
-            </div>
-            <div className="qf-row">
-              <label htmlFor="qf-num">Your number <span style={{ color:'#e53e3e' }}>*</span></label>
-              <input id="qf-num" value={number} onChange={(e) => { setNumber(e.target.value); setErr(''); }} placeholder="+971 5X XXX XXXX" inputMode="tel" required style={err ? { borderColor:'#e53e3e' } : {}} />
-              {err && <span style={{ color:'#e53e3e', fontSize:12, marginTop:4, display:'block' }}>{err}</span>}
-            </div>
-            <div className="qf-btns">
-              <button type="submit" className="btn btn-wa" disabled={sent}>
-                <span className="arr" style={{ background: '#082b13' }}>
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#25D366" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-                </span>
-                {sent ? 'Sent ✓' : desktop ? 'Send Enquiry' : 'Send on WhatsApp'}
-              </button>
-              <button type="button" className="btn-call" onClick={open} style={{ justifyContent: 'center' }}>Request a Call →</button>
-            </div>
-            <p className="qf-note">{sent ? 'We received your enquiry — expect a WhatsApp from us shortly!' : '"Send" opens WhatsApp and notifies us instantly. "Request a call" — we\'ll dial back fast.'}</p>
+            <div className="lab">Quote Request — AED 50</div>
+            <h3>Get your quote.</h3>
+            {sent ? (
+              <div style={{ marginTop: 24 }}>
+                <p className="qf-note">Payment received! We&apos;ll be in touch shortly.</p>
+                {waLink && (
+                  <a className="btn btn-wa" href={waLink} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'inline-flex', marginTop: 12 }}>
+                    <span className="arr" style={{ background: '#082b13' }}>
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#25D366" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                    </span>
+                    Continue on WhatsApp
+                  </a>
+                )}
+              </div>
+            ) : (
+              <>
+                <div className="qf-row" style={{ marginTop: 24 }}>
+                  <label htmlFor="qf-work">The work</label>
+                  <input id="qf-work" value={job} onChange={(e) => setJob(e.target.value)} placeholder="e.g. polish marble floor, 200 sq ft" />
+                </div>
+                <div className="qf-row">
+                  <label htmlFor="qf-num">Your number <span style={{ color:'#e53e3e' }}>*</span></label>
+                  <input id="qf-num" value={number} onChange={(e) => { setNumber(e.target.value); setErr(''); }} placeholder="+971 5X XXX XXXX" inputMode="tel" required style={err ? { borderColor:'#e53e3e' } : {}} />
+                  {err && <span style={{ color:'#e53e3e', fontSize:12, marginTop:4, display:'block' }}>{err}</span>}
+                </div>
+                <div className="qf-btns">
+                  <button type="submit" className="btn btn-wa" disabled={loading}>
+                    <span className="arr" style={{ background: '#082b13' }}>
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#25D366" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                    </span>
+                    {loading ? 'Redirecting...' : 'Pay AED 50 & Get Quote'}
+                  </button>
+                  <button type="button" className="btn-call" onClick={open} style={{ justifyContent: 'center' }}>Request a Call →</button>
+                </div>
+                <p className="qf-note">AED 50 fee — adjustable against your final booking. &quot;Request a call&quot; stays free.</p>
+              </>
+            )}
           </form>
         </div>
       </div>

@@ -24,6 +24,8 @@ const REVIEWS = [
   { name:'Mohammed A.', stars:5, src:'Google · Abu Dhabi', text:"Removed yellow stains we'd lived with for years. Worth every dirham." },
 ];
 
+const QUOTE_TAB_PENDING_KEY = 'mp_quote_tab_pending';
+
 function QuoteFormBand() {
   const showToast = useToast();
   const [tab, setTab] = useState<'quote'|'call'>('quote');
@@ -34,26 +36,72 @@ function QuoteFormBand() {
   const [service, setService] = useState('Marble Polishing');
   const [job, setJob] = useState('');
   const [phoneErr, setPhoneErr] = useState('');
-  const [desktop, setDesktop] = useState(false);
-  useEffect(() => { setDesktop(onDesktop()); }, []);
+  const [loading, setLoading] = useState(false);
+  const [waLink, setWaLink] = useState('');
 
-  const sendWa = async (e: React.FormEvent) => {
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const quote = params.get('quote');
+    const source = params.get('source');
+    if (source === 'quote_tab') {
+      if (quote === 'success') {
+        setTab('quote');
+        setDone(true);
+        showToast("Payment received! We'll be in touch shortly.");
+        try {
+          const pending = sessionStorage.getItem(QUOTE_TAB_PENDING_KEY);
+          if (pending) {
+            const { name: n, phone: p, emirate: em, service: sv, job: j } = JSON.parse(pending);
+            const msg = encodeURIComponent(`Hi MarblePro, I need a quote.\n\nName: ${n}\nNumber: ${p}\nEmirate: ${em}\nService: ${sv}\nDetails: ${j || '(see attached photo)'}`);
+            setWaLink(`${WA_LINK}?text=${msg}`);
+            sessionStorage.removeItem(QUOTE_TAB_PENDING_KEY);
+          }
+        } catch {}
+      } else if (quote === 'cancelled') {
+        showToast('Payment cancelled. You can try again anytime.');
+      }
+      if (quote) {
+        params.delete('quote');
+        params.delete('source');
+        params.delete('session_id');
+        const query = params.toString();
+        window.history.replaceState({}, '', window.location.pathname + (query ? `?${query}` : ''));
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const submitQuote = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!phone.trim()) { setPhoneErr('Phone number is required'); return; }
     setPhoneErr('');
-    try { await sendEnquiry({ type: 'Quote Request (Contact Page)', phone, work: `${service} — ${emirate}${job ? ` — ${job}` : ''}`, name }); } catch (e) { console.error('EmailJS:', e); }
-    showToast('Enquiry sent! We\'ll be in touch shortly.');
-    if (!onDesktop()) {
-      const msg = encodeURIComponent(`Hi MarblePro, I need a quote.\n\nName: ${name}\nNumber: ${phone}\nEmirate: ${emirate}\nService: ${service}\nDetails: ${job || '(see attached photo)'}`);
-      window.open(`${WA_LINK}?text=${msg}`, '_blank');
+    setLoading(true);
+    try {
+      sessionStorage.setItem(QUOTE_TAB_PENDING_KEY, JSON.stringify({ name, phone, emirate, service, job }));
+    } catch {}
+    try {
+      const res = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: 'Quote Request (Contact Page)',
+          name,
+          phone,
+          work: `${service} — ${emirate}${job ? ` — ${job}` : ''}`,
+          source: 'quote_tab',
+          returnPath: window.location.pathname,
+        }),
+      });
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+        return;
+      }
+      showToast('Could not start payment. Please try again.');
+    } catch {
+      showToast('Could not start payment. Please try again.');
     }
-  };
-  const sendMail = async () => {
-    if (!phone.trim()) { setPhoneErr('Phone number is required'); return; }
-    setPhoneErr('');
-    try { await sendEnquiry({ type: 'Email Quote (Contact Page)', phone, work: `${service} — ${emirate}${job ? ` — ${job}` : ''}`, name }); } catch (e) { console.error('EmailJS:', e); }
-    setDone(true);
-    showToast('Enquiry received! We\'ll reply within the hour.');
+    setLoading(false);
   };
   const requestCall = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -68,14 +116,30 @@ function QuoteFormBand() {
     <section className="c-quote-band" data-screen-label="contact-form" id="quote">
       <div className="c-quote-inner">
         <div className="c-form">
-          <span className="lab">Free quote — no obligation</span>
-          <h2>Request Your Free <em>Marble Polishing Quote</em> — Dubai &amp; All UAE Emirates.</h2>
-          <p className="sub">Pick a tab — full quote or just leave your number. Either way we read it within an hour during working hours.</p>
+          <span className="lab">Get a quote — Dubai &amp; all UAE Emirates</span>
+          <h2>Request Your <em>Marble Polishing Quote</em> — Dubai &amp; All UAE Emirates.</h2>
+          <p className="sub">Pick a tab — full quote (AED 50) or just leave your number for a free callback. Either way we read it within an hour during working hours.</p>
           <div className="c-tabs" role="tablist">
-            <button className={`c-tab ${tab === 'quote' ? 'active' : ''}`} onClick={() => { setTab('quote'); setDone(false); setPhoneErr(''); }}>Full quote</button>
-            <button className={`c-tab ${tab === 'call' ? 'active' : ''}`} onClick={() => { setTab('call'); setDone(false); setPhoneErr(''); }}>Request a call</button>
+            <button className={`c-tab ${tab === 'quote' ? 'active' : ''}`} onClick={() => { setTab('quote'); setDone(false); setPhoneErr(''); }}>Full quote — AED 50</button>
+            <button className={`c-tab ${tab === 'call' ? 'active' : ''}`} onClick={() => { setTab('call'); setDone(false); setPhoneErr(''); }}>Request a call — free</button>
           </div>
-          {done ? (
+          {done && tab === 'quote' ? (
+            <div className="c-success">
+              <div className="tick">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <h3 style={{ fontFamily:'var(--display)', fontWeight:380, fontSize:24, margin:'0 0 8px' }}>Payment received!</h3>
+              <p style={{ margin:0, opacity:.65, fontSize:14 }}>We&apos;ll be in touch shortly. Can&apos;t wait? Dial <a style={{ color:'var(--gold)' }} href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>.</p>
+              {waLink && (
+                <a className="btn btn-wa" href={waLink} target="_blank" rel="noopener noreferrer" style={{ textDecoration:'none', display:'inline-flex', marginTop:16 }}>
+                  <span className="arr" style={{ background:'#082b13' }}>
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#25D366" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                  </span>
+                  Continue on WhatsApp
+                </a>
+              )}
+            </div>
+          ) : done && tab === 'call' ? (
             <div className="c-success">
               <div className="tick">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -84,7 +148,7 @@ function QuoteFormBand() {
               <p style={{ margin:0, opacity:.65, fontSize:14 }}>We&apos;ll be in touch shortly. Can&apos;t wait? Dial <a style={{ color:'var(--gold)' }} href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>.</p>
             </div>
           ) : tab === 'quote' ? (
-            <form onSubmit={sendWa}>
+            <form onSubmit={submitQuote}>
               <div className="c-field">
                 <div className="row">
                   <div className="c-field">
@@ -119,15 +183,14 @@ function QuoteFormBand() {
                 <textarea id="cf-job" value={job} onChange={(e) => setJob(e.target.value)} placeholder="e.g. 200 sq ft Carrara marble floor, dull & lightly scratched, Palm Jumeirah villa" />
               </div>
               <div className="c-btns">
-                <button type="submit" className="btn btn-wa">
+                <button type="submit" className="btn btn-wa" disabled={loading}>
                   <span className="arr" style={{ background:'#082b13' }}>
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#25D366" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
                   </span>
-                  {desktop ? 'Send Enquiry' : 'Send on WhatsApp'}
+                  {loading ? 'Redirecting...' : 'Pay AED 50 & Get Quote'}
                 </button>
-                <button type="button" className="btn btn-secondary on-dark" onClick={sendMail}>Send by email</button>
               </div>
-              <p className="c-note">&quot;WhatsApp&quot; opens chat with your details pre-filled. &quot;Email&quot; sends your details directly to <strong style={{ color:'var(--gold)' }}>{EMAIL}</strong>.</p>
+              <p className="c-note">AED 50 fee — adjustable against your final booking. We&apos;ll email your details to <strong style={{ color:'var(--gold)' }}>{EMAIL}</strong> and follow up on WhatsApp once payment is confirmed.</p>
             </form>
           ) : (
             <form onSubmit={requestCall}>
