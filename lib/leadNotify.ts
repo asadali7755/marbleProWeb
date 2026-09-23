@@ -11,7 +11,7 @@ export async function notifyLead({ type, phone, work, name }: LeadFields) {
   const resend = new Resend(process.env.RESEND_API_KEY!)
   const time = new Date().toLocaleString('en-AE', { timeZone: 'Asia/Dubai' })
 
-  await resend.emails.send({
+  const { error } = await resend.emails.send({
     from: 'MarblePro Website <onboarding@resend.dev>',
     to: 'marbleprodxb@gmail.com',
     subject: `New Enquiry — ${type}`,
@@ -28,4 +28,11 @@ export async function notifyLead({ type, phone, work, name }: LeadFields) {
       </div>
     `,
   })
+
+  // The Resend SDK resolves with { error } on API-side failures (bad key,
+  // unverified sending domain, etc.) instead of throwing — without this
+  // check the caller sees a false "sent" success on every failure.
+  if (error) {
+    throw new Error(`Resend API error: ${error.name} — ${error.message}`)
+  }
 }
