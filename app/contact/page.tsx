@@ -5,8 +5,8 @@ import Fab from '@/components/marble/Fab';
 import ContactClient from '@/components/sections/contact/ContactClient';
 
 export const metadata: Metadata = {
-  title: 'Free Quote — Affordable Marble Polishing & Emergency Floor Restoration Dubai | MarblePro',
-  description: 'Get a free quote from the best marble polishing company in Dubai. Affordable marble floor polishing services UAE, emergency residential marble floor restoration services Dubai. Call, WhatsApp or email — available 7 days a week across all UAE emirates.',
+  title: 'Contact MarblePro — Marble Polishing Quote Dubai & UAE',
+  description: 'Get a marble polishing quote in Dubai and all UAE emirates. Call or WhatsApp 054 556 77 99, 7 days a week, 8 am to 10 pm. Site visit: AED 50.',
   keywords: 'affordable marble floor polishing services UAE, emergency residential marble floor restoration services Dubai, best marble polishing company in Dubai, free marble polishing quote Dubai, marble polishing contact UAE',
   alternates: {
     canonical: 'https://www.marblepro.ae/contact',

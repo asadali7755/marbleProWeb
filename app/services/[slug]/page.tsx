@@ -7,6 +7,7 @@ import Fab from '@/components/marble/Fab';
 import { PageFaqCta } from '@/components/marble/FaqCta';
 import { PHONE_DISPLAY, PHONE_TEL, EMIRATES } from '@/components/marble/constants';
 import { SERVICE_DETAIL, SVC_DETAIL_IMGS, getServiceDetail, serviceImgAlt } from '@/lib/servicesData';
+import { fitDescription, fitTitle } from '@/lib/seo';
 
 const SITE = 'https://www.marblepro.ae';
 
@@ -20,8 +21,8 @@ export async function generateMetadata(
   const { slug } = await params;
   const s = getServiceDetail(slug);
   if (!s) return {};
-  const title = `${s.h2} | MarblePro UAE`;
-  const description = `${s.intro} Quote on WhatsApp · ${PHONE_DISPLAY}.`.slice(0, 320);
+  const title = fitTitle(s.h2, ' | MarblePro UAE');
+  const description = fitDescription(s.intro, `Quote on WhatsApp · ${PHONE_DISPLAY}.`);
   const url = `${SITE}/services/${s.slug}`;
   const img = SVC_DETAIL_IMGS[s.slug] || '/raw/twittercard.jpg';
   return {

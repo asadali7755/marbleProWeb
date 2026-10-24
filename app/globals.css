@@ -221,8 +221,8 @@ section[data-screen-label] { scroll-margin-top:90px; }
 .loc-banner::before { content:""; position:absolute; inset:0; z-index:-2; background-size:cover; background-position:center; }
 .loc-banner::after { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(11,11,11,0.35) 0%,rgba(11,11,11,0.65) 60%,rgba(11,11,11,0.92) 100%); }
 .loc-banner-inner { max-width:1440px; margin:0 auto; width:100%; display:grid; grid-template-columns:1.4fr 1fr; gap:40px; align-items:end; }
-.loc-banner h1 { font-family:var(--display); font-weight:320; font-size:clamp(50px,8vw,120px); line-height:0.88; letter-spacing:-0.035em; margin:18px 0 0; }
-.loc-banner h1 em { font-style:italic; color:var(--gold); }
+.loc-banner h1, .loc-banner .loc-banner-h { font-family:var(--display); font-weight:320; font-size:clamp(50px,8vw,120px); line-height:0.88; letter-spacing:-0.035em; margin:18px 0 0; }
+.loc-banner h1 em, .loc-banner .loc-banner-h em { font-style:italic; color:var(--gold); }
 .loc-banner p { max-width:50ch; font-size:17px; line-height:1.55; opacity:.85; margin-top:22px; }
 .loc-banner .meta { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; opacity:.8; }
 .loc-card-list { background:rgba(11,11,11,0.55); backdrop-filter:blur(12px); border:1px solid var(--line-d); border-radius:18px; padding:24px; }
@@ -928,7 +928,7 @@ section.loc-section:nth-child(even) .loc-body { background:var(--paper2); }
   .loc-intro { padding: 96px 20px 36px; }
   .loc-intro h1 { font-size: clamp(30px, 10vw, 56px); }
   .loc-banner { padding: 96px 20px 36px; min-height: 55vh; }
-  .loc-banner h1 { font-size: clamp(28px, 9vw, 52px); }
+  .loc-banner h1, .loc-banner .loc-banner-h { font-size: clamp(28px, 9vw, 52px); }
   .loc-body { padding: 44px 20px; }
   .loc-body h3 { font-size: clamp(20px, 6vw, 32px); margin-bottom: 16px; }
   .loc-body .stats { padding: 20px 16px; }

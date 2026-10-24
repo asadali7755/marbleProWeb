@@ -5,8 +5,8 @@ import Fab from '@/components/marble/Fab';
 import LocationsClient from '@/components/sections/locations/LocationsClient';
 
 export const metadata: Metadata = {
-  title: 'Marble Floor Polishing Services Dubai, Abu Dhabi & All UAE — Multi-Type Floor Polishing Company',
-  description: 'MarblePro — multi-type floor polishing company UAE covering all 7 emirates. Affordable marble floor polishing services, commercial granite polishing services Dubai, terrazzo polishing and restoration contractors UAE. Same-week service in Dubai, Abu Dhabi, Sharjah, Ajman, RAK, Fujairah & Umm Al Quwain.',
+  title: 'Marble Polishing in Dubai, Abu Dhabi & All UAE | MarblePro',
+  description: 'Marble, granite and terrazzo polishing and floor restoration in all 7 emirates: Dubai, Abu Dhabi, Sharjah, Ajman, RAK, Umm Al Quwain and Fujairah.',
   keywords: 'multi type floor polishing company UAE, affordable marble floor polishing services UAE, commercial granite polishing services Dubai, terrazzo polishing and restoration contractors UAE, marble polishing dubai, marble polishing abu dhabi, marble polishing sharjah, marble polishing ajman, floor restoration services UAE, best marble polishing company in Dubai',
   alternates: {
     canonical: 'https://www.marblepro.ae/locations',

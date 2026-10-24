@@ -7,6 +7,7 @@ import Fab from '@/components/marble/Fab';
 import { PageFaqCta } from '@/components/marble/FaqCta';
 import { PHONE_DISPLAY, PHONE_TEL, CITY_IMG, CITY_GRAD, SERVICES } from '@/components/marble/constants';
 import { LOCATIONS, getLocation } from '@/lib/locationsData';
+import { fitDescription, fitTitle } from '@/lib/seo';
 
 const SITE = 'https://www.marblepro.ae';
 
@@ -20,8 +21,8 @@ export async function generateMetadata(
   const { slug } = await params;
   const l = getLocation(slug);
   if (!l) return {};
-  const title = `${l.h1} | MarblePro`;
-  const description = `${l.intro} Quote on WhatsApp · ${PHONE_DISPLAY}.`.slice(0, 320);
+  const title = fitTitle(l.h1, ' | MarblePro', l.name);
+  const description = fitDescription(l.intro, `Quote on WhatsApp · ${PHONE_DISPLAY}.`);
   const url = `${SITE}/locations/${l.slug}`;
   return {
     title,

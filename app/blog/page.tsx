@@ -8,7 +8,7 @@ import { GUIDES } from '@/lib/guidesData';
 const SITE = 'https://www.marblepro.ae';
 
 export const metadata: Metadata = {
-  title: 'Marble Care Blogs — Polishing Cost, Stain Removal & Maintenance | MarblePro UAE',
+  title: 'Marble Care Blog: Polishing, Stains & Care | MarblePro',
   description: 'Practical marble care guides for UAE homes: marble polishing cost in Dubai, removing yellow stains, marble vs granite, and how often to polish marble floors.',
   keywords: 'marble polishing guides dubai, marble care uae, marble polishing cost, yellow stain removal, marble maintenance',
   alternates: { canonical: `${SITE}/blog` },

@@ -15,7 +15,7 @@ function LocationSection({ loc, idx }: { loc: Location; idx: number }) {
         <div className="loc-banner-inner">
           <div>
             <span className="meta">{loc.eyebrow} · {loc.ar}</span>
-            <h1>{loc.name} — <em>Marble Polishing</em> &amp; Floor Restoration Services.</h1>
+            <h2 className="loc-banner-h">{loc.name} — <em>Marble Polishing</em> &amp; Floor Restoration Services.</h2>
             <p>{loc.intro}</p>
           </div>
           <div className="loc-card-list">
