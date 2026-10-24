@@ -26,7 +26,7 @@ const FAQS = [
   },
   {
     q: 'What is the price for terrazzo floor polishing in Dubai?',
-    a: 'Terrazzo floor polishing Dubai price depends on the area size, current condition and finish required. We offer free on-site assessments with no-obligation fixed quotes. As terrazzo polishing and restoration contractors UAE businesses trust, we price fairly with no hidden charges.',
+    a: 'Terrazzo floor polishing Dubai price depends on the area size, current condition and finish required. We inspect on site (AED 50 visit fee, paid at the visit) and give a no-obligation fixed quote. As terrazzo polishing and restoration contractors UAE businesses trust, we price fairly with no hidden charges.',
   },
   {
     q: 'Do you offer premium marble countertop polishing and Corian repair?',
@@ -93,7 +93,7 @@ export function PageFaqCta() {
       {/* CTA Section */}
       <section className="shine-cta" data-screen-label="shine-cta">
         <div className="shine-cta-inner">
-          <span className="sec-eyebrow" style={{ color: 'var(--paper)', opacity: 0.65 }}>— Free on-site inspection</span>
+          <span className="sec-eyebrow" style={{ color: 'var(--paper)', opacity: 0.65 }}>— On-site inspection · AED 50</span>
           <h3>Ready to bring back<br/><em>the mirror shine?</em></h3>
           <p>
             Contact MarblePro today for the best floor restoration services in Dubai and the wider UAE.

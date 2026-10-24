@@ -1,12 +1,13 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { useRequestCall, useToast } from '@/components/marble/RequestCallModal';
+import { useRequestCall, useToast, ENQUIRY_FAILED_MSG } from '@/components/marble/RequestCallModal';
 import { PageFaqCta } from '@/components/marble/FaqCta';
 import CityCards from '@/components/marble/CityCards';
 import { marbleSvg } from '@/components/marble/marbleSvg';
 import { PHONE_TEL, WA_LINK, SERVICES } from '@/components/marble/constants';
 import { SVC_DETAIL_IMGS } from '@/lib/servicesData';
+import { sendEnquiry } from '@/lib/sendEmail';
 
 const STEPS = [
   { n: '01', h: 'Deep Inspection & Lippage Removal',  p: 'We evaluate the stone, identify cracks, and check for uneven tile edges. Low-speed weighted diamond grinding flattens the floor surface seamlessly.' },
@@ -28,7 +29,7 @@ const FAQS = [
   { q: 'How long does the marble floor polishing process take in Dubai?', a: 'A standard villa living area typically takes 1 to 2 days. Emergency residential marble floor restoration services in Dubai can be scheduled same-day or next-day. We work around your schedule and ensure a completely dust-free process.' },
   { q: 'Can you remove yellow stains from marble floors in Dubai?', a: 'Yes. Professional yellow stain removing for natural stone UAE is one of our core specialties. We use chemically targeted treatments to lift deep-set yellowing, rust marks and watermarks that regular cleaning cannot fix — restoring the original bright tone of your stone.' },
   { q: 'Do you do deep scratch removal and marble crack filling in Dubai?', a: 'Absolutely. Deep scratch removal and marble crack filling Dubai is handled using colour-matched epoxy fillers and progressive diamond pads. We can restore heavily scratched, chipped or cracked natural stone to near-new condition.' },
-  { q: 'What is the price for terrazzo floor polishing in Dubai?', a: 'Terrazzo floor polishing Dubai price depends on the area size, current condition and finish required. We offer free on-site assessments with no-obligation fixed quotes. As terrazzo polishing and restoration contractors UAE businesses and homeowners trust, we price fairly with no hidden charges.' },
+  { q: 'What is the price for terrazzo floor polishing in Dubai?', a: 'Terrazzo floor polishing Dubai price depends on the area size, current condition and finish required. We inspect on site (AED 50 visit fee, paid at the visit) and give a no-obligation fixed quote. As terrazzo polishing and restoration contractors UAE businesses and homeowners trust, we price fairly with no hidden charges.' },
   { q: 'Do you offer premium marble countertop polishing in Dubai?', a: 'Yes. Premium marble countertop polishing Dubai covers kitchen tops, bathroom vanities, island benches and feature walls. We also offer kitchen top polishing and sealing services UAE-wide, Corian countertop polishing and scratch repair Dubai, and quartz polishing and stain protection Abu Dhabi.' },
   { q: 'Do you provide commercial granite polishing services in Dubai?', a: 'Yes — commercial granite polishing services Dubai is available for retail showrooms, hotel lobbies, office buildings and residential complexes. As a multi-type floor polishing company UAE, we handle marble, granite, terrazzo, quartz and Corian in one visit.' },
   { q: 'Which emirates do you cover?', a: 'All 7 — Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Umm Al Quwain and Fujairah. Same crew, same standards, same-week availability. Italian marble polishing and crystallization Dubai is our flagship service, available across all regions.' },
@@ -85,7 +86,9 @@ function BeforeAfter({ hue, vein, title, sub, beforeImg, afterImg }: { hue: numb
   );
 }
 
-const HERO_PENDING_KEY = 'mp_hero_quote_pending';
+const onDesktop = () => window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+const quoteWaLink = (job: string, number: string) =>
+  `${WA_LINK}?text=${encodeURIComponent(`Hi MarblePro, I need a quote.\nWork: ${job || 'Marble polishing'}\nNumber: ${number}`)}`;
 
 function Hero() {
   const { open } = useRequestCall();
@@ -95,60 +98,22 @@ function Hero() {
   const [err, setErr] = useState('');
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
-  const [waLink, setWaLink] = useState('');
-
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const quote = params.get('quote');
-    const source = params.get('source');
-    if (source === 'hero_card') {
-      if (quote === 'success') {
-        setSent(true);
-        showToast("Payment received! We'll be in touch shortly.");
-        try {
-          const pending = sessionStorage.getItem(HERO_PENDING_KEY);
-          if (pending) {
-            const { job: j, number: num } = JSON.parse(pending);
-            const msg = encodeURIComponent(`Hi MarblePro, I need a quote.\nWork: ${j || 'Marble polishing'}\nNumber: ${num}`);
-            setWaLink(`${WA_LINK}?text=${msg}`);
-            sessionStorage.removeItem(HERO_PENDING_KEY);
-          }
-        } catch {}
-      } else if (quote === 'cancelled') {
-        showToast('Payment cancelled. You can try again anytime.');
-      }
-      if (quote) {
-        params.delete('quote');
-        params.delete('source');
-        params.delete('session_id');
-        const query = params.toString();
-        window.history.replaceState({}, '', window.location.pathname + (query ? `?${query}` : ''));
-      }
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const wa = async () => {
     if (!number.trim()) { setErr('Please enter your phone number'); return; }
     setErr('');
     setLoading(true);
-    try { sessionStorage.setItem(HERO_PENDING_KEY, JSON.stringify({ job, number })); } catch {}
     try {
-      const res = await fetch('/api/create-checkout-session', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ type: 'WhatsApp Quote (Hero)', phone: number, work: job || 'Marble polishing', source: 'hero_card', returnPath: window.location.pathname }),
-      });
-      const data = await res.json();
-      if (data.url) {
-        window.location.href = data.url;
-        return;
-      }
-      showToast('Could not start payment. Please try again.');
+      await sendEnquiry({ type: 'Quote Request (Hero)', phone: number, work: job || 'Marble polishing' });
     } catch {
-      showToast('Could not start payment. Please try again.');
+      setLoading(false);
+      showToast(ENQUIRY_FAILED_MSG, 'error');
+      return;
     }
     setLoading(false);
+    setSent(true);
+    showToast("Request sent! We'll call you to book the visit.");
+    if (!onDesktop()) window.open(quoteWaLink(job, number), '_blank');
   };
   return (
     <section className="hero marble-bg" data-screen-label="hero" id="top">
@@ -167,7 +132,7 @@ function Hero() {
         </p>
         <div className="hero-cta-row">
           <a className="btn btn-primary" href="#quote">
-            Get a Free On-Site Quote
+            Get a Quote
             <span className="arr"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </a>
           <button className="btn btn-secondary" onClick={open}>
@@ -179,19 +144,17 @@ function Hero() {
       <aside className="hero-card">
         <div className="veins-d" />
         <div style={{ position: 'relative', zIndex: 1 }}>
-          <span className="hero-card-label">Two-line quote · AED 50</span>
-          <h2 className="hero-card-h">Tell us the job &amp; your number.<br/>Adjustable against your booking.</h2>
+          <span className="hero-card-label">Two-line quote · AED 50 site visit</span>
+          <h2 className="hero-card-h">Tell us the job &amp; your number.<br/>We&apos;ll call to book your visit.</h2>
           {sent ? (
             <div className="quote-mini" style={{ textAlign: 'center' }}>
-              <p style={{ marginBottom: 12 }}>Payment received! We&apos;ll be in touch shortly.</p>
-              {waLink && (
-                <a className="btn btn-wa" href={waLink} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'inline-flex' }}>
-                  <span className="arr" style={{ background: '#082b13' }}>
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#25D366" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-                  </span>
-                  Continue on WhatsApp
-                </a>
-              )}
+              <p style={{ marginBottom: 12 }}>Request sent! We&apos;ll call you shortly to book the visit.</p>
+              <a className="btn btn-wa" href={quoteWaLink(job, number)} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'inline-flex' }}>
+                <span className="arr" style={{ background: '#082b13' }}>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#25D366" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                </span>
+                Continue on WhatsApp
+              </a>
             </div>
           ) : (
             <div className="quote-mini">
@@ -203,10 +166,11 @@ function Hero() {
                   <span className="arr" style={{ background: '#082b13' }}>
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#25D366" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
                   </span>
-                  {loading ? 'Redirecting...' : 'Pay AED 50 & Get Quote'}
+                  {loading ? 'Sending...' : 'Get My Quote'}
                 </button>
                 <a className="btn-call" href={`tel:${PHONE_TEL}`} style={{ justifyContent: 'center' }}>Call now</a>
               </div>
+              <p className="qf-note" style={{ marginTop: 10 }}>Site visit: AED 50, paid to our team at the visit.</p>
             </div>
           )}
         </div>
@@ -612,8 +576,6 @@ function FAQ() {
   );
 }
 
-const BAND_PENDING_KEY = 'mp_band_quote_pending';
-
 function QuoteBand() {
   const { open } = useRequestCall();
   const showToast = useToast();
@@ -622,61 +584,23 @@ function QuoteBand() {
   const [err, setErr] = useState('');
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [waLink, setWaLink] = useState('');
-
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const quote = params.get('quote');
-    const source = params.get('source');
-    if (source === 'quote_band') {
-      if (quote === 'success') {
-        setSent(true);
-        showToast("Payment received! We'll be in touch shortly.");
-        try {
-          const pending = sessionStorage.getItem(BAND_PENDING_KEY);
-          if (pending) {
-            const { job: j, number: num } = JSON.parse(pending);
-            const msg = encodeURIComponent(`Hi MarblePro, I need a quote.\nWork: ${j || 'Marble polishing'}\nNumber: ${num}`);
-            setWaLink(`${WA_LINK}?text=${msg}`);
-            sessionStorage.removeItem(BAND_PENDING_KEY);
-          }
-        } catch {}
-      } else if (quote === 'cancelled') {
-        showToast('Payment cancelled. You can try again anytime.');
-      }
-      if (quote) {
-        params.delete('quote');
-        params.delete('source');
-        params.delete('session_id');
-        const query = params.toString();
-        window.history.replaceState({}, '', window.location.pathname + (query ? `?${query}` : ''));
-      }
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const wa = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!number.trim()) { setErr('Phone number is required'); return; }
     setErr('');
     setLoading(true);
-    try { sessionStorage.setItem(BAND_PENDING_KEY, JSON.stringify({ job, number })); } catch {}
     try {
-      const res = await fetch('/api/create-checkout-session', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ type: 'WhatsApp Quote (Section 8)', phone: number, work: job || 'Marble polishing', source: 'quote_band', returnPath: window.location.pathname }),
-      });
-      const data = await res.json();
-      if (data.url) {
-        window.location.href = data.url;
-        return;
-      }
-      showToast('Could not start payment. Please try again.');
+      await sendEnquiry({ type: 'Quote Request (Section 8)', phone: number, work: job || 'Marble polishing' });
     } catch {
-      showToast('Could not start payment. Please try again.');
+      setLoading(false);
+      showToast(ENQUIRY_FAILED_MSG, 'error');
+      return;
     }
     setLoading(false);
+    setSent(true);
+    showToast("Request sent! We'll call you to book the visit.");
+    if (!onDesktop()) window.open(quoteWaLink(job, number), '_blank');
   };
   return (
     <section className="cta-band" data-screen-label="quote" id="quote">
@@ -686,7 +610,7 @@ function QuoteBand() {
             <span className="sec-eyebrow">08 — Quote request · all UAE emirates</span>
             <h2 className="cta-h">Affordable marble floor polishing and restoration services — <em>get your quote today.</em></h2>
             <p style={{ fontSize: 17, lineHeight: 1.55, opacity: 0.78, maxWidth: '42ch', marginTop: 22 }}>
-              As the best marble polishing company in Dubai, we give you a fixed-price quote in minutes — no site fee, no fine print. Italian marble polishing and crystallization, floor restoration, countertop polishing and yellow stain removing across all 7 UAE emirates.
+              As the best marble polishing company in Dubai, we give you a clear, fixed-price quote after a quick site visit (AED 50, paid at the visit). Italian marble polishing and crystallization, floor restoration, countertop polishing and yellow stain removing across all 7 UAE emirates.
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, marginTop: 24, fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase', opacity: 0.7 }}>
               <span>✦ Same-day emergency service</span>
@@ -695,19 +619,17 @@ function QuoteBand() {
             </div>
           </div>
           <form className="quote-form" onSubmit={wa}>
-            <div className="lab">Quote Request — AED 50</div>
+            <div className="lab">Quote Request · AED 50 site visit</div>
             <h3>Get your quote.</h3>
             {sent ? (
               <div style={{ marginTop: 24 }}>
-                <p className="qf-note">Payment received! We&apos;ll be in touch shortly.</p>
-                {waLink && (
-                  <a className="btn btn-wa" href={waLink} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'inline-flex', marginTop: 12 }}>
-                    <span className="arr" style={{ background: '#082b13' }}>
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#25D366" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-                    </span>
-                    Continue on WhatsApp
-                  </a>
-                )}
+                <p className="qf-note">Request sent! We&apos;ll call you shortly to book the visit.</p>
+                <a className="btn btn-wa" href={quoteWaLink(job, number)} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'inline-flex', marginTop: 12 }}>
+                  <span className="arr" style={{ background: '#082b13' }}>
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#25D366" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                  </span>
+                  Continue on WhatsApp
+                </a>
               </div>
             ) : (
               <>
@@ -725,11 +647,11 @@ function QuoteBand() {
                     <span className="arr" style={{ background: '#082b13' }}>
                       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#25D366" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
                     </span>
-                    {loading ? 'Redirecting...' : 'Pay AED 50 & Get Quote'}
+                    {loading ? 'Sending...' : 'Get My Quote'}
                   </button>
                   <button type="button" className="btn-call" onClick={open} style={{ justifyContent: 'center' }}>Request a Call →</button>
                 </div>
-                <p className="qf-note">AED 50 fee — adjustable against your final booking. &quot;Request a call&quot; stays free.</p>
+                <p className="qf-note">Site visit: AED 50, paid to our team at the visit. &quot;Request a call&quot; is free.</p>
               </>
             )}
           </form>

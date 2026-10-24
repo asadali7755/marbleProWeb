@@ -50,7 +50,7 @@ const GALLERY: GalleryItem[] = [
     intro:'Heavy foot traffic, desert sand and casual maintenance all dull marble over time. Our diamond polishing process — 50 to 3000 grit, then Italian crystallization — restores the deep, glass-like reflection your stone had on day one.',
     body:'These before & after slides are real Dubai villa floors, photographed under identical daylight. Move the handle to see how dramatically marble polishing Dubai can transform a tired floor without replacement cost.',
     projects:[{city:'Palm Jumeirah',spec:'Carrara marble · 240 m²',hue:32,vein:0.22},{city:'Emirates Hills',spec:'Crema Marfil · 180 m²',hue:38,vein:0.18},{city:'Downtown Dubai',spec:'Botticino marble · 95 m²',hue:28,vein:0.25}],
-    meta:['1-2 day completion','Dust-free wet process','85+ GU gloss guaranteed','Free on-site inspection']},
+    meta:['1-2 day completion','Dust-free wet process','85+ GU gloss guaranteed','On-site inspection · AED 50']},
   { slug:'marble-floor-restoration', num:'07', name:'Floor Restoration', kw:'marble floor restoration services · floor restoration services', h2:'Marble floor restoration services — even severely damaged stone',
     intro:'Cracked, etched, deeply yellowed marble can be brought back without replacement. We do color-matched epoxy crack filling, lippage grinding, acid-etch reversal — then full re-polish.',
     body:'Property managers across Dubai, Abu Dhabi and Sharjah call us for emergency residential marble floor restoration services. Most jobs are walk-on-ready within 24 hours.',

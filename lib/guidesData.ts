@@ -37,7 +37,7 @@ const handWrittenGuides: Guide[] = [
     sections: [
       { h2: 'What affects the price of marble polishing?', body: [
         'Five things move a marble polishing quote up or down: the <strong>area size</strong> (larger floors cost less per m²), the <strong>current condition</strong> (deep scratches, etching and lippage need more grinding), the <strong>type of stone</strong> (delicate stones like onyx and Calacatta need finer, slower work), the <strong>finish</strong> (a basic buff vs full diamond polishing with Italian crystallization), and <strong>access</strong> (furniture, occupied homes and high floors add time).',
-        'This is why a trustworthy company always does a free on-site inspection before quoting — a fair price cannot be given by phone alone.',
+        'This is why a trustworthy company always inspects the floor on site before quoting — a fair price cannot be given by phone alone.',
       ]},
       { h2: 'Typical price ranges in Dubai (indicative)', body: [
         'As a rough guide for 2026, standard marble floor polishing in Dubai tends to fall in the lower-to-mid range per square metre, while full restoration (crack filling, lippage grinding, etch reversal) and premium stones sit higher. Crystallization and sealing are usually priced as an add-on or included in a premium package.',
@@ -52,7 +52,7 @@ const handWrittenGuides: Guide[] = [
     ],
     faqs: [
       { q: 'Is marble polishing cheaper than replacing the floor?', a: 'Far cheaper. Professional polishing and restoration typically costs a fraction of removing and re-laying marble, and properly restored marble holds its shine for years.' },
-      { q: 'Do you charge for the quote?', a: 'No. MarblePro provides a free on-site inspection and a transparent fixed-price quote with no obligation.' },
+      { q: 'Do you charge for the quote?', a: 'A rough quote on WhatsApp (send a photo) is free. For an exact fixed price we visit the site; the visit fee is AED 50, paid to our team at the visit.' },
       { q: 'Does the price change once you start?', a: 'No. Our written quote is fixed for the agreed scope — there are no hidden or surprise charges.' },
     ],
     related: [
@@ -284,7 +284,7 @@ const handWrittenGuides: Guide[] = [
         'Cleaning removes dirt from the surface. Restoration fixes the stone itself — grinding out scratches and lippage, filling cracks, reversing etching and yellowing, then re-polishing and sealing. If your floor is clean but still looks dull, damaged or uneven, it needs restoration, not more cleaning.',
       ]},
       { h2: 'Why act early', body: [
-        'Light dullness can be corrected with a quick polish. Left for years, the same floor may need full grinding, crack filling and stain treatment — more time and cost. A free inspection tells you exactly where your floor stands and the lightest fix that will work.',
+        'Light dullness can be corrected with a quick polish. Left for years, the same floor may need full grinding, crack filling and stain treatment — more time and cost. An on-site inspection tells you exactly where your floor stands and the lightest fix that will work.',
       ]},
     ],
     faqs: [

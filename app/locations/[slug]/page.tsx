@@ -21,7 +21,7 @@ export async function generateMetadata(
   const l = getLocation(slug);
   if (!l) return {};
   const title = `${l.h1} | MarblePro`;
-  const description = `${l.intro} Free on-site quote · ${PHONE_DISPLAY}.`.slice(0, 320);
+  const description = `${l.intro} Quote on WhatsApp · ${PHONE_DISPLAY}.`.slice(0, 320);
   const url = `${SITE}/locations/${l.slug}`;
   return {
     title,

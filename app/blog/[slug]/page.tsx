@@ -100,7 +100,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
 
           <div className="blog-cta-box">
             <h3>Want an exact price for your floor?</h3>
-            <p>Free on-site inspection, fixed-price quote and a written gloss guarantee — across all 7 UAE emirates.</p>
+            <p>On-site inspection (AED 50 visit fee), fixed-price quote and a written gloss guarantee — across all 7 UAE emirates.</p>
             <div className="blog-cta-btns">
               <Link href="/contact" className="btn btn-primary">Get a Free Quote
                 <span className="arr"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>

@@ -45,4 +45,6 @@ export async function sendEnquiry(data: EnquiryData): Promise<void> {
     }
     if (attempt < 3) await sleep(1500);
   }
+  // Callers must catch this and show an error — never a fake "sent".
+  throw new Error('Failed to send enquiry after 3 attempts');
 }

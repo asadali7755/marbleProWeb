@@ -57,7 +57,7 @@ export default function ShowcaseVideo() {
         </div>
 
         <p style={{ fontSize: 13.5, letterSpacing: '0.04em', opacity: 0.6, marginTop: 18 }}>
-          ▶ Tap to watch · Free on-site inspection · Fixed-price quotes
+          ▶ Tap to watch · AED 50 site visit · Fixed-price quotes
         </p>
       </div>
     </section>

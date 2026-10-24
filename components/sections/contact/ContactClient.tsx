@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useRequestCall, useToast } from '@/components/marble/RequestCallModal';
+import { useRequestCall, useToast, ENQUIRY_FAILED_MSG } from '@/components/marble/RequestCallModal';
 import { PHONE_DISPLAY, PHONE_TEL, EMAIL, WA_LINK, EMIRATES, SERVICES, CITY_IMG } from '@/components/marble/constants';
 import { sendEnquiry } from '@/lib/sendEmail';
 import { PageFaqCta } from '@/components/marble/FaqCta';
@@ -24,8 +24,6 @@ const REVIEWS = [
   { name:'Mohammed A.', stars:5, src:'Google · Abu Dhabi', text:"Removed yellow stains we'd lived with for years. Worth every dirham." },
 ];
 
-const QUOTE_TAB_PENDING_KEY = 'mp_quote_tab_pending';
-
 function QuoteFormBand() {
   const showToast = useToast();
   const [tab, setTab] = useState<'quote'|'call'>('quote');
@@ -37,39 +35,8 @@ function QuoteFormBand() {
   const [job, setJob] = useState('');
   const [phoneErr, setPhoneErr] = useState('');
   const [loading, setLoading] = useState(false);
-  const [waLink, setWaLink] = useState('');
 
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const quote = params.get('quote');
-    const source = params.get('source');
-    if (source === 'quote_tab') {
-      if (quote === 'success') {
-        setTab('quote');
-        setDone(true);
-        showToast("Payment received! We'll be in touch shortly.");
-        try {
-          const pending = sessionStorage.getItem(QUOTE_TAB_PENDING_KEY);
-          if (pending) {
-            const { name: n, phone: p, emirate: em, service: sv, job: j } = JSON.parse(pending);
-            const msg = encodeURIComponent(`Hi MarblePro, I need a quote.\n\nName: ${n}\nNumber: ${p}\nEmirate: ${em}\nService: ${sv}\nDetails: ${j || '(see attached photo)'}`);
-            setWaLink(`${WA_LINK}?text=${msg}`);
-            sessionStorage.removeItem(QUOTE_TAB_PENDING_KEY);
-          }
-        } catch {}
-      } else if (quote === 'cancelled') {
-        showToast('Payment cancelled. You can try again anytime.');
-      }
-      if (quote) {
-        params.delete('quote');
-        params.delete('source');
-        params.delete('session_id');
-        const query = params.toString();
-        window.history.replaceState({}, '', window.location.pathname + (query ? `?${query}` : ''));
-      }
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const waLink = `${WA_LINK}?text=${encodeURIComponent(`Hi MarblePro, I need a quote.\n\nName: ${name}\nNumber: ${phone}\nEmirate: ${emirate}\nService: ${service}\nDetails: ${job || '(see attached photo)'}`)}`;
 
   const submitQuote = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -77,37 +44,35 @@ function QuoteFormBand() {
     setPhoneErr('');
     setLoading(true);
     try {
-      sessionStorage.setItem(QUOTE_TAB_PENDING_KEY, JSON.stringify({ name, phone, emirate, service, job }));
-    } catch {}
-    try {
-      const res = await fetch('/api/create-checkout-session', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          type: 'Quote Request (Contact Page)',
-          name,
-          phone,
-          work: `${service} — ${emirate}${job ? ` — ${job}` : ''}`,
-          source: 'quote_tab',
-          returnPath: window.location.pathname,
-        }),
+      await sendEnquiry({
+        type: 'Quote Request (Contact Page)',
+        name,
+        phone,
+        work: `${service} — ${emirate}${job ? ` — ${job}` : ''}`,
       });
-      const data = await res.json();
-      if (data.url) {
-        window.location.href = data.url;
-        return;
-      }
-      showToast('Could not start payment. Please try again.');
     } catch {
-      showToast('Could not start payment. Please try again.');
+      setLoading(false);
+      showToast(ENQUIRY_FAILED_MSG, 'error');
+      return;
     }
     setLoading(false);
+    setDone(true);
+    showToast("Request sent! We'll call you to book the visit.");
+    if (!onDesktop()) window.open(waLink, '_blank');
   };
   const requestCall = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!phone.trim()) { setPhoneErr('Phone number is required'); return; }
     setPhoneErr('');
-    try { await sendEnquiry({ type: 'Request a Call (Contact Page)', phone, work: emirate, name }); } catch (e) { console.error('EmailJS:', e); }
+    setLoading(true);
+    try {
+      await sendEnquiry({ type: 'Request a Call (Contact Page)', phone, work: emirate, name });
+    } catch {
+      setLoading(false);
+      showToast(ENQUIRY_FAILED_MSG, 'error');
+      return;
+    }
+    setLoading(false);
     setDone(true);
     showToast('We got your number! Expect a call back shortly.');
   };
@@ -118,9 +83,9 @@ function QuoteFormBand() {
         <div className="c-form">
           <span className="lab">Get a quote — Dubai &amp; all UAE Emirates</span>
           <h2>Request Your <em>Marble Polishing Quote</em> — Dubai &amp; All UAE Emirates.</h2>
-          <p className="sub">Pick a tab — full quote (AED 50) or just leave your number for a free callback. Either way we read it within an hour during working hours.</p>
+          <p className="sub">Pick a tab — full quote request or just leave your number for a free callback. Either way we read it within an hour during working hours.</p>
           <div className="c-tabs" role="tablist">
-            <button className={`c-tab ${tab === 'quote' ? 'active' : ''}`} onClick={() => { setTab('quote'); setDone(false); setPhoneErr(''); }}>Full quote — AED 50</button>
+            <button className={`c-tab ${tab === 'quote' ? 'active' : ''}`} onClick={() => { setTab('quote'); setDone(false); setPhoneErr(''); }}>Full quote</button>
             <button className={`c-tab ${tab === 'call' ? 'active' : ''}`} onClick={() => { setTab('call'); setDone(false); setPhoneErr(''); }}>Request a call — free</button>
           </div>
           {done && tab === 'quote' ? (
@@ -128,16 +93,14 @@ function QuoteFormBand() {
               <div className="tick">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
-              <h3 style={{ fontFamily:'var(--display)', fontWeight:380, fontSize:24, margin:'0 0 8px' }}>Payment received!</h3>
+              <h3 style={{ fontFamily:'var(--display)', fontWeight:380, fontSize:24, margin:'0 0 8px' }}>Request sent!</h3>
               <p style={{ margin:0, opacity:.65, fontSize:14 }}>We&apos;ll be in touch shortly. Can&apos;t wait? Dial <a style={{ color:'var(--gold)' }} href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>.</p>
-              {waLink && (
-                <a className="btn btn-wa" href={waLink} target="_blank" rel="noopener noreferrer" style={{ textDecoration:'none', display:'inline-flex', marginTop:16 }}>
-                  <span className="arr" style={{ background:'#082b13' }}>
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#25D366" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-                  </span>
-                  Continue on WhatsApp
-                </a>
-              )}
+              <a className="btn btn-wa" href={waLink} target="_blank" rel="noopener noreferrer" style={{ textDecoration:'none', display:'inline-flex', marginTop:16 }}>
+                <span className="arr" style={{ background:'#082b13' }}>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#25D366" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                </span>
+                Continue on WhatsApp
+              </a>
             </div>
           ) : done && tab === 'call' ? (
             <div className="c-success">
@@ -187,10 +150,10 @@ function QuoteFormBand() {
                   <span className="arr" style={{ background:'#082b13' }}>
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#25D366" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
                   </span>
-                  {loading ? 'Redirecting...' : 'Pay AED 50 & Get Quote'}
+                  {loading ? 'Sending...' : 'Send Quote Request'}
                 </button>
               </div>
-              <p className="c-note">AED 50 fee — adjustable against your final booking. We&apos;ll email your details to <strong style={{ color:'var(--gold)' }}>{EMAIL}</strong> and follow up on WhatsApp once payment is confirmed.</p>
+              <p className="c-note">Site visit: AED 50, paid to our team at the visit. We&apos;ll email your details to <strong style={{ color:'var(--gold)' }}>{EMAIL}</strong> and call you to book the visit.</p>
             </form>
           ) : (
             <form onSubmit={requestCall}>
@@ -345,7 +308,7 @@ export default function ContactClient() {
             <span className="eyebrow-pill"><span className="pulse" /> Mon–Sun · 8:00 am — 10:00 pm</span>
             <h1>Get a Free Quote for <em>Marble Polishing</em> &amp; Floor Restoration — <em>Dubai &amp; UAE.</em></h1>
             <p className="lead">
-              Free on-site inspection across all 7 emirates. WhatsApp a photo and we&apos;ll
+              On-site inspection across all 7 emirates (AED 50 visit fee, paid at the visit). WhatsApp a photo and we&apos;ll
               ballpark in minutes — or pick a slot and we&apos;ll be at your door for the proper quote.
             </p>
           </div>

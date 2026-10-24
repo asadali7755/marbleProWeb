@@ -21,7 +21,7 @@ export async function generateMetadata(
   const s = getServiceDetail(slug);
   if (!s) return {};
   const title = `${s.h2} | MarblePro UAE`;
-  const description = `${s.intro} Free on-site quote · ${PHONE_DISPLAY}.`.slice(0, 320);
+  const description = `${s.intro} Quote on WhatsApp · ${PHONE_DISPLAY}.`.slice(0, 320);
   const url = `${SITE}/services/${s.slug}`;
   const img = SVC_DETAIL_IMGS[s.slug] || '/raw/twittercard.jpg';
   return {
@@ -116,7 +116,7 @@ export default async function ServicePage(
             </p>
             <div className="cta-row">
               <Link href="/#quote" className="btn btn-primary">
-                Get a Free On-Site Quote
+                Get a Quote
                 <span className="arr"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
               </Link>
               <a href={`tel:${PHONE_TEL}`} className="btn btn-secondary">Call {PHONE_DISPLAY}</a>

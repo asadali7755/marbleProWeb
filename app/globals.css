@@ -1036,6 +1036,9 @@ section.loc-section:nth-child(even) .loc-body { background:var(--paper2); }
   line-height: 1.4;
   color: rgba(246,241,232,0.88);
 }
+.st-msg a { color: var(--gold); font-weight: 600; text-decoration: underline; }
+.success-toast.is-error .st-icon { background: rgba(220,38,38,0.15); border-color: rgba(220,38,38,0.6); color: #f87171; }
+.success-toast.is-error .st-title { color: #f87171; }
 .st-close {
   flex-shrink: 0;
   background: transparent;
