@@ -45,6 +45,11 @@ export async function sendEnquiry(data: EnquiryData): Promise<void> {
     }
     if (attempt < 3) await sleep(1500);
   }
+  // Lost leads show up in GA4 (via GTM) as enquiry_failed.
+  try {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'enquiry_failed', lead_type: data.type });
+  } catch {}
   // Callers must catch this and show an error — never a fake "sent".
   throw new Error('Failed to send enquiry after 3 attempts');
 }

@@ -68,8 +68,18 @@ function BeforeAfter({ hue, vein, title, sub, beforeImg, afterImg }: { hue: numb
         onMouseDown={(e) => { dragging.current = true; onMove(e.nativeEvent); }}
         onTouchStart={(e) => { dragging.current = true; onMove(e.nativeEvent); }}
       >
-        <div className="pane before" style={{ backgroundImage: beforeBg }} />
-        <div className="pane after"  style={{ backgroundImage: afterBg }} />
+        {beforeImg && afterImg ? (
+          // Real <img> (not a CSS background) so Google Images can index the job photos.
+          <>
+            <img className="pane before" src={beforeImg} alt={`${title} (${sub}) — before polishing`} loading="lazy" decoding="async" draggable={false} />
+            <img className="pane after"  src={afterImg}  alt={`${title} (${sub}) — after MarblePro polishing`} loading="lazy" decoding="async" draggable={false} />
+          </>
+        ) : (
+          <>
+            <div className="pane before" style={{ backgroundImage: beforeBg }} />
+            <div className="pane after"  style={{ backgroundImage: afterBg }} />
+          </>
+        )}
         <div className="ba-handle">
           <div className="grip">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 6 3 12 9 18"/><polyline points="15 6 21 12 15 18"/></svg>
