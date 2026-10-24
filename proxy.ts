@@ -68,7 +68,7 @@ const GONE_HTML =
   '<p><a href="/">Visit our homepage</a></p>' +
   '</body></html>';
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   const { pathname, searchParams } = req.nextUrl;
 
   // Block WordPress path-based URLs

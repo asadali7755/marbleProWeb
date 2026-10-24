@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: '*',
         allow: '/',
         // Block WP admin/internal paths — but NOT old content slugs.
-        // Old content paths should return 410 (handled by middleware) so
+        // Old content paths should return 410 (handled by proxy.ts) so
         // Googlebot can read the 410 and remove them from the index.
         // Blocking them here would prevent Google from seeing the 410.
         disallow: [

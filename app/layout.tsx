@@ -19,11 +19,15 @@ const archivo = Archivo({
   subsets: ["latin"],
   variable: "--font-archivo",
   display: "swap",
+  // Small labels only: don't preload, so the LCP heading/text fonts download first.
+  preload: false,
 });
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains",
   display: "swap",
+  // Small labels only: don't preload, so the LCP heading/text fonts download first.
+  preload: false,
 });
 
 const SITE_URL = 'https://www.marblepro.ae';
