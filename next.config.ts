@@ -77,6 +77,31 @@ const nextConfig: NextConfig = {
       { source: '/blog/marble-crystallization-sealing-dubai-email', destination: '/blog/marble-crystallization-sealing-dubai', permanent: true },
       // -> /blog/yellow-stain-removing-marble-dubai
       { source: '/blog/yellow-stain-removing-marble-dubai-cost', destination: '/blog/yellow-stain-removing-marble-dubai', permanent: true },
+      // Second consolidation (24 Oct 2026): the bot re-created 23 near-
+      // duplicates after the first one. Same rule: one article per topic.
+      { source: '/blog/emperador-marble-polishing-dubai-price', destination: '/blog/emperador-marble-polishing-dubai', permanent: true },
+      { source: '/blog/emperador-marble-polishing-dubai-cost', destination: '/blog/emperador-marble-polishing-dubai', permanent: true },
+      { source: '/blog/calacatta-marble-polishing-dubai-abu-dhabi', destination: '/blog/calacatta-marble-polishing-dubai', permanent: true },
+      { source: '/blog/calacatta-marble-polishing-dubai-hills', destination: '/blog/calacatta-marble-polishing-dubai', permanent: true },
+      { source: '/blog/crema-marfil-polishing-business-bay', destination: '/blog/crema-marfil-marble-polishing-dubai', permanent: true },
+      { source: '/blog/crema-marfil-polishing-dubai-green-stain', destination: '/blog/crema-marfil-marble-polishing-dubai', permanent: true },
+      { source: '/blog/travertine-polishing-dubai-floor', destination: '/blog/travertine-polishing-dubai', permanent: true },
+      { source: '/blog/travertine-polishing-dubai-contact', destination: '/blog/travertine-polishing-dubai', permanent: true },
+      { source: '/blog/kitchen-top-polishing-dubai-hills', destination: '/blog/kitchen-top-polishing-dubai', permanent: true },
+      { source: '/blog/kitchen-top-polishing-dubai-industrial-city', destination: '/blog/kitchen-top-polishing-dubai', permanent: true },
+      { source: '/blog/corian-countertop-polishing-dubai-abu-dhabi', destination: '/blog/corian-countertop-polishing-dubai', permanent: true },
+      { source: '/blog/corian-countertop-polishing-dubai-industrial-city', destination: '/blog/corian-countertop-polishing-dubai', permanent: true },
+      { source: '/blog/granite-polishing-dubai-floor', destination: '/blog/granite-polishing-dubai', permanent: true },
+      { source: '/blog/granite-polishing-dubai-price-list', destination: '/blog/granite-polishing-dubai', permanent: true },
+      { source: '/blog/terrazzo-polishing-dubai-brand', destination: '/blog/terrazzo-polishing-dubai', permanent: true },
+      { source: '/blog/terrazzo-polishing-dubai-industrial', destination: '/blog/terrazzo-polishing-dubai', permanent: true },
+      { source: '/blog/marble-countertop-polishing-dubai-price', destination: '/blog/marble-countertop-polishing-dubai', permanent: true },
+      { source: '/blog/marble-countertop-polishing-dubai-contact', destination: '/blog/marble-countertop-polishing-dubai', permanent: true },
+      { source: '/blog/quartz-polishing-dubai-hills', destination: '/blog/quartz-polishing-dubai', permanent: true },
+      { source: '/blog/onyx-marble-polishing-dubai-golden', destination: '/blog/onyx-marble-polishing-dubai', permanent: true },
+      { source: '/blog/marble-crystallization-sealing-dubai-business-bay', destination: '/blog/marble-crystallization-sealing-dubai', permanent: true },
+      { source: '/blog/quality-marble-polishing-dubai', destination: '/blog/marble-polishing-dubai', permanent: true },
+      { source: '/blog/marble-floor-restoration-dubai-reviews', destination: '/blog/marble-floor-restoration-dubai', permanent: true },
     ];
   },
 };
