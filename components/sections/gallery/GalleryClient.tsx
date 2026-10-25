@@ -44,18 +44,18 @@ const GALLERY: GalleryItem[] = [
     intro:"Emperador is Spain's most celebrated dark marble — a rich chocolate-brown stone with striking white veining, widely used in UAE luxury bathrooms, staircases and feature walls. Its dense structure polishes to one of the highest gloss readings possible in natural stone.",
     body:"Our Emperador marble polishing Dubai process restores the deep chocolate tones, removes calcium deposits and white water marks that show clearly on the dark surface, and applies a colour-enhancing sealer that deepens the brown tones while blocking moisture in wet areas.",
     projects:[{city:'Jumeirah villa bathrooms',spec:'Emperador floor & walls · 85 m²',hue:22,vein:0.28},{city:'Dubai Hills estate',spec:'Staircase & landing · 60 m²',hue:20,vein:0.30},{city:'Sharjah luxury apartment',spec:'Master bath · 28 m²',hue:24,vein:0.26}],
-    meta:['Calcium deposit removal','Chocolate tone revival','90+ GU gloss','Wet-area marine seal']},
+    meta:['Calcium deposit removal','Chocolate tone revival','High-gloss finish','Wet-area marine seal']},
 
   { slug:'marble-polishing-dubai', num:'06', name:'Marble Polishing', kw:'marble polishing dubai · marble floor polishing', h2:'Marble polishing Dubai — mirror finishes for villas & towers',
     intro:'Heavy foot traffic, desert sand and casual maintenance all dull marble over time. Our diamond polishing process — 50 to 3000 grit, then Italian crystallization — restores the deep, glass-like reflection your stone had on day one.',
     body:'These before & after slides are real Dubai villa floors, photographed under identical daylight. Move the handle to see how dramatically marble polishing Dubai can transform a tired floor without replacement cost.',
     projects:[{city:'Palm Jumeirah',spec:'Carrara marble · 240 m²',hue:32,vein:0.22},{city:'Emirates Hills',spec:'Crema Marfil · 180 m²',hue:38,vein:0.18},{city:'Downtown Dubai',spec:'Botticino marble · 95 m²',hue:28,vein:0.25}],
-    meta:['1-2 day completion','Dust-free wet process','85+ GU gloss guaranteed','On-site inspection · AED 50']},
+    meta:['1-2 day completion','Dust-free wet process','1-month guarantee','On-site inspection · AED 50']},
   { slug:'marble-floor-restoration', num:'07', name:'Floor Restoration', kw:'marble floor restoration services · floor restoration services', h2:'Marble floor restoration services — even severely damaged stone',
     intro:'Cracked, etched, deeply yellowed marble can be brought back without replacement. We do color-matched epoxy crack filling, lippage grinding, acid-etch reversal — then full re-polish.',
     body:'Property managers across Dubai, Abu Dhabi and Sharjah call us for emergency residential marble floor restoration services. Most jobs are walk-on-ready within 24 hours.',
     projects:[{city:'Saadiyat Island',spec:'Severe lippage & cracks · 320 m²',hue:30,vein:0.30},{city:'Abu Dhabi Corniche',spec:'Acid-etched lobby · 80 m²',hue:36,vein:0.22},{city:'Sharjah villa',spec:'Full restoration · 12 years old',hue:24,vein:0.28}],
-    meta:['Crack & chip filling','Lippage leveling','Acid-etch reversal','Written guarantee']},
+    meta:['Crack & chip filling','Lippage leveling','Acid-etch reversal','1-month written guarantee']},
   { slug:'marble-countertop-polishing', num:'08', name:'Countertop Polishing', kw:'premium marble countertop polishing Dubai · kitchen top polishing and sealing services UAE', h2:'Premium marble countertop polishing Dubai & kitchen top sealing UAE',
     intro:'Kitchen counters and bathroom vanities face daily exposure to oils, acids, water and heat. Our premium marble countertop polishing Dubai service buffs the surface back, removes burns and rings, then applies a food-safe sealant — same-day kitchen top polishing and sealing services UAE-wide.',
     body:'Edges, cut-outs and undermount sinks are hand-polished separately so the join is invisible. We also offer Corian countertop polishing and scratch repair Dubai — even kitchen islands stay seamless from above and below.',
@@ -398,7 +398,7 @@ export default function GalleryClient() {
             <div className="gstat"><div className="n"><em>15</em></div><div className="l">Services covered</div></div>
             <div className="gstat"><div className="n"><em>45</em></div><div className="l">Projects displayed</div></div>
             <div className="gstat"><div className="n"><em>7</em></div><div className="l">Emirates served</div></div>
-            <div className="gstat"><div className="n">85+ GU</div><div className="l">Average gloss reading</div></div>
+            <div className="gstat"><div className="n">1 month</div><div className="l">Written guarantee</div></div>
           </div>
         </div>
       </section>

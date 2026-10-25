@@ -63,7 +63,7 @@ function ServicesHero() {
           <p className="lead">
             Fifteen specialised treatments. One certified team. From Travertine and Onyx to Crema Marfil,
             Calacatta and Emperador — every natural stone, every emirate, same diamond-grade process backed
-            by a written guarantee.
+            by a 1-month written guarantee.
           </p>
           <div className="cta-row">
             <Link href="/#quote" className="btn btn-primary">
@@ -328,7 +328,7 @@ function EmperadorFeature() {
               { t: 'Deep chocolate tone revival',   d: 'Dull, grey-toned Emperador restored to its original rich dark brown — the colour depth comes back fully.' },
               { t: 'White vein enhancement',         d: 'Fine white and gold veins cleaned and polished separately — contrast against the dark background is maximised.' },
               { t: 'Calcium & water mark removal',  d: 'Hard water deposits common in UAE show up white on dark marble — chemically removed without bleaching the stone.' },
-              { t: 'High-density diamond polish',   d: "Emperador's compact structure achieves 90+ GU gloss — one of the highest readings possible in natural stone." },
+              { t: 'High-density diamond polish',   d: "Emperador's compact structure takes a very high gloss — one of the highest finishes possible in natural stone." },
               { t: 'Dark sealer application',       d: 'Colour-enhancing impregnating sealer deepens the brown tones while blocking oil and liquid penetration.' },
               { t: 'Bathroom & wet area expertise', d: 'Emperador in showers, wet rooms and pool surrounds treated with marine-grade sealers rated for permanent moisture.' },
             ].map((f) => (
@@ -432,8 +432,8 @@ function Welcome() {
 function Stats() {
   const stats = [
     { n: '500+',  l: 'Villas restored' },
-    { n: '85+ GU', l: 'Average gloss reading' },
-    { n: '10 yr',  l: 'Service guarantee' },
+    { n: '24/7',   l: 'Available' },
+    { n: '1 month', l: 'Service guarantee' },
     { n: `${GOOGLE_RATING} ★`,  l: `Google rating (${GOOGLE_REVIEW_COUNT})` },
   ];
   return (
@@ -466,7 +466,7 @@ function WhyUs() {
     { num: '03', h: 'Tailored',         em: 'Stone Solutions',  p: 'From Italian Carrara marble to technical quartz, we understand the specific chemistry of every material — the right technique for every stone type.' },
     { num: '04', h: 'Transparent',      em: 'Pricing',          p: 'No hidden fees. We do an on-site evaluation (AED 50 visit fee, paid at the visit) to give a precise quotation tailored to your floor\'s exact condition and size.' },
     { num: '05', h: 'Dust-Free',        em: 'Process',          p: 'Furniture is covered, edges masked, and our wet process keeps the air clear so your home or office stays completely liveable throughout the job.' },
-    { num: '06', h: 'Written',          em: 'Guarantee',        p: 'Every job is backed by a written workmanship guarantee. We return and fix anything that doesn\'t meet our published 85+ GU gloss standard.' },
+    { num: '06', h: 'Written',          em: 'Guarantee',        p: 'Every job is backed by a 1-month written workmanship guarantee. If anything is not right within that month, we come back and fix it.' },
   ];
   return (
     <section className="why" data-screen-label="why">
@@ -479,7 +479,7 @@ function WhyUs() {
           <p className="sec-lead">
             We&apos;re not a generic cleaning crew with a polishing add-on. We&apos;re certified stone
             specialists — affordable marble floor polishing services UAE-wide, backed by Italian
-            diamond technology and a written gloss guarantee on every job.
+            diamond technology and a 1-month written guarantee on every job.
           </p>
         </div>
         <div className="why-grid">

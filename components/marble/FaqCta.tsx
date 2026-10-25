@@ -18,7 +18,7 @@ const FAQS = [
   },
   {
     q: 'Why is MarblePro the best marble polishing company in Dubai?',
-    a: 'MarblePro uses Italian diamond crystallization technology — the same system used in 5-star hotels across the UAE. Every job comes with a written gloss guarantee (minimum 85 GU) and a fixed-price quote, making us the most trusted and affordable marble floor polishing services provider across UAE.',
+    a: 'MarblePro uses Italian diamond crystallization technology — the same system used in 5-star hotels across the UAE. Every job comes with a 1-month written guarantee and a fixed-price quote, making us the most trusted and affordable marble floor polishing services provider across UAE.',
   },
   {
     q: 'Do you offer emergency residential marble floor restoration services in Dubai?',
@@ -97,7 +97,7 @@ export function PageFaqCta() {
           <h3>Ready to bring back<br/><em>the mirror shine?</em></h3>
           <p>
             Contact MarblePro today for the best floor restoration services in Dubai and the wider UAE.
-            Fixed-price quote, dust-free work, written gloss guarantee.
+            Fixed-price quote, dust-free work, 1-month written guarantee.
           </p>
           <div className="shine-cta-btns">
             <Link className="btn btn-primary" href="/contact">

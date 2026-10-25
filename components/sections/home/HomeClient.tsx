@@ -26,7 +26,7 @@ const REVIEWS = [
 ];
 
 const FAQS = [
-  { q: 'Why is MarblePro the best marble polishing company in Dubai?', a: 'MarblePro uses Italian diamond crystallization technology — the same system used in 5-star hotels across the UAE. Every job comes with a written gloss guarantee (minimum 85 GU) and a fixed-price quote, making us the most trusted and affordable marble floor polishing services provider across UAE.' },
+  { q: 'Why is MarblePro the best marble polishing company in Dubai?', a: 'MarblePro uses Italian diamond crystallization technology — the same system used in 5-star hotels across the UAE. Every job comes with a 1-month written guarantee and a fixed-price quote, making us the most trusted and affordable marble floor polishing services provider across UAE.' },
   { q: 'How long does the marble floor polishing process take in Dubai?', a: 'A standard villa living area typically takes 1 to 2 days. Emergency residential marble floor restoration services in Dubai can be scheduled same-day or next-day. We work around your schedule and ensure a completely dust-free process.' },
   { q: 'Can you remove yellow stains from marble floors in Dubai?', a: 'Yes. Professional yellow stain removing for natural stone UAE is one of our core specialties. We use chemically targeted treatments to lift deep-set yellowing, rust marks and watermarks that regular cleaning cannot fix — restoring the original bright tone of your stone.' },
   { q: 'Do you do deep scratch removal and marble crack filling in Dubai?', a: 'Absolutely. Deep scratch removal and marble crack filling Dubai is handled using colour-matched epoxy fillers and progressive diamond pads. We can restore heavily scratched, chipped or cracked natural stone to near-new condition.' },
@@ -415,7 +415,7 @@ function ProcessVideo() {
       <div style={{ position: 'absolute', left: 24, right: 24, bottom: 24, color: 'var(--paper)' }}>
         <span style={{ fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', opacity: 0.7 }}>Live polish · 3000 grit</span>
         <p style={{ fontFamily: 'var(--display)', fontWeight: 380, fontSize: 26, lineHeight: 1.15, letterSpacing: '-0.02em', margin: '10px 0 0' }}>
-          We measure gloss with a meter — <em style={{ color: 'var(--gold)' }}>minimum 85 GU</em> before we leave site.
+          We check the finish with you before we leave — <em style={{ color: 'var(--gold)' }}>covered by a 1-month guarantee.</em>
         </p>
       </div>
     </div>
@@ -625,7 +625,7 @@ function QuoteBand() {
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, marginTop: 24, fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase', opacity: 0.7 }}>
               <span>✦ Same-day emergency service</span>
-              <span>✦ Fixed price · written guarantee</span>
+              <span>✦ Fixed price · 1-month guarantee</span>
               <span>✦ Open 24 hours · 7 days</span>
             </div>
           </div>

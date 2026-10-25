@@ -60,7 +60,7 @@ export const SERVICES: Service[] = [
   { num: "02", slug: "onyx-marble-polishing-dubai",      name: "Onyx Polishing",            short: "Ultra-fine grit sequence — translucency preserved, backlit panels restored." },
   { num: "03", slug: "crema-marfil-polishing-dubai",     name: "Crema Marfil Polishing",    short: "UAE's most installed marble — etch reversal, tone correction & sealing." },
   { num: "04", slug: "calacatta-marble-polishing-dubai", name: "Calacatta Polishing",       short: "Italy's finest — pure white tone restored, bold veins untouched." },
-  { num: "05", slug: "emperador-marble-polishing-dubai", name: "Emperador Polishing",       short: "Rich chocolate tones revived, 90+ GU gloss, wet-area marine seal." },
+  { num: "05", slug: "emperador-marble-polishing-dubai", name: "Emperador Polishing",       short: "Rich chocolate tones revived, high-gloss finish, wet-area marine seal." },
   { num: "06", slug: "marble-polishing-dubai",           name: "Marble Polishing",          short: "Diamond polishing for honed, etched & dull marble — restores deep gloss." },
   { num: "07", slug: "marble-floor-restoration",         name: "Floor Restoration",         short: "Lippage removal, crack & chip repair, full grind-down & re-polish." },
   { num: "08", slug: "marble-countertop-polishing",      name: "Countertop Polishing",      short: "Kitchen & bathroom marble, granite & quartz countertops." },
