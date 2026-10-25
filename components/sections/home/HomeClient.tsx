@@ -626,7 +626,7 @@ function QuoteBand() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, marginTop: 24, fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase', opacity: 0.7 }}>
               <span>✦ Same-day emergency service</span>
               <span>✦ Fixed price · written guarantee</span>
-              <span>✦ Mon–Sun 8 am – 10 pm</span>
+              <span>✦ Open 24 hours · 7 days</span>
             </div>
           </div>
           <form className="quote-form" onSubmit={wa}>

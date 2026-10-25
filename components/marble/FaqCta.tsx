@@ -22,7 +22,7 @@ const FAQS = [
   },
   {
     q: 'Do you offer emergency residential marble floor restoration services in Dubai?',
-    a: 'Yes — emergency residential marble floor restoration services Dubai are available same-day or next-day. Most central Dubai locations are reached within 90 minutes of a confirmed booking. We work Mon–Sun, 8 am to 10 pm.',
+    a: 'Yes — emergency residential marble floor restoration services Dubai are available same-day or next-day. Most central Dubai locations are reached within 90 minutes of a confirmed booking. We are available 24 hours, 7 days a week.',
   },
   {
     q: 'What is the price for terrazzo floor polishing in Dubai?',

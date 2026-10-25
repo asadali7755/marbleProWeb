@@ -126,8 +126,8 @@ const schemaOrg = {
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-    "opens": "08:00",
-    "closes": "22:00"
+    "opens": "00:00",
+    "closes": "23:59"
   },
   "areaServed": [
     "Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "Umm Al Quwain", "Fujairah"
