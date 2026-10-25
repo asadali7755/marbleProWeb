@@ -41,38 +41,74 @@ function BlockHead({ label, meta }: { label: string; meta: string }) {
   );
 }
 
-/** Muted video that plays while on screen and pauses when scrolled away. */
+// Muted previews that may play at the same time. Each clip is 1–5 MB, so
+// letting every visible clip stream at once starved the photos on mobile.
+const MAX_AUTOPLAY = 2;
+const autoplaying = new Set<HTMLVideoElement>();
+
+/** Slow or data-saver connections get tap-to-play only, no muted previews. */
+function autoplayAllowed(): boolean {
+  if (typeof navigator === 'undefined') return false;
+  const conn = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
+  if (conn?.saveData) return false;
+  return !(conn?.effectiveType && /(^|-)2g$|^3g$/.test(conn.effectiveType));
+}
+
+/**
+ * Muted video that plays while on screen and pauses when scrolled away.
+ * Nothing (not even the poster) is requested until the card is near the
+ * viewport, and at most MAX_AUTOPLAY previews stream at once.
+ */
 function InViewVideo({ video, className, label }: { video: GalleryVideo; className?: string; label?: string }) {
   const ref = useRef<HTMLVideoElement>(null);
+  const [near, setNear] = useState(false);
   const [withSound, setWithSound] = useState(false);
 
+  // Phase 1: wait until the card is near the viewport before requesting anything.
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      ([e]) => {
-        if (e.isIntersecting) el.play().catch(() => {});
-        else el.pause();
-      },
-      { threshold: 0.35 },
-    );
+    if (!el || near) return;
+    const io = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) { setNear(true); io.disconnect(); }
+    }, { rootMargin: '400px 0px' });
     io.observe(el);
     return () => io.disconnect();
-  }, []);
+  }, [near]);
+
+  // Phase 2 (source is in the DOM now): muted preview while mostly on screen.
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || !near || !autoplayAllowed()) return;
+    const io = new IntersectionObserver(([e]) => {
+      if (el.controls) return;
+      if (e.isIntersecting && autoplaying.size < MAX_AUTOPLAY) {
+        autoplaying.add(el);
+        el.play().catch(() => autoplaying.delete(el));
+      } else if (!e.isIntersecting) {
+        autoplaying.delete(el);
+        el.pause();
+      }
+    }, { threshold: 0.6 });
+    io.observe(el);
+    return () => { io.disconnect(); autoplaying.delete(el); };
+  }, [near]);
 
   const playWithSound = () => {
     const el = ref.current;
     if (!el) return;
+    setNear(true);
+    autoplaying.delete(el);
     el.muted = false;
     el.controls = true;
-    el.play().catch(() => {});
+    // The <source> may only just have been added; let React render it first.
+    requestAnimationFrame(() => { el.load(); el.play().catch(() => {}); });
     setWithSound(true);
   };
 
   return (
     <div className={`gx-video ${className ?? ''}`}>
-      <video ref={ref} muted playsInline loop preload="none" poster={video.poster} aria-label={video.caption}>
-        <source src={video.mp4} type="video/mp4" />
+      <video ref={ref} muted playsInline loop preload="none" poster={near ? video.poster : undefined} aria-label={video.caption}>
+        {near && <source src={video.mp4} type="video/mp4" />}
       </video>
       {label && <span className={`gx-tag ${label === 'After' ? 'gx-tag-after' : ''}`}>{label}</span>}
       {!withSound && (
@@ -304,24 +340,23 @@ function GalleryTabs() {
 
 /* ───────────── intro film ───────────── */
 
-/** The intro film: poster first, plays with sound and controls on tap. */
+/**
+ * The intro film. It is the largest thing on screen (the page's LCP), so it
+ * starts as a high-priority <img>; the <video> is only mounted on tap.
+ */
 function ShowcaseFilm() {
-  const ref = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
-  const play = () => {
-    const el = ref.current;
-    if (!el) return;
-    el.controls = true;
-    el.play().catch(() => {});
-    setPlaying(true);
-  };
   return (
     <div className="gx-film">
-      <video ref={ref} playsInline preload="none" poster={SHOWCASE_VIDEO.poster} aria-label={SHOWCASE_VIDEO.caption}>
-        <source src={SHOWCASE_VIDEO.mp4} type="video/mp4" />
-      </video>
+      {playing ? (
+        <video playsInline controls autoPlay preload="auto" poster={SHOWCASE_VIDEO.poster} aria-label={SHOWCASE_VIDEO.caption}>
+          <source src={SHOWCASE_VIDEO.mp4} type="video/mp4" />
+        </video>
+      ) : (
+        <img src={SHOWCASE_VIDEO.poster} alt="" fetchPriority="high" decoding="async" />
+      )}
       {!playing && (
-        <button type="button" className="gx-film-play" onClick={play} aria-label="Play the MarblePro intro film">
+        <button type="button" className="gx-film-play" onClick={() => setPlaying(true)} aria-label="Play the MarblePro intro film">
           <span className="gx-film-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg></span>
           <span className="gx-film-text">Watch the intro film <span>{SHOWCASE_VIDEO.duration}</span></span>
         </button>
@@ -381,7 +416,7 @@ export default function GalleryClient() {
               const n = categoryCounts(c);
               return (
                 <a key={c.id} href={`#${c.id}`} className="gx-cat">
-                  <img src={c.cover} alt="" loading="eager" decoding="async" />
+                  <img src={c.cover} alt="" loading="lazy" decoding="async" />
                   <span className="gx-cat-shade" aria-hidden="true" />
                   <span className="gx-cat-text">
                     <span className="gx-cat-title">{c.title}</span>
