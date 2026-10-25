@@ -3,6 +3,7 @@ import { Fraunces, Inter, Archivo, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Providers from "@/components/marble/Providers";
 import { GoogleTagManager } from "@next/third-parties/google";
+import { GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from "@/components/marble/constants";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -105,15 +106,17 @@ const schemaOrg = {
   ],
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "4.4",
-    "reviewCount": "6",
+    "ratingValue": GOOGLE_RATING,
+    "reviewCount": String(GOOGLE_REVIEW_COUNT),
     "bestRating": "5",
     "worstRating": "1"
   },
   "address": {
     "@type": "PostalAddress",
-    "addressCountry": "AE",
-    "addressRegion": "Dubai"
+    "streetAddress": "Industrial Area",
+    "addressLocality": "Muwaileh Commercial",
+    "addressRegion": "Sharjah",
+    "addressCountry": "AE"
   },
   "geo": {
     "@type": "GeoCoordinates",

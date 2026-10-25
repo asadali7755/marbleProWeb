@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRequestCall, useToast, ENQUIRY_FAILED_MSG } from '@/components/marble/RequestCallModal';
-import { PHONE_DISPLAY, PHONE_TEL, EMAIL, WA_LINK, EMIRATES, SERVICES, CITY_IMG } from '@/components/marble/constants';
+import { PHONE_DISPLAY, PHONE_TEL, EMAIL, WA_LINK, EMIRATES, SERVICES, CITY_IMG, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from '@/components/marble/constants';
 import { sendEnquiry } from '@/lib/sendEmail';
 import { PageFaqCta } from '@/components/marble/FaqCta';
 
@@ -190,10 +190,10 @@ function QuoteFormBand() {
               </div>
             </div>
             <div className="c-gmb-rating">
-              <span className="rate">4.4</span>
+              <span className="rate">{GOOGLE_RATING}</span>
               <div>
-                <div className="stars">★★★★★</div>
-                <div className="meta">Based on 6 Google reviews</div>
+                <div className="stars">★★★★☆</div>
+                <div className="meta">Based on {GOOGLE_REVIEW_COUNT} Google reviews</div>
               </div>
             </div>
             <div style={{ borderTop:'1px solid var(--line)', marginTop:18, paddingTop:18, display:'grid', gap:14 }}>

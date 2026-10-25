@@ -5,7 +5,7 @@ import { useRequestCall, useToast, ENQUIRY_FAILED_MSG } from '@/components/marbl
 import { PageFaqCta } from '@/components/marble/FaqCta';
 import CityCards from '@/components/marble/CityCards';
 import { marbleSvg } from '@/components/marble/marbleSvg';
-import { PHONE_TEL, WA_LINK, SERVICES } from '@/components/marble/constants';
+import { PHONE_TEL, WA_LINK, SERVICES, GOOGLE_RATING } from '@/components/marble/constants';
 import { SVC_DETAIL_IMGS } from '@/lib/servicesData';
 import { sendEnquiry } from '@/lib/sendEmail';
 
@@ -509,13 +509,13 @@ function GMBReviews() {
       <div className="sec-head">
         <div>
           <span className="sec-eyebrow">06 — Google reviews</span>
-          <h2 className="sec-title">Trusted by UAE Homeowners — 4.4 Stars on Google for <em>Marble Polishing Dubai.</em></h2>
+          <h2 className="sec-title">Trusted by UAE Homeowners — {GOOGLE_RATING} Stars on Google for <em>Marble Polishing Dubai.</em></h2>
           <div className="gmb-badge">
             <div className="g-icon">G</div>
             <div>
               <div style={{ display: 'flex', gap: 8, alignItems: 'baseline' }}>
-                <span className="rate">4.4</span>
-                <span style={{ color: 'var(--gold)', letterSpacing: 2 }}>★★★★★</span>
+                <span className="rate">{GOOGLE_RATING}</span>
+                <span style={{ color: 'var(--gold)', letterSpacing: 2 }}>★★★★☆</span>
               </div>
               <div className="lbl">
                 <a href="https://maps.google.com/?cid=9770771076887647238" target="_blank" rel="noopener" style={{ textDecoration: 'underline', textUnderlineOffset: '3px' }}>

@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { useRequestCall } from '@/components/marble/RequestCallModal';
 import { marbleSvg } from '@/components/marble/marbleSvg';
-import { PHONE_DISPLAY, PHONE_TEL, WA_LINK } from '@/components/marble/constants';
+import { PHONE_DISPLAY, PHONE_TEL, WA_LINK, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from '@/components/marble/constants';
 import { PageFaqCta } from '@/components/marble/FaqCta';
 import { SERVICE_DETAIL, SVC_DETAIL_IMGS, serviceImgAlt, type ServiceDetail } from '@/lib/servicesData';
 
@@ -434,7 +434,7 @@ function Stats() {
     { n: '500+',  l: 'Villas restored' },
     { n: '85+ GU', l: 'Average gloss reading' },
     { n: '10 yr',  l: 'Service guarantee' },
-    { n: '4.4 ★',  l: 'Google rating (6)' },
+    { n: `${GOOGLE_RATING} ★`,  l: `Google rating (${GOOGLE_REVIEW_COUNT})` },
   ];
   return (
     <section className="stats-band" data-screen-label="stats">

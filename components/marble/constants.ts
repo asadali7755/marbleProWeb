@@ -3,6 +3,11 @@ export const PHONE_TEL = "+971545567799";
 export const EMAIL = "marbleprodxb@gmail.com";
 export const WA_LINK = `https://wa.me/${PHONE_TEL.replace("+", "")}`;
 
+// Must match the live Google Business Profile ("Marble polishing and
+// crystallization services", Muwaileh, Sharjah). Update when it changes.
+export const GOOGLE_RATING = "3.9";
+export const GOOGLE_REVIEW_COUNT = 7;
+
 export interface Emirate {
   slug: string;
   name: string;
