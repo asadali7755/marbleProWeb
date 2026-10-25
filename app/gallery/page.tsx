@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 export default function GalleryPage() {
   return (
     <>
-      <Nav active="gallery" theme="dark" />
+      <Nav active="gallery" />
       <GalleryClient />
       <Footer />
       <Fab />
