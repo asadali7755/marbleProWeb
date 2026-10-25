@@ -3,7 +3,7 @@ import { Resend } from 'resend';
 
 // Set ENQUIRY_TO in Vercel to change the lead inbox without a code change.
 const LEADS_TO = process.env.ENQUIRY_TO || 'marbleprodxb@gmail.com';
-// Set ENQUIRY_FROM (e.g. "MarblePro UAE <leads@marblepro.ae>") once the
+// Set ENQUIRY_FROM (e.g. "MarblePro UAE <leads@mail.marblepro.ae>") once the
 // domain is verified in Resend. The resend.dev sandbox sender only delivers
 // to the Resend account owner and fails SPF/DKIM for the brand.
 const LEADS_FROM = process.env.ENQUIRY_FROM || 'MarblePro Website <onboarding@resend.dev>';
