@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { Fraunces, Inter, Archivo, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Providers from "@/components/marble/Providers";
-import { GoogleTagManager } from "@next/third-parties/google";
+import DeferredGTM from "@/components/marble/DeferredGTM";
 import { GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from "@/components/marble/constants";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--font-fraunces",
-  axes: ["opsz", "SOFT"],
+  axes: ["opsz"],
   display: "swap",
 });
 const inter = Inter({
@@ -163,7 +163,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body data-theme="default">
-        <GoogleTagManager gtmId="GTM-W4GMWCRL" />
+        <DeferredGTM />
         <Providers>{children}</Providers>
       </body>
     </html>
