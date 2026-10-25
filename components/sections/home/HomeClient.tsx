@@ -17,11 +17,12 @@ const STEPS = [
   { n: '05', h: 'Impregnating Sealer Application',    p: 'A premium breathable sealer protects against future spills, ensuring your floor restoration services investment lasts for years.' },
 ];
 
+// Real 5-star reviews copied word for word from the Google Business Profile
+// (cid 9770771076887647238). Never invent or reword reviews.
 const REVIEWS = [
-  { name: 'Ahmed K.',    stars: 5, time: '2 weeks ago',  text: 'MarblePro restored a 12-year-old marble floor in our Palm Jumeirah villa to better than new. The team was punctual, clean, and the price was exactly what was quoted.' },
-  { name: 'Layla R.',    stars: 5, time: '1 month ago',  text: 'Beautiful job on our terrazzo lobby in Sharjah. Tenants noticed within a day. Professional crew, dust-free process.' },
-  { name: 'Mohammed A.', stars: 5, time: '1 month ago',  text: 'Removed yellow stains we\'d lived with for years from our Abu Dhabi villa floor. Worth every dirham.' },
-  { name: 'Priya S.',    stars: 5, time: '2 months ago', text: 'Quartz countertop in our Dubai Marina apartment looks brand new. Booking again for the bathrooms.' },
+  { name: 'Adel A.',       stars: 5, time: 'Google · 2026', text: 'Amazing Guy' },
+  { name: 'Ammar A.',      stars: 5, time: 'Google · 2020', text: 'Excellent service. Fast and clean. Keep it up...' },
+  { name: 'Abdulrahman E.', stars: 5, time: 'Google · 2020', text: 'Professional' },
 ];
 
 const FAQS = [
@@ -526,7 +527,7 @@ function GMBReviews() {
           </div>
         </div>
         <p className="sec-lead">
-          Real Google reviews from UAE villa owners, hotels and commercial clients across Dubai, Abu Dhabi and Sharjah. See why MarblePro is the best marble polishing company in Dubai.
+          Reviews from our Google Business Profile, shown word for word. Read all of them — good and bad — on Google Maps.
         </p>
       </div>
       <div className="gmb-wrap">

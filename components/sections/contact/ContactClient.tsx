@@ -18,10 +18,11 @@ const EMIRATE_RESPONSE = [
   { slug:'fujairah',       name:'Fujairah',       time:'Same day' },
 ];
 
+// Real 5-star reviews copied word for word from the Google Business Profile.
 const REVIEWS = [
-  { name:'Ahmed K.',    stars:5, src:'Google · Dubai',     text:'Restored a 12-year-old marble floor to better than new.' },
-  { name:'Layla R.',    stars:5, src:'Google · Sharjah',   text:'Beautiful job on our terrazzo lobby — tenants noticed within a day.' },
-  { name:'Mohammed A.', stars:5, src:'Google · Abu Dhabi', text:"Removed yellow stains we'd lived with for years. Worth every dirham." },
+  { name:'Adel A.',        stars:5, src:'Google · 2026', text:'Amazing Guy' },
+  { name:'Ammar A.',       stars:5, src:'Google · 2020', text:'Excellent service. Fast and clean. Keep it up...' },
+  { name:'Abdulrahman E.', stars:5, src:'Google · 2020', text:'Professional' },
 ];
 
 function QuoteFormBand() {
