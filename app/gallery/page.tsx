@@ -5,8 +5,8 @@ import Fab from '@/components/marble/Fab';
 import GalleryClient from '@/components/sections/gallery/GalleryClient';
 
 export const metadata: Metadata = {
-  title: 'Before & After Gallery — Marble Polishing Dubai | MarblePro',
-  description: 'Before and after photos and videos of MarblePro marble polishing, split into floors and countertops — villas, apartments, hotels and kitchens across the UAE.',
+  title: 'Marble Polishing Before and After Gallery | MarblePro',
+  description: 'Before and after photos and videos of our marble polishing work, in two sections: floors and countertops. Villas, apartments and kitchens in the UAE.',
   keywords: 'how to remove yellow stains from marble floor Dubai, professional yellow stain removing for natural stone UAE, deep scratch removal and marble crack filling Dubai, marble polishing before after Dubai, Italian marble polishing and crystallization Dubai, marble floor restoration gallery UAE',
   alternates: {
     canonical: 'https://www.marblepro.ae/gallery',

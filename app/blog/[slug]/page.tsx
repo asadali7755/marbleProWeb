@@ -6,6 +6,7 @@ import Footer from '@/components/marble/Footer';
 import Fab from '@/components/marble/Fab';
 import { PHONE_DISPLAY, PHONE_TEL } from '@/components/marble/constants';
 import { GUIDES, getGuide } from '@/lib/guidesData';
+import { fitDescription, fitFullTitle } from '@/lib/seo';
 
 const SITE = 'https://www.marblepro.ae';
 
@@ -18,13 +19,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const g = getGuide(slug);
   if (!g) return {};
   const url = `${SITE}/blog/${g.slug}`;
+  const description = fitDescription(g.description);
   return {
-    title: g.title,
-    description: g.description,
+    title: fitFullTitle(g.title),
+    description,
     keywords: g.keywords,
     alternates: { canonical: url },
     openGraph: {
-      type: 'article', title: g.h1, description: g.description, url,
+      type: 'article', title: g.h1, description, url,
       images: [{ url: g.image ?? '/raw/twittercard.jpg', width: 1200, height: 630, alt: g.h1 }],
     },
   };
