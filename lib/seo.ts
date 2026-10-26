@@ -4,7 +4,7 @@
 // character), so descriptions stay a little under that.
 const TITLE_MAX = 60;
 const DESCRIPTION_MAX = 150;
-const DESCRIPTION_MIN = 110;
+const DESCRIPTION_MIN = 100;
 const BRAND = ' | MarblePro';
 const DANGLING = /^(&|and|or|for|with|the|in|of|to|—|-|:)$/i;
 
@@ -53,6 +53,7 @@ export function fitFullTitle(title: string): string {
 function cutClause(text: string, max: number): string {
   if (text.length <= max) return text;
   const head = cutWords(text, max - 1);
+  if (/^[,;—]/.test(text.slice(head.length).trim())) return `${head}.`;
   const dash = head.lastIndexOf(' — ');
   if (dash >= max * 0.5) return `${head.slice(0, dash)}.`;
   const comma = head.lastIndexOf(', ');
