@@ -3,7 +3,8 @@ import { useEffect } from 'react';
 
 const GTM_ID = 'GTM-W4GMWCRL';
 // Load anyway after this long, so visitors who only read still count.
-const FALLBACK_MS = 3500;
+// 3.5s still landed inside page load and cost 210ms of blocking time on desktop.
+const FALLBACK_MS = 12000;
 const TRIGGERS = ['pointerdown', 'keydown', 'touchstart', 'scroll'] as const;
 
 /**
