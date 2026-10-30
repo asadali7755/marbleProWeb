@@ -9,6 +9,7 @@ import ServiceExtra from '@/components/marble/ServiceExtra';
 import { PHONE_DISPLAY, PHONE_TEL, EMIRATES } from '@/components/marble/constants';
 import { SERVICE_DETAIL, SVC_DETAIL_IMGS, getServiceDetail, serviceImgAlt } from '@/lib/servicesData';
 import { fitDescription, fitTitle } from '@/lib/seo';
+import { GUIDES } from '@/lib/guidesData';
 
 const SITE = 'https://www.marblepro.ae';
 
@@ -50,6 +51,7 @@ export default async function ServicePage(
   const url = `${SITE}/services/${s.slug}`;
   const img = SVC_DETAIL_IMGS[s.slug] || '/raw/twittercard.jpg';
   const related = SERVICE_DETAIL.filter((x) => x.slug !== s.slug).slice(0, 6);
+  const guides = GUIDES.filter((g) => g.related[0]?.href === `/services/${s.slug}`).slice(0, 6);
   // Service name without "Dubai"/"UAE" so city chips read cleanly, e.g. "Marble Polishing Abu Dhabi"
   const svcLabel = s.name.replace(/\s*(Dubai|UAE)\s*/gi, ' ').replace(/\s+/g, ' ').trim();
 
@@ -165,6 +167,23 @@ export default async function ServicePage(
         </section>
 
         <ServiceExtra slug={s.slug} />
+
+        {guides.length > 0 && (
+          <section className="sec" style={{ padding: '60px 36px', maxWidth: 'none' }} data-screen-label="service-guides">
+            <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+              <span className="sec-eyebrow">— Guides</span>
+              <h2 className="sec-title" style={{ marginTop: 12, fontSize: 'clamp(26px,4vw,40px)' }}>Read more about <em>{svcLabel.toLowerCase()}.</em></h2>
+              <div style={{ marginTop: 24, display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 16 }}>
+                {guides.map((g) => (
+                  <Link key={g.slug} href={`/blog/${g.slug}`} className="blog-more-card">
+                    <span className="cat">{g.category}</span>
+                    <div className="title">{g.h1}</div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Available across all 7 emirates — internal links to location pages */}
         <section className="sec" style={{ padding: '60px 36px', background: 'var(--paper2)' }} data-screen-label="service-areas">

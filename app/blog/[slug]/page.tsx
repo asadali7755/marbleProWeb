@@ -38,7 +38,12 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
   if (!g) notFound();
 
   const url = `${SITE}/blog/${g.slug}`;
-  const more = GUIDES.filter((x) => x.slug !== g.slug).slice(0, 3);
+  // One guide on the same topic, then the next guides in the list. Taking the
+  // first three for every post left most posts with a single internal link.
+  const index = GUIDES.findIndex((x) => x.slug === g.slug);
+  const sameTopic = GUIDES.find((x) => x.slug !== g.slug && x.related[0]?.href === g.related[0]?.href);
+  const next = [...GUIDES.slice(index + 1), ...GUIDES.slice(0, index)];
+  const more = [...new Set([...(sameTopic ? [sameTopic] : []), ...next])].slice(0, 3);
 
   const articleSchema = {
     '@context': 'https://schema.org',
