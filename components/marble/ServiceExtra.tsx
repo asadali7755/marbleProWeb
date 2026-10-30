@@ -38,7 +38,7 @@ export default function ServiceExtra({ slug }: { slug: string }) {
             {sec.links && (
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginTop: 24 }}>
                 {sec.links.map((l) => (
-                  <Link key={l.href} href={l.href} className="area" style={{ textDecoration: 'none' }}>{l.label}</Link>
+                  <Link key={l.href} href={l.href} style={{ fontSize: 15, fontWeight: 600, color: 'var(--gold-text)', textDecoration: 'underline', textUnderlineOffset: 3 }}>{l.label}</Link>
                 ))}
               </div>
             )}
