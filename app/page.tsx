@@ -23,7 +23,9 @@ export default function HomePage() {
   return (
     <>
       <Nav active="home" />
-      <HomeClient />
+      <main>
+        <HomeClient />
+      </main>
       <Footer />
       <Fab />
     </>

@@ -23,7 +23,9 @@ export default function ContactPage() {
   return (
     <>
       <Nav active="contact" />
-      <ContactClient />
+      <main>
+        <ContactClient />
+      </main>
       <Footer />
       <Fab />
     </>

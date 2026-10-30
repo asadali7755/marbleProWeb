@@ -9,7 +9,10 @@ const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--font-fraunces",
   axes: ["opsz"],
-  display: "swap",
+  // "optional" instead of "swap": the hero H1 reflowed when Fraunces
+  // arrived late on mobile (PageSpeed CLS 0.187). Preloaded, so it is
+  // normally ready in time; otherwise the fallback stays and nothing jumps.
+  display: "optional",
 });
 const inter = Inter({
   subsets: ["latin"],

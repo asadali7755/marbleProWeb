@@ -23,7 +23,9 @@ export default function ServicesPage() {
   return (
     <>
       <Nav active="services" />
-      <ServicesClient />
+      <main>
+        <ServicesClient />
+      </main>
       <Footer />
       <Fab />
     </>

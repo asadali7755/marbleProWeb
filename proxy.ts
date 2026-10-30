@@ -43,6 +43,10 @@ const WP_PATH_PATTERNS: RegExp[] = [
   // Common WP plugin/theme paths
   /^\/wp-sitemap\.xml/i,
   /^\/wp-sitemap-/i,
+  // WP theme demo pages and stray index.php links
+  /^\/sample-page(-\d+)?\/?$/i,
+  /^\/single-project\/?$/i,
+  /index\.php/i,
 ];
 
 // WordPress query-string parameters used in old URLs

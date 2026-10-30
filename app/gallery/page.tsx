@@ -23,7 +23,9 @@ export default function GalleryPage() {
   return (
     <>
       <Nav active="gallery" />
-      <GalleryClient />
+      <main>
+        <GalleryClient />
+      </main>
       <Footer />
       <Fab />
     </>

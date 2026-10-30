@@ -23,7 +23,9 @@ export default function LocationsPage() {
   return (
     <>
       <Nav active="locations" />
-      <LocationsClient />
+      <main>
+        <LocationsClient />
+      </main>
       <Footer />
       <Fab />
     </>
