@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import Link from 'next/link';
+import Link from '@/components/marble/Link';
 import { useRequestCall } from '@/components/marble/RequestCallModal';
 import { marbleSvg } from '@/components/marble/marbleSvg';
 import { PHONE_DISPLAY, PHONE_TEL, WA_LINK, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from '@/components/marble/constants';

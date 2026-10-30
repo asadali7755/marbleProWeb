@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/marble/Link';
 import Nav from '@/components/marble/Nav';
 import Footer from '@/components/marble/Footer';
 import Fab from '@/components/marble/Fab';

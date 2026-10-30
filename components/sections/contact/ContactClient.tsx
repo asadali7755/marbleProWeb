@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import Link from '@/components/marble/Link';
 import { useRequestCall, useToast, ENQUIRY_FAILED_MSG } from '@/components/marble/RequestCallModal';
 import { PHONE_DISPLAY, PHONE_TEL, EMAIL, WA_LINK, EMIRATES, SERVICES, CITY_IMG, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from '@/components/marble/constants';
 import { sendEnquiry } from '@/lib/sendEmail';

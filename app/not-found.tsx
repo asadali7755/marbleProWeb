@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/marble/Link';
 
 // noindex so this page is never accidentally indexed by Google
 export const metadata: Metadata = {

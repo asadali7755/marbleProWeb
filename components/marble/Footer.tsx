@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import Link from '@/components/marble/Link';
 import { useRequestCall } from './RequestCallModal';
 import { PHONE_DISPLAY, PHONE_TEL, EMAIL, WA_LINK, SERVICES, EMIRATES } from './constants';
 

@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
+import Link from '@/components/marble/Link';
 import { useRequestCall, useToast, ENQUIRY_FAILED_MSG } from '@/components/marble/RequestCallModal';
 import { PageFaqCta } from '@/components/marble/FaqCta';
 import CityCards from '@/components/marble/CityCards';

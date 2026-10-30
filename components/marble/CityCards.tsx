@@ -1,5 +1,5 @@
 'use client';
-import Link from 'next/link';
+import Link from '@/components/marble/Link';
 import { EMIRATES, CITY_IMG, CITY_GRAD } from './constants';
 
 export default function CityCards() {
