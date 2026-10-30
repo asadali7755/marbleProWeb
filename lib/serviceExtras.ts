@@ -110,4 +110,83 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
       links: [{ label: 'How to care for marble in the UAE climate', href: '/blog/how-to-care-for-marble-floors-uae' }],
     },
   ],
+  'marble-floor-restoration': [
+    {
+      eyebrow: 'What it is',
+      h2: 'Marble floor restoration: repair first, then shine',
+      body: [
+        'Polishing alone works when marble is dull. Restoration is for floors with real damage, such as cracks, chips, deep scratches, acid etching, uneven tiles or heavy yellowing. Each fault is repaired first, then the whole floor is ground, polished and sealed so the repairs blend into the stone.',
+        'Marble flooring in a Dubai villa is expensive to replace, and removing it means noise, dust and days of disruption. In many cases marble floor restoration saves the stone you already have. We tell you honestly at the site visit if a tile is too badly damaged to save.',
+      ],
+    },
+    {
+      eyebrow: 'Damage we repair',
+      h2: 'What marble floor restoration can fix',
+      items: [
+        { t: 'Cracks and chips', d: 'Filled with colour-matched epoxy, then levelled and polished with the surrounding stone.' },
+        { t: 'Deep scratches', d: 'Cut back with coarse diamonds where normal polishing pads cannot reach, often from moved furniture.' },
+        { t: 'Etching', d: 'Marks from citrus, wine and harsh cleaners are removed from the surface and re-polished.' },
+        { t: 'Lippage', d: 'Tile edges that stand proud are ground down until the floor is flat underfoot.' },
+        { t: 'Open or dirty joints', d: 'Joints are cleaned out and levelled so the floor reads as one surface.' },
+        { t: 'Yellowed marble', d: 'Deep discolouration gets its own stain treatment before the final polish.' },
+      ],
+      links: [
+        { label: 'Yellow stain removing', href: '/services/yellow-stain-removing' },
+        { label: '7 signs your floor needs restoration', href: '/blog/signs-marble-floor-needs-restoration' },
+      ],
+    },
+    {
+      eyebrow: 'Our process',
+      h2: 'How we restore a marble floor',
+      numbered: true,
+      items: [
+        { t: 'Damage assessment', d: 'On a free site visit we map every crack, chip and low spot, then agree the scope and a fixed price with you.' },
+        { t: 'Repairs', d: 'Cracks and chips are filled and left to cure, with the colour matched to your stone.' },
+        { t: 'Flattening', d: 'Weighted diamond grinding levels the tiles and the repairs into a single flat surface.' },
+        { t: 'Scratch and etch removal', d: 'Progressively finer diamonds take out the remaining damage and the marks left by grinding.' },
+        { t: 'Polish and crystallize', d: 'The floor is brought up to the finish you chose, then treated with Italian crystallization.' },
+        { t: 'Seal and final check', d: 'A breathable sealer goes on last, and we review the finished floor with you.' },
+      ],
+    },
+    {
+      eyebrow: 'Restore or replace',
+      h2: 'Should you restore or replace your marble?',
+      body: [
+        'Restoration usually makes sense when the tiles are still firmly bonded and the damage is on the surface or in isolated spots. It also keeps the original stone, so you avoid hunting for a matching batch of marble. Replacement may be the better choice if tiles are loose across a large area or badly broken.',
+        'If only some areas are affected, a single room or a stretch of corridor can be restored on its own. We will explain how the finish will meet the rest of the floor before any work starts.',
+      ],
+    },
+    {
+      eyebrow: 'Pricing',
+      h2: 'What affects the cost of marble floor restoration in Dubai?',
+      body: [
+        'Restoration costs more per square metre than a standard polish because there is more work in it. The price depends on the floor area, the number of cracks and chips, how much grinding the tiles need and the finish you want. That is why we inspect first instead of quoting blind.',
+        'The site visit is free, and you receive a fixed price for the agreed scope. Your restored floor is covered by a 1-month written guarantee.',
+      ],
+      links: [{ label: 'Marble polishing and restoration cost guide', href: '/blog/marble-polishing-cost-dubai' }],
+    },
+    {
+      eyebrow: 'Homes and businesses',
+      h2: 'Residential and commercial floor restoration in Dubai',
+      body: [
+        'We restore marble floors in villas and apartments, as well as hotels, offices, lobbies and showrooms. Emergency residential work is available same-day or next-day. For commercial floor restoration in Dubai, we can plan overnight and weekend work so your business keeps running.',
+        'Our dust-free wet process means a lived-in home stays usable while the work moves from room to room. We also cover Abu Dhabi, Sharjah and the other emirates.',
+      ],
+      links: [
+        { label: 'Marble floor restoration in Dubai', href: '/locations/dubai' },
+        { label: 'Marble polishing Dubai', href: '/services/marble-polishing-dubai' },
+      ],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Marble restoration questions from Dubai customers',
+      items: [
+        { t: 'Will I still see the crack after repair?', d: 'We colour-match the filler so repairs blend into the stone. Veining and the size of the crack affect the result, and we show you what to expect first.' },
+        { t: 'Can etching always be removed?', d: 'Surface etching normally can. Deeper damage may need more grinding, which we check at the site visit.' },
+        { t: 'How long does restoration take?', d: 'It depends on the area and the amount of repair work. You get a clear timeline with your quote.' },
+        { t: 'Does restoration stop the damage coming back?', d: 'It removes the existing damage, and sealing helps protect the floor, but marble still needs care. Wipe up acidic spills quickly and use pH-neutral cleaners.' },
+      ],
+      links: [{ label: 'How often should marble be polished?', href: '/blog/how-often-polish-marble-floors-dubai' }],
+    },
+  ],
 };
