@@ -5,6 +5,7 @@ import Nav from '@/components/marble/Nav';
 import Footer from '@/components/marble/Footer';
 import Fab from '@/components/marble/Fab';
 import { PageFaqCta } from '@/components/marble/FaqCta';
+import ServiceExtra from '@/components/marble/ServiceExtra';
 import { PHONE_DISPLAY, PHONE_TEL, EMIRATES } from '@/components/marble/constants';
 import { SERVICE_DETAIL, SVC_DETAIL_IMGS, getServiceDetail, serviceImgAlt } from '@/lib/servicesData';
 import { fitDescription, fitTitle } from '@/lib/seo';
@@ -162,6 +163,8 @@ export default async function ServicePage(
             </div>
           </article>
         </section>
+
+        <ServiceExtra slug={s.slug} />
 
         {/* Available across all 7 emirates — internal links to location pages */}
         <section className="sec" style={{ padding: '60px 36px', background: 'var(--paper2)' }} data-screen-label="service-areas">
