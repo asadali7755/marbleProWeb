@@ -562,14 +562,14 @@ body[data-theme="rosegold"]{ --gold:#B26E55;--amber:#B26E55; }
 /* ═══════ LOCATIONS PAGE ═══════ */
 .loc-intro { padding:150px 36px 60px; max-width:1280px; margin:0 auto; }
 .loc-intro h1 { font-family:var(--display); font-weight:320; font-size:clamp(44px,7vw,116px); line-height:0.9; letter-spacing:-0.035em; margin:22px 0 0; }
-.loc-intro h1 em { font-style:italic; color:var(--gold); }
+.loc-intro h1 em { font-style:italic; color:var(--gold-deep); }
 .loc-intro .lead { max-width:580px; font-size:17px; line-height:1.55; opacity:.78; margin-top:22px; }
 .loc-rail { position:sticky; top:0; z-index:30; background:rgba(246,241,232,0.9); backdrop-filter:blur(12px); border-bottom:1px solid var(--line); }
 .loc-rail-inner { max-width:1440px; margin:0 auto; display:flex; overflow-x:auto; padding:0 36px; scrollbar-width:none; }
 .loc-rail-inner::-webkit-scrollbar { display:none; }
 .loc-rail-inner a { display:flex; align-items:center; gap:8px; padding:14px 18px; font-family:var(--grot); font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; white-space:nowrap; opacity:.6; border-bottom:2px solid transparent; transition:opacity .2s,border-color .2s; }
 .loc-rail-inner a:hover,.loc-rail-inner a.active { opacity:1; border-bottom-color:var(--gold); }
-.loc-rail-inner .n { font-family:var(--mono); font-size:9px; opacity:.7; }
+.loc-rail-inner .n { font-family:var(--mono); font-size:9px; opacity:1; }
 .loc-body { background:var(--paper); padding:80px 36px; }
 .loc-body-grid { display:grid; grid-template-columns:1.4fr 1fr; gap:80px; align-items:start; max-width:1440px; margin:0 auto; }
 .loc-body h3 { font-family:var(--display); font-weight:320; font-size:clamp(28px,3.5vw,52px); line-height:0.95; letter-spacing:-0.025em; margin:0 0 22px; }
@@ -1219,7 +1219,7 @@ section.loc-section:nth-child(even) .loc-body { background:var(--paper2); }
   max-width: 760px; margin: 0 auto; padding: 140px 24px 50px;
 }
 .blog-breadcrumb {
-  font-size: 13px; opacity: .65; margin-bottom: 20px;
+  font-size: 13px; opacity: 1; margin-bottom: 20px;
   display: flex; gap: 8px; flex-wrap: wrap; align-items: center;
 }
 .blog-breadcrumb a { transition: color .2s; }

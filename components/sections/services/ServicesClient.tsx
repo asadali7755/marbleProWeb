@@ -167,7 +167,7 @@ function OnyxFeature() {
         </div>
 
         <div className="fs-top">
-          <span className="sec-eyebrow" style={{ color: 'var(--gold)' }}>— Ultra-Premium · Handle with Expertise</span>
+          <span className="sec-eyebrow" style={{ color: 'var(--gold)', opacity: 1 }}>— Ultra-Premium · Handle with Expertise</span>
           <h2 className="onyx-h2">Onyx Marble Polishing &amp;<br/><em>Restoration in Dubai &amp; UAE.</em></h2>
           <p className="onyx-intro">Onyx is the rarest, most visually dramatic — and most delicate — natural stone used in UAE luxury interiors. A single wrong pass with an abrasive can permanently damage its translucent surface. MarblePro&apos;s certified technicians deliver <strong>onyx marble polishing Dubai</strong> with surgical precision: the right grit, the right pressure, and zero shortcuts.</p>
           <p style={{ fontSize: 15, lineHeight: 1.7, opacity: 0.82, marginTop: 16 }}>Found in backlit feature walls, luxury bathroom vanities, reception counters and statement staircases, onyx demands specialist knowledge at every stage. Our <strong>onyx restoration UAE</strong> process addresses micro-scratches, etch marks and dull patches without removing the stone&apos;s signature translucency. From <strong>onyx polishing Abu Dhabi</strong> palace interiors to <strong>onyx marble care Sharjah</strong> boutique hotels and <strong>onyx stone polishing Ajman</strong> private residences — we treat every onyx surface as the investment piece it is.</p>
@@ -317,7 +317,7 @@ function EmperadorFeature() {
       <div className="emp-inner">
 
         <div className="fs-top">
-          <span className="sec-eyebrow" style={{ color: 'var(--gold)' }}>— Spanish Classic · Rich Chocolate Tones</span>
+          <span className="sec-eyebrow" style={{ color: 'var(--gold)', opacity: 1 }}>— Spanish Classic · Rich Chocolate Tones</span>
           <h2 className="emp-h2">Emperador Marble Polishing &amp;<br/><em>Restoration in Dubai &amp; UAE.</em></h2>
           <p className="emp-intro">Emperador is Spain&apos;s most celebrated dark marble — a rich chocolate-brown stone with striking white and gold veining that brings warmth and drama to any UAE interior. Widely installed in luxury bathroom floors, feature walls, reception counters and villa staircases, Emperador loses its deep lustre quickly without proper care. MarblePro delivers <strong>Emperador marble polishing Dubai</strong> that restores the stone&apos;s signature dark depth and mirror-like finish.</p>
           <p style={{ fontSize: 15, lineHeight: 1.7, opacity: 0.8, marginTop: 16 }}>Emperador marble has a dense, compact structure that responds exceptionally well to professional diamond polishing — but its dark colour makes dull patches, micro-scratches and calcium deposits immediately visible. Our <strong>Emperador marble restoration UAE</strong> process removes surface damage, re-activates the brown tones and locks in a deep, glossy finish. From <strong>Emperador marble polishing Abu Dhabi</strong> hotel lobbies to <strong>Emperador cleaning Sharjah</strong> residential bathrooms and <strong>Emperador marble sealing Ajman</strong> commercial spaces — we cover every installation across the Emirates.</p>
