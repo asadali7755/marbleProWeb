@@ -154,7 +154,7 @@ function QuoteFormBand() {
                   {loading ? 'Sending...' : 'Send Quote Request'}
                 </button>
               </div>
-              <p className="c-note">Site visit: AED 50, paid to our team at the visit. We&apos;ll email your details to <strong style={{ color:'var(--gold)' }}>{EMAIL}</strong> and call you to book the visit.</p>
+              <p className="c-note">Site visit is free. We&apos;ll email your details to <strong style={{ color:'var(--gold)' }}>{EMAIL}</strong> and call you to book the visit.</p>
             </form>
           ) : (
             <form onSubmit={requestCall}>
@@ -308,7 +308,7 @@ export default function ContactClient() {
             <span className="eyebrow-pill"><span className="pulse" /> Open 24 hours · 7 days</span>
             <h1>Get a Free Quote for <em>Marble Polishing</em> &amp; Floor Restoration — <em>Dubai &amp; UAE.</em></h1>
             <p className="lead">
-              On-site inspection across all 7 emirates (AED 50 visit fee, paid at the visit). WhatsApp a photo and we&apos;ll
+              Free on-site inspection across all 7 emirates. WhatsApp a photo and we&apos;ll
               ballpark in minutes — or pick a slot and we&apos;ll be at your door for the proper quote.
             </p>
           </div>

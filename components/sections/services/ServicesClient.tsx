@@ -464,7 +464,7 @@ function WhyUs() {
     { num: '01', h: 'UAE-Wide',         em: 'Coverage',        p: 'Centrally located in Dubai, our mobile teams quickly service Abu Dhabi, Sharjah, Ajman, and all northern emirates — same-week availability across all 7 emirates.' },
     { num: '02', h: 'Advanced Diamond Grinding &', em: 'Crystallization', p: "We don't just use cheap wax coatings that wear off. We utilise true mechanical diamond abrasives followed by premium Italian crystallization for long-lasting protection." },
     { num: '03', h: 'Tailored',         em: 'Stone Solutions',  p: 'From Italian Carrara marble to technical quartz, we understand the specific chemistry of every material — the right technique for every stone type.' },
-    { num: '04', h: 'Transparent',      em: 'Pricing',          p: 'No hidden fees. We do an on-site evaluation (AED 50 visit fee, paid at the visit) to give a precise quotation tailored to your floor\'s exact condition and size.' },
+    { num: '04', h: 'Transparent',      em: 'Pricing',          p: 'No hidden fees. We offer free on-site evaluations to give a precise quotation tailored to your floor\'s exact condition and size.' },
     { num: '05', h: 'Dust-Free',        em: 'Process',          p: 'Furniture is covered, edges masked, and our wet process keeps the air clear so your home or office stays completely liveable throughout the job.' },
     { num: '06', h: 'Written',          em: 'Guarantee',        p: 'Every job is backed by a 1-month written workmanship guarantee. If anything is not right within that month, we come back and fix it.' },
   ];
@@ -550,7 +550,7 @@ function CTAFooter() {
         </h2>
         <p style={{ fontSize: 17, lineHeight: 1.6, opacity: 0.78, maxWidth: '52ch', margin: '0 auto 30px' }}>
           Contact MarblePro today for the best floor restoration services in Dubai and the wider UAE.
-          We&apos;ll be on-site within 24 hours for your inspection (AED 50 visit fee).
+          We&apos;ll be on-site within 24 hours for your free inspection.
         </p>
         <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
           <Link className="btn btn-primary" href="/#quote">

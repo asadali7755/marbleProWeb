@@ -440,7 +440,7 @@ export default function GalleryClient() {
         <div className="gx-wrap gx-cta-inner">
           <h2>Your floor or countertop <em>could be next.</em></h2>
           <div>
-            <p>Send us a photo on WhatsApp and we&apos;ll tell you what&apos;s possible. Site visit AED 50, paid at the visit.</p>
+            <p>Send us a photo on WhatsApp and we&apos;ll tell you what&apos;s possible. Site visit is free.</p>
             <div className="gx-hero-ctas">
               <a className="btn btn-wa" href={WA_HREF} target="_blank" rel="noopener noreferrer">WhatsApp a photo</a>
               <button type="button" className="btn gx-btn-ghost" onClick={open}>Request a call</button>

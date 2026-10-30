@@ -30,7 +30,7 @@ const FAQS = [
   { q: 'How long does the marble floor polishing process take in Dubai?', a: 'A standard villa living area typically takes 1 to 2 days. Emergency residential marble floor restoration services in Dubai can be scheduled same-day or next-day. We work around your schedule and ensure a completely dust-free process.' },
   { q: 'Can you remove yellow stains from marble floors in Dubai?', a: 'Yes. Professional yellow stain removing for natural stone UAE is one of our core specialties. We use chemically targeted treatments to lift deep-set yellowing, rust marks and watermarks that regular cleaning cannot fix — restoring the original bright tone of your stone.' },
   { q: 'Do you do deep scratch removal and marble crack filling in Dubai?', a: 'Absolutely. Deep scratch removal and marble crack filling Dubai is handled using colour-matched epoxy fillers and progressive diamond pads. We can restore heavily scratched, chipped or cracked natural stone to near-new condition.' },
-  { q: 'What is the price for terrazzo floor polishing in Dubai?', a: 'Terrazzo floor polishing Dubai price depends on the area size, current condition and finish required. We inspect on site (AED 50 visit fee, paid at the visit) and give a no-obligation fixed quote. As terrazzo polishing and restoration contractors UAE businesses and homeowners trust, we price fairly with no hidden charges.' },
+  { q: 'What is the price for terrazzo floor polishing in Dubai?', a: 'Terrazzo floor polishing Dubai price depends on the area size, current condition and finish required. We offer free on-site assessments with no-obligation fixed quotes. As terrazzo polishing and restoration contractors UAE businesses and homeowners trust, we price fairly with no hidden charges.' },
   { q: 'Do you offer premium marble countertop polishing in Dubai?', a: 'Yes. Premium marble countertop polishing Dubai covers kitchen tops, bathroom vanities, island benches and feature walls. We also offer kitchen top polishing and sealing services UAE-wide, Corian countertop polishing and scratch repair Dubai, and quartz polishing and stain protection Abu Dhabi.' },
   { q: 'Do you provide commercial granite polishing services in Dubai?', a: 'Yes — commercial granite polishing services Dubai is available for retail showrooms, hotel lobbies, office buildings and residential complexes. As a multi-type floor polishing company UAE, we handle marble, granite, terrazzo, quartz and Corian in one visit.' },
   { q: 'Which emirates do you cover?', a: 'All 7 — Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Umm Al Quwain and Fujairah. Same crew, same standards, same-week availability. Italian marble polishing and crystallization Dubai is our flagship service, available across all regions.' },
@@ -155,7 +155,7 @@ function Hero() {
       <aside className="hero-card">
         <div className="veins-d" />
         <div style={{ position: 'relative', zIndex: 1 }}>
-          <span className="hero-card-label">Two-line quote · AED 50 site visit</span>
+          <span className="hero-card-label">Two-line quote · Free site visit</span>
           <h2 className="hero-card-h">Tell us the job &amp; your number.<br/>We&apos;ll call to book your visit.</h2>
           {sent ? (
             <div className="quote-mini" style={{ textAlign: 'center' }}>
@@ -181,7 +181,7 @@ function Hero() {
                 </button>
                 <a className="btn-call" href={`tel:${PHONE_TEL}`} style={{ justifyContent: 'center' }}>Call now</a>
               </div>
-              <p className="qf-note" style={{ marginTop: 10 }}>Site visit: AED 50, paid to our team at the visit.</p>
+              <p className="qf-note" style={{ marginTop: 10 }}>Site visit is free, no obligation.</p>
             </div>
           )}
         </div>
@@ -621,7 +621,7 @@ function QuoteBand() {
             <span className="sec-eyebrow">08 — Quote request · all UAE emirates</span>
             <h2 className="cta-h">Affordable marble floor polishing and restoration services — <em>get your quote today.</em></h2>
             <p style={{ fontSize: 17, lineHeight: 1.55, opacity: 0.78, maxWidth: '42ch', marginTop: 22 }}>
-              As the best marble polishing company in Dubai, we give you a clear, fixed-price quote after a quick site visit (AED 50, paid at the visit). Italian marble polishing and crystallization, floor restoration, countertop polishing and yellow stain removing across all 7 UAE emirates.
+              As the best marble polishing company in Dubai, we give you a clear, fixed-price quote after a free site visit. Italian marble polishing and crystallization, floor restoration, countertop polishing and yellow stain removing across all 7 UAE emirates.
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, marginTop: 24, fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase', opacity: 0.7 }}>
               <span>✦ Same-day emergency service</span>
@@ -630,7 +630,7 @@ function QuoteBand() {
             </div>
           </div>
           <form className="quote-form" onSubmit={wa}>
-            <div className="lab">Quote Request · AED 50 site visit</div>
+            <div className="lab">Quote Request · Free site visit</div>
             <h3>Get your quote.</h3>
             {sent ? (
               <div style={{ marginTop: 24 }}>
@@ -662,7 +662,7 @@ function QuoteBand() {
                   </button>
                   <button type="button" className="btn-call" onClick={open} style={{ justifyContent: 'center' }}>Request a Call →</button>
                 </div>
-                <p className="qf-note">Site visit: AED 50, paid to our team at the visit. &quot;Request a call&quot; is free.</p>
+                <p className="qf-note">Site visit is free, no obligation. &quot;Request a call&quot; is free too.</p>
               </>
             )}
           </form>

@@ -52,7 +52,7 @@ const handWrittenGuides: Guide[] = [
     ],
     faqs: [
       { q: 'Is marble polishing cheaper than replacing the floor?', a: 'Far cheaper. Professional polishing and restoration typically costs a fraction of removing and re-laying marble, and properly restored marble holds its shine for years.' },
-      { q: 'Do you charge for the quote?', a: 'A rough quote on WhatsApp (send a photo) is free. For an exact fixed price we visit the site; the visit fee is AED 50, paid to our team at the visit.' },
+      { q: 'Do you charge for the quote?', a: 'No. MarblePro provides a free on-site inspection and a transparent fixed-price quote with no obligation.' },
       { q: 'Does the price change once you start?', a: 'No. Our written quote is fixed for the agreed scope — there are no hidden or surprise charges.' },
     ],
     related: [
