@@ -36,11 +36,12 @@ function LocationSection({ loc, idx }: { loc: Location; idx: number }) {
       <div className="loc-body">
         <div className="loc-body-grid">
           <div>
-            <h3>{loc.h1}</h3>
-            {loc.body.map((p, i) => <p key={i}>{p}</p>)}
+            <h3><Link href={`/locations/${loc.slug}`} style={{ color: 'inherit', textDecoration: 'none' }}>{loc.h1}</Link></h3>
+            {/* Full copy lives on the location page; repeating it here duplicated every page. */}
             <div className="areas">
               {loc.areas.map((a) => <span className="area" key={a}>{a}</span>)}
             </div>
+            <Link href={`/locations/${loc.slug}`} className="btn btn-secondary" style={{ marginTop: 20 }}>View {loc.name} page</Link>
           </div>
           <div className="stats">
             <h4>{loc.name} service snapshot</h4>

@@ -30,9 +30,9 @@ function ServiceDetail({ s }: { s: ServiceDetail }) {
       </div>
       {/* bottom: body + features + buttons — shows third on mobile */}
       <div className="svc-bot">
-        {s.body.map((p, i) => <p key={i}>{p}</p>)}
+        {/* Full copy lives on the service page; repeating it here duplicated every page. */}
         <ul className="feat">
-          {s.feat.map((f, i) => (
+          {s.feat.slice(0, 3).map((f, i) => (
             <li key={i}>
               <svg className="chk" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               <span><strong>{f.t}</strong>{f.d}</span>
@@ -40,8 +40,8 @@ function ServiceDetail({ s }: { s: ServiceDetail }) {
           ))}
         </ul>
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 24 }}>
-          <Link href="/#quote" className="btn btn-primary">
-            Quote this service
+          <Link href={`/services/${s.slug}`} className="btn btn-primary">
+            View {s.name}
             <span className="arr"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </Link>
           <a href={`tel:${PHONE_TEL}`} className="btn btn-secondary">Call {PHONE_DISPLAY}</a>
