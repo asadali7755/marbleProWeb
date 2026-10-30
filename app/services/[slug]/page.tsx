@@ -105,7 +105,7 @@ export default async function ServicePage(
               <span>/</span>
               <Link href="/services" style={{ color: 'inherit' }}>Services</Link>
               <span>/</span>
-              <span style={{ color: 'var(--gold)' }}>{s.name}</span>
+              <span style={{ color: 'var(--gold-text)' }}>{s.name}</span>
             </nav>
             <span className="eyebrow-pill"><span className="pulse" /> Available across all 7 UAE emirates</span>
             <h1>{s.h2}</h1>
@@ -191,7 +191,7 @@ export default async function ServicePage(
             <div style={{ marginTop: 28, display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 16 }}>
               {related.map((r) => (
                 <Link key={r.slug} href={`/services/${r.slug}`} style={{ textDecoration: 'none', color: 'inherit', display: 'block', background: 'var(--paper2)', borderRadius: 14, padding: '22px 24px', border: '1px solid var(--line)' }}>
-                  <span style={{ fontFamily: 'var(--mono)', fontSize: 12, color: 'var(--gold)' }}>— {r.num}</span>
+                  <span style={{ fontFamily: 'var(--mono)', fontSize: 12, color: 'var(--gold-text)' }}>— {r.num}</span>
                   <div style={{ fontFamily: 'var(--grot)', fontWeight: 700, fontSize: 16, margin: '8px 0 6px', color: 'var(--ink)' }}>{r.name}</div>
                   <p style={{ margin: 0, fontSize: 13.5, lineHeight: 1.6, opacity: 0.72 }}>{r.intro.slice(0, 110)}…</p>
                 </Link>

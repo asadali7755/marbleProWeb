@@ -109,7 +109,7 @@ export default function LocationsClient() {
         <div style={{ maxWidth: 900, margin: '0 auto', position: 'relative' }}>
           <span className="sec-eyebrow" style={{ color: 'var(--paper)', opacity: 0.7 }}>— Whichever emirate</span>
           <h2 style={{ fontFamily: 'var(--display)', fontWeight: 320, fontSize: 'clamp(40px, 6vw, 88px)', lineHeight: 0.95, letterSpacing: '-0.03em', margin: '14px 0 22px' }}>
-            Affordable Marble Floor Polishing Services — <em style={{ color: 'var(--gold)', fontStyle: 'italic' }}>UAE&apos;s Best Stone Care, All 7 Emirates.</em>
+            Affordable Marble Floor Polishing Services — <em style={{ color: 'var(--gold-deep)', fontStyle: 'italic' }}>UAE&apos;s Best Stone Care, All 7 Emirates.</em>
           </h2>
           <p style={{ fontSize: 17, lineHeight: 1.6, opacity: 0.78, maxWidth: '54ch', margin: '0 auto 30px' }}>
             Free on-site inspection anywhere in the UAE. Same-week bookings in Dubai and Abu Dhabi.

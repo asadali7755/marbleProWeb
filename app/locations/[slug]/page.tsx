@@ -158,7 +158,7 @@ export default async function LocationPage(
               {SERVICES.map((sv) => (
                 <Link key={sv.slug} href={`/services/${sv.slug}`} style={{ textDecoration: 'none', color: 'inherit', background: 'var(--paper)', border: '1px solid var(--line)', borderRadius: 12, padding: '16px 18px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 10 }}>
                   <span style={{ fontFamily: 'var(--grot)', fontWeight: 600, fontSize: 14 }}>{sv.name}</span>
-                  <span style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--gold)' }}>{sv.num}</span>
+                  <span style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--gold-text)' }}>{sv.num}</span>
                 </Link>
               ))}
             </div>

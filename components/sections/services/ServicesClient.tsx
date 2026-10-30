@@ -97,7 +97,7 @@ function TravertineFeature() {
       <div className="trav-inner">
 
         <div className="fs-top">
-          <span className="sec-eyebrow" style={{ color: 'var(--gold)' }}>— Featured · UAE&apos;s Most Loved Stone</span>
+          <span className="sec-eyebrow" style={{ color: 'var(--gold-text)', opacity: 1 }}>— Featured · UAE&apos;s Most Loved Stone</span>
           <h2 className="trav-h2">Travertine Polishing &amp; Restoration<br/><em>in Dubai, Abu Dhabi &amp; UAE.</em></h2>
           <p className="trav-intro">Travertine is the most widely used natural stone in UAE villas, hotel lobbies and commercial spaces — and also the most misunderstood when it comes to maintenance. MarblePro specialises in <strong>travertine polishing Dubai</strong>, deep pore-filling, lippage correction and crystallization that returns this ancient stone to its full, natural beauty.</p>
           <p style={{ fontSize: 15, lineHeight: 1.7, opacity: 0.82, marginTop: 16 }}>Unlike marble, travertine has natural holes and voids that require specialist epoxy filling before polishing — a step many generic companies skip. Our <strong>travertine restoration UAE</strong> process fills every void, grinds flush, hones through fine grits and seals with an impregnating breathable sealer rated for the UAE&apos;s extreme heat cycle. From <strong>travertine floor polishing Abu Dhabi</strong> high-rises to <strong>travertine cleaning Sharjah</strong> heritage villas and <strong>travertine sealing Ajman</strong> beachfront homes — we cover every emirate with the same certified crew.</p>
@@ -208,7 +208,7 @@ function CremaMarfilFeature() {
       <div className="crema-inner">
 
         <div className="fs-top">
-          <span className="sec-eyebrow" style={{ color: 'var(--gold)' }}>— UAE&apos;s Most Installed Marble</span>
+          <span className="sec-eyebrow" style={{ color: 'var(--gold-text)', opacity: 1 }}>— UAE&apos;s Most Installed Marble</span>
           <h2 className="crema-h2">Crema Marfil Polishing &amp;<br/><em>Restoration Across the UAE.</em></h2>
           <p className="crema-intro">Crema Marfil is the single most installed marble in UAE homes, villas and commercial buildings. Its warm cream tones and subtle golden veining made it the defining stone of UAE luxury interiors for two decades — but years of foot traffic, sand abrasion and harsh cleaning chemicals dull its surface fast. MarblePro specialises in <strong>Crema Marfil polishing Dubai</strong> and full-surface restoration that brings this Spanish marble back to its original warm, high-gloss finish.</p>
           <p style={{ fontSize: 15, lineHeight: 1.7, opacity: 0.82, marginTop: 16 }}>Crema Marfil is a relatively soft, porous marble that scratches and etches easily — yet responds beautifully to professional diamond polishing. Our <strong>Crema Marfil marble restoration UAE</strong> process covers deep scratch removal, etch reversal, full diamond honing, high-gloss polishing and impregnating sealer application. Whether it&apos;s <strong>Crema Marfil floor polishing Abu Dhabi</strong> palace corridors, <strong>Crema Marfil cleaning Sharjah</strong> residential villas, <strong>Crema Marfil sealing Ajman</strong> apartments or a full <strong>Crema Marfil restoration Dubai</strong> — we restore the warm cream glow that made this marble iconic across the Emirates.</p>
@@ -276,7 +276,7 @@ function CalacattaFeature() {
         </div>
 
         <div className="fs-top">
-          <span className="sec-eyebrow" style={{ color: 'var(--gold)' }}>— Italian Premium · Bold Veining</span>
+          <span className="sec-eyebrow" style={{ color: 'var(--gold-text)', opacity: 1 }}>— Italian Premium · Bold Veining</span>
           <h2 className="cala-h2">Calacatta Marble Polishing &amp;<br/><em>Restoration in Dubai &amp; UAE.</em></h2>
           <p className="cala-intro">Calacatta marble is the pinnacle of Italian stone — pure white with bold, dramatic grey and gold veining that makes every slab a work of art. Found in UAE&apos;s most prestigious villas, five-star hotel lobbies and luxury apartment feature walls, Calacatta commands the highest value per square metre of any stone. MarblePro&apos;s specialists deliver <strong>Calacatta marble polishing Dubai</strong> with the precision and respect this stone demands.</p>
           <p style={{ fontSize: 15, lineHeight: 1.7, opacity: 0.82, marginTop: 16 }}>Calacatta is highly sensitive to acids, heat and abrasion — and its bright white background makes every scratch, etch and stain immediately visible. Our <strong>Calacatta marble restoration UAE</strong> uses ultra-fine diamond sequences to erase damage without disturbing the stone&apos;s iconic bold vein patterns. From <strong>Calacatta marble cleaning Abu Dhabi</strong> penthouse kitchens to <strong>Calacatta polishing Sharjah</strong> luxury bathroom walls, <strong>Calacatta marble sealing Ajman</strong> feature slabs and full <strong>Calacatta restoration Dubai</strong> villa floors — we handle Italy&apos;s finest stone with the care it deserves.</p>
@@ -410,7 +410,7 @@ function Welcome() {
           {CORE_SERVICES.map((group) => (
             <div key={group.group} style={{ background: 'var(--paper2)', borderRadius: 16, padding: '32px 28px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 24 }}>
-                <span style={{ fontFamily: 'var(--mono)', fontSize: 18, color: 'var(--gold)' }}>{group.icon}</span>
+                <span style={{ fontFamily: 'var(--mono)', fontSize: 18, color: 'var(--gold-text)' }}>{group.icon}</span>
                 <h3 style={{ fontFamily: 'var(--grot)', fontSize: 13, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', margin: 0 }}>{group.group}</h3>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
@@ -546,7 +546,7 @@ function CTAFooter() {
       <div style={{ maxWidth: 900, margin: '0 auto' }}>
         <span className="sec-eyebrow">— Ready?</span>
         <h2 style={{ fontFamily: 'var(--display)', fontWeight: 320, fontSize: 'clamp(40px, 6vw, 88px)', lineHeight: 0.95, letterSpacing: '-0.03em', margin: '14px 0 22px' }}>
-          Ready to bring back the <em style={{ color: 'var(--gold)', fontStyle: 'italic' }}>mirror shine?</em>
+          Ready to bring back the <em style={{ color: 'var(--gold-deep)', fontStyle: 'italic' }}>mirror shine?</em>
         </h2>
         <p style={{ fontSize: 17, lineHeight: 1.6, opacity: 0.78, maxWidth: '52ch', margin: '0 auto 30px' }}>
           Contact MarblePro today for the best floor restoration services in Dubai and the wider UAE.

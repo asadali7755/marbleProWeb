@@ -78,7 +78,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
           <nav aria-label="Breadcrumb" className="blog-breadcrumb">
             <Link href="/">Home</Link><span>/</span>
             <Link href="/blog">Blogs</Link><span>/</span>
-            <span style={{ color: 'var(--gold)' }}>{g.category}</span>
+            <span style={{ color: 'var(--gold-text)' }}>{g.category}</span>
           </nav>
 
           <span className="blog-article-cat">{g.category} · {g.readMins} min read</span>
