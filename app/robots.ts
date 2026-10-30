@@ -23,6 +23,10 @@ export default function robots(): MetadataRoute.Robots {
           '/wp-json/',
           '/api/',        // Next.js API routes — not web pages
           '/?s=',         // Search result pages (WP search)
+          // Next.js RSC payloads (client-side navigation data, not pages).
+          // GSC Crawl stats showed 58% of Googlebot requests going here.
+          '/*?_rsc=',
+          '/*&_rsc=',
         ],
       },
     ],
