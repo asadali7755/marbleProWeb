@@ -919,7 +919,7 @@ section.loc-section:nth-child(even) .loc-body { background:var(--paper2); }
   /* service detail mobile: heading → image → features */
   .svc-detail { display:flex !important; flex-direction:column !important; padding:36px 0 !important; gap:20px !important; }
   .svc-detail .svc-top { order:1 !important; }
-  .svc-detail .preview { order:2 !important; position:relative !important; aspect-ratio:16/10 !important; width:100% !important; height:auto !important; border-radius:16px !important; }
+  .svc-detail .preview { order:2 !important; position:relative !important; top:auto !important; aspect-ratio:16/10 !important; width:100% !important; height:auto !important; border-radius:16px !important; }
   .svc-detail .svc-bot { order:3 !important; }
   /* feature sections mobile: heading → image → features */
   .trav-inner, .onyx-inner, .crema-inner, .cala-inner, .emp-inner { display:flex !important; flex-direction:column !important; gap:20px !important; }
