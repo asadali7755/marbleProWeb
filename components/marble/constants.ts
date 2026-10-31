@@ -75,4 +75,5 @@ export const SERVICES: Service[] = [
   { num: "17", slug: "marble-scratch-repair-dubai",      name: "Marble Scratch & Crack Repair", short: "Scratches, cracks, chips and etch marks repaired and blended into the stone." },
   { num: "18", slug: "marble-grinding-dubai",            name: "Marble Grinding",           short: "Diamond grinding for uneven tiles, lippage and deep scratches." },
   { num: "19", slug: "commercial-floor-polishing-dubai", name: "Commercial Floor Polishing", short: "Stone floors in hotels, offices and retail spaces, with night and weekend work." },
+  { num: "20", slug: "marble-cleaning-dubai",            name: "Marble Cleaning",           short: "Stone-safe cleaning for marble floors, stairs, bathrooms and kitchen tops." },
 ];

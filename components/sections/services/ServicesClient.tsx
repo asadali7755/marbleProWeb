@@ -59,9 +59,9 @@ function ServicesHero() {
         <div className="marble-veins" />
         <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative', zIndex: 2 }}>
           <span className="eyebrow-pill"><span className="pulse" /> Services · across all 7 emirates</span>
-          <h1>19 Specialised <em>Stone Polishing Services</em> in Dubai &amp; UAE — Marble, Terrazzo, Granite &amp; <em>More.</em></h1>
+          <h1>20 Specialised <em>Stone Polishing Services</em> in Dubai &amp; UAE — Marble, Terrazzo, Granite &amp; <em>More.</em></h1>
           <p className="lead">
-            Nineteen specialised treatments. One certified team. From Travertine and Onyx to Crema Marfil,
+            Twenty specialised treatments. One certified team. From Travertine and Onyx to Crema Marfil,
             Calacatta and Emperador — every natural stone, every emirate, same diamond-grade process backed
             by a 1-month written guarantee.
           </p>
@@ -110,7 +110,7 @@ function TravertineFeature() {
               { t: 'High-gloss crystallization', d: 'Italian crystallizer creates a permanent mirror-finish on travertine without masking its natural veining.' },
               { t: 'Breathable sealing',          d: 'Impregnating sealer rated for UAE heat — lets the stone breathe while blocking oil, water & stains.' },
               { t: 'Outdoor travertine care',     d: 'UV-resistant sealers for pool surrounds, driveways and external walkways across Dubai & Abu Dhabi.' },
-              { t: 'Same-week availability',      d: 'Direct scheduling for residential & commercial travertine jobs across all 7 UAE emirates.' },
+              { t: 'Visit time agreed with you',  d: 'Direct scheduling for residential & commercial travertine jobs across all 7 UAE emirates.' },
             ].map((f) => (
               <div className="trav-feat" key={f.t}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--gold)', flexShrink: 0, marginTop: 2 }}><polyline points="20 6 9 17 4 12"/></svg>
@@ -461,7 +461,7 @@ const WHY_GRADS = [
 
 function WhyUs() {
   const items = [
-    { num: '01', h: 'UAE-Wide',         em: 'Coverage',        p: 'Centrally located in Dubai, our mobile teams quickly service Abu Dhabi, Sharjah, Ajman, and all northern emirates — same-week availability across all 7 emirates.' },
+    { num: '01', h: 'UAE-Wide',         em: 'Coverage',        p: 'Our office is in Sharjah and our teams work across Dubai, Abu Dhabi, Ajman and all northern emirates — visit times are agreed with you, based on our schedule.' },
     { num: '02', h: 'Advanced Diamond Grinding &', em: 'Crystallization', p: "We don't just use cheap wax coatings that wear off. We utilise true mechanical diamond abrasives followed by premium Italian crystallization for long-lasting protection." },
     { num: '03', h: 'Tailored',         em: 'Stone Solutions',  p: 'From Italian Carrara marble to technical quartz, we understand the specific chemistry of every material — the right technique for every stone type.' },
     { num: '04', h: 'Transparent',      em: 'Pricing',          p: 'No hidden fees. We offer free on-site evaluations to give a precise quotation tailored to your floor\'s exact condition and size.' },
@@ -550,7 +550,7 @@ function CTAFooter() {
         </h2>
         <p style={{ fontSize: 17, lineHeight: 1.6, opacity: 0.78, maxWidth: '52ch', margin: '0 auto 30px' }}>
           Contact MarblePro today for the best floor restoration services in Dubai and the wider UAE.
-          We&apos;ll be on-site within 24 hours for your free inspection.
+          We&apos;ll reply within 30 minutes and agree a time for your free inspection.
         </p>
         <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
           <Link className="btn btn-primary" href="/#quote">

@@ -35,6 +35,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
         { t: 'Cracks or yellowing', d: 'These need repair or stain treatment first, then polishing.' },
       ],
       links: [
+        { label: 'Marble cleaning', href: '/services/marble-cleaning-dubai' },
         { label: '7 signs your floor needs restoration', href: '/blog/signs-marble-floor-needs-restoration' },
         { label: 'Marble floor restoration', href: '/services/marble-floor-restoration' },
         { label: 'Yellow stain removing', href: '/services/yellow-stain-removing' },
@@ -547,6 +548,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
       ],
       links: [
         { label: 'Marble polishing Dubai', href: '/services/marble-polishing-dubai' },
+        { label: 'Marble cleaning', href: '/services/marble-cleaning-dubai' },
         { label: 'Marble floor restoration', href: '/services/marble-floor-restoration' },
         { label: 'Crystallization and sealing', href: '/services/crystallization-sealing' },
         { label: 'Yellow stain removing', href: '/services/yellow-stain-removing' },
@@ -559,7 +561,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
       h2: 'Marble polishing company in Abu Dhabi',
       body: [
         'Sand, heavy foot traffic and hard water wear down stone floors in Abu Dhabi just as they do in Dubai. We polish and restore marble in villas, towers and showrooms across the capital, from Saadiyat Island and Yas Island to Al Reem Island and the Corniche.',
-        'We run weekly routes to Abu Dhabi, and bookings are typically scheduled within 48 hours. The site visit is free, and you receive a fixed-price quote before any work starts.',
+        'Our office is in Sharjah and our team works across the UAE. When you contact us, we reply within 30 minutes and give you a visit time based on our schedule. The site visit is free, and you receive a fixed-price quote before any work starts.',
       ],
     },
     {
@@ -592,7 +594,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
       eyebrow: 'Sharjah',
       h2: 'Marble polishing in Sharjah',
       body: [
-        'Our address is in Muwaileh Commercial, Sharjah, so Sharjah is home ground for MarblePro. We polish marble in villas, apartments and offices across Al Khan, Al Majaz, Al Nahda, Al Taawun and University City.',
+        'Our office is in Muwaileh Commercial, Sharjah, so Sharjah is home ground for MarblePro. Our team also works across the UAE, on a schedule agreed with each customer. We polish marble in villas, apartments and offices across Al Khan, Al Majaz, Al Nahda, Al Taawun and University City.',
         'Older Sharjah buildings often mix marble, terrazzo and granite on one floor plan. We can handle all three in one visit, using the right machinery for each stone.',
       ],
     },
@@ -617,6 +619,114 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
       body: [
         'Call or WhatsApp a photo of your floor. We then visit for free, confirm the stone and give you a fixed price for the agreed work. Our work comes with a 1-month written guarantee.',
       ],
+    },
+  ],
+  'marble-cleaning-dubai': [
+    {
+      eyebrow: 'What it is',
+      h2: 'Marble cleaning in Dubai: what the service covers',
+      body: [
+        'Marble cleaning removes what is sitting on the stone: dirt, sand, grime, soap film and the build-up left by old cleaning products. It is a different job from polishing. Cleaning lifts what is on top of the surface, while polishing works the stone itself with diamond abrasives to bring back the shine.',
+        'Marble needs more care than tile or porcelain because it is a calcium-based stone, and acids eat into it. Many bathroom, kitchen and glass cleaners can leave pale, dull marks after one use. A good marble cleaning company chooses products to suit the stone, which is why we check your marble before any work starts.',
+      ],
+    },
+    {
+      eyebrow: 'Signs',
+      h2: 'When does marble need a professional clean?',
+      items: [
+        { t: 'The floor looks grey after mopping', d: 'Old mop water and product residue build up on the surface and hold on to dirt.' },
+        { t: 'Bathroom marble looks cloudy', d: 'Soap film and hard water leave a dull layer on vanities, walls and shower areas.' },
+        { t: 'Joints have turned dark', d: 'Dirt collects in the lines between tiles and makes the whole floor look tired.' },
+        { t: 'Entrances and stairs stay sandy', d: 'Sand comes in on shoes, so these areas get dirty first and scratch fastest.' },
+        { t: 'You have just renovated', d: 'Fine dust and site residue should be removed with care from new or uncovered stone.' },
+        { t: 'You are moving in or out', d: 'A deep clean gets the stone ready for the next person living in the home.' },
+      ],
+    },
+    {
+      eyebrow: 'Which service',
+      h2: 'Cleaning, polishing or stain removal: which one do you need?',
+      body: [
+        'Not every marked floor is a dirty floor. Marks inside the stone will not come off with any cleaner, and scrubbing harder can make things worse. We look at the stone first, then tell you which of these it needs.',
+      ],
+      items: [
+        { t: 'Cleaning', d: 'For marble that is dirty but not damaged.' },
+        { t: 'Polishing', d: 'For marble that stays dull once it is clean, or shows traffic paths and fine scratches.' },
+        { t: 'Stain removal', d: 'For marks inside the stone, such as yellowing, rust or oil.' },
+        { t: 'Repair', d: 'For etch marks, chips and cracks, which are damage rather than dirt.' },
+      ],
+      links: [
+        { label: 'Marble polishing Dubai', href: '/services/marble-polishing-dubai' },
+        { label: 'Yellow stain removing', href: '/services/yellow-stain-removing' },
+        { label: 'Marble scratch and crack repair', href: '/services/marble-scratch-repair-dubai' },
+      ],
+    },
+    {
+      eyebrow: 'Our process',
+      h2: 'How our marble cleaning service works',
+      numbered: true,
+      items: [
+        { t: 'Call or WhatsApp', d: 'Tell us your area and send a photo of the marble. We reply within 30 minutes.' },
+        { t: 'Free site visit', d: 'We confirm a time with you, identify the stone and measure the area.' },
+        { t: 'Fixed-price quote', d: 'You get one price for the agreed scope, with no obligation to go ahead.' },
+        { t: 'Stone-safe clean', d: 'We use products that suit your stone, and clean the surface and the joints.' },
+        { t: 'Rinse and dry', d: 'Residue is removed, because cleaner left on the stone attracts new dirt.' },
+        { t: 'Check it with you', d: 'We go through the result together and point out any area that needs more than cleaning.' },
+      ],
+    },
+    {
+      eyebrow: 'What we clean',
+      h2: 'Marble floor cleaning and more',
+      items: [
+        { t: 'Floors', d: 'Living rooms, hallways, lobbies and entrances, the areas that collect the most sand.' },
+        { t: 'Stairs', d: 'Treads and landings, including the edges a machine struggles to reach.' },
+        { t: 'Bathrooms', d: 'Marble vanities, walls and floors with soap film and water marks.' },
+        { t: 'Kitchen tops', d: 'Marble tops with grease and everyday marks, cleaned with care around food areas.' },
+      ],
+      body: [
+        'Have a different stone? Granite, terrazzo and travertine each need their own products, so tell us what you have when you contact us.',
+      ],
+    },
+    {
+      eyebrow: 'Dubai coverage',
+      h2: 'Marble cleaning for Dubai homes and businesses',
+      body: [
+        'We clean marble in villas, apartments, offices, hotels and showrooms across Dubai. Our office is in Sharjah and our team works across the UAE, so when you contact us we give you a visit time based on our schedule. Tell us about any building rules or working hours, and we will plan around them.',
+      ],
+      links: [
+        { label: 'Marble polishing company in Dubai', href: '/locations/dubai' },
+        { label: 'Commercial floor polishing', href: '/services/commercial-floor-polishing-dubai' },
+      ],
+    },
+    {
+      eyebrow: 'Pricing',
+      h2: 'How marble cleaning is priced',
+      body: [
+        'The price depends on the size of the area, the condition of the stone and how easy it is to reach. A single bathroom and a full villa floor are very different jobs, so we do not quote one flat rate for everything. The site visit is free, and you get a fixed price for the agreed work before anything starts.',
+      ],
+    },
+    {
+      eyebrow: 'Daily care',
+      h2: 'How to keep marble clean between visits',
+      items: [
+        { t: 'Sweep or dust-mop often', d: 'Removing sand is the simplest way to protect the surface.' },
+        { t: 'Use a pH-neutral cleaner', d: 'Choose a product made for natural stone, and follow the label.' },
+        { t: 'Avoid acids and bleach', d: 'Vinegar, lemon, bleach and strong bathroom cleaners can mark marble.' },
+        { t: 'Wipe spills quickly', d: 'Blot juice, coffee and oil before they reach the stone.' },
+        { t: 'Put mats at the door', d: 'Mats catch sand before it spreads through the home.' },
+      ],
+      links: [{ label: 'How to care for marble in the UAE climate', href: '/blog/how-to-care-for-marble-floors-uae' }],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Marble cleaning questions from Dubai customers',
+      items: [
+        { t: 'Is marble cleaning the same as polishing?', d: 'No. Cleaning removes dirt from the surface. Polishing works the stone to bring back its shine.' },
+        { t: 'Will cleaning bring the shine back?', d: 'Only if the shine is hidden under dirt or residue. A worn or scratched floor needs polishing.' },
+        { t: 'Can cleaning remove yellow stains?', d: 'Usually not, because yellowing sits inside the stone. It needs a stain treatment instead.' },
+        { t: 'Can I use a normal floor cleaner on marble?', d: 'Check the label first. Many household cleaners are too acidic or too harsh for marble.' },
+        { t: 'How do I book?', d: 'Call or WhatsApp 054 556 77 99. We reply within 30 minutes and agree a visit time with you.' },
+      ],
+      links: [{ label: 'How to remove yellow stains from marble', href: '/blog/how-to-remove-yellow-stains-from-marble' }],
     },
   ],
   'floor-polishing-dubai': [
@@ -653,6 +763,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
         { t: 'Seal', d: 'For polished stone that needs extra protection against spills and daily wear.' },
       ],
       links: [
+        { label: 'Marble cleaning', href: '/services/marble-cleaning-dubai' },
         { label: 'Marble floor restoration', href: '/services/marble-floor-restoration' },
         { label: 'Crystallization and sealing', href: '/services/crystallization-sealing' },
       ],

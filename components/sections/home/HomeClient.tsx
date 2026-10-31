@@ -33,7 +33,7 @@ const FAQS = [
   { q: 'What is the price for terrazzo floor polishing in Dubai?', a: 'Terrazzo floor polishing Dubai price depends on the area size, current condition and finish required. We offer free on-site assessments with no-obligation fixed quotes. As terrazzo polishing and restoration contractors UAE businesses and homeowners trust, we price fairly with no hidden charges.' },
   { q: 'Do you offer premium marble countertop polishing in Dubai?', a: 'Yes. Premium marble countertop polishing Dubai covers kitchen tops, bathroom vanities, island benches and feature walls. We also offer kitchen top polishing and sealing services UAE-wide, Corian countertop polishing and scratch repair Dubai, and quartz polishing and stain protection Abu Dhabi.' },
   { q: 'Do you provide commercial granite polishing services in Dubai?', a: 'Yes — commercial granite polishing services Dubai is available for retail showrooms, hotel lobbies, office buildings and residential complexes. As a multi-type floor polishing company UAE, we handle marble, granite, terrazzo, quartz and Corian in one visit.' },
-  { q: 'Which emirates do you cover?', a: 'All 7 — Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Umm Al Quwain and Fujairah. Same crew, same standards, same-week availability. Italian marble polishing and crystallization Dubai is our flagship service, available across all regions.' },
+  { q: 'Which emirates do you cover?', a: 'All 7 — Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Umm Al Quwain and Fujairah. Same crew, same standards, with a visit time agreed when you contact us. Italian marble polishing and crystallization Dubai is our flagship service, available across all regions.' },
 ];
 
 function BeforeAfter({ hue, vein, title, sub, beforeImg, afterImg }: { hue: number; vein: number; title: string; sub: string; beforeImg?: string; afterImg?: string }) {
@@ -492,7 +492,7 @@ function Coverage() {
           </div>
           <p className="sec-lead">
             From Dubai to Fujairah — affordable marble floor polishing services UAE-wide. Same crew,
-            same diamond-grade standards, same-week availability across all 7 emirates. Tap your emirate
+            same diamond-grade standards, with visits scheduled across all 7 emirates. Tap your emirate
             for local response times.
             <Link href="/locations" style={{ display: 'block', marginTop: 18, fontFamily: 'var(--grot)', fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--ink)' }}>
               View all locations →

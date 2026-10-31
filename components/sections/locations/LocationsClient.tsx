@@ -96,7 +96,7 @@ export default function LocationsClient() {
         <span className="eyebrow-pill"><span className="pulse" /> Live coverage · all 7 emirates</span>
         <h1>Affordable marble floor polishing services UAE — <em>all 7 emirates covered.</em></h1>
         <p className="lead">
-          MarblePro — multi-type floor polishing company UAE — runs regular weekly routes through all 7 emirates.
+          MarblePro — multi-type floor polishing company UAE — has its office in Sharjah and a team working across all 7 emirates.
           Best marble polishing company in Dubai, with commercial granite polishing services, terrazzo polishing
           and restoration contractors UAE, and emergency residential marble floor restoration services available
           same-day in Dubai. Same team, same machinery, same gloss standard everywhere.
@@ -113,7 +113,7 @@ export default function LocationsClient() {
             Affordable Marble Floor Polishing Services — <em style={{ color: 'var(--gold-deep)', fontStyle: 'italic' }}>UAE&apos;s Best Stone Care, All 7 Emirates.</em>
           </h2>
           <p style={{ fontSize: 17, lineHeight: 1.6, opacity: 0.78, maxWidth: '54ch', margin: '0 auto 30px' }}>
-            Free on-site inspection anywhere in the UAE. Same-week bookings in Dubai and Abu Dhabi.
+            Free on-site inspection anywhere in the UAE. We reply within 30 minutes and agree a visit time with you.
           </p>
           <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link className="btn btn-primary" href="/contact">

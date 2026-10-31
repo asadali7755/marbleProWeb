@@ -10,12 +10,12 @@ const onDesktop = () => window.matchMedia('(hover:hover) and (pointer:fine)').ma
 
 const EMIRATE_RESPONSE = [
   { slug:'dubai',          name:'Dubai',          time:'Within 30 min' },
-  { slug:'abu-dhabi',      name:'Abu Dhabi',      time:'Within 2 hours' },
-  { slug:'sharjah',        name:'Sharjah',        time:'Within 1 hour' },
-  { slug:'ajman',          name:'Ajman',          time:'Within 1 hour' },
-  { slug:'ras-al-khaimah', name:'Ras Al Khaimah', time:'4–5 hours' },
-  { slug:'umm-al-quwain',  name:'Umm Al Quwain',  time:'Same day' },
-  { slug:'fujairah',       name:'Fujairah',       time:'Same day' },
+  { slug:'abu-dhabi',      name:'Abu Dhabi',      time:'Within 30 min' },
+  { slug:'sharjah',        name:'Sharjah',        time:'Within 30 min' },
+  { slug:'ajman',          name:'Ajman',          time:'Within 30 min' },
+  { slug:'ras-al-khaimah', name:'Ras Al Khaimah', time:'Within 30 min' },
+  { slug:'umm-al-quwain',  name:'Umm Al Quwain',  time:'Within 30 min' },
+  { slug:'fujairah',       name:'Fujairah',       time:'Within 30 min' },
 ];
 
 // Real 5-star reviews copied word for word from the Google Business Profile.
@@ -84,7 +84,7 @@ function QuoteFormBand() {
         <div className="c-form">
           <span className="lab">Get a quote — Dubai &amp; all UAE Emirates</span>
           <h2>Request Your <em>Marble Polishing Quote</em> — Dubai &amp; All UAE Emirates.</h2>
-          <p className="sub">Pick a tab — full quote request or just leave your number for a free callback. Either way we usually read it within an hour, any time of day.</p>
+          <p className="sub">Pick a tab — full quote request or just leave your number for a free callback. Either way we usually reply within 30 minutes, any time of day.</p>
           <div className="c-tabs" role="tablist" aria-label="Choose how to contact us">
             <button role="tab" aria-selected={tab === 'quote'} className={`c-tab ${tab === 'quote' ? 'active' : ''}`} onClick={() => { setTab('quote'); setDone(false); setPhoneErr(''); }}>Full quote</button>
             <button role="tab" aria-selected={tab === 'call'} className={`c-tab ${tab === 'call' ? 'active' : ''}`} onClick={() => { setTab('call'); setDone(false); setPhoneErr(''); }}>Request a call — free</button>
@@ -158,7 +158,7 @@ function QuoteFormBand() {
             </form>
           ) : (
             <form onSubmit={requestCall}>
-              <p className="sub" style={{ maxWidth:'38ch' }}>One field. Drop your number, we&apos;ll call you back — usually within an hour, 24/7.</p>
+              <p className="sub" style={{ maxWidth:'38ch' }}>One field. Drop your number, we&apos;ll call you back — usually within 30 minutes, 24/7.</p>
               <div className="c-field">
                 <div className="row">
                   <div className="c-field">
@@ -177,7 +177,7 @@ function QuoteFormBand() {
               <button type="submit" className="btn btn-primary" style={{ width:'100%', justifyContent:'center', padding:18, background:'var(--gold)', color:'var(--ink)' }}>
                 Call me back →
               </button>
-              <p className="c-note">Drop your number and we&apos;ll call you back — usually within an hour, 24/7. No spam, no list.</p>
+              <p className="c-note">Drop your number and we&apos;ll call you back — usually within 30 minutes, 24/7. No spam, no list.</p>
             </form>
           )}
         </div>
