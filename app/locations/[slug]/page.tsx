@@ -8,6 +8,7 @@ import { PageFaqCta } from '@/components/marble/FaqCta';
 import { PHONE_DISPLAY, PHONE_TEL, CITY_IMG, CITY_GRAD, SERVICES } from '@/components/marble/constants';
 import { LOCATIONS, getLocation } from '@/lib/locationsData';
 import { fitDescription, fitTitle } from '@/lib/seo';
+import ServiceExtra from '@/components/marble/ServiceExtra';
 
 const SITE = 'https://www.marblepro.ae';
 
@@ -146,6 +147,8 @@ export default async function LocationPage(
             </div>
           </div>
         </section>
+
+        <ServiceExtra slug={`location-${l.slug}`} />
 
         {/* All services in this city — internal links */}
         <section className="sec" style={{ padding: '60px 36px', background: 'var(--paper2)' }} data-screen-label="city-services">

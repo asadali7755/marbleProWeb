@@ -6,14 +6,19 @@ export interface Feat { t: string; d: string; }
 export interface ServiceDetail {
   num: string; slug: string; name: string; h2: string; kw: string;
   hue: number; vein: number; intro: string; body: string[]; feat: Feat[];
+  seoTitle?: string; seoDescription?: string;
 }
 
 export const SERVICE_DETAIL: ServiceDetail[] = [
   { num:'01', slug:'marble-polishing-dubai', name:'Marble Polishing Dubai', h2:'Premium Marble Polishing in Dubai & UAE', kw:'marble polishing dubai · marble floor polishing', hue:32, vein:0.22,
+    seoTitle:'Marble Polishing Dubai | Free Site Visit | MarblePro',
+    seoDescription:'Marble polishing in Dubai for villas, apartments and offices. Free site visit, fixed-price quote and a 1-month written guarantee. Call 054 556 77 99.',
     intro:'Over time, heavy foot traffic and desert sand cause marble to lose its luster. Our multi-stage diamond marble polishing Dubai process restores a high-gloss, premium reflective finish to the floors, walls and stairs of luxury villas and commercial buildings.',
     body:['MarblePro polishes Italian Carrara, Botticino, Crema Marfil and locally-sourced natural stone across Dubai and the UAE. Our certified technicians grind, hone and polish with successive diamond pads from 50 to 3000 grit — then lock the result in with Italian diamond crystallization for a finish that lasts for years.','Whether you need affordable marble floor polishing for an apartment or full marble polishing and crystallization for a villa, we inspect on site for free and give a transparent fixed-price quote.'],
     feat:[{t:'Diamond grinding 50–3000 grit',d:'Lippage flattened, scratches erased, mirror-like gloss restored.'},{t:'Italian crystallization seal',d:'Mirror finish chemically bonded into the stone, not just waxed on top.'},{t:'Dust-free wet process',d:"We never leave your villa or office covered in marble dust."},{t:'Same-day completion',d:'Most living-area floors completed in 8–14 hours of on-site work.'}]},
   { num:'02', slug:'marble-floor-restoration', name:'Marble Floor Restoration Services', h2:'Marble Floor Restoration Services Dubai', kw:'floor restoration services · marble floor restoration services', hue:28, vein:0.20,
+    seoTitle:'Marble Restoration Dubai | Floor Repair | MarblePro',
+    seoDescription:'Marble floor restoration in Dubai for cracks, deep scratches, etching and uneven tiles. Free site visit and a fixed-price quote. Call 054 556 77 99.',
     intro:"Cracked, etched, deep-scratched or completely yellowed marble? Our marble floor restoration services bring even the most neglected stone back to showroom condition — without ripping it out.",
     body:['Emergency residential marble floor restoration services Dubai is one of our most-requested treatments. We perform color-matched epoxy crack filling, joint leveling, deep scratch removal and acid-etch reversal — followed by full diamond polishing and crystallization.','Our floor restoration services are designed for the long haul: properly restored marble holds its shine for years with minimal maintenance, saving you the cost of full replacement.'],
     feat:[{t:'Color-matched epoxy crack filling',d:'Cracks and chips blend into the stone after re-polishing.'},{t:'Lippage & joint leveling',d:'We grind down uneven tiles for a perfectly flat plane.'},{t:'Acid & etch reversal',d:'Removes citrus, wine and cleaning-product damage.'},{t:'Re-polish & crystallize',d:'The final finish matches new — backed by a 1-month written guarantee.'}]},
@@ -73,6 +78,18 @@ export const SERVICE_DETAIL: ServiceDetail[] = [
     intro:'Dull, scratched or tired stone floors? Our floor polishing service in Dubai brings back the shine on marble, granite, terrazzo and travertine floors in villas, apartments, offices and hotels, with a free site visit and a fixed-price quote.',
     body:['MarblePro is a stone specialist, so every floor polishing job starts by identifying the stone. Marble, granite and terrazzo each need a different grit sequence, and the wrong pads or chemicals can damage them.','Our crews use diamond pads and a dust-free wet process, then finish with crystallization or sealing where the stone needs it. You get one fixed price for the agreed scope.'],
     feat:[{t:'Right method for each stone',d:'Marble, granite and terrazzo each get their own pad sequence.'},{t:'Dust-free wet process',d:'Your home or office stays liveable during the work.'},{t:'Free site visit',d:'We check the floor first, then give a fixed-price quote.'},{t:'1-month written guarantee',d:'Our work is covered in writing.'}]},
+  { num:'17', slug:'marble-scratch-repair-dubai', name:'Marble Scratch & Crack Repair', h2:'Marble Repair Dubai — Scratch, Crack & Chip Repair', kw:'marble repair dubai · marble scratch removal dubai', hue:30, vein:0.2,
+    intro:'Scratched, cracked or chipped marble does not always need replacing. Our marble repair service in Dubai fills, levels and polishes the damaged area so it blends back into the stone.',
+    body:['We repair scratches, hairline cracks, chips and etch marks on marble floors, stairs and tops. Fillers are colour-matched to your stone, and the area is polished to suit the floor around it.','We check the damage at a free site visit, then give you a fixed price and explain what result to expect.'],
+    feat:[{t:'Colour-matched repairs',d:'Filler is matched to your stone before it is applied.'},{t:'Scratch removal',d:'Diamond pads remove light and deep scratches.'},{t:'Etch mark repair',d:'Dull marks from acids and harsh cleaners are re-polished.'},{t:'1-month written guarantee',d:'Our work is covered in writing.'}]},
+  { num:'18', slug:'marble-grinding-dubai', name:'Marble Grinding', h2:'Marble Grinding Dubai — Lippage Removal & Floor Levelling', kw:'marble grinding dubai · marble floor grinding services', hue:26, vein:0.2,
+    intro:'Uneven tiles, deep scratches and patchy old polish need more than a surface polish. Our marble floor grinding service in Dubai levels the floor first, so the final polish looks even.',
+    body:['Weighted diamond grinding removes lippage and deep damage, then honing and polishing bring the floor back to the finish you want.','We use a dust-free wet process, and only grind as much as your floor needs.'],
+    feat:[{t:'Lippage removal',d:'Uneven tile edges are ground down until flat.'},{t:'Wet, dust-free process',d:'Stone dust is captured in water, not spread through your home.'},{t:'Marble, granite and terrazzo',d:'Machinery is chosen to suit the floor.'},{t:'Fixed-price quote',d:'The site visit is free, and the price is agreed first.'}]},
+  { num:'19', slug:'commercial-floor-polishing-dubai', name:'Commercial Floor Polishing', h2:'Commercial Floor Polishing Dubai — Hotels, Offices & Retail', kw:'commercial floor polishing dubai · hotel floor polishing dubai', hue:22, vein:0.2,
+    intro:'Busy lobbies and shop floors need stone that looks right every day. Our commercial floor polishing service in Dubai restores marble, granite and terrazzo floors around your opening hours.',
+    body:['We work with hotels, offices, retail spaces and residential towers, with overnight and weekend slots to keep your business running.','Our wet process avoids dust in occupied buildings, and every project starts with a free site survey and a fixed-price quote.'],
+    feat:[{t:'Night and weekend work',d:'Planned around your opening hours.'},{t:'Commercial-scale machinery',d:'Suited to large lobbies, halls and corridors.'},{t:'Dust-free wet process',d:'Safer for occupied buildings.'},{t:'Fixed-price quote',d:'Agreed before work starts.'}]},
 ];
 
 // Real MarblePro project photos, optimised to WebP. Filenames are the service
@@ -94,6 +111,9 @@ export const SVC_DETAIL_IMGS: Record<string, string> = {
   'kitchen-top-polishing':            '/images/services/kitchen-top-polishing.webp',
   'crystallization-sealing':          '/images/projects/polished-marble-floor-dubai-10.webp',
   'floor-polishing-dubai':            '/images/projects/polished-marble-floor-dubai-11.webp',
+  'marble-scratch-repair-dubai':      '/images/projects/polished-marble-floor-dubai-12.webp',
+  'marble-grinding-dubai':            '/images/projects/polished-marble-floor-dubai-13.webp',
+  'commercial-floor-polishing-dubai': '/images/projects/polished-marble-floor-dubai-2.webp',
 };
 
 // SEO alt text per service — descriptive + keyword + brand/location.

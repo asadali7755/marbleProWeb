@@ -59,9 +59,9 @@ function ServicesHero() {
         <div className="marble-veins" />
         <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative', zIndex: 2 }}>
           <span className="eyebrow-pill"><span className="pulse" /> Services · across all 7 emirates</span>
-          <h1>16 Specialised <em>Stone Polishing Services</em> in Dubai &amp; UAE — Marble, Terrazzo, Granite &amp; <em>More.</em></h1>
+          <h1>19 Specialised <em>Stone Polishing Services</em> in Dubai &amp; UAE — Marble, Terrazzo, Granite &amp; <em>More.</em></h1>
           <p className="lead">
-            Sixteen specialised treatments. One certified team. From Travertine and Onyx to Crema Marfil,
+            Nineteen specialised treatments. One certified team. From Travertine and Onyx to Crema Marfil,
             Calacatta and Emperador — every natural stone, every emirate, same diamond-grade process backed
             by a 1-month written guarantee.
           </p>

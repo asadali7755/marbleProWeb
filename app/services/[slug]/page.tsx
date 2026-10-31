@@ -23,8 +23,8 @@ export async function generateMetadata(
   const { slug } = await params;
   const s = getServiceDetail(slug);
   if (!s) return {};
-  const title = fitTitle(s.h2, ' | MarblePro UAE');
-  const description = fitDescription(s.intro, `Quote on WhatsApp · ${PHONE_DISPLAY}.`);
+  const title = s.seoTitle ?? fitTitle(s.h2, ' | MarblePro UAE');
+  const description = s.seoDescription ?? fitDescription(s.intro, `Quote on WhatsApp · ${PHONE_DISPLAY}.`);
   const url = `${SITE}/services/${s.slug}`;
   const img = SVC_DETAIL_IMGS[s.slug] || '/raw/twittercard.jpg';
   return {

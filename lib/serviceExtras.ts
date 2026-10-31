@@ -113,6 +113,512 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
       links: [{ label: 'How to care for marble in the UAE climate', href: '/blog/how-to-care-for-marble-floors-uae' }],
     },
   ],
+  'marble-scratch-repair-dubai': [
+    {
+      eyebrow: 'What it is',
+      h2: 'Marble repair in Dubai for scratches, cracks and chips',
+      body: [
+        'A dropped pan, a dragged sofa or a settling building can leave a mark that polishing alone will not remove. Marble repair deals with one problem area, or a few, then blends it back into the floor. It suits damage in one spot, while restoration covers the whole floor.',
+        'Marble scratch removal starts with a look at the depth. Light scratches come out with fine diamond pads. Deeper ones need coarser grits first. Cracks and chips are filled with colour-matched epoxy, then levelled and polished so the repair follows the surface of the stone.',
+      ],
+    },
+    {
+      eyebrow: 'Damage we repair',
+      h2: 'What marble damage can be repaired?',
+      items: [
+        { t: 'Light scratches', d: 'Fine lines from sand, shoes and pets, removed with fine diamond pads.' },
+        { t: 'Deep scratches', d: 'Marks you can feel with a fingernail, cut back with coarser diamonds and then polished.' },
+        { t: 'Hairline cracks', d: 'Filled with colour-matched epoxy so the line is much harder to see.' },
+        { t: 'Chips and broken edges', d: 'Common at tile edges and stair nosing. Built up with filler, then shaped and polished.' },
+        { t: 'Etch marks', d: 'Dull patches from lemon, vinegar or strong cleaners, removed from the surface and re-polished.' },
+        { t: 'Countertop damage', d: 'Scratches and chips on marble tops can be repaired too.' },
+      ],
+      links: [
+        { label: 'Marble countertop polishing', href: '/services/marble-countertop-polishing' },
+        { label: 'Marble floor restoration', href: '/services/marble-floor-restoration' },
+      ],
+    },
+    {
+      eyebrow: 'Our process',
+      h2: 'How we repair marble',
+      numbered: true,
+      items: [
+        { t: 'Send a photo', d: 'A clear photo on WhatsApp helps us give you a first opinion.' },
+        { t: 'Free site visit', d: 'We check the depth of the damage, the stone and the colour match.' },
+        { t: 'Fill and cure', d: 'Cracks and chips are filled, then left to cure before we touch the surface.' },
+        { t: 'Level and blend', d: 'Diamond pads bring the repair flush with the stone around it.' },
+        { t: 'Polish to match', d: 'We finish the area to match the rest of the floor, then check it with you.' },
+      ],
+    },
+    {
+      eyebrow: 'Be honest',
+      h2: 'What marble repair can and cannot do',
+      body: [
+        'Repairs make damage far less visible, but a large crack through heavy veining may still show up close. If an area has been polished on its own, the shine can also look different from a floor that has aged. We show you what to expect at the site visit, and may suggest polishing a wider area so the finish matches.',
+        'A tile that is loose or broken right through may not be worth repairing. In that case, we will tell you before you pay for anything.',
+      ],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Marble repair questions from Dubai customers',
+      items: [
+        { t: 'Can you repair one scratch only?', d: 'Yes. We can work on a small area, and we will explain how it will blend with the rest.' },
+        { t: 'Do DIY scratch remover kits work?', d: 'They may help with very light marks. Acidic products and rough pads can leave the area looking worse.' },
+        { t: 'How much does marble repair cost?', d: 'It depends on the damage and the area. The site visit is free, and you get a fixed price.' },
+        { t: 'Is the repair guaranteed?', d: 'Yes. Our work comes with a 1-month written guarantee.' },
+      ],
+    },
+  ],
+  'marble-grinding-dubai': [
+    {
+      eyebrow: 'What it is',
+      h2: 'Marble grinding in Dubai: when polishing is not enough',
+      body: [
+        'Grinding is the heavy first stage of floor work. A weighted machine with coarse diamonds takes the surface down so uneven tiles, deep scratches and worn patches become one flat plane. Honing then smooths that surface, and polishing brings up the shine.',
+        'Not every floor needs it. If the tiles are level and the marks are light, we start at a finer grit and save you time and cost. Grinding removes stone, so we only do what the floor needs.',
+      ],
+    },
+    {
+      eyebrow: 'When it is needed',
+      h2: 'Does your floor need marble grinding?',
+      items: [
+        { t: 'Lippage', d: 'Tile edges catch your foot or your fingernail.' },
+        { t: 'Raised or dirty joints', d: 'The joints sit proud of the tiles or look dark and uneven.' },
+        { t: 'Deep scratches', d: 'Marks too deep for honing pads to reach.' },
+        { t: 'Patchy old polish', d: 'Years of wax or poor polishing have left an uneven surface.' },
+      ],
+    },
+    {
+      eyebrow: 'Stages',
+      h2: 'Grinding, honing and polishing: what is the difference?',
+      numbered: true,
+      items: [
+        { t: 'Grinding', d: 'Coarse diamonds flatten the floor and remove the deepest damage.' },
+        { t: 'Honing', d: 'Medium grits remove grinding marks and leave a smooth, satin surface.' },
+        { t: 'Polishing', d: 'Fine grits, up to 3000, bring back the reflection and colour.' },
+        { t: 'Crystallization and sealing', d: 'The last stage hardens and protects the finished surface.' },
+      ],
+      links: [
+        { label: 'Marble polishing Dubai', href: '/services/marble-polishing-dubai' },
+        { label: 'Crystallization and sealing', href: '/services/crystallization-sealing' },
+      ],
+    },
+    {
+      eyebrow: 'Dust and disruption',
+      h2: 'Will grinding fill my home with dust?',
+      body: [
+        'Dry grinding spreads fine dust through a home, which is why we work wet. Water carries the stone dust into a slurry that the crew removes as they go, so your rooms stay liveable. Grinding machines do make noise, so tell us about your building hours and we will plan around them.',
+      ],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Marble grinding questions',
+      items: [
+        { t: 'Do you grind granite and terrazzo too?', d: 'Yes. Granite and terrazzo floors can also be ground and polished, using machinery suited to each.' },
+        { t: 'Is grinding safe for thin marble?', d: 'We check the condition of the floor first, and only grind as much as it needs.' },
+        { t: 'How is it priced?', d: 'By area and condition. The site visit is free, and you receive a fixed price.' },
+      ],
+      links: [
+        { label: 'Granite polishing', href: '/services/granite-polishing' },
+        { label: 'Terrazzo polishing', href: '/services/terrazzo-polishing-dubai' },
+      ],
+    },
+  ],
+  'commercial-floor-polishing-dubai': [
+    {
+      eyebrow: 'What it is',
+      h2: 'Commercial floor polishing for Dubai businesses',
+      body: [
+        'Lobbies, corridors and shop floors take far more traffic than a home, and visitors notice dull stone straight away. Commercial floor polishing restores marble, granite and terrazzo across larger areas, with the work planned around your business.',
+        'We work in hotels, offices, retail spaces and residential towers. For commercial clients we can schedule overnight and weekend work, and our wet process avoids dust in occupied buildings.',
+      ],
+    },
+    {
+      eyebrow: 'Where we work',
+      h2: 'Commercial spaces we polish',
+      items: [
+        { t: 'Hotels', d: 'Lobbies, corridors and shared areas, planned around guests and operations.' },
+        { t: 'Offices and towers', d: 'Entrance lobbies, lift areas and common floors.' },
+        { t: 'Retail and showrooms', d: 'Shop floors where the stone is part of the first impression.' },
+        { t: 'Villa communities', d: 'Shared entrances and clubhouses with natural stone.' },
+      ],
+    },
+    {
+      eyebrow: 'How we plan it',
+      h2: 'How we keep your business running',
+      numbered: true,
+      items: [
+        { t: 'Site survey', d: 'We visit for free, measure the area and check the stone and its condition.' },
+        { t: 'Work plan', d: 'We agree the sections, hours and access with your facilities team.' },
+        { t: 'Night or weekend work', d: 'Crews can work outside your busy hours, section by section.' },
+        { t: 'Handover', d: 'We review the finished floor with your team before we leave.' },
+      ],
+    },
+    {
+      eyebrow: 'Maintenance',
+      h2: 'Keeping commercial floors in good condition',
+      body: [
+        'Busy floors lose their shine faster than homes. High-traffic properties such as hotels and offices may need maintenance every 6 months or so, depending on the traffic and the stone. Entrance mats, a pH-neutral cleaner and quick spill clean-up all help a polished floor last longer.',
+      ],
+      links: [
+        { label: 'Granite polishing', href: '/services/granite-polishing' },
+        { label: 'Terrazzo polishing', href: '/services/terrazzo-polishing-dubai' },
+        { label: 'Floor polishing Dubai', href: '/services/floor-polishing-dubai' },
+      ],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Commercial floor polishing questions',
+      items: [
+        { t: 'Can you work at night?', d: 'Yes. Overnight and weekend slots are available for commercial clients.' },
+        { t: 'Do you give fixed quotes for large areas?', d: 'Yes. We survey the site first, then give a fixed price for the agreed scope.' },
+        { t: 'Do you cover other emirates?', d: 'Yes. We work across all 7 UAE emirates.' },
+      ],
+    },
+  ],
+  'crystallization-sealing': [
+    {
+      eyebrow: 'What it is',
+      h2: 'Marble crystallization in Dubai, explained',
+      body: [
+        'Crystallization is a treatment applied to polished marble. A crystallizing product is worked into the surface with a machine, and it reacts with the stone to create a harder, more reflective top layer. It differs from a wax or acrylic coating, which sits on the surface and wears away.',
+        'Sealing does a different job. An impregnating sealer soaks into the stone and helps stop liquids from getting in, while the stone can still breathe. Many floors in Dubai benefit from both, one for the finish and one for protection.',
+      ],
+    },
+    {
+      eyebrow: 'Which one',
+      h2: 'Crystallization or sealing: what does your stone need?',
+      items: [
+        { t: 'Crystallization', d: 'Best for marble and other calcium-based stone that needs a harder, high-gloss surface.' },
+        { t: 'Impregnating sealer', d: 'Best where spills are the main risk, such as kitchens, bathrooms and dining areas.' },
+        { t: 'Both', d: 'A common choice for busy floors in villas, hotels and lobbies.' },
+        { t: 'Neither yet', d: 'If the stone is dull or scratched, it needs polishing first. Sealing over damage only locks it in.' },
+      ],
+      links: [
+        { label: 'Polishing vs crystallization guide', href: '/blog/marble-polishing-vs-crystallization' },
+        { label: 'Marble polishing Dubai', href: '/services/marble-polishing-dubai' },
+      ],
+    },
+    {
+      eyebrow: 'Our process',
+      h2: 'How we crystallize and seal a floor',
+      numbered: true,
+      items: [
+        { t: 'Inspect', d: 'At a free site visit, we check the stone and any old coatings.' },
+        { t: 'Clean and prepare', d: 'Old wax and residue must come off, or the treatment will not bond.' },
+        { t: 'Polish if needed', d: 'Scratches and dull areas are removed first.' },
+        { t: 'Crystallize', d: 'The product is worked in by machine for an even, reflective finish.' },
+        { t: 'Seal', d: 'A breathable impregnating sealer is added where the stone needs it.' },
+      ],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Crystallization and sealing questions',
+      items: [
+        { t: 'Do marble sealers stop all stains?', d: 'No sealer makes stone stain-proof. Sealers slow liquids down, so spills should still be wiped up quickly.' },
+        { t: 'Do you sell sealers?', d: 'We apply sealers as a service. Our team chooses the product to suit your stone.' },
+        { t: 'Does it work on granite?', d: 'Granite is usually sealed. We check your stone first and recommend the right treatment.' },
+        { t: 'Do you offer this in Abu Dhabi?', d: 'Yes. We work across Abu Dhabi and the other emirates.' },
+      ],
+      links: [{ label: 'Marble polishing in Abu Dhabi', href: '/locations/abu-dhabi' }],
+    },
+  ],
+  'granite-polishing': [
+    {
+      eyebrow: 'What it is',
+      h2: 'Granite polishing in Dubai: why it takes different tools',
+      body: [
+        'Granite is much harder than marble, so the light pads used on softer stone can skid across it. Granite floor polishing needs heavier machines and industrial diamond discs. The reward is a tough, deep shine that suits entrances, stairs, kitchens and busy lobbies.',
+        'Granite also fails differently. It rarely etches like marble, but its shine can fade under heavy traffic, and pits and uneven tiles can trap dirt. Dark granite shows dullness quickly, so the final grits matter.',
+      ],
+    },
+    {
+      eyebrow: 'Where we polish',
+      h2: 'Granite surfaces we polish',
+      items: [
+        { t: 'Floors', d: 'Villas, hotel lobbies, shops and offices.' },
+        { t: 'Stairs and entrances', d: 'Treads and landings that take the most wear.' },
+        { t: 'Kitchen tops', d: 'Worktops polished in place around your fitted cabinets.' },
+        { t: 'Outdoor granite', d: 'Sealed against moisture after polishing.' },
+      ],
+      links: [
+        { label: 'Kitchen top polishing', href: '/services/kitchen-top-polishing' },
+        { label: 'Commercial floor polishing', href: '/services/commercial-floor-polishing-dubai' },
+      ],
+    },
+    {
+      eyebrow: 'Our process',
+      h2: 'How we polish granite floors',
+      numbered: true,
+      items: [
+        { t: 'Inspect', d: 'A free site visit confirms the stone, the finish and any uneven tiles.' },
+        { t: 'Level', d: 'Heavy machines grind down lippage where needed.' },
+        { t: 'Polish', d: 'Industrial diamond discs work through the grits to bring up the shine.' },
+        { t: 'Seal', d: 'A sealer helps protect against moisture and stains.' },
+      ],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Granite polishing questions',
+      items: [
+        { t: 'Is polished granite slippery?', d: 'Any polished stone can be slippery when wet. Tell us where the floor is, and we will advise on the right finish.' },
+        { t: 'Does granite need sealing?', d: 'Many granites do, especially lighter stones in kitchens and wet areas. We check yours first.' },
+        { t: 'How is the price worked out?', d: 'By area, condition and finish. The site visit is free, and you get a fixed quote.' },
+      ],
+    },
+  ],
+  'terrazzo-polishing-dubai': [
+    {
+      eyebrow: 'What it is',
+      h2: 'Terrazzo floor polishing in Dubai: what to expect',
+      body: [
+        'Terrazzo is made of marble, glass or stone chips set in a cement or resin base. Because it mixes hard chips with a softer binder, the polish has to cut both evenly. Done well, grinding and polishing reveal the chips and give the floor a deep, even sheen.',
+        'Old terrazzo in Dubai and Sharjah buildings often looks darker than it really is, because the surface is worn or hidden under old coatings. Much of that colour can come back once the top layer is removed.',
+      ],
+    },
+    {
+      eyebrow: 'Common problems',
+      h2: 'Problems we fix on terrazzo floors',
+      items: [
+        { t: 'Dull or grey surface', d: 'Years of wear and old coatings hide the colour of the chips.' },
+        { t: 'Cracks', d: 'Levelled and filled before polishing.' },
+        { t: 'Yellowed binder', d: 'Sealing the cement base helps limit future yellowing.' },
+        { t: 'Uneven wear', d: 'Traffic paths are ground back to match the rest of the floor.' },
+      ],
+    },
+    {
+      eyebrow: 'Our process',
+      h2: 'How we polish terrazzo',
+      numbered: true,
+      items: [
+        { t: 'Assess the mix', d: 'We check the original floor before removing anything.' },
+        { t: 'Grind', d: 'Diamond tools level the surface and expose the chips.' },
+        { t: 'Fill', d: 'Cracks and small holes are filled.' },
+        { t: 'Polish', d: 'Fine diamond pads bring up the sheen.' },
+        { t: 'Seal', d: 'The cement base is sealed to reduce staining and yellowing.' },
+      ],
+      links: [
+        { label: 'Terrazzo work in Sharjah', href: '/locations/sharjah' },
+        { label: 'Commercial floor polishing', href: '/services/commercial-floor-polishing-dubai' },
+      ],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Terrazzo polishing questions',
+      items: [
+        { t: 'Can old terrazzo be saved?', d: 'Often, yes. Worn terrazzo usually responds well to grinding and polishing, and we confirm this on site.' },
+        { t: 'What does terrazzo polishing cost?', d: 'It depends on the area, the condition and the finish. The site visit is free, and the quote is fixed.' },
+        { t: 'Do you polish terrazzo in large buildings?', d: 'Yes. We use commercial-scale machinery for large lobbies and halls.' },
+      ],
+    },
+  ],
+  'corian-countertop-polishing': [
+    {
+      eyebrow: 'What it is',
+      h2: 'Corian repair and polishing in Dubai',
+      body: [
+        'Corian is a solid surface, not a natural stone. The colour runs through the material, so scratches can be sanded out instead of filled over. That makes Corian repair a different job from marble polishing, and it is done mainly by hand.',
+        'Kitchen tops, vanities and reception desks all pick up fine scratches, heat marks and dull patches. Most can be sanded out, blended and finished to match the surface around them.',
+      ],
+    },
+    {
+      eyebrow: 'What we fix',
+      h2: 'Corian damage we repair',
+      items: [
+        { t: 'Scratches', d: 'Sanded out by hand through finer and finer grits.' },
+        { t: 'Burn marks', d: 'Hot pan marks are sanded back and refinished.' },
+        { t: 'Chips and small holes', d: 'Repaired, then blended into the surface.' },
+        { t: 'Lifted or yellow seams', d: 'Re-bonded and re-polished.' },
+        { t: 'Sink damage', d: 'Burns, chips and hairline cracks on integrated sinks.' },
+        { t: 'Dull finish', d: 'Refinished to matte, satin or gloss.' },
+      ],
+    },
+    {
+      eyebrow: 'Our process',
+      h2: 'How Corian polishing works',
+      numbered: true,
+      items: [
+        { t: 'Send a photo', d: 'A photo on WhatsApp helps us give a first opinion.' },
+        { t: 'Sand', d: 'We work through fine grits by hand to remove the damage.' },
+        { t: 'Repair', d: 'Seams, chips and cracks are fixed.' },
+        { t: 'Finish', d: 'You choose matte, satin or gloss.' },
+      ],
+      links: [
+        { label: 'Kitchen top polishing', href: '/services/kitchen-top-polishing' },
+        { label: 'Quartz polishing', href: '/services/quartz-polishing' },
+      ],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Corian repair questions',
+      items: [
+        { t: 'Can Corian be polished at home?', d: 'Yes. Most work is done on site, without removing the countertop.' },
+        { t: 'Which finish hides scratches best?', d: 'Matte and satin finishes usually hide fine scratches better than high gloss.' },
+        { t: 'Is it Corian or quartz?', d: 'They look similar but need different work. We can confirm from a photo or at a free site visit.' },
+      ],
+    },
+  ],
+  'yellow-stain-removing': [
+    {
+      eyebrow: 'What it is',
+      h2: 'Marble stain removal: why stains need the right treatment',
+      body: [
+        'Marble is porous, so liquids can sink below the surface. That is why scrubbing often fails, and why bleach or acid can make things worse. Stain removal starts by working out what caused the mark, then using a treatment that draws it back out of the stone.',
+        'Yellowing is the most common complaint on white marble. It may come from rust, oil, organic seepage, old wax or the wrong cleaning products, and each cause needs a different approach.',
+      ],
+    },
+    {
+      eyebrow: 'Stain types',
+      h2: 'Common marble stains and their causes',
+      items: [
+        { t: 'Rust stains', d: 'Orange or brown marks from metal legs, cans or iron in the stone.' },
+        { t: 'Oil stains', d: 'Dark patches, common in kitchens and dining areas.' },
+        { t: 'Organic stains', d: 'Tea, coffee, leaves and pet marks, often brown or yellow.' },
+        { t: 'Old wax build-up', d: 'A yellow film that builds up under foot traffic.' },
+        { t: 'Water marks', d: 'Dull rings and patches from hard water.' },
+        { t: 'Etching', d: 'A surface mark, not a stain. It needs polishing instead of a poultice.' },
+      ],
+      links: [
+        { label: 'How to remove yellow stains', href: '/blog/how-to-remove-yellow-stains-from-marble' },
+        { label: 'Marble scratch and crack repair', href: '/services/marble-scratch-repair-dubai' },
+      ],
+    },
+    {
+      eyebrow: 'Our process',
+      h2: 'How we remove stains from marble',
+      numbered: true,
+      items: [
+        { t: 'Find the cause', d: 'We check the stain and the stone at a free site visit.' },
+        { t: 'Apply a poultice', d: 'A stain-specific treatment draws the mark out of the pores over 24 to 48 hours.' },
+        { t: 'Repeat if needed', d: 'Older stains may need more than one round.' },
+        { t: 'Re-polish', d: 'The area is polished to blend with the floor.' },
+        { t: 'Seal', d: 'A sealer helps slow down future staining.' },
+      ],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Stain removal questions',
+      items: [
+        { t: 'Can every stain be removed?', d: 'Not always. Very old or deep stains may only fade, and we tell you what to expect first.' },
+        { t: 'Should I use bleach on marble?', d: 'No. Bleach and acids can damage the surface or set the stain deeper.' },
+        { t: 'Do you remove stains from countertops?', d: 'Yes, including marble kitchen and bathroom tops.' },
+      ],
+      links: [{ label: 'Marble countertop polishing', href: '/services/marble-countertop-polishing' }],
+    },
+  ],
+  'location-dubai': [
+    {
+      eyebrow: 'Why it matters',
+      h2: 'Choosing a marble polishing company in Dubai',
+      body: [
+        'Dubai has many companies offering marble polishing, and the results can vary a lot. A cheap coating can look good for a few weeks and then fade, while rough work can leave swirl marks on expensive stone. A good marble polishing company should inspect your floor first, explain the process and put the price in writing.',
+        'At MarblePro, the site visit is free, the quote is fixed for the agreed scope and our work comes with a 1-month written guarantee. We use diamond pads up to 3000 grit, Italian crystallization and a dust-free wet process.',
+      ],
+    },
+    {
+      eyebrow: 'Dubai properties',
+      h2: 'Marble polishing for every type of Dubai property',
+      items: [
+        { t: 'Villas', d: 'Living rooms, stairs and entrances in communities such as Palm Jumeirah, Emirates Hills and Arabian Ranches.' },
+        { t: 'Apartments', d: 'Towers in Downtown, Dubai Marina, JBR and Business Bay. We plan around your building hours.' },
+        { t: 'Offices and showrooms', d: 'DIFC and Business Bay spaces, with overnight or weekend work available.' },
+      ],
+      links: [
+        { label: 'Commercial floor polishing', href: '/services/commercial-floor-polishing-dubai' },
+        { label: 'Floor polishing Dubai', href: '/services/floor-polishing-dubai' },
+      ],
+    },
+    {
+      eyebrow: 'How to book',
+      h2: 'How to book marble polishing in Dubai',
+      numbered: true,
+      items: [
+        { t: 'Call or WhatsApp', d: 'Send a photo of the floor and tell us your area.' },
+        { t: 'Free site visit', d: 'We check the stone and measure the area.' },
+        { t: 'Fixed quote', d: 'You get a clear price with no obligation.' },
+        { t: 'Polish and handover', d: 'We finish the work, then check the floor with you.' },
+      ],
+    },
+    {
+      eyebrow: 'Dubai services',
+      h2: 'Our most requested services in Dubai',
+      body: [
+        'Marble polishing is the main job, but many Dubai homes also need restoration for deep damage, crystallization for a stronger finish or stain removal on pale stones such as Crema Marfil and Calacatta.',
+      ],
+      links: [
+        { label: 'Marble polishing Dubai', href: '/services/marble-polishing-dubai' },
+        { label: 'Marble floor restoration', href: '/services/marble-floor-restoration' },
+        { label: 'Crystallization and sealing', href: '/services/crystallization-sealing' },
+        { label: 'Yellow stain removing', href: '/services/yellow-stain-removing' },
+      ],
+    },
+  ],
+  'location-abu-dhabi': [
+    {
+      eyebrow: 'Abu Dhabi',
+      h2: 'Marble polishing company in Abu Dhabi',
+      body: [
+        'Sand, heavy foot traffic and hard water wear down stone floors in Abu Dhabi just as they do in Dubai. We polish and restore marble in villas, towers and showrooms across the capital, from Saadiyat Island and Yas Island to Al Reem Island and the Corniche.',
+        'We run weekly routes to Abu Dhabi, and bookings are typically scheduled within 48 hours. The site visit is free, and you receive a fixed-price quote before any work starts.',
+      ],
+    },
+    {
+      eyebrow: 'Services',
+      h2: 'Marble services in Abu Dhabi',
+      items: [
+        { t: 'Marble floor polishing', d: 'Diamond polishing for dull and scratched floors.' },
+        { t: 'Marble floor grinding', d: 'For uneven tiles and deep scratches.' },
+        { t: 'Crystallization', d: 'Popular for new-build handovers and after renovation work.' },
+        { t: 'Restoration', d: 'Crack filling, etch removal and full re-polishing.' },
+      ],
+      links: [
+        { label: 'Marble grinding', href: '/services/marble-grinding-dubai' },
+        { label: 'Crystallization and sealing', href: '/services/crystallization-sealing' },
+        { label: 'Marble floor restoration', href: '/services/marble-floor-restoration' },
+      ],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Marble polishing questions from Abu Dhabi customers',
+      items: [
+        { t: 'What does it cost to polish marble floors in Abu Dhabi?', d: 'It depends on the area, the condition and the finish. The site visit is free, and the price is fixed.' },
+        { t: 'Can you work on weekends?', d: 'Yes. Overnight and weekend slots are available for commercial clients.' },
+        { t: 'Is the guarantee the same as in Dubai?', d: 'Yes. Work in every emirate has the same 1-month written guarantee.' },
+      ],
+    },
+  ],
+  'location-sharjah': [
+    {
+      eyebrow: 'Sharjah',
+      h2: 'Marble polishing in Sharjah',
+      body: [
+        'Our address is in Muwaileh Commercial, Sharjah, so Sharjah is home ground for MarblePro. We polish marble in villas, apartments and offices across Al Khan, Al Majaz, Al Nahda, Al Taawun and University City.',
+        'Older Sharjah buildings often mix marble, terrazzo and granite on one floor plan. We can handle all three in one visit, using the right machinery for each stone.',
+      ],
+    },
+    {
+      eyebrow: 'Services',
+      h2: 'Marble and stone services in Sharjah',
+      items: [
+        { t: 'Marble polishing', d: 'Brings back the shine on dull and scratched floors.' },
+        { t: 'Terrazzo restoration', d: 'Reveals the chips hidden by years of wear.' },
+        { t: 'Marble repair', d: 'Fixes scratches, cracks and chips.' },
+        { t: 'Yellow stain removing', d: 'Treats yellowing and deep stains on pale marble.' },
+      ],
+      links: [
+        { label: 'Marble polishing', href: '/services/marble-polishing-dubai' },
+        { label: 'Terrazzo polishing', href: '/services/terrazzo-polishing-dubai' },
+        { label: 'Marble scratch and crack repair', href: '/services/marble-scratch-repair-dubai' },
+      ],
+    },
+    {
+      eyebrow: 'How to book',
+      h2: 'How to book in Sharjah',
+      body: [
+        'Call or WhatsApp a photo of your floor. We then visit for free, confirm the stone and give you a fixed price for the agreed work. Our work comes with a 1-month written guarantee.',
+      ],
+    },
+  ],
   'floor-polishing-dubai': [
     {
       eyebrow: 'What it is',

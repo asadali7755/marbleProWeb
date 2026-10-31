@@ -72,4 +72,7 @@ export const SERVICES: Service[] = [
   { num: "14", slug: "kitchen-top-polishing",            name: "Kitchen Top Polishing",     short: "Sealing & polishing for daily-use kitchen surfaces. Oil-resistant." },
   { num: "15", slug: "crystallization-sealing",          name: "Crystallization & Sealing", short: "Permanent shine via crystallizers — extends life of the stone." },
   { num: "16", slug: "floor-polishing-dubai",            name: "Floor Polishing Dubai",     short: "Marble, granite, terrazzo and travertine floors polished across Dubai." },
+  { num: "17", slug: "marble-scratch-repair-dubai",      name: "Marble Scratch & Crack Repair", short: "Scratches, cracks, chips and etch marks repaired and blended into the stone." },
+  { num: "18", slug: "marble-grinding-dubai",            name: "Marble Grinding",           short: "Diamond grinding for uneven tiles, lippage and deep scratches." },
+  { num: "19", slug: "commercial-floor-polishing-dubai", name: "Commercial Floor Polishing", short: "Stone floors in hotels, offices and retail spaces, with night and weekend work." },
 ];
