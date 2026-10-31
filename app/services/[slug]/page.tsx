@@ -115,7 +115,7 @@ export default async function ServicePage(
             <p className="lead">{s.intro}</p>
             <p style={{ fontSize: 15, lineHeight: 1.6, opacity: 0.82, marginTop: 14, maxWidth: '64ch' }}>
               MarblePro delivers {svcLabel.toLowerCase()} across{' '}
-              <strong>Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Umm Al Quwain &amp; Fujairah</strong> — same certified
+              <strong>Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Umm Al Quwain &amp; Fujairah</strong> — same
               crew, same diamond-grade process and 1-month written guarantee in every emirate.
             </p>
             <div className="cta-row">

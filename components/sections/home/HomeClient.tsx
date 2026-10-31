@@ -287,7 +287,7 @@ function ServicesGrid() {
         </p>
         <p style={{ marginTop: 16, fontSize: 17, lineHeight: 1.65, fontWeight: 600, maxWidth: '70ch' }}>
           Whether you need routine floor polishing in Dubai, intensive marble floor restoration
-          services, or specialised countertop care, our certified technicians use state-of-the-art
+          services, or specialised countertop care, our technicians use state-of-the-art
           diamond grinding machinery and eco-friendly compounds to achieve flawless results.
           We serve residential and commercial clients all over the UAE, delivering unparalleled
           craftsmanship with minimal disruption to your day.

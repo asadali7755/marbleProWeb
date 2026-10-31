@@ -9,7 +9,7 @@ export interface Location {
 
 export const LOCATIONS: Location[] = [
   { slug:'dubai', name:'Dubai', ar:'دبي', h1:'Marble Polishing Company in Dubai — Villas, Towers & Showrooms', eyebrow:'01 — Marble Polishing Company Dubai',
-    intro:'MarblePro is a certified marble polishing company in Dubai, open 24/7 for villas, towers and showrooms. From Palm Jumeirah villas to DIFC offices, our diamond-grade Italian marble polishing and crystallization brings Dubai floors back to a deep, lasting shine.',
+    intro:'MarblePro is a marble polishing company in Dubai, open 24/7 for villas, towers and showrooms. From Palm Jumeirah villas to DIFC offices, our diamond-grade Italian marble polishing and crystallization brings Dubai floors back to a deep, lasting shine.',
     body:['We provide affordable marble floor polishing services UAE-wide, with our full range available in Dubai: terrazzo floor polishing, commercial granite polishing services Dubai, quartz polishing, Corian countertop polishing and scratch repair Dubai, kitchen top polishing and sealing, professional yellow stain removing, and full deep scratch removal and marble crack filling Dubai.','Emergency residential marble floor restoration services Dubai are available same-day. We reply within 30 minutes and confirm your visit time based on our schedule. We are available 24 hours, 7 days a week.'],
     areas:['Palm Jumeirah','Emirates Hills','Downtown','DIFC','Marina','JBR','Business Bay','Al Barsha','Jumeirah','Mirdif','Arabian Ranches','Damac Hills'],
     stats:[{l:'Response time',v:'Within 30 min'},{l:'Avg job size',v:'240 m² villa'},{l:'Crew count',v:'5 teams active'},{l:'Top service',v:'Marble polishing'}]},

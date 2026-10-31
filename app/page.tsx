@@ -6,14 +6,14 @@ import HomeClient from '@/components/sections/home/HomeClient';
 
 export const metadata: Metadata = {
   title: 'Marble Polishing Dubai | Floor Restoration UAE | MarblePro',
-  description: 'Marble floor polishing, crystallization, terrazzo and granite restoration in Dubai and across the UAE. Certified team, open 24/7. Call 054 556 77 99.',
+  description: 'Marble floor polishing, crystallization, terrazzo and granite restoration in Dubai and across the UAE. Free inspection, open 24/7. Call 054 556 77 99.',
   keywords: 'best marble polishing company in Dubai, affordable marble floor polishing services UAE, Italian marble polishing and crystallization Dubai, emergency residential marble floor restoration services Dubai, marble polishing dubai, marble floor polishing, floor polishing dubai, countertop polishing, kitchen top polishing, floor restoration services, marble floor restoration services, terrazzo floor polishing dubai, terrazzo polishing dubai, quartz polishing, corian countertop polishing, yellow stain removing, granite polishing, multi type floor polishing company UAE',
   alternates: {
     canonical: 'https://www.marblepro.ae',
   },
   openGraph: {
     title: 'Marble Polishing Dubai | Floor Restoration UAE | MarblePro',
-    description: 'Marble floor polishing, crystallization, terrazzo and granite restoration in Dubai and across the UAE. Certified team, open 24/7. Call 054 556 77 99.',
+    description: 'Marble floor polishing, crystallization, terrazzo and granite restoration in Dubai and across the UAE. Free inspection, open 24/7. Call 054 556 77 99.',
     url: 'https://www.marblepro.ae',
     images: [{ url: '/raw/twittercard.jpg', width: 1200, height: 630, alt: 'MarblePro marble polishing in Dubai, UAE' }],
   },
