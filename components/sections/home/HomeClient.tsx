@@ -297,7 +297,8 @@ function ServicesGrid() {
         </Link>
       </div>
       <div className="svc-grid">
-        {SERVICES.map((s, i) => (
+        {/* The grid is designed for the first 15 services. */}
+        {SERVICES.slice(0, SVC_CARDS.length).map((s, i) => (
           <LazySvcCard
             key={s.num}
             s={s}

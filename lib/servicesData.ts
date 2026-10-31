@@ -69,6 +69,10 @@ export const SERVICE_DETAIL: ServiceDetail[] = [
     intro:"Emperador is Spain's most celebrated dark marble — a rich chocolate-brown stone with striking white veining installed throughout UAE luxury bathrooms, hotel lobbies and feature staircases. Its dense structure takes a very high gloss — among the highest finishes in natural stone.",
     body:["Emperador's dark surface makes calcium deposits, white water marks and dull patches immediately visible — issues that go unnoticed on lighter stones. We remove all of these chemically before polishing, then apply a colour-enhancing sealer that deepens the chocolate tones.",'Wet areas including showers, pool surrounds and bathroom floors are treated with marine-grade sealers rated for permanent moisture exposure — essential in the UAE climate.'],
     feat:[{t:'Calcium & water mark removal',d:'Hard-water deposits removed chemically — bright white marks on dark stone disappear.'},{t:'Chocolate tone revival',d:'Dull, grey-toned Emperador restored to original rich dark brown depth.'},{t:'Very high gloss achievable',d:"Emperador's dense structure responds exceptionally to diamond polishing — highest gloss of any stone."},{t:'Marine-grade wet area sealing',d:'Bathroom & pool installations sealed against permanent moisture exposure.'}]},
+  { num:'16', slug:'floor-polishing-dubai', name:'Floor Polishing Dubai', h2:'Floor Polishing Dubai — Marble, Granite & Stone Floors', kw:'floor polishing dubai · floor polishing service in dubai', hue:34, vein:0.2,
+    intro:'Dull, scratched or tired stone floors? Our floor polishing service in Dubai brings back the shine on marble, granite, terrazzo and travertine floors in villas, apartments, offices and hotels, with a free site visit and a fixed-price quote.',
+    body:['MarblePro is a stone specialist, so every floor polishing job starts by identifying the stone. Marble, granite and terrazzo each need a different grit sequence, and the wrong pads or chemicals can damage them.','Our crews use diamond pads and a dust-free wet process, then finish with crystallization or sealing where the stone needs it. You get one fixed price for the agreed scope.'],
+    feat:[{t:'Right method for each stone',d:'Marble, granite and terrazzo each get their own pad sequence.'},{t:'Dust-free wet process',d:'Your home or office stays liveable during the work.'},{t:'Free site visit',d:'We check the floor first, then give a fixed-price quote.'},{t:'1-month written guarantee',d:'Our work is covered in writing.'}]},
 ];
 
 // Real MarblePro project photos, optimised to WebP. Filenames are the service
@@ -89,6 +93,7 @@ export const SVC_DETAIL_IMGS: Record<string, string> = {
   'yellow-stain-removing':            '/images/services/yellow-stain-removing.webp',
   'kitchen-top-polishing':            '/images/services/kitchen-top-polishing.webp',
   'crystallization-sealing':          '/images/projects/polished-marble-floor-dubai-10.webp',
+  'floor-polishing-dubai':            '/images/projects/polished-marble-floor-dubai-11.webp',
 };
 
 // SEO alt text per service — descriptive + keyword + brand/location.

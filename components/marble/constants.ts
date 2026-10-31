@@ -71,4 +71,5 @@ export const SERVICES: Service[] = [
   { num: "13", slug: "yellow-stain-removing",            name: "Yellow Stain Removing",     short: "Deep-set yellowing, rust, watermarks & efflorescence — chemically lifted." },
   { num: "14", slug: "kitchen-top-polishing",            name: "Kitchen Top Polishing",     short: "Sealing & polishing for daily-use kitchen surfaces. Oil-resistant." },
   { num: "15", slug: "crystallization-sealing",          name: "Crystallization & Sealing", short: "Permanent shine via crystallizers — extends life of the stone." },
+  { num: "16", slug: "floor-polishing-dubai",            name: "Floor Polishing Dubai",     short: "Marble, granite, terrazzo and travertine floors polished across Dubai." },
 ];

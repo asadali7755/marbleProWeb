@@ -95,7 +95,10 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
       body: [
         'We polish marble in villas, apartments, offices, hotels and showrooms across Dubai, including Palm Jumeirah, Emirates Hills, Downtown, DIFC, Dubai Marina, JBR, Business Bay, Al Barsha, Jumeirah, Mirdif, Arabian Ranches and Damac Hills. We are available 24 hours, 7 days a week, so offices and shops can book work outside business hours.',
       ],
-      links: [{ label: 'Marble polishing company in Dubai', href: '/locations/dubai' }],
+      links: [
+        { label: 'Marble polishing company in Dubai', href: '/locations/dubai' },
+        { label: 'Floor polishing Dubai', href: '/services/floor-polishing-dubai' },
+      ],
     },
     {
       eyebrow: 'Questions',
@@ -108,6 +111,96 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
         { t: 'How do I keep the shine afterwards?', d: 'Use a pH-neutral cleaner, wipe up acidic spills quickly and put mats at the entrances to catch sand.' },
       ],
       links: [{ label: 'How to care for marble in the UAE climate', href: '/blog/how-to-care-for-marble-floors-uae' }],
+    },
+  ],
+  'floor-polishing-dubai': [
+    {
+      eyebrow: 'What it is',
+      h2: 'Floor polishing in Dubai, done for your type of stone',
+      body: [
+        'Floor polishing means working the surface of a hard floor with fine abrasives until it reflects light again. It is very different from mopping or applying a shine product, which only sit on top and wear off. On stone, a proper polish takes out fine scratches and brings back the depth of the floor.',
+        'The method depends on the floor. Marble is soft and reacts to acids, granite is very hard, and terrazzo mixes stone chips with a cement base. A floor polishing company that treats them all the same risks an uneven finish, so we identify the stone before quoting.',
+      ],
+    },
+    {
+      eyebrow: 'Floors we polish',
+      h2: 'Which floors can we polish?',
+      items: [
+        { t: 'Marble floors', d: 'Crema Marfil, Calacatta, Emperador and other marbles, polished up to 3000 grit.' },
+        { t: 'Granite floors', d: 'A very hard stone that needs heavy machines and industrial diamond discs.' },
+        { t: 'Terrazzo floors', d: 'Fine diamond pads level the surface and bring out the stone and glass chips.' },
+        { t: 'Travertine floors', d: 'Natural holes are filled first, then the stone is honed and polished.' },
+      ],
+      links: [
+        { label: 'Marble polishing Dubai', href: '/services/marble-polishing-dubai' },
+        { label: 'Granite polishing', href: '/services/granite-polishing' },
+        { label: 'Terrazzo polishing', href: '/services/terrazzo-polishing-dubai' },
+        { label: 'Travertine polishing', href: '/services/travertine-polishing-dubai' },
+      ],
+    },
+    {
+      eyebrow: 'What your floor needs',
+      h2: 'Polish, restore or seal?',
+      items: [
+        { t: 'Polish', d: 'For floors that look dull or carry light scratches, but are otherwise in good shape.' },
+        { t: 'Restore', d: 'For cracks, chips, deep scratches, etching or uneven tiles. Repairs come before the polish.' },
+        { t: 'Seal', d: 'For polished stone that needs extra protection against spills and daily wear.' },
+      ],
+      links: [
+        { label: 'Marble floor restoration', href: '/services/marble-floor-restoration' },
+        { label: 'Crystallization and sealing', href: '/services/crystallization-sealing' },
+      ],
+    },
+    {
+      eyebrow: 'How it works',
+      h2: 'How our floor polishing service works',
+      numbered: true,
+      items: [
+        { t: 'Tell us about your floor', d: 'Call us, or send a photo on WhatsApp for a first opinion.' },
+        { t: 'Free site visit', d: 'We identify the stone, check the condition and measure the area.' },
+        { t: 'Fixed-price quote', d: 'You get one price for the agreed scope, with no obligation to go ahead.' },
+        { t: 'Polishing day', d: 'Our crew uses a dust-free wet process, working through the diamond grits for your stone.' },
+        { t: 'Protect and hand over', d: 'We apply crystallization or a sealer where needed, then check the finish with you.' },
+      ],
+    },
+    {
+      eyebrow: 'Homes and businesses',
+      h2: 'Floor polishing for villas, apartments and offices',
+      body: [
+        'We polish stone floors in villas, apartments, offices, hotels and retail spaces across Dubai. Lived-in homes can stay occupied while we work. For offices and shops, we can plan overnight or weekend work to keep your business running. We are available 24 hours, 7 days a week.',
+      ],
+      links: [
+        { label: 'Our work in Dubai', href: '/locations/dubai' },
+        { label: 'Project gallery', href: '/gallery' },
+      ],
+    },
+    {
+      eyebrow: 'Choosing a company',
+      h2: 'How to choose a floor polishing company in Dubai',
+      items: [
+        { t: 'Ask what stone they work with', d: 'A good company should identify your floor and explain the method.' },
+        { t: 'Ask about wax coatings', d: 'A coating can look shiny at first, but it does not repair the stone and wears off.' },
+        { t: 'Ask how they control dust', d: 'Dry grinding spreads dust through a home. A wet process avoids it.' },
+        { t: 'Get the price and guarantee in writing', d: 'Check what is included, and be careful of a price given without seeing the floor.' },
+      ],
+    },
+    {
+      eyebrow: 'Pricing',
+      h2: 'Floor polishing price in Dubai',
+      body: [
+        'Stone floor polishing is usually priced by the square metre. The rate depends on the stone, its condition, the area and the finish you want. That is why we check the floor first. The site visit is free, and your fixed price covers the agreed scope.',
+      ],
+      links: [{ label: 'Marble polishing cost guide', href: '/blog/marble-polishing-cost-dubai' }],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Floor polishing questions from Dubai customers',
+      items: [
+        { t: 'How long does it take?', d: 'A standard villa living area typically takes 1 to 2 days. We confirm the time with your quote.' },
+        { t: 'Will my home be full of dust?', d: 'No. We use a wet process, so marble dust does not spread through your home.' },
+        { t: 'Do you offer same-day service?', d: 'Same-day or next-day work may be available for urgent residential jobs. Call us to check.' },
+        { t: 'Do you cover other emirates?', d: 'Yes. We work across all 7 UAE emirates, including Abu Dhabi and Sharjah.' },
+      ],
     },
   ],
   'marble-floor-restoration': [
