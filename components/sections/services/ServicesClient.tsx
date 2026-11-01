@@ -387,7 +387,7 @@ const CORE_SERVICES = [
     icon: '◉',
     items: [
       { name: 'Yellow Stain Removing', desc: 'Got stubborn discolourations? Our deep chemical poultice treatments target yellow stain removing from deep within the stone pores without damaging the surface.' },
-      { name: 'Granite Polishing', desc: 'Renowned for its hardness, granite needs professional-grade equipment. Our grinding and weather-protection sealing make your granite surfaces exceptionally durable and brilliant.' },
+      { name: 'Granite Polishing', desc: 'Known for its hardness, granite needs professional-grade equipment. Our grinding and weather-protection sealing make your granite surfaces exceptionally durable and brilliant.' },
     ],
   },
 ];
