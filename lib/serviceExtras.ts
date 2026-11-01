@@ -588,6 +588,25 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
         { t: 'Is the guarantee the same as in Dubai?', d: 'Yes. Work in every emirate has the same 1-month written guarantee.' },
       ],
     },
+    {
+      eyebrow: 'How it works',
+      h2: 'How to book in Abu Dhabi',
+      numbered: true,
+      items: [
+        { t: 'Contact us', d: 'Call or WhatsApp us with your area and a photo of the floor. We reply within 30 minutes.' },
+        { t: 'Get a visit time', d: 'We check our schedule and tell you when our team can come.' },
+        { t: 'Free inspection', d: 'We look at the stone in person and give you a fixed price for the agreed work.' },
+        { t: 'Work and handover', d: 'We complete the job, walk through it with you and explain the aftercare.' },
+      ],
+    },
+    {
+      eyebrow: 'Proof',
+      h2: 'See our work before you book',
+      body: [
+        'Our gallery shows real marble, granite and terrazzo jobs from across the UAE. Reading our Google reviews is also a good way to see how customers found the work.',
+      ],
+      links: [{ label: 'View the gallery', href: '/gallery' }],
+    },
   ],
   'location-sharjah': [
     {
@@ -618,6 +637,40 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
       h2: 'How to book in Sharjah',
       body: [
         'Call or WhatsApp a photo of your floor. We then visit for free, confirm the stone and give you a fixed price for the agreed work. Our work comes with a 1-month written guarantee.',
+      ],
+    },
+    {
+      eyebrow: 'Common jobs',
+      h2: 'What Sharjah customers ask us for',
+      items: [
+        { t: 'Old terrazzo floors', d: 'We strip old wax, repair cracks and bring the stone chips back into view.' },
+        { t: 'Apartment marble', d: 'We polish halls, living rooms and bathrooms room by room.' },
+        { t: 'Mixed stone floors', d: 'Many older buildings mix marble, granite and terrazzo, so we change the method for each one.' },
+        { t: 'Building lobbies', d: 'We can plan work around residents, and agree access with your building manager.' },
+      ],
+      links: [
+        { label: 'Terrazzo polishing', href: '/services/terrazzo-polishing-dubai' },
+        { label: 'Marble floor restoration', href: '/services/marble-floor-restoration' },
+      ],
+    },
+    {
+      eyebrow: 'How it works',
+      h2: 'How to book in Sharjah',
+      numbered: true,
+      items: [
+        { t: 'Call or WhatsApp us', d: 'Send your area and a photo if you can. We reply within 30 minutes.' },
+        { t: 'Agree a time', d: 'We give you a visit time based on our schedule.' },
+        { t: 'Free inspection', d: 'We check the stone and give you a fixed price for the agreed work.' },
+        { t: 'Work and aftercare', d: 'We finish the floor and show you how to keep it clean.' },
+      ],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Questions from Sharjah customers',
+      items: [
+        { t: 'Where is your office?', d: 'Our office is in Muwaileh Commercial, Sharjah. Our team works across the UAE.' },
+        { t: 'Can you work in a tenanted flat?', d: 'Yes, with the owner or tenant present. Agree this with us when you book.' },
+        { t: 'Do you charge for the inspection?', d: 'No. The site visit and quote are free.' },
       ],
     },
   ],
