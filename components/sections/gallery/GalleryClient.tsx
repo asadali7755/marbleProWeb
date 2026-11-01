@@ -403,7 +403,7 @@ export default function GalleryClient() {
           <div className="gx-hero-top">
             <h1>Before &amp; after <em>marble polishing</em> — floors &amp; countertops.</h1>
             <div className="gx-hero-side">
-              <p>Polishing, restoration and crystallisation for villas, apartments, hotels and restaurants — marble, granite, onyx, quartz and Corian.</p>
+              <p>Polishing, restoration and crystallization for villas, apartments, hotels and restaurants — marble, granite, onyx, quartz and Corian.</p>
               <div className="gx-hero-ctas">
                 <a className="btn btn-wa" href={WA_HREF} target="_blank" rel="noopener noreferrer">WhatsApp us</a>
                 <button type="button" className="btn gx-btn-ghost" onClick={open}>Get a quote</button>

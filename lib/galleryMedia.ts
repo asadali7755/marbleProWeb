@@ -58,7 +58,7 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
   {
     id: 'floors',
     title: 'Floors',
-    intro: 'Marble, granite and terrazzo floors — grinding, honing, polishing and crystallisation, including inlays and medallions.',
+    intro: 'Marble, granite and terrazzo floors — grinding, honing, polishing and crystallization, including inlays and medallions.',
     cover: '/images/projects/polished-marble-floor-dubai-10.webp',
     beforeAfter: [
       ba('emperador', 'Emperador marble floor', 'Dull, etched → deep gloss'),

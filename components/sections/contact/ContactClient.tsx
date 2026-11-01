@@ -247,7 +247,7 @@ function SupportBand() {
             <ul>
               <li><span className="l">Phone</span><span className="v">{PHONE_DISPLAY}</span></li>
               <li><span className="l">WhatsApp</span><span className="v">{PHONE_DISPLAY}</span></li>
-              <li><span className="l">Response</span><span className="v">Usually &lt; 30 min</span></li>
+              <li><span className="l">Response</span><span className="v">Within 30 min</span></li>
             </ul>
           </div>
           <div className="c-support-card">
