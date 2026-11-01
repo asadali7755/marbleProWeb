@@ -92,7 +92,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
 
           {g.image && (
             <div className="blog-hero-image-wrap">
-              <img src={g.image} alt={g.h1} />
+              <img src={g.image} alt={g.h1} fetchPriority="high" />
             </div>
           )}
 

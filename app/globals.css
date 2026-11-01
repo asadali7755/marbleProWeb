@@ -232,7 +232,7 @@ section[data-screen-label] { scroll-margin-top:90px; }
 .loc-banner p { max-width:50ch; font-size:17px; line-height:1.55; opacity:.85; margin-top:22px; }
 .loc-banner .meta { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; opacity:.8; }
 .loc-card-list { background:rgba(11,11,11,0.55); backdrop-filter:blur(12px); border:1px solid var(--line-d); border-radius:18px; padding:24px; }
-.loc-card-list h4 { font-family:var(--grot); font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; margin:0 0 14px; opacity:.7; }
+.loc-card-list h2, .loc-card-list h4 { font-family:var(--grot); font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; margin:0 0 14px; opacity:.7; }
 .loc-card-list ul { list-style:none; padding:0; margin:0; display:grid; gap:10px; }
 .loc-card-list li { font-family:var(--display); font-size:18px; font-weight:380; letter-spacing:-0.01em; border-top:1px solid var(--line-d); padding-top:10px; display:flex; justify-content:space-between; }
 .loc-card-list li:first-child { border-top:none; padding-top:0; }
@@ -577,7 +577,7 @@ body[data-theme="rosegold"]{ --gold:#B26E55;--amber:#B26E55; }
 .loc-body .areas { display:flex; gap:8px; flex-wrap:wrap; margin-top:22px; }
 .loc-body .area { padding:6px 12px; border:1px solid var(--line2); border-radius:999px; font-family:var(--mono); font-size:10px; letter-spacing:0.16em; text-transform:uppercase; opacity:.75; }
 .loc-body .stats { background:var(--ink); color:var(--paper); border-radius:22px; padding:32px; }
-.loc-body .stats h4 { font-family:var(--grot); font-size:11px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; opacity:.55; margin:0 0 20px; }
+.loc-body .stats h3, .loc-body .stats h4 { font-family:var(--grot); font-size:11px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; opacity:.55; margin:0 0 20px; }
 .loc-body .stats .row { display:flex; justify-content:space-between; align-items:baseline; gap:14px; padding:12px 0; border-top:1px solid var(--line-d); }
 .loc-body .stats .row:first-of-type { border-top:none; }
 .loc-body .stats .l { font-family:var(--mono); font-size:10px; letter-spacing:0.16em; text-transform:uppercase; opacity:.6; }

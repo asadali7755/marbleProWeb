@@ -84,6 +84,9 @@ export default async function LocationPage(
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
+      {/* The banner photo is a CSS background, which the browser finds late. */}
+      <link rel="preload" as="image" href={CITY_IMG[l.slug]} fetchPriority="high" />
+
       <Nav active="locations" />
 
       <main>
@@ -104,7 +107,7 @@ export default async function LocationPage(
                 <p>{l.intro}</p>
               </div>
               <div className="loc-card-list">
-                <h4>Services available in {l.name}</h4>
+                <h2>Services available in {l.name}</h2>
                 <ul>
                   {SERVICES.slice(0, 8).map((sv, i) => (
                     <li key={sv.slug}>
@@ -129,7 +132,7 @@ export default async function LocationPage(
                 </div>
               </div>
               <div className="stats">
-                <h4>{l.name} service snapshot</h4>
+                <h3>{l.name} service snapshot</h3>
                 {l.stats.map((st) => (
                   <div className="row" key={st.l}>
                     <span className="l">{st.l}</span>
