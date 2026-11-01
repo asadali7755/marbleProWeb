@@ -29,6 +29,7 @@ const nextConfig: NextConfig = {
       // More old WordPress pages GSC still lists as 404 (Oct 2026).
       { source: '/our-team', destination: '/', permanent: true },
       { source: '/blog/page/:n', destination: '/blog', permanent: true },
+      { source: '/blog/granite-polishing-dubai-facility', destination: '/blog/granite-polishing-dubai', permanent: true },
       { source: '/remove-stains-from-marble-dubai', destination: '/blog/yellow-stain-removing-marble-dubai', permanent: true },
       // The daily AI blog agent kept generating multiple near-duplicate
       // articles per topic (same keyword, different suffix -- some suffixes
