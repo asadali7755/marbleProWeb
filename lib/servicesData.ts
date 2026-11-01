@@ -30,7 +30,8 @@ export const SERVICE_DETAIL: ServiceDetail[] = [
     intro:'Terrazzo is back in style across UAE architecture — and old terrazzo can be restored to a finish more beautiful than the day it was poured. We specialise in terrazzo polishing in Dubai for heritage buildings, modern villas and commercial lobbies.',
     body:['Our terrazzo floor polishing process uses fine diamond pads to smoothly level out cracks and expose the beautiful, sparkling marble and glass aggregate beneath. Aggregate colours come back vivid, and the cement matrix gets a deep, even sheen.','Whether you\'re asking for a terrazzo polishing price in Dubai for a 50 m² lobby or a 2,000 m² heritage hall, we provide an upfront fixed quote with no surprises.'],
     feat:[{t:'Aggregate revealed sharply',d:'Successive grits expose marble and glass chips at perfect plane.'},{t:'Cement matrix sealed',d:'Prevents future yellowing and porosity in the binder.'},{t:'Commercial-scale machinery',d:'Heavy diamond grinders make short work of 1,000+ m² jobs.'},{t:'Heritage-safe technique',d:'We assess original mix before polishing — no irreversible removal.'}]},
-  { num:'05', slug:'granite-polishing', name:'Granite Polishing', h2:'Commercial Granite Polishing Services Dubai', kw:'granite polishing · floor polishing dubai', hue:20, vein:0.30,
+  { num:'05', slug:'granite-polishing', name:'Granite Polishing', h2:'Granite Polishing Dubai — Floors, Stairs & Kitchen Tops', kw:'granite polishing · floor polishing dubai', hue:20, vein:0.30,
+    seoTitle:'Granite Polishing Dubai | Floors & Kitchen Tops | MarblePro',
     intro:"Known for its hardness, granite needs professional-grade machinery and high-grade industrial diamond discs to polish to a brilliant, glass-like reflection. MarblePro delivers slip-safe granite gloss for villas, hotels and retail floors.",
     body:["Granite polishing is technically harder than marble polishing — that's why generic floor polishing companies often skip it. We use specialised heavy-weight machinery to grind down uneven tiles (lippage) and polish granite to a brilliant, mirror-like finish.","For commercial granite polishing services in Dubai — hotels, malls, premium retail — we schedule overnight and weekend work to ensure zero downtime for your business."],
     feat:[{t:'Heavy industrial diamond discs',d:"Required for granite's high silica content — generic pads simply skid."},{t:'Weather-proof sealing',d:'Granite outdoors? We seal against UV and moisture penetration.'},{t:'Slip-resistant finish',d:'We can leave a lower sheen where grip matters more than gloss.'},{t:'Commercial floors',d:'We polish granite in hotels, malls and offices, with work planned around your hours.'}]},
@@ -50,7 +51,8 @@ export const SERVICE_DETAIL: ServiceDetail[] = [
     intro:'Your kitchen counter is the centrepiece of your home — and the most punished surface in it. Kitchen top polishing and sealing delivers daily-use-grade protection that actually lasts.',
     body:['We offer kitchen top polishing for marble, granite, quartz, Corian, terrazzo and engineered stone tops. Each material gets a tailored polishing technique plus a food-safe sealant suited to its porosity.','We work across Dubai, Abu Dhabi, Sharjah and the rest of the UAE, with visit times agreed when you contact us. We confirm how long your kitchen top will take after the free inspection.'],
     feat:[{t:'Oil & water repellent',d:'Hydrophobic sealer rated for direct food prep contact.'},{t:'Hot-pan & ring removal',d:'Burn marks and glass rings polished out invisibly.'},{t:'Edge & cut-out polish',d:'Sink and hob cut-outs treated with the same precision as the surface.'},{t:'Half-day completion',d:'Cook on it the same evening. No fumes, no residue.'}]},
-  { num:'10', slug:'crystallization-sealing', name:'Crystallization & Sealing', h2:'Italian Diamond Crystallization & Sealing — Dubai & UAE', kw:'Italian marble polishing and crystallization Dubai · floor sealing UAE', hue:36, vein:0.20,
+  { num:'10', slug:'crystallization-sealing', name:'Crystallization & Sealing', h2:'Marble Crystallization Dubai — Italian Crystallization & Sealing', kw:'Italian marble polishing and crystallization Dubai · floor sealing UAE', hue:36, vein:0.20,
+    seoTitle:'Marble Crystallization Dubai | Stone Sealing | MarblePro',
     intro:"After polishing, the right sealant helps the finish last longer. We apply true Italian diamond crystallization plus an impregnating breathable sealer to protect against future spills.",
     body:["Italian marble polishing and crystallization Dubai is a popular finish for villas and hotels. The chemistry creates a microscopic, hardened shield on top of the stone — highly mirror-reflective, slip-resistant and durable against heavy foot traffic.","We don't use cheap wax coatings that wear off in weeks. Real crystallization is a chemical bond, not a coating."],
     feat:[{t:'Italian crystallization compound',d:'Real chemical bond — not a wax or acrylic film.'},{t:'Impregnating breathable sealer',d:'Stops liquid penetration without trapping stone moisture.'},{t:'Slip-resistance rated',d:'Surprisingly grippy underfoot despite the mirror finish.'},{t:'Multi-year shine',d:'Professionally crystallized floors hold their gloss for years.'}]},
@@ -96,6 +98,12 @@ export const SERVICE_DETAIL: ServiceDetail[] = [
     intro:'The wrong cleaner can dull marble in a single use. Our marble cleaning service in Dubai uses stone-safe products to lift dirt, grime and soap film without harming the surface.',
     body:['We clean marble floors, stairs, bathrooms and kitchen tops in villas, apartments and offices. The stone is checked first, because a product that is fine on tile can leave pale marks on marble.','The site visit is free, and you get a fixed price before we start. If your marble needs more than a clean, we will tell you and explain why.'],
     feat:[{t:'Stone-safe products',d:'No acids or bleach on your marble.'},{t:'Floors, stairs and tops',d:'For the marble surfaces in your home or office.'},{t:'Honest advice',d:'We tell you if the stone needs polishing rather than cleaning.'},{t:'Fixed-price quote',d:'The site visit is free, and the price is agreed first.'}]},
+  { num:'21', slug:'tile-polishing-dubai', name:'Tile Polishing', h2:'Tile Polishing Dubai — Porcelain, Ceramic & Stone Tile Floors', kw:'tile polishing dubai · porcelain tile polishing dubai', hue:32, vein:0.2,
+    seoTitle:'Tile Polishing Dubai | Porcelain & Ceramic | MarblePro',
+    seoDescription:'Tile polishing in Dubai for porcelain, ceramic and stone tile floors. We clean tile and grout and restore the shine. Free site visit. Call 054 556 77 99.',
+    intro:'Dull tiles and dark grout can make a clean room look tired. Our tile polishing service in Dubai restores porcelain, ceramic and stone tile floors in homes, offices and shops.',
+    body:['The method depends on the tile. Polished porcelain and stone tiles respond well to machine polishing, while glazed ceramic needs a gentler approach because the shine sits in a thin glaze.','We check your tiles at a free site visit, then give you a fixed price and explain what result to expect.'],
+    feat:[{t:'Right method for each tile',d:'Porcelain, ceramic and stone tiles each need different care.'},{t:'Grout cleaning',d:'Dark grout lines are cleaned so the whole floor looks brighter.'},{t:'Honest advice',d:'We tell you if a worn glaze cannot be brought back.'},{t:'Fixed-price quote',d:'The site visit is free, and the price is agreed first.'}]},
 ];
 
 // Real MarblePro project photos, optimised to WebP. Filenames are the service
@@ -121,6 +129,7 @@ export const SVC_DETAIL_IMGS: Record<string, string> = {
   'marble-grinding-dubai':            '/images/projects/polished-marble-floor-dubai-13.webp',
   'commercial-floor-polishing-dubai': '/images/projects/polished-marble-floor-dubai-2.webp',
   'marble-cleaning-dubai':            '/images/projects/polished-marble-floor-dubai-5.webp',
+  'tile-polishing-dubai':             '/images/projects/polished-marble-floor-dubai-8.webp',
 };
 
 // SEO alt text per service — descriptive + keyword + brand/location.

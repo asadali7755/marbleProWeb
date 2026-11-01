@@ -76,4 +76,5 @@ export const SERVICES: Service[] = [
   { num: "18", slug: "marble-grinding-dubai",            name: "Marble Grinding",           short: "Diamond grinding for uneven tiles, lippage and deep scratches." },
   { num: "19", slug: "commercial-floor-polishing-dubai", name: "Commercial Floor Polishing", short: "Stone floors in hotels, offices and retail spaces, with night and weekend work." },
   { num: "20", slug: "marble-cleaning-dubai",            name: "Marble Cleaning",           short: "Stone-safe cleaning for marble floors, stairs, bathrooms and kitchen tops." },
+  { num: "21", slug: "tile-polishing-dubai",              name: "Tile Polishing",            short: "Porcelain, ceramic and stone tile floors cleaned and polished, with grout cleaning." },
 ];

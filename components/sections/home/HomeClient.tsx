@@ -217,6 +217,12 @@ const SVC_CARDS: { img: string; overlay: string }[] = [
   { img:'/images/services/yellow-stain-removing.webp', overlay:'linear-gradient(180deg,rgba(28,16,44,0.30) 0%,rgba(28,16,44,0.62) 100%)' }, // yellow stain
   { img:'/images/services/kitchen-top-polishing.webp', overlay:'linear-gradient(180deg,rgba(14,36,24,0.28) 0%,rgba(14,36,24,0.62) 100%)' }, // kitchen top
   { img:'/images/projects/polished-marble-floor-dubai-10.webp', overlay:'linear-gradient(180deg,rgba(42,32,14,0.28) 0%,rgba(42,32,14,0.62) 100%)' }, // crystallization
+  { img:'/images/projects/polished-marble-floor-dubai-11.webp', overlay:'linear-gradient(180deg,rgba(24,24,30,0.30) 0%,rgba(24,24,30,0.62) 100%)' }, // floor polishing
+  { img:'/images/projects/polished-marble-floor-dubai-12.webp', overlay:'linear-gradient(180deg,rgba(24,24,30,0.30) 0%,rgba(24,24,30,0.62) 100%)' }, // scratch repair
+  { img:'/images/projects/polished-marble-floor-dubai-13.webp', overlay:'linear-gradient(180deg,rgba(24,24,30,0.30) 0%,rgba(24,24,30,0.62) 100%)' }, // grinding
+  { img:'/images/projects/polished-marble-floor-dubai-2.webp', overlay:'linear-gradient(180deg,rgba(24,24,30,0.30) 0%,rgba(24,24,30,0.62) 100%)' }, // commercial
+  { img:'/images/projects/polished-marble-floor-dubai-5.webp', overlay:'linear-gradient(180deg,rgba(24,24,30,0.30) 0%,rgba(24,24,30,0.62) 100%)' }, // marble cleaning
+  { img:'/images/projects/polished-marble-floor-dubai-8.webp', overlay:'linear-gradient(180deg,rgba(24,24,30,0.30) 0%,rgba(24,24,30,0.62) 100%)' }, // tile polishing
 ];
 
 // Lazy-load Unsplash background images — only fetch when card enters viewport.
@@ -274,7 +280,7 @@ function LazySvcCard({ s, size, card, eager }: {
 }
 
 function ServicesGrid() {
-  const sizes = ['lg','md','sm','sm','md','sm','sm','md','sm','sm','lg','md','sm','sm','md'];
+  const sizes = ['lg','md','sm','sm','md','sm','sm','md','sm','sm','lg','md','sm','sm','md','md','md','md','md','md','md'];
   return (
     <section className="sec" data-screen-label="services" id="services">
       <div style={{ marginBottom: 60 }}>
@@ -297,8 +303,7 @@ function ServicesGrid() {
         </Link>
       </div>
       <div className="svc-grid">
-        {/* The grid is designed for the first 15 services. */}
-        {SERVICES.slice(0, SVC_CARDS.length).map((s, i) => (
+        {SERVICES.map((s, i) => (
           <LazySvcCard
             key={s.num}
             s={s}

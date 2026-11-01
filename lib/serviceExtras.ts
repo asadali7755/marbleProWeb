@@ -79,6 +79,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
         { label: 'Emperador polishing', href: '/services/emperador-marble-polishing-dubai' },
         { label: 'Onyx polishing', href: '/services/onyx-marble-polishing-dubai' },
         { label: 'Travertine polishing', href: '/services/travertine-polishing-dubai' },
+        { label: 'Tile polishing', href: '/services/tile-polishing-dubai' },
       ],
     },
     {
@@ -799,6 +800,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
         { t: 'Granite floors', d: 'A very hard stone that needs heavy machines and industrial diamond discs.' },
         { t: 'Terrazzo floors', d: 'Fine diamond pads level the surface and bring out the stone and glass chips.' },
         { t: 'Travertine floors', d: 'Natural holes are filled first, then the stone is honed and polished.' },
+        { t: 'Tile floors', d: 'Porcelain and stone tiles polished, and grout cleaned, with a gentler method for glazed ceramic.' },
       ],
       links: [
         { label: 'Marble polishing Dubai', href: '/services/marble-polishing-dubai' },
@@ -1516,6 +1518,62 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
         { t: 'Do you cover Al Aqah?', d: 'Yes. Share your location and we will confirm the time.' },
         { t: 'How can I reduce sand damage?', d: 'Use mats at every door and sweep often. Sand scratches marble under shoes.' },
       ],
+    },
+  ],
+  'tile-polishing-dubai': [
+    {
+      eyebrow: 'What it is',
+      h2: 'Tile polishing in Dubai: what can be improved',
+      body: [
+        'Tiles lose their shine for simple reasons. Sand scratches the surface, cleaning products leave a film, and dirt builds up in the grout. Often the tile is not worn at all. It only needs a deep clean to look bright again.',
+        'Where the surface itself has worn, the answer depends on the tile. Polished porcelain and natural stone tiles can usually be polished by machine. Glazed ceramic has a thin coloured layer on top, so heavy polishing could damage it. We check which you have before we start.',
+      ],
+    },
+    {
+      eyebrow: 'Tiles we work on',
+      h2: 'Which tile floors can we polish?',
+      items: [
+        { t: 'Polished porcelain', d: 'Common in UAE villas and apartments. Light scratches and dull paths can usually be improved.' },
+        { t: 'Matt porcelain', d: 'This tile has no shine to restore, so a deep clean is usually the right job.' },
+        { t: 'Glazed ceramic', d: 'We clean it and lift the film, but we cannot replace a glaze that has worn through.' },
+        { t: 'Stone tiles', d: 'Marble, granite and travertine tiles get the same care as a stone floor.' },
+      ],
+      links: [
+        { label: 'Floor polishing', href: '/services/floor-polishing-dubai' },
+        { label: 'Marble polishing', href: '/services/marble-polishing-dubai' },
+      ],
+    },
+    {
+      eyebrow: 'Signs',
+      h2: 'When your tiles need attention',
+      items: [
+        { t: 'Dull walkways', d: 'The floor looks flat in hallways and near doors, while the edges still shine.' },
+        { t: 'Dark grout', d: 'Grout lines turn grey or black, and the floor looks dirty even after mopping.' },
+        { t: 'Streaks after mopping', d: 'Old cleaner has built up as a film on the tile.' },
+        { t: 'Fine scratches', d: 'You can see them when light falls across the floor.' },
+      ],
+    },
+    {
+      eyebrow: 'Our process',
+      h2: 'How we polish tile floors',
+      numbered: true,
+      items: [
+        { t: 'Identify the tile', d: 'We test a small area and agree the result you can expect.' },
+        { t: 'Deep clean', d: 'We remove dirt and old product film from the tile and the grout.' },
+        { t: 'Polish where it helps', d: 'We polish tiles that can take it, and use a gentler method on glazed surfaces.' },
+        { t: 'Protect the grout', d: 'We can seal the grout so that it stays cleaner for longer.' },
+      ],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Tile polishing questions',
+      items: [
+        { t: 'Can you polish every tile?', d: 'No. Some tiles only need cleaning, and a worn glaze cannot be restored. We tell you this at the site visit.' },
+        { t: 'Can you clean the grout too?', d: 'Yes. Grout cleaning makes a big difference to how the whole floor looks.' },
+        { t: 'Do you work in apartments and offices?', d: 'Yes. We work in homes, offices and shops across the UAE, with the visit time based on our schedule.' },
+        { t: 'How should I clean tiles at home?', d: 'Sweep first, then use a mild, neutral cleaner and clean water. Too much product leaves a dull film.' },
+      ],
+      links: [{ label: 'Get a free quote', href: '/contact' }],
     },
   ],
 };
