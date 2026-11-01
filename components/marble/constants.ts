@@ -6,7 +6,7 @@ export const WA_LINK = `https://wa.me/${PHONE_TEL.replace("+", "")}`;
 // Must match the live Google Business Profile ("Marble polishing and
 // crystallization services", Muwaileh, Sharjah). Update when it changes.
 export const GOOGLE_RATING = "3.9";
-export const GOOGLE_REVIEW_COUNT = 7;
+export const GOOGLE_REVIEW_COUNT = 11;
 
 export interface Emirate {
   slug: string;

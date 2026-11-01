@@ -44,10 +44,10 @@ const handWrittenGuides: Guide[] = [
         'Treat any fixed online price with caution — a 30 m² etched bathroom and a 300 m² villa floor in good condition are completely different jobs. The only accurate number is a written quote after inspection.',
       ]},
       { h2: 'What should be included in the price?', body: [
-        'A complete marble polishing quote should cover: diamond grinding and honing through the full grit sequence, edge and corner work by hand, a dust-free wet process, furniture protection, a final crystallization/seal where quoted, and a written gloss guarantee. Ask whether sealing is included or extra, and whether there is any call-out or minimum charge.',
+        'A complete marble polishing quote should cover: diamond grinding and honing through the full grit sequence, edge and corner work by hand, a dust-free wet process, furniture protection, and a final crystallization or seal where quoted. Ask whether sealing is included or extra, and whether there is any call-out or minimum charge.',
       ]},
       { h2: 'How to avoid overpaying', body: [
-        'Get at least two on-site quotes, make sure they cover the same scope, and be wary of prices that look far below the market — they often skip crystallization or use wax coatings that wear off in weeks. A fixed-price written quote with a gloss guarantee protects you from surprise charges on the day.',
+        'Get at least two on-site quotes, make sure they cover the same scope, and be wary of prices that look far below the market — they often skip crystallization or use wax coatings that wear off in weeks. A fixed-price written quote protects you from surprise charges on the day.',
       ]},
     ],
     faqs: [

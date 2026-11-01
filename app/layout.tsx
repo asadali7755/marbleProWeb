@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     template: '%s',
   },
   description:
-    "MarblePro — Dubai's best marble polishing company. Expert floor polishing, Italian crystallization, terrazzo & granite restoration across all 7 UAE emirates. Free quote · 054 556 77 99.",
+    "MarblePro — marble polishing company in Dubai. Expert floor polishing, Italian crystallization, terrazzo & granite restoration across all 7 UAE emirates. Free quote · 054 556 77 99.",
 
   // Explicit robots directives — tells Google to fully index & follow links.
   // Individual pages (e.g. not-found) can override this with noindex.
@@ -70,15 +70,15 @@ export const metadata: Metadata = {
     locale: 'en_AE',
     url: SITE_URL,
     siteName: 'MarblePro UAE',
-    title: 'Best Marble Polishing Company in Dubai | MarblePro UAE',
+    title: 'Marble Polishing Company in Dubai | MarblePro UAE',
     description:
-      'MarblePro — best marble polishing company in Dubai. Affordable marble floor polishing services UAE, Italian marble polishing and crystallization, emergency residential marble floor restoration, terrazzo, granite & quartz polishing across all 7 emirates.',
+      'MarblePro — marble polishing company in Dubai. Affordable marble floor polishing across the UAE, Italian marble polishing and crystallization, emergency residential marble floor restoration, terrazzo, granite & quartz polishing across all 7 emirates.',
     images: [
       {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: 'MarblePro — Best Marble Polishing Company in Dubai UAE',
+        alt: 'MarblePro — Marble Polishing Company in Dubai UAE',
       },
     ],
   },
@@ -86,9 +86,9 @@ export const metadata: Metadata = {
   // Twitter / X card
   twitter: {
     card: 'summary_large_image',
-    title: 'Best Marble Polishing Company in Dubai | MarblePro UAE',
+    title: 'Marble Polishing Company in Dubai | MarblePro UAE',
     description:
-      'MarblePro — best marble polishing company in Dubai. Affordable marble floor polishing services UAE, Italian marble polishing and crystallization, emergency residential marble floor restoration.',
+      'MarblePro — marble polishing company in Dubai. Affordable marble floor polishing across the UAE, Italian marble polishing and crystallization, emergency residential marble floor restoration.',
     images: [OG_IMAGE],
   },
 };
@@ -97,7 +97,7 @@ const schemaOrg = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "MarblePro UAE",
-  "description": "Best marble polishing company in Dubai offering affordable marble floor polishing across the UAE. Italian marble polishing and crystallization, emergency residential marble floor restoration, premium marble countertop polishing, terrazzo floor polishing, commercial granite polishing services Dubai.",
+  "description": "Marble polishing company in Dubai offering affordable marble floor polishing across the UAE. Italian marble polishing and crystallization, emergency residential marble floor restoration, premium marble countertop polishing, terrazzo floor polishing, commercial granite polishing.",
   "url": "https://www.marblepro.ae",
   "telephone": "+971545567799",
   "email": "marbleprodxb@gmail.com",

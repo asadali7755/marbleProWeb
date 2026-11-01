@@ -253,11 +253,11 @@ function SupportBand() {
           <div className="c-support-card">
             <div className="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
             <h3>Email &amp; <em>online</em></h3>
-            <p>Email suits commercial quotes, AMC enquiries and detailed job specs. We reply same working day.</p>
+            <p>Email suits commercial quotes and detailed job specs. We reply within 30 minutes.</p>
             <ul>
               <li><span className="l">Email</span><span className="v" style={{ fontSize:13, fontFamily:'var(--sans)' }}>{EMAIL}</span></li>
               <li><span className="l">Response</span><span className="v">Same working day</span></li>
-              <li><span className="l">Best for</span><span className="v">Commercial, AMC</span></li>
+              <li><span className="l">Best for</span><span className="v">Commercial jobs</span></li>
             </ul>
           </div>
         </div>

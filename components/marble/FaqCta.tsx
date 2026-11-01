@@ -17,12 +17,12 @@ const FAQS = [
     a: 'Yes. Our marble floor restoration services include specialised colour-matched epoxy crack filling and advanced yellow stain removing procedures to repair deeply neglected natural stone — restoring it to better than new.',
   },
   {
-    q: 'Why is MarblePro the best marble polishing company in Dubai?',
-    a: 'MarblePro uses Italian diamond crystallization technology — the same system used in 5-star hotels across the UAE. Every job comes with a 1-month written guarantee and a fixed-price quote, making us the most trusted and affordable marble floor polishing services provider across the UAE.',
+    q: 'Why choose MarblePro for marble polishing in Dubai?',
+    a: 'MarblePro uses Italian diamond crystallization technology. Every job comes with a 1-month written guarantee and a fixed-price quote after a free inspection.',
   },
   {
     q: 'Do you offer emergency residential marble floor restoration services in Dubai?',
-    a: 'Yes. Emergency marble floor restoration for homes in Dubai is available same-day or next-day. We reply within 30 minutes and confirm your visit time based on our schedule. We are available 24 hours, 7 days a week.',
+    a: 'Yes. Tell us it is urgent and we will give you the earliest visit time on our schedule. We reply within 30 minutes. We are available 24 hours, 7 days a week.',
   },
   {
     q: 'What is the price for terrazzo floor polishing in Dubai?',
@@ -30,7 +30,7 @@ const FAQS = [
   },
   {
     q: 'Do you offer premium marble countertop polishing and Corian repair?',
-    a: 'Yes. We offer premium marble countertop polishing in Dubai, kitchen top polishing and sealing across the UAE, Corian polishing and scratch repair in Dubai, and quartz polishing and stain protection in Abu Dhabi — all with food-safe sealers and same-day turnaround.',
+    a: 'Yes. We offer premium marble countertop polishing in Dubai, kitchen top polishing and sealing across the UAE, Corian polishing and scratch repair in Dubai, and quartz polishing and stain protection in Abu Dhabi — all with food-safe sealers.',
   },
   {
     q: 'Which emirates do you cover?',
@@ -96,7 +96,7 @@ export function PageFaqCta() {
           <span className="sec-eyebrow" style={{ color: 'var(--paper)', opacity: 0.65 }}>— Free on-site inspection</span>
           <h3>Ready to bring back<br/><em>the mirror shine?</em></h3>
           <p>
-            Contact MarblePro today for the best floor restoration services in Dubai and the wider UAE.
+            Contact MarblePro today for floor restoration in Dubai and the wider UAE.
             Fixed-price quote, dust-free work, 1-month written guarantee.
           </p>
           <div className="shine-cta-btns">

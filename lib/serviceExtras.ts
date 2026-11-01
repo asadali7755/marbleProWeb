@@ -815,7 +815,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
       items: [
         { t: 'How long does it take?', d: 'A standard villa living area typically takes 1 to 2 days. We confirm the time with your quote.' },
         { t: 'Will my home be full of dust?', d: 'No. We use a wet process, so marble dust does not spread through your home.' },
-        { t: 'Do you offer same-day service?', d: 'Same-day or next-day work may be available for urgent residential jobs. Call us to check.' },
+        { t: 'Can you come urgently?', d: 'Tell us it is urgent and we will give you the earliest visit time on our schedule.' },
         { t: 'Do you cover other emirates?', d: 'Yes. We work across all 7 UAE emirates, including Abu Dhabi and Sharjah.' },
       ],
     },
@@ -879,7 +879,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
       eyebrow: 'Homes and businesses',
       h2: 'Residential and commercial floor restoration in Dubai',
       body: [
-        'We restore marble floors in villas and apartments, as well as hotels, offices, lobbies and showrooms. Emergency residential work is available same-day or next-day. For commercial floor restoration in Dubai, we can plan overnight and weekend work so your business keeps running.',
+        'We restore marble floors in villas and apartments, as well as hotels, offices, lobbies and showrooms. For urgent home jobs, we give you the earliest visit time on our schedule. For commercial floor restoration in Dubai, we can plan overnight and weekend work so your business keeps running.',
         'Our dust-free wet process means a lived-in home stays usable while the work moves from room to room. We also cover Abu Dhabi, Sharjah and the other emirates.',
       ],
       links: [
@@ -897,6 +897,572 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
         { t: 'Does restoration stop the damage coming back?', d: 'It removes the existing damage, and sealing helps protect the floor, but marble still needs care. Wipe up acidic spills quickly and use pH-neutral cleaners.' },
       ],
       links: [{ label: 'How often should marble be polished?', href: '/blog/how-often-polish-marble-floors-dubai' }],
+    },
+  ],
+  'calacatta-marble-polishing-dubai': [
+    {
+      eyebrow: 'The stone',
+      h2: 'What makes Calacatta marble hard to polish',
+      body: [
+        'Calacatta is a white Italian marble with bold grey and gold veins. It is calcium-based, so lemon juice, vinegar and many bathroom cleaners can leave a dull mark within minutes. On a white background, every one of those marks shows.',
+        'White marble also needs care with water. Too much water sitting on or under the stone can bring out yellow or brown tones, so we control the water we use at each step. The aim is to restore the shine without changing the colour of the slab.',
+      ],
+    },
+    {
+      eyebrow: 'Signs',
+      h2: 'When Calacatta needs professional work',
+      items: [
+        { t: 'Dull rings and spots', d: 'Glasses, perfume bottles and cleaning sprays leave etch marks on vanity tops and floors.' },
+        { t: 'Yellow patches', d: 'Age, water and old wax can turn parts of the slab yellow, and normal cleaning will not lift it.' },
+        { t: 'Faded shine in walkways', d: 'Sand on shoes wears the polish down along hallways and around doors.' },
+        { t: 'Lost contrast in the veins', d: 'A dull surface makes the grey and gold veining look flat.' },
+      ],
+    },
+    {
+      eyebrow: 'Our process',
+      h2: 'How we polish Calacatta',
+      numbered: true,
+      items: [
+        { t: 'Inspect the slab', d: 'We check the finish, stains, cracks and any old coatings, then give you a fixed-price quote.' },
+        { t: 'Treat stains first', d: 'We deal with yellowing and marks before polishing, so we do not seal them in.' },
+        { t: 'Polish in stages', d: 'We use fine diamond pads and move up gradually, to protect the veins and the white tone.' },
+        { t: 'Seal and hand over', d: 'We apply a sealer that suits white marble and show you which cleaners to use.' },
+      ],
+      links: [
+        { label: 'Yellow stain removal', href: '/services/yellow-stain-removing' },
+        { label: 'Crystallization and sealing', href: '/services/crystallization-sealing' },
+      ],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Calacatta polishing questions',
+      items: [
+        { t: 'Can you polish Calacatta kitchen tops as well as floors?', d: 'Yes. We polish floors, kitchen tops, vanities, walls and stairs.' },
+        { t: 'Will sealing stop etch marks?', d: 'No sealer fully stops acid from etching marble. It slows stains, so you still need to wipe spills quickly.' },
+        { t: 'Should I choose a polished or honed finish?', d: 'Polished Calacatta looks brighter. A honed finish hides light marks better, which helps in busy kitchens.' },
+      ],
+      links: [{ label: 'How to care for Calacatta at home', href: '/blog/calacatta-marble-polishing-dubai' }],
+    },
+  ],
+  'crema-marfil-polishing-dubai': [
+    {
+      eyebrow: 'The stone',
+      h2: 'Why Crema Marfil needs its own approach',
+      body: [
+        'Crema Marfil is a warm beige marble from Spain, and you will find it in many UAE villas and apartment blocks. It is fairly soft and has natural veins and fine fissures. Factories often fill these with resin before the tiles reach the site.',
+        'That mix of soft stone and resin filler affects how we polish it. Heavy grinding can open up the veins or remove filler, so we set the grit and pressure after we have looked at your floor. We also check the joints, as dirt in the grout can make a clean floor look tired.',
+      ],
+    },
+    {
+      eyebrow: 'Signs',
+      h2: 'Common problems on Crema Marfil floors',
+      items: [
+        { t: 'Patchy shine', d: 'Walkways turn matt while the edges of the room still look polished.' },
+        { t: 'Dark or orange patches', d: 'Water and old cleaners can leave uneven tones in the stone.' },
+        { t: 'Hollow or chipped veins', d: 'Old filler can wear away and leave small holes that trap dirt.' },
+        { t: 'Uneven tiles', d: 'Raised tile edges catch the light and chip over time.' },
+      ],
+    },
+    {
+      eyebrow: 'Our process',
+      h2: 'How we restore Crema Marfil',
+      numbered: true,
+      items: [
+        { t: 'Check the floor', d: 'We look at wear, stains, filler and lippage, and tell you what polishing can and cannot fix.' },
+        { t: 'Repair first', d: 'We fill open veins and chips with a colour-matched filler.' },
+        { t: 'Grind only where needed', d: 'We flatten raised edges where a floor needs it, then polish through the diamond grits.' },
+        { t: 'Finish and protect', d: 'We finish to the shine you choose and seal the stone against spills.' },
+      ],
+      links: [
+        { label: 'Marble grinding', href: '/services/marble-grinding-dubai' },
+        { label: 'Scratch and crack repair', href: '/services/marble-scratch-repair-dubai' },
+      ],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Crema Marfil polishing questions',
+      items: [
+        { t: 'Can polishing remove dark patches?', d: 'Often, but it depends on the cause. We test the patch during the inspection before we promise a result.' },
+        { t: 'Do you polish single rooms?', d: 'Yes. The shine may differ slightly from the rooms next door, so we discuss that with you first.' },
+        { t: 'Is the work dusty?', d: 'We use a wet process, which keeps stone dust out of the air.' },
+      ],
+      links: [{ label: 'Why Crema Marfil turns dull or patchy', href: '/blog/crema-marfil-marble-polishing-dubai' }],
+    },
+  ],
+  'emperador-marble-polishing-dubai': [
+    {
+      eyebrow: 'The stone',
+      h2: 'Why Emperador shows every mark',
+      body: [
+        'Emperador is a brown Spanish marble with white veins. Its dark colour makes it look rich, but it also shows scratches, water spots and dust far more than a cream or white stone.',
+        'Hard-water marks are the most common complaint in bathrooms. They sit on the surface as white spots, and a dull etch mark can look almost the same. We tell them apart first, because one needs cleaning and the other needs polishing.',
+      ],
+    },
+    {
+      eyebrow: 'Signs',
+      h2: 'When Emperador needs attention',
+      items: [
+        { t: 'White water marks', d: 'Marks build up around basins, showers and taps.' },
+        { t: 'Grey, faded areas', d: 'The floor loses its deep brown colour along the paths people walk.' },
+        { t: 'Fine scratches', d: 'Light catches every scratch on dark stone, especially near entrances.' },
+        { t: 'Worn white veins', d: 'The veins are softer in places, and they can pit or lose their shine.' },
+      ],
+    },
+    {
+      eyebrow: 'Our process',
+      h2: 'How we polish Emperador',
+      numbered: true,
+      items: [
+        { t: 'Identify the marks', d: 'We separate water deposits, etching and scratches, then quote for the agreed work.' },
+        { t: 'Clean off deposits', d: 'We remove hard-water build-up with products that suit marble.' },
+        { t: 'Polish through the grits', d: 'Diamond pads take out the wear and bring the brown tone back.' },
+        { t: 'Seal wet areas', d: 'We use a sealer made for bathrooms and other wet areas.' },
+      ],
+      links: [{ label: 'Crystallization and sealing', href: '/services/crystallization-sealing' }],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Emperador polishing questions',
+      items: [
+        { t: 'How do I stop water marks coming back?', d: 'Wipe the stone dry after use and clean with a pH-neutral cleaner. Sealing helps, but it does not replace drying.' },
+        { t: 'Can you polish Emperador in a shower?', d: 'Yes. We check the joints and any water damage first.' },
+        { t: 'Will polishing darken the stone?', d: 'It usually brings back the deeper brown you lost to wear. A colour-enhancing sealer can deepen it further if you want that.' },
+      ],
+      links: [{ label: 'Why Emperador shows every mark', href: '/blog/emperador-marble-polishing-dubai' }],
+    },
+  ],
+  'onyx-marble-polishing-dubai': [
+    {
+      eyebrow: 'The stone',
+      h2: 'What makes onyx different from marble',
+      body: [
+        'Onyx is a translucent, banded stone. People use it for backlit walls, vanity tops, reception counters and feature panels because light passes through it. It is softer and more brittle than most marble, so it scratches and cracks more easily.',
+        'Many onyx slabs have a resin layer or a mesh backing to hold them together. That changes what we can do, because too much heat or pressure can damage the resin. We inspect each piece and agree a plan before any machine touches it.',
+      ],
+    },
+    {
+      eyebrow: 'Signs',
+      h2: 'Problems we see on onyx',
+      items: [
+        { t: 'Cloudy surface', d: 'Acidic cleaners and water leave a white haze that dims the glow.' },
+        { t: 'Fine scratches', d: 'Even a soft cloth with grit on it can mark a polished slab.' },
+        { t: 'Uneven light', d: 'On a backlit wall, wear and residue show up as dark or dull areas.' },
+        { t: 'Small cracks', d: 'Natural fissures can open over time and collect dirt.' },
+      ],
+    },
+    {
+      eyebrow: 'Our process',
+      h2: 'How we polish onyx',
+      numbered: true,
+      items: [
+        { t: 'Inspect the piece', d: 'We check the backing, cracks and finish, and tell you the risks before we start.' },
+        { t: 'Fill and stabilise', d: 'We fill fissures with resin where the stone needs it.' },
+        { t: 'Use fine abrasives only', d: 'We start at a fine grit and work by hand on delicate areas.' },
+        { t: 'Protect the finish', d: 'We apply a suitable sealer and explain how to clean the stone.' },
+      ],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Onyx polishing questions',
+      items: [
+        { t: 'Can you polish a backlit onyx wall?', d: 'Yes, in most cases. We check the fixing and the lighting first, and protect the area around it.' },
+        { t: 'Can all scratches come out?', d: 'Light scratches usually can. Deep damage may stay visible, and we tell you that at the inspection.' },
+        { t: 'Which cleaner is safe for onyx?', d: 'Use a soft cloth and a pH-neutral stone cleaner. Avoid vinegar, lemon and bathroom sprays.' },
+      ],
+      links: [{ label: 'Onyx care at home', href: '/blog/onyx-marble-polishing-dubai' }],
+    },
+  ],
+  'quartz-polishing': [
+    {
+      eyebrow: 'The surface',
+      h2: 'Quartz is not stone in the usual sense',
+      body: [
+        'Engineered quartz is mostly crushed quartz held together with resin. The factory gives it a polish that resists stains well, so it does not need the sealing routine that marble does. The resin is also its weak point: heat and strong chemicals can mark it.',
+        'That means polishing quartz is a limited job. We can often improve light scratches and dull patches, but we cannot always remove a burn or a deep chip. We tell you what is realistic before we start, and we use low speed and low heat to protect the resin.',
+      ],
+    },
+    {
+      eyebrow: 'Signs',
+      h2: 'What brings customers to us',
+      items: [
+        { t: 'Dull areas by the sink or hob', d: 'Daily wiping and harsh cleaners can take the sheen off busy spots.' },
+        { t: 'Light scratches', d: 'Cutting directly on the top leaves fine lines.' },
+        { t: 'Stubborn marks', d: 'Oil, turmeric and tea can sit on a worn surface.' },
+        { t: 'Heat marks', d: 'Hot pans can leave pale or yellow patches in the resin.' },
+      ],
+    },
+    {
+      eyebrow: 'Our process',
+      h2: 'How we work on quartz',
+      numbered: true,
+      items: [
+        { t: 'Check the damage', d: 'We look at each mark and tell you which ones should improve.' },
+        { t: 'Clean the surface', d: 'We remove residue so we can see the true condition of the top.' },
+        { t: 'Polish gently', d: 'We work at low speed to avoid overheating the resin.' },
+        { t: 'Add protection if you want it', d: 'An optional sealer helps repel oil, wine and juice.' },
+      ],
+      links: [{ label: 'Kitchen top polishing', href: '/services/kitchen-top-polishing' }],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Quartz polishing questions',
+      items: [
+        { t: 'Can a burn mark be removed?', d: 'Sometimes it can be reduced, but a heat mark in the resin may not fully go. Check it with us first.' },
+        { t: 'Does quartz etch like marble?', d: 'No. Normal food acids do not etch it, but strong chemicals and bleach can damage the surface.' },
+        { t: 'How should I clean quartz?', d: 'Use a soft cloth, warm water and mild soap. Avoid abrasive pads.' },
+      ],
+      links: [{ label: 'Can quartz be polished?', href: '/blog/quartz-polishing-dubai' }],
+    },
+  ],
+  'travertine-polishing-dubai': [
+    {
+      eyebrow: 'The stone',
+      h2: 'Why travertine is treated differently',
+      body: [
+        'Travertine forms in layers around mineral springs, which leaves natural holes in the stone. Many tiles are filled at the factory, but that filler can wear away. When it does, dirt and water collect in the holes and the floor starts to look pitted.',
+        'So polishing alone will not fix a worn travertine floor. We fill the holes first, and only then hone or polish. We also ask how you want it to look. Some homes suit a soft honed finish, and others want more shine.',
+      ],
+    },
+    {
+      eyebrow: 'Signs',
+      h2: 'When travertine needs work',
+      items: [
+        { t: 'Open holes', d: 'Filler has worn out, and dirt now sits in the surface.' },
+        { t: 'Dark, dirty patches', d: 'Soil gets into the pores, and mopping only moves it around.' },
+        { t: 'Rough walkways', d: 'The floor feels worn underfoot along busy routes.' },
+        { t: 'Damaged outdoor areas', d: 'Pool surrounds and terraces suffer from sun, salt and water.' },
+      ],
+    },
+    {
+      eyebrow: 'Our process',
+      h2: 'How we restore travertine',
+      numbered: true,
+      items: [
+        { t: 'Inspect and agree the finish', d: 'We look at the holes and the wear, and help you choose honed or polished.' },
+        { t: 'Deep clean', d: 'We clear dirt from the pores so the filler can bond.' },
+        { t: 'Fill the voids', d: 'We use a colour-matched epoxy filler in holes and chips.' },
+        { t: 'Hone, polish and seal', d: 'We bring the floor to the agreed finish and seal it.' },
+      ],
+      links: [{ label: 'Marble floor restoration', href: '/services/marble-floor-restoration' }],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Travertine polishing questions',
+      items: [
+        { t: 'Honed or polished: which is better?', d: 'Honed hides wear and feels less slippery. Polished looks brighter but shows marks sooner.' },
+        { t: 'Will the filler match my floor?', d: 'We colour-match it to the stone. Small differences are normal, because no two tiles are the same.' },
+        { t: 'Can you work on pool areas?', d: 'Yes. We usually suggest a finish with more grip outdoors.' },
+      ],
+      links: [{ label: 'Filled or unfilled travertine', href: '/blog/travertine-polishing-dubai' }],
+    },
+  ],
+  'marble-countertop-polishing': [
+    {
+      eyebrow: 'What it is',
+      h2: 'What countertop polishing can fix',
+      body: [
+        'A marble countertop takes more daily punishment than a floor. Lemon, tomato, vinegar and wine can all etch it, leaving dull spots that look like water marks but do not wipe off. Oil can also soak in and leave a dark stain.',
+        'We polish tops in place, so you do not have to remove anything. Our team protects the cabinets, sink and walls first, and we work by hand around taps and edges where a machine cannot reach.',
+      ],
+    },
+    {
+      eyebrow: 'Signs',
+      h2: 'When your countertop needs polishing',
+      items: [
+        { t: 'Dull rings and spots', d: 'Glasses and spills leave marks you can see in the light.' },
+        { t: 'Dark oil stains', d: 'They usually appear around the hob and the sink.' },
+        { t: 'Water no longer beads', d: 'If water soaks in quickly, the sealer has worn off.' },
+        { t: 'Rough or chipped edges', d: 'Edges take knocks from pans and sinks.' },
+      ],
+    },
+    {
+      eyebrow: 'Our process',
+      h2: 'How we polish a marble top',
+      numbered: true,
+      items: [
+        { t: 'Inspect', d: 'We check the stone type, marks and edges, then give you a fixed-price quote.' },
+        { t: 'Protect the kitchen', d: 'We cover nearby surfaces before we start.' },
+        { t: 'Remove marks', d: 'We treat stains, then polish out etching with diamond pads.' },
+        { t: 'Seal', d: 'We apply a food-safe sealer and tell you when you can use the top again.' },
+      ],
+      links: [{ label: 'Kitchen top polishing', href: '/services/kitchen-top-polishing' }],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Countertop polishing questions',
+      items: [
+        { t: 'Do I need to remove my sink?', d: 'No. We work with the sink and taps in place.' },
+        { t: 'How often should I reseal?', d: 'It depends on use. If water stops beading on the surface, it is time to reseal.' },
+        { t: 'Can you fix a chipped edge?', d: 'Usually, yes. We fill the chip and blend it into the edge.' },
+      ],
+      links: [{ label: 'Etch marks on marble countertops', href: '/blog/marble-countertop-polishing-dubai' }],
+    },
+  ],
+  'kitchen-top-polishing': [
+    {
+      eyebrow: 'What it is',
+      h2: 'Every kitchen top needs a different method',
+      body: [
+        'The right method depends on what your top is made of. Marble can etch, but polishing can bring it back. Granite is harder and resists most kitchen acids. Quartz relies on resin, so it needs low heat. Corian is a solid surface that we sand and refinish.',
+        'That is why we start by checking the material. If you are not sure what your kitchen top is, send us a photo on WhatsApp. We reply within 30 minutes and can confirm it during the free inspection.',
+      ],
+    },
+    {
+      eyebrow: 'Problems',
+      h2: 'What we fix on kitchen tops',
+      items: [
+        { t: 'Dull areas', d: 'Daily cleaning wears down the shine near the sink and hob.' },
+        { t: 'Oil and food stains', d: 'Stains are most common on marble and on granite that has lost its seal.' },
+        { t: 'Scratches', d: 'Knives and pans leave marks, especially on softer surfaces.' },
+        { t: 'Heat marks', d: 'Hot pans can mark quartz and Corian.' },
+      ],
+    },
+    {
+      eyebrow: 'Our process',
+      h2: 'How the job works',
+      numbered: true,
+      items: [
+        { t: 'Confirm the material', d: 'We identify the surface and check the damage.' },
+        { t: 'Agree the price', d: 'You get a fixed price for the agreed work.' },
+        { t: 'Polish in place', d: 'We protect the kitchen and work around sinks and taps.' },
+        { t: 'Seal where it helps', d: 'We seal porous stone with a food-safe product. Quartz and Corian usually do not need it.' },
+      ],
+      links: [
+        { label: 'Marble countertop polishing', href: '/services/marble-countertop-polishing' },
+        { label: 'Quartz polishing', href: '/services/quartz-polishing' },
+        { label: 'Corian countertop polishing', href: '/services/corian-countertop-polishing' },
+        { label: 'Granite polishing', href: '/services/granite-polishing' },
+      ],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Kitchen top polishing questions',
+      items: [
+        { t: 'How long will my kitchen be out of use?', d: 'It depends on the material and the size of the top. We confirm the time after the inspection.' },
+        { t: 'Is the sealer safe for food areas?', d: 'We use a food-safe sealer on stone kitchen tops.' },
+        { t: 'Can you polish only one section?', d: 'Sometimes, but the repair can show. We usually suggest polishing the full run so the shine stays even.' },
+      ],
+      links: [{ label: 'Which kitchen tops can be polished?', href: '/blog/kitchen-top-polishing-dubai' }],
+    },
+  ],
+  'location-ajman': [
+    {
+      eyebrow: 'Ajman homes',
+      h2: 'Stone care for Ajman towers and villas',
+      body: [
+        'Ajman has a mix of apartment towers along the Corniche and Al Rashidiya, newer communities such as Al Zorah and Helio, and older villas in areas such as Al Nuaimiya and Al Rumailah. Each of these brings different problems, so we start by looking at your stone and how you use the space.',
+        'In tower lobbies and lift areas, the main issue is foot traffic and sand from outside. Close to the sea, humidity and salty air make floors feel dull sooner. In older homes, we often find terrazzo or marble under years of wax.',
+      ],
+    },
+    {
+      eyebrow: 'What we do',
+      h2: 'Popular jobs in Ajman',
+      items: [
+        { t: 'Apartment floor polishing', d: 'We work room by room, which suits lived-in flats.' },
+        { t: 'Lobby and corridor polishing', d: 'We can plan work with building managers to reduce disruption.' },
+        { t: 'Bathroom and vanity marble', d: 'We remove water marks and dull spots.' },
+        { t: 'Old terrazzo restoration', d: 'We remove old coatings and bring back the stone chips.' },
+      ],
+      links: [
+        { label: 'Floor polishing', href: '/services/floor-polishing-dubai' },
+        { label: 'Terrazzo polishing', href: '/services/terrazzo-polishing-dubai' },
+      ],
+    },
+    {
+      eyebrow: 'How it works',
+      h2: 'How to book in Ajman',
+      numbered: true,
+      items: [
+        { t: 'Call or WhatsApp us', d: 'Send a photo if you can. We reply within 30 minutes.' },
+        { t: 'Agree a visit time', d: 'We give you a time based on our schedule.' },
+        { t: 'Get a fixed quote', d: 'We inspect the floor for free and quote for the agreed work.' },
+        { t: 'We do the work', d: 'Our team protects the area and uses a wet, low-dust process.' },
+      ],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Questions from Ajman customers',
+      items: [
+        { t: 'Do you work in apartments?', d: 'Yes. We can work around building rules and access times.' },
+        { t: 'Do you charge for the visit?', d: 'No. The inspection and quote are free.' },
+        { t: 'Can you polish my floor before I move in?', d: 'Yes. An empty home is the easiest time to do it.' },
+      ],
+    },
+  ],
+  'location-ras-al-khaimah': [
+    {
+      eyebrow: 'Ras Al Khaimah homes',
+      h2: 'Stone care for homes and holiday properties in RAK',
+      body: [
+        'Many properties in Al Hamra Village, Mina Al Arab and Al Marjan Island are holiday homes or rentals. Floors in these homes can sit unused for weeks, then take heavy use from guests. Sand, sun cream and pool water all end up on the stone.',
+        'Further inland, in areas such as Khuzam and Al Nakheel, family villas often have marble or granite that has lost its shine over many years. We look at each floor first, because a holiday flat and a family villa rarely need the same work.',
+      ],
+    },
+    {
+      eyebrow: 'What we do',
+      h2: 'Popular jobs in Ras Al Khaimah',
+      items: [
+        { t: 'Refreshing a holiday home', d: 'We polish and seal floors between lets or before a new season.' },
+        { t: 'Marble floor restoration', d: 'We take out scratches, etch marks and worn areas.' },
+        { t: 'Terrace and pool surrounds', d: 'We clean and seal stone that takes sun and water.' },
+        { t: 'Hotel and resort work', d: 'We can plan overnight work so guests are not disturbed.' },
+      ],
+      links: [
+        { label: 'Marble floor restoration', href: '/services/marble-floor-restoration' },
+        { label: 'Commercial floor polishing', href: '/services/commercial-floor-polishing-dubai' },
+      ],
+    },
+    {
+      eyebrow: 'How it works',
+      h2: 'How to book in RAK',
+      numbered: true,
+      items: [
+        { t: 'Send us the details', d: 'Call or WhatsApp us with your location and a photo. We reply within 30 minutes.' },
+        { t: 'Choose a time', d: 'We give you a visit time based on our schedule. Tell us if the home is empty.' },
+        { t: 'Inspection and quote', d: 'We check the stone for free and give you a fixed price.' },
+        { t: 'Work and handover', d: 'We finish the floor and explain how to look after it.' },
+      ],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Questions from Ras Al Khaimah customers',
+      items: [
+        { t: 'I live abroad. Can you work with my property manager?', d: 'Yes. We can arrange access and send updates through your manager.' },
+        { t: 'How do I look after the floor between visits?', d: 'Sweep sand often, use a pH-neutral cleaner and put mats at entrances.' },
+        { t: 'Do you cover Jebel Jais?', d: 'Yes. Tell us the exact location so we can plan the trip.' },
+      ],
+    },
+  ],
+  'location-umm-al-quwain': [
+    {
+      eyebrow: 'Umm Al Quwain homes',
+      h2: 'Stone care for older homes and lagoon villas',
+      body: [
+        'Umm Al Quwain has a quieter mix of older family homes around the Old Town and newer villas near UAQ Marina. In older homes, terrazzo and marble have often been waxed many times. That wax yellows and hides the stone beneath it.',
+        'We prefer a gentle approach on these floors. We test a small area first, remove the old coating, and then decide how much polishing the floor needs. On newer villas near the water, the work is usually about bringing back shine and protecting the stone from humidity.',
+      ],
+    },
+    {
+      eyebrow: 'What we do',
+      h2: 'Popular jobs in Umm Al Quwain',
+      items: [
+        { t: 'Removing old wax', d: 'We strip yellowed coatings and show the real stone.' },
+        { t: 'Terrazzo restoration', d: 'We bring out the stone chips and repair small cracks.' },
+        { t: 'Marble polishing', d: 'We remove dull paths, etch marks and light scratches.' },
+        { t: 'Sealing', d: 'We protect the floor from spills and damp.' },
+      ],
+      links: [
+        { label: 'Terrazzo polishing', href: '/services/terrazzo-polishing-dubai' },
+        { label: 'Marble polishing', href: '/services/marble-polishing-dubai' },
+      ],
+    },
+    {
+      eyebrow: 'How it works',
+      h2: 'How to book in Umm Al Quwain',
+      numbered: true,
+      items: [
+        { t: 'Contact us', d: 'Call or WhatsApp us. We reply within 30 minutes.' },
+        { t: 'Agree a time', d: 'We give you a visit time based on our schedule.' },
+        { t: 'Test and quote', d: 'We inspect the floor for free and give you a fixed price.' },
+        { t: 'Finish the floor', d: 'We complete the work and show you how to clean it.' },
+      ],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Questions from Umm Al Quwain customers',
+      items: [
+        { t: 'Is my old floor worth restoring?', d: 'Very often, yes. Old terrazzo and marble can usually be restored for less than the cost of replacing them.' },
+        { t: 'Will you damage the floor when you remove the wax?', d: 'We test a small area first, then choose the gentlest method that works.' },
+        { t: 'Do I need to move out?', d: 'Usually not. We work room by room and agree the plan with you.' },
+      ],
+    },
+  ],
+  'location-fujairah': [
+    {
+      eyebrow: 'Fujairah properties',
+      h2: 'Stone care on the east coast',
+      body: [
+        'Fujairah properties range from family homes in Fujairah City and Sakamkam to hotels and villas along the coast at Al Faseel and Khor Fakkan. Air from the sea brings humidity and salt, which can leave stone looking tired, especially near doors and windows.',
+        'Homes close to the mountains deal with more dust, which scratches a polished floor in the same way as desert sand. So the plan for each property depends on where it is, what the stone is, and how many people walk on it.',
+      ],
+    },
+    {
+      eyebrow: 'What we do',
+      h2: 'Popular jobs in Fujairah',
+      items: [
+        { t: 'Hotel lobbies and corridors', d: 'We plan overnight work around your guests.' },
+        { t: 'Villa floor restoration', d: 'We remove scratches and worn paths and bring back the shine.' },
+        { t: 'Sealing near the sea', d: 'We choose sealers that suit humid, coastal homes.' },
+        { t: 'Granite polishing', d: 'We restore granite on floors, stairs and kitchen tops.' },
+      ],
+      links: [
+        { label: 'Commercial floor polishing', href: '/services/commercial-floor-polishing-dubai' },
+        { label: 'Granite polishing', href: '/services/granite-polishing' },
+      ],
+    },
+    {
+      eyebrow: 'How it works',
+      h2: 'How to book in Fujairah',
+      numbered: true,
+      items: [
+        { t: 'Tell us where you are', d: 'Call or WhatsApp us with your location. We reply within 30 minutes.' },
+        { t: 'Agree a visit', d: 'We give you a time based on our schedule.' },
+        { t: 'Free inspection', d: 'We check the stone and give you a fixed price.' },
+        { t: 'Finish and handover', d: 'We complete the work and explain the aftercare.' },
+      ],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Questions from Fujairah customers',
+      items: [
+        { t: 'Do you travel to Khor Fakkan?', d: 'Yes. Share your location and we will confirm a visit time.' },
+        { t: 'Does sea air damage marble?', d: 'Humidity and salt can dull the finish over time. Regular cleaning and sealing help.' },
+        { t: 'Can you work while a hotel stays open?', d: 'Yes. We can work in sections and plan overnight slots.' },
+      ],
+    },
+  ],
+  'location-dibba': [
+    {
+      eyebrow: 'Dibba homes',
+      h2: 'Stone care for Dibba villas and beach homes',
+      body: [
+        'Dibba sits between the mountains and the sea, and it covers Dibba Al-Fujairah and Dibba Al-Hisn, along with beach properties towards Al Aqah. Many homes here are villas or weekend houses, and they take in a lot of sand, salt and damp air.',
+        'Stone near pools and terraces often loses its shine first. Indoors, sand from the beach scratches the floor along the main walkways. For homes used only at weekends, we also see water marks and dull patches from long gaps between cleaning.',
+      ],
+    },
+    {
+      eyebrow: 'What we do',
+      h2: 'Popular jobs in Dibba',
+      items: [
+        { t: 'Villa floor polishing', d: 'We bring back the shine in living areas and hallways.' },
+        { t: 'Terrace and pool stone', d: 'We clean and seal stone that takes sun, salt and water.' },
+        { t: 'Bathroom marble', d: 'We remove water marks and seal wet areas.' },
+        { t: 'Yellow stain removal', d: 'We treat yellowing on white marble.' },
+      ],
+      links: [
+        { label: 'Yellow stain removal', href: '/services/yellow-stain-removing' },
+        { label: 'Crystallization and sealing', href: '/services/crystallization-sealing' },
+      ],
+    },
+    {
+      eyebrow: 'How it works',
+      h2: 'How to book in Dibba',
+      numbered: true,
+      items: [
+        { t: 'Message us', d: 'Send your location and a photo. We reply within 30 minutes.' },
+        { t: 'Get a visit time', d: 'We confirm a time based on our schedule.' },
+        { t: 'Free inspection', d: 'We check the stone and give you a fixed price.' },
+        { t: 'Work and aftercare', d: 'We finish the job and show you how to care for the stone.' },
+      ],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Questions from Dibba customers',
+      items: [
+        { t: 'Can you work while we are away?', d: 'Yes, if someone can give our team access. Agree this with us when you book.' },
+        { t: 'Do you cover Al Aqah?', d: 'Yes. Share your location and we will confirm the time.' },
+        { t: 'How can I reduce sand damage?', d: 'Use mats at every door and sweep often. Sand scratches marble under shoes.' },
+      ],
     },
   ],
 };

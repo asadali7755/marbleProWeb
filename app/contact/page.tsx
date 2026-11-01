@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Free Quote — Affordable Marble Polishing & Emergency Floor Restoration Dubai | MarblePro',
-    description: 'Get a free quote from the best marble polishing company in Dubai. Affordable marble floor polishing services UAE, emergency residential marble floor restoration services Dubai. Call, WhatsApp or email — 7 days a week.',
+    description: 'Get a free quote for marble polishing in Dubai and across the UAE, or book a free inspection for marble floor restoration. Call, WhatsApp or email — 7 days a week.',
     url: 'https://www.marblepro.ae/contact',
     images: [{ url: '/raw/twittercard.jpg', width: 1200, height: 630, alt: 'Contact MarblePro — Free Marble Polishing Quote Dubai' }],
   },

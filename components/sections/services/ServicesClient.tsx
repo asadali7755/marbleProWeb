@@ -330,7 +330,7 @@ function EmperadorFeature() {
               { t: 'Calcium & water mark removal',  d: 'Hard water deposits common in UAE show up white on dark marble — chemically removed without bleaching the stone.' },
               { t: 'High-density diamond polish',   d: "Emperador's compact structure takes a very high gloss — one of the highest finishes possible in natural stone." },
               { t: 'Dark sealer application',       d: 'Colour-enhancing impregnating sealer deepens the brown tones while blocking oil and liquid penetration.' },
-              { t: 'Bathroom & wet area expertise', d: 'Emperador in showers, wet rooms and pool surrounds treated with marine-grade sealers rated for permanent moisture.' },
+              { t: 'Bathroom & wet area expertise', d: 'Emperador in showers, wet rooms and pool surrounds treated with sealers made for wet areas.' },
             ].map((f) => (
               <div className="emp-feat" key={f.t}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--gold)', flexShrink: 0, marginTop: 2 }}><polyline points="20 6 9 17 4 12"/></svg>
@@ -402,8 +402,8 @@ function Welcome() {
         </h2>
         <p style={{ marginTop: 20, fontSize: 17, lineHeight: 1.65, opacity: 0.75, maxWidth: '62ch' }}>
           From affordable marble floor polishing to emergency residential marble floor restoration
-          services in Dubai — our technicians use state-of-the-art diamond grinding machinery
-          and eco-friendly compounds to achieve flawless results across all UAE properties.
+          services in Dubai — our technicians use diamond grinding machinery
+          to bring back the shine on floors across the UAE.
         </p>
 
         <div style={{ marginTop: 60, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32 }}>
@@ -474,7 +474,7 @@ function WhyUs() {
         <div className="sec-head" style={{ marginBottom: 0 }}>
           <div>
             <span className="sec-eyebrow">03 — Why Choose MarblePro</span>
-            <h2 className="sec-title" style={{ maxWidth: '24ch', marginTop: 18 }}>Why Choose MarblePro — <em>The Best Marble Polishing Company in Dubai.</em></h2>
+            <h2 className="sec-title" style={{ maxWidth: '24ch', marginTop: 18 }}>Why Choose MarblePro — <em>for Marble Polishing in Dubai.</em></h2>
           </div>
           <p className="sec-lead">
             We&apos;re not a generic cleaning crew with a polishing add-on. We&apos;re stone
@@ -509,12 +509,12 @@ function Commercial() {
           <h2>Commercial floor polishing &amp; <em>maintenance</em> across the UAE.</h2>
           <p>
             First impressions matter. A dull, stained lobby floor can subtly push away premium clients
-            and hotel guests. MarblePro is the trusted partner for commercial floor polishing in Dubai
+            and hotel guests. MarblePro handles commercial floor polishing in Dubai
             and the wider Emirates. We provide overnight and weekend scheduling to ensure zero
             downtime for your business operations.
           </p>
           <ul>
-            <li>5-Star Hotels &amp; Luxury Resorts</li>
+            <li>Hotels &amp; Resorts</li>
             <li>Corporate Office Lobbies</li>
             <li>High-End Retail Showrooms</li>
             <li>Restaurants &amp; Commercial Kitchens</li>
@@ -526,7 +526,7 @@ function Commercial() {
           <span className="sm">Property managers</span>
           <h4>Ask about our Annual Maintenance Contracts (AMC).</h4>
           <p style={{ fontSize: 14, lineHeight: 1.65, opacity: 0.8, margin: '0 0 22px' }}>
-            We keep your commercial floors looking flawless year-round with scheduled, cost-effective
+            We keep your commercial floors looking good all year with scheduled, cost-effective
             quarterly buffering and crystallization. Predictable budgeting, premium results.
           </p>
           <Link href="/#quote" className="btn btn-secondary on-dark" style={{ width: '100%', justifyContent: 'center' }}>
@@ -549,7 +549,7 @@ function CTAFooter() {
           Ready to bring back the <em style={{ color: 'var(--gold-deep)', fontStyle: 'italic' }}>mirror shine?</em>
         </h2>
         <p style={{ fontSize: 17, lineHeight: 1.6, opacity: 0.78, maxWidth: '52ch', margin: '0 auto 30px' }}>
-          Contact MarblePro today for the best floor restoration services in Dubai and the wider UAE.
+          Contact MarblePro today for floor restoration in Dubai and the wider UAE.
           We&apos;ll reply within 30 minutes and agree a time for your free inspection.
         </p>
         <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
