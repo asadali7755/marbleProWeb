@@ -1250,9 +1250,19 @@ section.loc-section:nth-child(even) .loc-body { background:var(--paper2); }
   font-size: clamp(22px, 3vw, 30px); letter-spacing: -0.015em;
   line-height: 1.15; margin-bottom: 14px;
 }
-.blog-section p {
+.blog-section p, .blog-section ul, .blog-section ol {
   font-size: 16px; line-height: 1.72; opacity: .83; margin-bottom: 16px;
 }
+.blog-section ul, .blog-section ol { padding-left: 22px; }
+.blog-section li { margin-bottom: 8px; }
+.blog-section h3 {
+  font-family: var(--display); font-weight: 400;
+  font-size: 20px; line-height: 1.25; margin: 26px 0 10px;
+}
+.blog-table { overflow-x: auto; margin-bottom: 20px; }
+.blog-table table { width: 100%; min-width: 520px; border-collapse: collapse; font-size: 14.5px; line-height: 1.5; }
+.blog-table th, .blog-table td { padding: 10px 12px; border: 1px solid var(--line); text-align: left; vertical-align: top; }
+.blog-table th { background: var(--paper2); font-weight: 600; }
 .blog-cta-box {
   margin: 44px 0; padding: 30px 32px;
   background: var(--paper2); border: 1px solid var(--line); border-radius: 18px;

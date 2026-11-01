@@ -134,8 +134,7 @@ export default async function ServicePage(
             <div className="svc-top">
               <span className="svc-detail-num">— {s.num}</span>
               <span className="kw">{s.kw}</span>
-              <h2>{s.h2}</h2>
-              <p style={{ fontSize: 18, fontFamily: 'var(--display)', fontWeight: 380, letterSpacing: '-0.01em', lineHeight: 1.4 }}>{s.intro}</p>
+              <h2>{s.name}: what we do</h2>
             </div>
             <div className="preview">
               <img className="ph" src={img} alt={serviceImgAlt(s)} title={`${s.name} — MarblePro UAE`} width={1280} height={720} loading="lazy" decoding="async" />

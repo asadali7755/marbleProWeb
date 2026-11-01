@@ -97,7 +97,7 @@ const schemaOrg = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "MarblePro UAE",
-  "description": "Best marble polishing company in Dubai offering affordable marble floor polishing services UAE-wide. Italian marble polishing and crystallization, emergency residential marble floor restoration, premium marble countertop polishing, terrazzo floor polishing, commercial granite polishing services Dubai.",
+  "description": "Best marble polishing company in Dubai offering affordable marble floor polishing across the UAE. Italian marble polishing and crystallization, emergency residential marble floor restoration, premium marble countertop polishing, terrazzo floor polishing, commercial granite polishing services Dubai.",
   "url": "https://www.marblepro.ae",
   "telephone": "+971545567799",
   "email": "marbleprodxb@gmail.com",

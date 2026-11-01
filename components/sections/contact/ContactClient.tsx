@@ -309,7 +309,7 @@ export default function ContactClient() {
             <h1>Get a Free Quote for <em>Marble Polishing</em> &amp; Floor Restoration — <em>Dubai &amp; UAE.</em></h1>
             <p className="lead">
               Free on-site inspection across all 7 emirates. WhatsApp a photo and we&apos;ll
-              ballpark in minutes — or pick a slot and we&apos;ll be at your door for the proper quote.
+              reply within 30 minutes, then confirm your visit time based on our schedule.
             </p>
           </div>
           <aside className="c-quick">

@@ -100,7 +100,9 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
             <section key={i} className="blog-section">
               <h2>{s.h2}</h2>
               {s.body.map((p, j) => (
-                <p key={j} dangerouslySetInnerHTML={{ __html: p }} />
+                /^<(h3|ul|ol|div)/.test(p)
+                  ? <div key={j} dangerouslySetInnerHTML={{ __html: p }} />
+                  : <p key={j} dangerouslySetInnerHTML={{ __html: p }} />
               ))}
             </section>
           ))}

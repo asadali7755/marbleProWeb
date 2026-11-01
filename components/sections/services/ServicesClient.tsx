@@ -99,8 +99,8 @@ function TravertineFeature() {
         <div className="fs-top">
           <span className="sec-eyebrow" style={{ color: 'var(--gold-text)', opacity: 1 }}>— Featured · UAE&apos;s Most Loved Stone</span>
           <h2 className="trav-h2">Travertine Polishing &amp; Restoration<br/><em>in Dubai, Abu Dhabi &amp; UAE.</em></h2>
-          <p className="trav-intro">Travertine is the most widely used natural stone in UAE villas, hotel lobbies and commercial spaces — and also the most misunderstood when it comes to maintenance. MarblePro specialises in <strong>travertine polishing Dubai</strong>, deep pore-filling, lippage correction and crystallization that returns this ancient stone to its full, natural beauty.</p>
-          <p style={{ fontSize: 15, lineHeight: 1.7, opacity: 0.82, marginTop: 16 }}>Unlike marble, travertine has natural holes and voids that require specialist epoxy filling before polishing — a step many generic companies skip. Our <strong>travertine restoration UAE</strong> process fills every void, grinds flush, hones through fine grits and seals with an impregnating breathable sealer rated for the UAE&apos;s extreme heat cycle. From <strong>travertine floor polishing Abu Dhabi</strong> high-rises to <strong>travertine cleaning Sharjah</strong> heritage villas and <strong>travertine sealing Ajman</strong> beachfront homes — we cover every emirate with the same crew.</p>
+          <p className="trav-intro">Travertine is the most widely used natural stone in UAE villas, hotel lobbies and commercial spaces — and also the most misunderstood when it comes to maintenance. MarblePro specialises in <strong>travertine polishing in Dubai</strong>, deep pore-filling, lippage correction and crystallization that returns this ancient stone to its full, natural beauty.</p>
+          <p style={{ fontSize: 15, lineHeight: 1.7, opacity: 0.82, marginTop: 16 }}>Unlike marble, travertine has natural holes and voids that require specialist epoxy filling before polishing — a step many generic companies skip. Our <strong>travertine restoration</strong> process fills every void, grinds flush, hones through fine grits and seals with an impregnating breathable sealer rated for the UAE&apos;s extreme heat cycle. From <strong>travertine floor polishing in Abu Dhabi</strong> high-rises to <strong>travertine cleaning in Sharjah</strong> heritage villas and <strong>travertine sealing in Ajman</strong> beachfront homes — we cover every emirate with the same crew.</p>
         </div>
         <div className="fs-bot">
           <div className="trav-feats">
@@ -169,8 +169,8 @@ function OnyxFeature() {
         <div className="fs-top">
           <span className="sec-eyebrow" style={{ color: 'var(--gold)', opacity: 1 }}>— Ultra-Premium · Handle with Expertise</span>
           <h2 className="onyx-h2">Onyx Marble Polishing &amp;<br/><em>Restoration in Dubai &amp; UAE.</em></h2>
-          <p className="onyx-intro">Onyx is the rarest, most visually dramatic — and most delicate — natural stone used in UAE luxury interiors. A single wrong pass with an abrasive can permanently damage its translucent surface. MarblePro&apos;s technicians deliver <strong>onyx marble polishing Dubai</strong> with surgical precision: the right grit, the right pressure, and zero shortcuts.</p>
-          <p style={{ fontSize: 15, lineHeight: 1.7, opacity: 0.82, marginTop: 16 }}>Found in backlit feature walls, luxury bathroom vanities, reception counters and statement staircases, onyx demands specialist knowledge at every stage. Our <strong>onyx restoration UAE</strong> process addresses micro-scratches, etch marks and dull patches without removing the stone&apos;s signature translucency. From <strong>onyx polishing Abu Dhabi</strong> palace interiors to <strong>onyx marble care Sharjah</strong> boutique hotels and <strong>onyx stone polishing Ajman</strong> private residences — we treat every onyx surface as the investment piece it is.</p>
+          <p className="onyx-intro">Onyx is the rarest, most visually dramatic — and most delicate — natural stone used in UAE luxury interiors. A single wrong pass with an abrasive can permanently damage its translucent surface. MarblePro&apos;s technicians deliver <strong>onyx marble polishing in Dubai</strong> with surgical precision: the right grit, the right pressure, and zero shortcuts.</p>
+          <p style={{ fontSize: 15, lineHeight: 1.7, opacity: 0.82, marginTop: 16 }}>Found in backlit feature walls, luxury bathroom vanities, reception counters and statement staircases, onyx demands specialist knowledge at every stage. Our <strong>onyx restoration</strong> process addresses micro-scratches, etch marks and dull patches without removing the stone&apos;s signature translucency. From <strong>onyx polishing in Abu Dhabi</strong> palace interiors to <strong>onyx marble care Sharjah</strong> boutique hotels and <strong>onyx stone polishing in Ajman</strong> private residences — we treat every onyx surface as the investment piece it is.</p>
         </div>
         <div className="fs-bot">
           <div className="onyx-feats">
@@ -210,8 +210,8 @@ function CremaMarfilFeature() {
         <div className="fs-top">
           <span className="sec-eyebrow" style={{ color: 'var(--gold-text)', opacity: 1 }}>— UAE&apos;s Most Installed Marble</span>
           <h2 className="crema-h2">Crema Marfil Polishing &amp;<br/><em>Restoration Across the UAE.</em></h2>
-          <p className="crema-intro">Crema Marfil is the single most installed marble in UAE homes, villas and commercial buildings. Its warm cream tones and subtle golden veining made it the defining stone of UAE luxury interiors for two decades — but years of foot traffic, sand abrasion and harsh cleaning chemicals dull its surface fast. MarblePro specialises in <strong>Crema Marfil polishing Dubai</strong> and full-surface restoration that brings this Spanish marble back to its original warm, high-gloss finish.</p>
-          <p style={{ fontSize: 15, lineHeight: 1.7, opacity: 0.82, marginTop: 16 }}>Crema Marfil is a relatively soft, porous marble that scratches and etches easily — yet responds beautifully to professional diamond polishing. Our <strong>Crema Marfil marble restoration UAE</strong> process covers deep scratch removal, etch reversal, full diamond honing, high-gloss polishing and impregnating sealer application. Whether it&apos;s <strong>Crema Marfil floor polishing Abu Dhabi</strong> palace corridors, <strong>Crema Marfil cleaning Sharjah</strong> residential villas, <strong>Crema Marfil sealing Ajman</strong> apartments or a full <strong>Crema Marfil restoration Dubai</strong> — we restore the warm cream glow that made this marble iconic across the Emirates.</p>
+          <p className="crema-intro">Crema Marfil is the single most installed marble in UAE homes, villas and commercial buildings. Its warm cream tones and subtle golden veining made it the defining stone of UAE luxury interiors for two decades — but years of foot traffic, sand abrasion and harsh cleaning chemicals dull its surface fast. MarblePro specialises in <strong>Crema Marfil polishing in Dubai</strong> and full-surface restoration that brings this Spanish marble back to its original warm, high-gloss finish.</p>
+          <p style={{ fontSize: 15, lineHeight: 1.7, opacity: 0.82, marginTop: 16 }}>Crema Marfil is a relatively soft, porous marble that scratches and etches easily — yet responds beautifully to professional diamond polishing. Our <strong>Crema Marfil marble restoration</strong> process covers deep scratch removal, etch reversal, full diamond honing, high-gloss polishing and impregnating sealer application. Whether it&apos;s <strong>Crema Marfil floor polishing in Abu Dhabi</strong> palace corridors, <strong>Crema Marfil cleaning in Sharjah</strong> residential villas, <strong>Crema Marfil sealing in Ajman</strong> apartments or a full <strong>Crema Marfil restoration in Dubai</strong> — we restore the warm cream glow that made this marble iconic across the Emirates.</p>
         </div>
         <div className="fs-bot">
           <div className="crema-feats">
@@ -278,8 +278,8 @@ function CalacattaFeature() {
         <div className="fs-top">
           <span className="sec-eyebrow" style={{ color: 'var(--gold-text)', opacity: 1 }}>— Italian Premium · Bold Veining</span>
           <h2 className="cala-h2">Calacatta Marble Polishing &amp;<br/><em>Restoration in Dubai &amp; UAE.</em></h2>
-          <p className="cala-intro">Calacatta marble is the pinnacle of Italian stone — pure white with bold, dramatic grey and gold veining that makes every slab a work of art. Found in UAE&apos;s most prestigious villas, five-star hotel lobbies and luxury apartment feature walls, Calacatta commands the highest value per square metre of any stone. MarblePro&apos;s specialists deliver <strong>Calacatta marble polishing Dubai</strong> with the precision and respect this stone demands.</p>
-          <p style={{ fontSize: 15, lineHeight: 1.7, opacity: 0.82, marginTop: 16 }}>Calacatta is highly sensitive to acids, heat and abrasion — and its bright white background makes every scratch, etch and stain immediately visible. Our <strong>Calacatta marble restoration UAE</strong> uses ultra-fine diamond sequences to erase damage without disturbing the stone&apos;s iconic bold vein patterns. From <strong>Calacatta marble cleaning Abu Dhabi</strong> penthouse kitchens to <strong>Calacatta polishing Sharjah</strong> luxury bathroom walls, <strong>Calacatta marble sealing Ajman</strong> feature slabs and full <strong>Calacatta restoration Dubai</strong> villa floors — we handle Italy&apos;s finest stone with the care it deserves.</p>
+          <p className="cala-intro">Calacatta marble is the pinnacle of Italian stone — pure white with bold, dramatic grey and gold veining that makes every slab a work of art. Found in UAE&apos;s most prestigious villas, five-star hotel lobbies and luxury apartment feature walls, Calacatta commands the highest value per square metre of any stone. MarblePro&apos;s specialists deliver <strong>Calacatta marble polishing in Dubai</strong> with the precision and respect this stone demands.</p>
+          <p style={{ fontSize: 15, lineHeight: 1.7, opacity: 0.82, marginTop: 16 }}>Calacatta is highly sensitive to acids, heat and abrasion — and its bright white background makes every scratch, etch and stain immediately visible. Our <strong>Calacatta marble restoration</strong> uses ultra-fine diamond sequences to erase damage without disturbing the stone&apos;s iconic bold vein patterns. From <strong>Calacatta marble cleaning in Abu Dhabi</strong> penthouse kitchens to <strong>Calacatta polishing in Sharjah</strong> luxury bathroom walls, <strong>Calacatta marble sealing in Ajman</strong> feature slabs and full <strong>Calacatta restoration in Dubai</strong> villa floors — we handle Italy&apos;s finest stone with the care it deserves.</p>
         </div>
         <div className="fs-bot">
           <div className="cala-feats">
@@ -319,8 +319,8 @@ function EmperadorFeature() {
         <div className="fs-top">
           <span className="sec-eyebrow" style={{ color: 'var(--gold)', opacity: 1 }}>— Spanish Classic · Rich Chocolate Tones</span>
           <h2 className="emp-h2">Emperador Marble Polishing &amp;<br/><em>Restoration in Dubai &amp; UAE.</em></h2>
-          <p className="emp-intro">Emperador is Spain&apos;s most celebrated dark marble — a rich chocolate-brown stone with striking white and gold veining that brings warmth and drama to any UAE interior. Widely installed in luxury bathroom floors, feature walls, reception counters and villa staircases, Emperador loses its deep lustre quickly without proper care. MarblePro delivers <strong>Emperador marble polishing Dubai</strong> that restores the stone&apos;s signature dark depth and mirror-like finish.</p>
-          <p style={{ fontSize: 15, lineHeight: 1.7, opacity: 0.8, marginTop: 16 }}>Emperador marble has a dense, compact structure that responds exceptionally well to professional diamond polishing — but its dark colour makes dull patches, micro-scratches and calcium deposits immediately visible. Our <strong>Emperador marble restoration UAE</strong> process removes surface damage, re-activates the brown tones and locks in a deep, glossy finish. From <strong>Emperador marble polishing Abu Dhabi</strong> hotel lobbies to <strong>Emperador cleaning Sharjah</strong> residential bathrooms and <strong>Emperador marble sealing Ajman</strong> commercial spaces — we cover every installation across the Emirates.</p>
+          <p className="emp-intro">Emperador is Spain&apos;s most celebrated dark marble — a rich chocolate-brown stone with striking white and gold veining that brings warmth and drama to any UAE interior. Widely installed in luxury bathroom floors, feature walls, reception counters and villa staircases, Emperador loses its deep lustre quickly without proper care. MarblePro delivers <strong>Emperador marble polishing in Dubai</strong> that restores the stone&apos;s signature dark depth and mirror-like finish.</p>
+          <p style={{ fontSize: 15, lineHeight: 1.7, opacity: 0.8, marginTop: 16 }}>Emperador marble has a dense, compact structure that responds exceptionally well to professional diamond polishing — but its dark colour makes dull patches, micro-scratches and calcium deposits immediately visible. Our <strong>Emperador marble restoration</strong> process removes surface damage, re-activates the brown tones and locks in a deep, glossy finish. From <strong>Emperador marble polishing in Abu Dhabi</strong> hotel lobbies to <strong>Emperador cleaning in Sharjah</strong> residential bathrooms and <strong>Emperador marble sealing in Ajman</strong> commercial spaces — we cover every installation across the Emirates.</p>
         </div>
         <div className="fs-bot">
           <div className="emp-feats">
@@ -369,8 +369,8 @@ const CORE_SERVICES = [
     group: 'Premium Marble Polishing & Restoration',
     icon: '✦',
     items: [
-      { name: 'Marble Polishing Dubai', desc: 'Over time, heavy foot traffic and desert sand cause marble to lose its luster. Our multi-stage diamond polishing process restores a high-gloss, premium reflective finish.' },
-      { name: 'Marble Floor Restoration Services', desc: 'From deep scratch removal to seamless crack filling and joint leveling, we completely rejuvenate old or damaged natural stone.' },
+      { name: 'Marble Polishing Dubai', desc: 'Over time, heavy foot traffic and desert sand cause marble to lose its lustre. Our multi-stage diamond polishing process restores a high-gloss, premium reflective finish.' },
+      { name: 'Marble Floor Restoration Services', desc: 'From deep scratch removal to seamless crack filling and joint levelling, we completely rejuvenate old or damaged natural stone.' },
       { name: 'Terrazzo Floor Polishing Dubai', desc: 'We specialise in classic terrazzo polishing in Dubai, bringing out the vibrant glass and marble chips embedded in your terrazzo surfaces.' },
     ],
   },
@@ -386,7 +386,7 @@ const CORE_SERVICES = [
     group: 'Advanced Stain & Problem Solving',
     icon: '◉',
     items: [
-      { name: 'Yellow Stain Removing', desc: 'Got stubborn discolorations? Our deep chemical poultice treatments target yellow stain removing from deep within the stone pores without damaging the surface.' },
+      { name: 'Yellow Stain Removing', desc: 'Got stubborn discolourations? Our deep chemical poultice treatments target yellow stain removing from deep within the stone pores without damaging the surface.' },
       { name: 'Granite Polishing', desc: 'Renowned for its hardness, granite needs professional-grade equipment. Our grinding and weather-protection sealing make your granite surfaces exceptionally durable and brilliant.' },
     ],
   },
@@ -402,7 +402,7 @@ function Welcome() {
         </h2>
         <p style={{ marginTop: 20, fontSize: 17, lineHeight: 1.65, opacity: 0.75, maxWidth: '62ch' }}>
           From affordable marble floor polishing to emergency residential marble floor restoration
-          services Dubai — our technicians use state-of-the-art diamond grinding machinery
+          services in Dubai — our technicians use state-of-the-art diamond grinding machinery
           and eco-friendly compounds to achieve flawless results across all UAE properties.
         </p>
 
@@ -478,7 +478,7 @@ function WhyUs() {
           </div>
           <p className="sec-lead">
             We&apos;re not a generic cleaning crew with a polishing add-on. We&apos;re stone
-            specialists — affordable marble floor polishing services UAE-wide, backed by Italian
+            specialists — affordable marble floor polishing across the UAE, backed by Italian
             diamond technology and a 1-month written guarantee on every job.
           </p>
         </div>

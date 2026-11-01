@@ -18,23 +18,23 @@ const FAQS = [
   },
   {
     q: 'Why is MarblePro the best marble polishing company in Dubai?',
-    a: 'MarblePro uses Italian diamond crystallization technology — the same system used in 5-star hotels across the UAE. Every job comes with a 1-month written guarantee and a fixed-price quote, making us the most trusted and affordable marble floor polishing services provider across UAE.',
+    a: 'MarblePro uses Italian diamond crystallization technology — the same system used in 5-star hotels across the UAE. Every job comes with a 1-month written guarantee and a fixed-price quote, making us the most trusted and affordable marble floor polishing services provider across the UAE.',
   },
   {
     q: 'Do you offer emergency residential marble floor restoration services in Dubai?',
-    a: 'Yes — emergency residential marble floor restoration services Dubai are available same-day or next-day. We reply within 30 minutes and confirm your visit time based on our schedule. We are available 24 hours, 7 days a week.',
+    a: 'Yes. Emergency marble floor restoration for homes in Dubai is available same-day or next-day. We reply within 30 minutes and confirm your visit time based on our schedule. We are available 24 hours, 7 days a week.',
   },
   {
     q: 'What is the price for terrazzo floor polishing in Dubai?',
-    a: 'Terrazzo floor polishing Dubai price depends on the area size, current condition and finish required. We offer free on-site assessments with no-obligation fixed quotes. As terrazzo polishing and restoration contractors UAE businesses trust, we price fairly with no hidden charges.',
+    a: 'The price of terrazzo floor polishing in Dubai depends on the area size, current condition and finish required. We offer free on-site assessments with no-obligation fixed quotes. We price fairly with no hidden charges.',
   },
   {
     q: 'Do you offer premium marble countertop polishing and Corian repair?',
-    a: 'Yes. We offer premium marble countertop polishing Dubai, kitchen top polishing and sealing services UAE-wide, Corian countertop polishing and scratch repair Dubai, and quartz polishing and stain protection Abu Dhabi — all with food-safe sealers and same-day turnaround.',
+    a: 'Yes. We offer premium marble countertop polishing in Dubai, kitchen top polishing and sealing across the UAE, Corian polishing and scratch repair in Dubai, and quartz polishing and stain protection in Abu Dhabi — all with food-safe sealers and same-day turnaround.',
   },
   {
     q: 'Which emirates do you cover?',
-    a: 'All 7 — Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Umm Al Quwain and Fujairah. As a multi-type floor polishing company UAE, we handle marble, granite, terrazzo, quartz and Corian with the same crew and the same standards everywhere.',
+    a: 'All 7 — Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Umm Al Quwain and Fujairah. We handle marble, granite, terrazzo, quartz and Corian with the same crew and the same standards everywhere.',
   },
 ];
 
@@ -67,7 +67,7 @@ export function PageFaqCta() {
             <span className="sec-eyebrow">— Frequently asked</span>
             <h2 className="sec-title">Questions worth <em>asking.</em></h2>
             <p style={{ marginTop: 16, fontSize: 15, lineHeight: 1.6, opacity: 0.65, maxWidth: '30ch' }}>
-              Can&apos;t find your answer? WhatsApp us — we reply within minutes.
+              Can&apos;t find your answer? WhatsApp us — we reply within 30 minutes.
             </p>
           </div>
           <div className="shared-faq-list">
