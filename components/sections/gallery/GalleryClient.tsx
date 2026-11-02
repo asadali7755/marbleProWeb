@@ -13,6 +13,7 @@ import {
   type GalleryCategory,
   type GalleryPhoto,
   type GalleryVideo,
+  type SideBySide,
   type VideoPair,
 } from '@/lib/galleryMedia';
 
@@ -189,6 +190,27 @@ function BeforeAfterSlider({ pair }: { pair: BeforeAfterPair }) {
   );
 }
 
+function PhotoPairCard({ pair, shots }: { pair: BeforeAfterPair; shots: SideBySide }) {
+  return (
+    <figure className="gx-card">
+      <div className="gx-vpair">
+        <div className="gx-shot">
+          <img src={pair.before} alt={shots.beforeAlt} width={shots.w} height={shots.h} loading="lazy" decoding="async" />
+          <span className="gx-tag">Before</span>
+        </div>
+        <div className="gx-shot">
+          <img src={pair.after} alt={shots.afterAlt} width={shots.w} height={shots.h} loading="lazy" decoding="async" />
+          <span className="gx-tag gx-tag-after">After</span>
+        </div>
+      </div>
+      <figcaption className="gx-cap">
+        <span className="gx-cap-title">{pair.caption}</span>
+        <span className="gx-cap-note">{pair.note}</span>
+      </figcaption>
+    </figure>
+  );
+}
+
 function VideoPairCard({ pair }: { pair: VideoPair }) {
   return (
     <figure className="gx-card">
@@ -270,7 +292,11 @@ function CategorySection({ c }: { c: GalleryCategory }) {
 
       <BlockHead label="Before & after" meta={`${c.beforeAfter.length} pairs · drag to compare`} />
       <div className="gx-grid-2">
-        {show(c.beforeAfter, 'beforeAfter').map((p) => <BeforeAfterSlider key={p.before} pair={p} />)}
+        {show(c.beforeAfter, 'beforeAfter').map((p) => (
+          p.sideBySide
+            ? <PhotoPairCard key={p.before} pair={p} shots={p.sideBySide} />
+            : <BeforeAfterSlider key={p.before} pair={p} />
+        ))}
       </div>
       <ShowAll total={c.beforeAfter.length} shown={FIRST.beforeAfter} onClick={() => open('beforeAfter')} />
 
@@ -386,7 +412,7 @@ function videoSchema() {
         description: `${vid.caption}: marble and stone polishing by MarblePro UAE.`,
         thumbnailUrl: `${SITE}${vid.poster}`,
         contentUrl: `${SITE}${vid.mp4}`,
-        uploadDate: '2026-10-25',
+        uploadDate: vid.uploadDate ?? '2026-10-25',
       },
     })),
   };

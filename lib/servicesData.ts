@@ -161,7 +161,7 @@ export const SVC_DETAIL_IMGS: Record<string, string> = {
   'marble-cleaning-dubai':            '/images/projects/polished-marble-floor-dubai-5.webp',
   'tile-polishing-dubai':             '/images/projects/polished-marble-floor-dubai-8.webp',
   'marble-stairs-polishing-dubai':     '/videos/granite-staircase-polishing-after-poster.jpg',
-  'marble-table-polishing-dubai':      '/images/services/marble-countertop-polishing.webp',
+  'marble-table-polishing-dubai':      '/images/gallery/coffee-table-polishing-dubai-after.webp',
   'grout-joint-repair-dubai':          '/images/projects/polished-marble-floor-dubai-7.webp',
   'limestone-polishing-dubai':         '/images/projects/polished-marble-floor-dubai-3.webp',
   'mosaic-floor-polishing-dubai':      '/images/projects/decorative-marble-medallion-dubai-4.webp',

@@ -6,6 +6,7 @@ import Footer from '@/components/marble/Footer';
 import Fab from '@/components/marble/Fab';
 import { PageFaqCta } from '@/components/marble/FaqCta';
 import ServiceExtra from '@/components/marble/ServiceExtra';
+import ServiceWork from '@/components/marble/ServiceWork';
 import { PHONE_DISPLAY, PHONE_TEL, EMIRATES } from '@/components/marble/constants';
 import { SERVICE_DETAIL, SVC_DETAIL_IMGS, getServiceDetail, serviceImgAlt } from '@/lib/servicesData';
 import { fitDescription, fitTitle } from '@/lib/seo';
@@ -164,6 +165,8 @@ export default async function ServicePage(
             </div>
           </article>
         </section>
+
+        <ServiceWork slug={s.slug} />
 
         <ServiceExtra slug={s.slug} />
 
