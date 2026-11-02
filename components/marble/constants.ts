@@ -77,4 +77,9 @@ export const SERVICES: Service[] = [
   { num: "19", slug: "commercial-floor-polishing-dubai", name: "Commercial Floor Polishing", short: "Stone floors in hotels, offices and retail spaces, with night and weekend work." },
   { num: "20", slug: "marble-cleaning-dubai",            name: "Marble Cleaning",           short: "Stone-safe cleaning for marble floors, stairs, bathrooms and kitchen tops." },
   { num: "21", slug: "tile-polishing-dubai",              name: "Tile Polishing",            short: "Porcelain, ceramic and stone tile floors cleaned and polished, with grout cleaning." },
+  { num: "22", slug: "marble-stairs-polishing-dubai", name: "Marble Stairs Polishing", short: "Treads, risers and landings polished, with chipped edges repaired." },
+  { num: "23", slug: "marble-table-polishing-dubai", name: "Marble Table Polishing", short: "Rings and scratches removed from dining, coffee and console tables." },
+  { num: "24", slug: "grout-joint-repair-dubai", name: "Grout & Joint Repair", short: "Dark or broken joints cleaned, filled and colour-matched." },
+  { num: "25", slug: "limestone-polishing-dubai", name: "Limestone Polishing", short: "Soft stone cleaned, honed or polished, and sealed." },
+  { num: "26", slug: "mosaic-floor-polishing-dubai", name: "Mosaic Floor Polishing", short: "Stone patterns, borders and inlays cleaned and polished." },
 ];

@@ -1418,6 +1418,11 @@ section.loc-section:nth-child(even) .loc-body { background:var(--paper2); }
 .gx-lb-prev { left: 16px; }
 .gx-lb-next { right: 16px; }
 
+.gx-areas { border-top: 1px solid var(--line); padding: 72px 0; }
+.gx-areas h2 { font-family: var(--display); font-weight: 370; font-size: clamp(28px, 4vw, 42px); letter-spacing: -0.015em; margin: 0 0 16px; }
+.gx-areas p { max-width: 70ch; font-size: 16px; line-height: 1.7; opacity: .8; margin: 0 0 24px; }
+.gx-areas-links { display: flex; flex-wrap: wrap; gap: 12px; }
+.gx-areas-links .area { text-decoration: none; }
 .gx-cta { border-top: 1px solid var(--line); padding: 96px 0; background: var(--paper2); }
 .gx-cta-inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; }
 .gx-cta h2 { font-family: var(--display); font-weight: 320; font-size: clamp(40px, 5.5vw, 80px); line-height: 1; letter-spacing: -0.02em; margin: 0; }

@@ -1,7 +1,8 @@
 'use client';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useRequestCall } from '@/components/marble/RequestCallModal';
-import { WA_LINK } from '@/components/marble/constants';
+import Link from '@/components/marble/Link';
+import { WA_LINK, EMIRATES } from '@/components/marble/constants';
 import { PageFaqCta } from '@/components/marble/FaqCta';
 import {
   GALLERY_CATEGORIES,
@@ -435,6 +436,18 @@ export default function GalleryClient() {
       <div className="gx-wrap">
         {GALLERY_CATEGORIES.map((c) => <CategorySection key={c.id} c={c} />)}
       </div>
+
+      <section className="gx-areas" data-screen-label="gallery-areas">
+        <div className="gx-wrap">
+          <h2>Where we <em>work.</em></h2>
+          <p>Our office is in Sharjah, and our team works across the UAE. In Dubai, that includes Palm Jumeirah, Emirates Hills, Downtown, Dubai Marina, Business Bay, Jumeirah, Al Barsha, Mirdif and Arabian Ranches. The photos above show our work, but we do not name each customer&apos;s home.</p>
+          <div className="gx-areas-links">
+            {EMIRATES.map((e) => (
+              <Link key={e.slug} href={`/locations/${e.slug}`} className="area">Marble polishing {e.name}</Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="gx-cta" data-screen-label="gallery-cta">
         <div className="gx-wrap gx-cta-inner">

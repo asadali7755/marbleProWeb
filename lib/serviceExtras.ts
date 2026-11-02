@@ -80,6 +80,8 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
         { label: 'Onyx polishing', href: '/services/onyx-marble-polishing-dubai' },
         { label: 'Travertine polishing', href: '/services/travertine-polishing-dubai' },
         { label: 'Tile polishing', href: '/services/tile-polishing-dubai' },
+        { label: 'Limestone polishing', href: '/services/limestone-polishing-dubai' },
+        { label: 'Mosaic floor polishing', href: '/services/mosaic-floor-polishing-dubai' },
       ],
     },
     {
@@ -801,6 +803,8 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
         { t: 'Terrazzo floors', d: 'Fine diamond pads level the surface and bring out the stone and glass chips.' },
         { t: 'Travertine floors', d: 'Natural holes are filled first, then the stone is honed and polished.' },
         { t: 'Tile floors', d: 'Porcelain and stone tiles polished, and grout cleaned, with a gentler method for glazed ceramic.' },
+        { t: 'Limestone floors', d: 'Soft, porous stone that is honed or polished with care.' },
+        { t: 'Mosaic floors', d: 'Stone patterns, borders and inlays, cleaned and polished piece by piece.' },
       ],
       links: [
         { label: 'Marble polishing Dubai', href: '/services/marble-polishing-dubai' },
@@ -1574,6 +1578,275 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
         { t: 'How should I clean tiles at home?', d: 'Sweep first, then use a mild, neutral cleaner and clean water. Too much product leaves a dull film.' },
       ],
       links: [{ label: 'Get a free quote', href: '/contact' }],
+    },
+  ],
+  'marble-stairs-polishing-dubai': [
+    {
+      eyebrow: 'What it is',
+      h2: 'Why marble stairs need their own approach',
+      body: [
+        'A staircase takes more wear than most floors, because people step on the same small area every day. The front edge of each tread suffers most. It turns dull first, and it can chip when something heavy hits it.',
+        'Stairs also have many small surfaces. Treads, risers, landings and side strips all need work, and large floor machines cannot reach most of them. So much of the job is done with small machines and by hand.',
+      ],
+    },
+    {
+      eyebrow: 'Signs',
+      h2: 'When your stairs need polishing',
+      items: [
+        { t: 'Dull centres', d: 'The middle of each step looks matt, while the sides still shine.' },
+        { t: 'Chipped edges', d: 'Step edges have small breaks that catch dirt and feet.' },
+        { t: 'Scratches on the landing', d: 'Turning on a landing grinds sand into the stone.' },
+        { t: 'Marks on risers', d: 'Shoes and cleaning products leave scuffs on the upright faces.' },
+      ],
+    },
+    {
+      eyebrow: 'Our process',
+      h2: 'How we polish a staircase',
+      numbered: true,
+      items: [
+        { t: 'Inspect', d: 'We check the stone, the edges and any loose steps, then give you a fixed-price quote.' },
+        { t: 'Protect', d: 'We cover the walls, handrails and nearby floors.' },
+        { t: 'Repair', d: 'We fill chips and cracks with a colour-matched filler.' },
+        { t: 'Polish', d: 'We work step by step through finer diamond pads, and finish the edges by hand.' },
+        { t: 'Seal', d: 'We seal the stone, then show you how to clean it safely.' },
+      ],
+      links: [
+        { label: 'Marble polishing', href: '/services/marble-polishing-dubai' },
+        { label: 'Scratch and crack repair', href: '/services/marble-scratch-repair-dubai' },
+      ],
+    },
+    {
+      eyebrow: 'Safety',
+      h2: 'Shine and grip on stairs',
+      body: [
+        'A high gloss looks good, but polished stone can be slippery, especially when it is wet. On stairs, we talk through the finish with you first. A slightly lower sheen on the treads can be the better choice, above all in homes with children or older family members.',
+      ],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Marble stairs polishing questions',
+      items: [
+        { t: 'Can we keep using the stairs during the work?', d: 'Usually, yes. We work in sections and agree the plan with you, so there is always a way up and down.' },
+        { t: 'Do you polish granite stairs too?', d: 'Yes. We polish marble, granite and other stone stairs.' },
+        { t: 'Can broken step edges be repaired?', d: 'Most chips can be filled and shaped. A step with a large break may need more work, and we will tell you at the site visit.' },
+        { t: 'How should I clean polished stairs?', d: 'Dust them first, then use a damp mop and a pH-neutral cleaner. Make sure the steps are dry before anyone uses them.' },
+      ],
+    },
+  ],
+  'marble-table-polishing-dubai': [
+    {
+      eyebrow: 'What it is',
+      h2: 'What marble table polishing can fix',
+      body: [
+        'A marble table is one of the easiest places to spot damage, because light falls right across it. Lemon, wine, coffee and perfume can all leave dull rings. Hot cups and cleaning sprays can mark it as well.',
+        'Most of these marks sit on the surface, so polishing can remove them. Stains that have soaked in are different. They need a stain treatment first, and we test this before we start.',
+      ],
+    },
+    {
+      eyebrow: 'Types of table',
+      h2: 'Tables we work on',
+      items: [
+        { t: 'Dining tables', d: 'Large tops with rings, scratches and uneven shine.' },
+        { t: 'Coffee tables', d: 'Daily use leaves marks from cups, keys and remote controls.' },
+        { t: 'Console and side tables', d: 'Smaller tops with shaped edges, finished by hand.' },
+        { t: 'Hotel and restaurant tables', d: 'We can plan the work around your opening hours.' },
+      ],
+    },
+    {
+      eyebrow: 'Our process',
+      h2: 'How we polish a marble table',
+      numbered: true,
+      items: [
+        { t: 'Inspect', d: 'We check the stone, marks and edges, and tell you what polishing can fix.' },
+        { t: 'Protect the room', d: 'We cover the floor, the table base and nearby furniture.' },
+        { t: 'Remove marks', d: 'We treat stains, then polish out rings and scratches with fine diamond pads.' },
+        { t: 'Finish the edges', d: 'We work round the edges by hand so that they match the top.' },
+        { t: 'Seal', d: 'We seal the top and tell you when you can use it again.' },
+      ],
+      links: [
+        { label: 'Marble countertop polishing', href: '/services/marble-countertop-polishing' },
+        { label: 'Etch marks explained', href: '/blog/marble-countertop-polishing-dubai' },
+      ],
+    },
+    {
+      eyebrow: 'Daily care',
+      h2: 'How to keep a marble table looking good',
+      items: [
+        { t: 'Use coasters and placemats', d: 'They stop drinks and hot dishes from marking the stone.' },
+        { t: 'Wipe spills straight away', d: 'Acid from lemon, wine and vinegar works within minutes.' },
+        { t: 'Use mild cleaners', d: 'Warm water and a pH-neutral stone cleaner are enough.' },
+        { t: 'Avoid sliding objects', d: 'Grit under a vase or tray scratches the surface.' },
+      ],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Marble table polishing questions',
+      items: [
+        { t: 'Do you need to take the table away?', d: 'No. We polish it at your home or business.' },
+        { t: 'Can you remove every ring?', d: 'Most surface rings come out. Deep stains may fade rather than go completely.' },
+        { t: 'Will a polished table stay mark-free?', d: 'No marble does. Sealing helps with stains, but acid can still leave marks, so quick cleaning matters.' },
+      ],
+    },
+  ],
+  'grout-joint-repair-dubai': [
+    {
+      eyebrow: 'What it is',
+      h2: 'Why grout and joints fail',
+      body: [
+        'The lines between tiles take in dirt, water and cleaning products every day. Over time they turn dark, crack or crumble. Because they cover the whole floor, even a clean floor can look tired when the joints are dirty.',
+        'Joints also move. If a floor has shifted, or if water has got underneath, the filler can crack again. That is why we look for the cause before we repair anything.',
+      ],
+    },
+    {
+      eyebrow: 'Signs',
+      h2: 'When your joints need attention',
+      items: [
+        { t: 'Dark lines', d: 'The grout has soaked up dirt, and mopping no longer helps.' },
+        { t: 'Cracked or missing filler', d: 'Gaps open up and collect dirt and water.' },
+        { t: 'Loose tile edges', d: 'Broken joints can leave tile edges open to chipping.' },
+        { t: 'Damp lines near wet areas', d: 'Showers and kitchens are the first places to check.' },
+      ],
+    },
+    {
+      eyebrow: 'Which repair',
+      h2: 'Clean, refill or replace?',
+      items: [
+        { t: 'Deep clean', d: 'For joints that are dirty but still solid.' },
+        { t: 'Refill', d: 'For small gaps, where the old filler is sound around them.' },
+        { t: 'Remove and replace', d: 'For crumbling or badly stained grout.' },
+        { t: 'Fill and polish', d: 'For marble and stone floors, where the joints can be blended into the polished surface.' },
+      ],
+      links: [
+        { label: 'Marble cleaning', href: '/services/marble-cleaning-dubai' },
+        { label: 'Tile polishing', href: '/services/tile-polishing-dubai' },
+        { label: 'Marble floor restoration', href: '/services/marble-floor-restoration' },
+      ],
+    },
+    {
+      eyebrow: 'Our process',
+      h2: 'How we repair joints',
+      numbered: true,
+      items: [
+        { t: 'Find the cause', d: 'We check for movement, damp and old filler, then quote for the agreed work.' },
+        { t: 'Clean the lines', d: 'We remove dirt and any loose material.' },
+        { t: 'Match the colour', d: 'We choose a filler that suits your floor.' },
+        { t: 'Fill and finish', d: 'We fill the joints and finish them level with the surface.' },
+        { t: 'Protect', d: 'We seal where it helps, so the joints stay cleaner for longer.' },
+      ],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Grout and joint repair questions',
+      items: [
+        { t: 'Can you make joints on a marble floor less visible?', d: 'Yes. A colour-matched filler and polishing can make them far less obvious, though natural stone always varies.' },
+        { t: 'Do you repair grout in bathrooms?', d: 'Yes. If water is getting behind the tiles, that needs fixing first.' },
+        { t: 'Will the new grout match exactly?', d: 'We match it as closely as we can. Old grout can differ in colour, so sometimes the best result comes from renewing a whole area.' },
+      ],
+    },
+  ],
+  'limestone-polishing-dubai': [
+    {
+      eyebrow: 'The stone',
+      h2: 'What makes limestone different',
+      body: [
+        'Limestone is a calcium-based stone, just like marble, so acids such as lemon and vinegar can mark it. It is usually softer and more porous, so it scratches more easily and takes in water and dirt faster.',
+        'That means the method matters. Too much pressure can leave marks, and too much water can leave dark patches. We check the stone first and choose the grit and products to suit it.',
+      ],
+    },
+    {
+      eyebrow: 'Signs',
+      h2: 'Common problems on limestone',
+      items: [
+        { t: 'Dark, dirty walkways', d: 'Dirt gets into the pores in busy areas.' },
+        { t: 'Dull or chalky patches', d: 'Acids and strong cleaners damage the surface.' },
+        { t: 'Water marks', d: 'Damp can leave rings and patches on porous stone.' },
+        { t: 'Rust marks', d: 'Metal furniture and some cans can leave orange stains.' },
+      ],
+    },
+    {
+      eyebrow: 'Finish',
+      h2: 'Honed or polished limestone?',
+      items: [
+        { t: 'Honed', d: 'A soft, natural look that hides marks well. Many limestone floors look best this way.' },
+        { t: 'Polished', d: 'More shine, but it shows wear sooner on soft stone.' },
+        { t: 'Textured', d: 'A better choice outdoors, where grip matters.' },
+      ],
+    },
+    {
+      eyebrow: 'Our process',
+      h2: 'How we restore limestone',
+      numbered: true,
+      items: [
+        { t: 'Check the stone', d: 'We test the finish and stains, then agree the look you want.' },
+        { t: 'Clean', d: 'We lift dirt from the surface with stone-safe products.' },
+        { t: 'Hone or polish', d: 'We remove wear with diamond pads, and use only as much water as the stone can take.' },
+        { t: 'Seal', d: 'We apply a sealer that helps keep water and dirt out.' },
+      ],
+      links: [
+        { label: 'Travertine polishing', href: '/services/travertine-polishing-dubai' },
+        { label: 'Crystallization and sealing', href: '/services/crystallization-sealing' },
+      ],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Limestone polishing questions',
+      items: [
+        { t: 'Can limestone be polished like marble?', d: 'Often, but many types are softer and take a lower shine. We test a small area first.' },
+        { t: 'Which cleaner is safe?', d: 'Use a pH-neutral stone cleaner. Avoid vinegar, lemon and bathroom sprays.' },
+        { t: 'Do you polish limestone outdoors?', d: 'We clean and seal outdoor limestone, and we normally keep a finish with more grip.' },
+      ],
+    },
+  ],
+  'mosaic-floor-polishing-dubai': [
+    {
+      eyebrow: 'What it is',
+      h2: 'What makes mosaic floors hard to polish',
+      body: [
+        'A mosaic is made of many small pieces set close together. Some are marble, some are other stone, and some may be glass or ceramic. Each material wears differently, so one method will not suit them all.',
+        'There are also far more joints than on a normal floor. Dirt collects in them, and small pieces can come loose. A careless machine can pull those pieces out, which is why we check the floor closely before we begin.',
+      ],
+    },
+    {
+      eyebrow: 'What we restore',
+      h2: 'Mosaics we work on',
+      items: [
+        { t: 'Marble mosaics', d: 'Patterned floors and borders that have lost their shine.' },
+        { t: 'Inlays and medallions', d: 'Entrance features with several stone colours.' },
+        { t: 'Bathroom mosaics', d: 'Small stone tiles with dirty or damaged joints.' },
+        { t: 'Mixed-material floors', d: 'Stone is polished, and glass or glazed pieces are cleaned.' },
+      ],
+    },
+    {
+      eyebrow: 'Our process',
+      h2: 'How we polish a mosaic',
+      numbered: true,
+      items: [
+        { t: 'Inspect each area', d: 'We identify the materials and check for loose pieces.' },
+        { t: 'Repair', d: 'We fix loose pieces and fill open joints where we can.' },
+        { t: 'Clean', d: 'We remove dirt from the surface and the joints.' },
+        { t: 'Polish the stone', d: 'We use fine pads, and work by hand around detail.' },
+        { t: 'Seal', d: 'We seal porous stone and joints.' },
+      ],
+      links: [
+        { label: 'Grout and joint repair', href: '/services/grout-joint-repair-dubai' },
+        { label: 'Floor polishing', href: '/services/floor-polishing-dubai' },
+      ],
+    },
+    {
+      eyebrow: 'Limits',
+      h2: 'What polishing cannot do',
+      body: [
+        'Glass and glazed pieces cannot be ground like stone, so we clean them instead. Missing pieces can only be matched if similar stone is available. If an old floor has moved or lifted, it may need repair by a tiler first. We tell you all of this at the site visit, before you pay for anything.',
+      ],
+    },
+    {
+      eyebrow: 'Questions',
+      h2: 'Mosaic floor polishing questions',
+      items: [
+        { t: 'Can you replace missing pieces?', d: 'Sometimes. It depends on whether a close match is available.' },
+        { t: 'Will polishing damage the pattern?', d: 'Not with the right method. We work gently, and test a small area first.' },
+        { t: 'Do you work on medallions?', d: 'Yes. Inlays and medallions need careful hand work.' },
+      ],
     },
   ],
 };

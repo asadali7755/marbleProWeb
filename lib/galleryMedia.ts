@@ -44,12 +44,13 @@ const ba = (name: string, caption: string, note: string, pendingReview?: boolean
   ...(pendingReview ? { pendingReview } : {}),
 });
 
-const FLOOR_ALT = 'Polished marble floor restored to a high-gloss finish by MarblePro';
+/** What each floor photo shows. Places stay off captions unless the job's location is known. */
+const FLOOR_CAPTIONS: Record<number, string> = {1: 'Beige marble floor · bright room', 2: 'Beige marble floor · reception room', 3: 'Cream marble hall with brown inlay border', 4: 'Grey striped marble floor', 5: 'White marble with dark veins · glass-walled room', 6: 'Cream marble with inlay border · window bay', 7: 'Beige marble hall with black border', 8: 'Cream marble with brown border', 9: 'Cream marble hall · full view', 10: 'Cream marble with curved inlay border', 11: 'White marble with dark veins · full room', 12: 'Cream marble with patterned inlay panels', 13: 'White and grey veined marble floor'};
 
 const floorPhoto = (n: number, w: number, h: number): GalleryPhoto => ({
   src: `/images/projects/polished-marble-floor-dubai-${n}.webp`,
-  alt: FLOOR_ALT,
-  caption: 'Polished marble floor · villa',
+  alt: `${FLOOR_CAPTIONS[n]}, polished to a high gloss by MarblePro`,
+  caption: FLOOR_CAPTIONS[n],
   w,
   h,
 });

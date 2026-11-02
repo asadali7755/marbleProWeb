@@ -223,6 +223,11 @@ const SVC_CARDS: { img: string; overlay: string }[] = [
   { img:'/images/projects/polished-marble-floor-dubai-2.webp', overlay:'linear-gradient(180deg,rgba(24,24,30,0.30) 0%,rgba(24,24,30,0.62) 100%)' }, // commercial
   { img:'/images/projects/polished-marble-floor-dubai-5.webp', overlay:'linear-gradient(180deg,rgba(24,24,30,0.30) 0%,rgba(24,24,30,0.62) 100%)' }, // marble cleaning
   { img:'/images/projects/polished-marble-floor-dubai-8.webp', overlay:'linear-gradient(180deg,rgba(24,24,30,0.30) 0%,rgba(24,24,30,0.62) 100%)' }, // tile polishing
+  { img:'/videos/granite-staircase-polishing-after-poster.jpg', overlay:'linear-gradient(180deg,rgba(24,24,30,0.30) 0%,rgba(24,24,30,0.62) 100%)' }, // stairs
+  { img:'/images/services/marble-countertop-polishing.webp', overlay:'linear-gradient(180deg,rgba(24,24,30,0.30) 0%,rgba(24,24,30,0.62) 100%)' }, // tables
+  { img:'/images/projects/polished-marble-floor-dubai-7.webp', overlay:'linear-gradient(180deg,rgba(24,24,30,0.30) 0%,rgba(24,24,30,0.62) 100%)' }, // joints
+  { img:'/images/projects/polished-marble-floor-dubai-3.webp', overlay:'linear-gradient(180deg,rgba(24,24,30,0.30) 0%,rgba(24,24,30,0.62) 100%)' }, // limestone
+  { img:'/images/projects/decorative-marble-medallion-dubai-4.webp', overlay:'linear-gradient(180deg,rgba(24,24,30,0.30) 0%,rgba(24,24,30,0.62) 100%)' }, // mosaic
 ];
 
 // Lazy-load Unsplash background images — only fetch when card enters viewport.
@@ -280,7 +285,7 @@ function LazySvcCard({ s, size, card, eager }: {
 }
 
 function ServicesGrid() {
-  const sizes = ['lg','md','sm','sm','md','sm','sm','md','sm','sm','lg','md','sm','sm','md','md','md','md','md','md','md'];
+  const sizes = ['lg','md','sm','sm','md','sm','sm','md','sm','sm','lg','md','sm','sm','md','md','md','md','md','md','md','md','md','md','lg','lg'];
   return (
     <section className="sec" data-screen-label="services" id="services">
       <div style={{ marginBottom: 60 }}>
