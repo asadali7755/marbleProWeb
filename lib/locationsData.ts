@@ -43,7 +43,7 @@ export const LOCATIONS: Location[] = [
     body:['Every MarblePro service is available in Fujairah: marble polishing, marble floor polishing, floor restoration services, terrazzo polishing, granite polishing, quartz polishing, Corian countertop polishing, kitchen top polishing and yellow stain removing.','Hotels, large residences and smaller homes all get a visit time based on our schedule when they contact us.'],
     areas:['Dibba','Al Faseel','Al Ghurfa','Sakamkam','Madhab','Al Bidiyah','Khor Fakkan','Fujairah City'],
     stats:[{l:'Response time',v:'Within 30 min'},{l:'Site inspection',v:'Free'},{l:'Specialty',v:'Coastal homes'},{l:'Top service',v:'Marble polishing'}]},
-  { slug:'dibba', name:'Dibba', ar:'دبا', h1:'Marble Polishing Dibba — East Coast, Two Emirates', eyebrow:'08 — Dibba Service',
+  { slug:'dibba', name:'Dibba', ar:'دبا', h1:'Marble Polishing Dibba — East Coast, Two Emirates', eyebrow:'East Coast Town — Fujairah & Sharjah',
     intro:"Dibba is split across Fujairah and Sharjah on the UAE's east coast — and we cover both sides, Dibba Al-Fujairah and Dibba Al-Hisn. Villas and holiday homes here need stone care that handles the same humidity, salt and sand as the rest of the east coast.",
     body:['Every MarblePro service is available in Dibba: marble polishing, marble floor polishing, floor restoration services, terrazzo polishing, granite polishing, quartz polishing, Corian countertop polishing, kitchen top polishing and yellow stain removing. .','We confirm your visit time when you contact us, based on our schedule.'],
     areas:['Dibba Al-Fujairah','Dibba Al-Hisn','Dibba Port','Al Aqah'],

@@ -171,10 +171,10 @@ export default async function LocationPage(
           </div>
         </section>
 
-        {/* Other emirates — internal links */}
+        {/* Other areas — internal links */}
         <section className="sec" style={{ padding: '60px 36px' }} data-screen-label="other-emirates">
           <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-            <span className="sec-eyebrow">— Other emirates</span>
+            <span className="sec-eyebrow">— Other areas</span>
             <h2 className="sec-title" style={{ marginTop: 12, fontSize: 'clamp(26px,4vw,40px)' }}>We also cover <em>the whole UAE.</em></h2>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginTop: 24 }}>
               {LOCATIONS.filter((x) => x.slug !== l.slug).map((x) => (
