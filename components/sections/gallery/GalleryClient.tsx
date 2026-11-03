@@ -8,20 +8,26 @@ import {
   GALLERY_CATEGORIES,
   SHOWCASE_VIDEO,
   categoryCounts,
+  categoryPhotos,
+  joinAreas,
   type BeforeAfterPair,
   type CategoryId,
   type GalleryCategory,
   type GalleryPhoto,
   type GalleryVideo,
+  type PhotoGroup,
+  type ServiceLink,
   type SideBySide,
   type VideoPair,
+  type VideoRow,
 } from '@/lib/galleryMedia';
 
 const SITE = 'https://www.marblepro.ae';
 const WA_HREF = `${WA_LINK}?text=${encodeURIComponent('Hi MarblePro, I saw your gallery and need a quote.')}`;
 
-// How many items each block shows before its "Show all" button.
-const FIRST = { beforeAfter: 4, videoPairs: 2, videos: 6, photos: 9 };
+// How many items each block shows before its "Show all" button. Hidden video
+// rows stay in the HTML (with `hidden`) so their text is still crawlable.
+const FIRST = { beforeAfter: 4, videoPairs: 2, videos: 3 };
 
 /* ───────────── shared bits ───────────── */
 
@@ -226,6 +232,52 @@ function VideoPairCard({ pair }: { pair: VideoPair }) {
   );
 }
 
+/* ───────────── finished-work rows ───────────── */
+
+function AreaLine({ service, areas }: { service: ServiceLink; areas: string[] }) {
+  return (
+    <p className="gx-row-areas">
+      We offer <Link href={`/services/${service.slug}`}>{service.label}</Link> across the UAE, including {joinAreas(areas)}.
+    </p>
+  );
+}
+
+function VideoRowItem({ row, hidden }: { row: VideoRow; hidden: boolean }) {
+  return (
+    <article className={`gx-row gx-row-${row.video.orientation}`} hidden={hidden}>
+      <InViewVideo video={row.video} label="After" />
+      <div className="gx-row-text">
+        <h3>{row.title}</h3>
+        <p>{row.body}</p>
+        <AreaLine service={row.service} areas={row.areas} />
+      </div>
+    </article>
+  );
+}
+
+function PhotoGroupRow({ group, start, onOpen }: { group: PhotoGroup; start: number; onOpen: (i: number) => void }) {
+  const n = group.photos.length;
+  return (
+    <article className="gx-row gx-row-photos">
+      <div className={`gx-group-photos ${n === 2 || n === 4 ? 'gx-cols-2' : ''}`}>
+        {group.photos.map((p, i) => (
+          <figure key={p.src} className="gx-card gx-photo">
+            <button type="button" className="gx-photo-btn" onClick={() => onOpen(start + i)} aria-label={`Open photo: ${p.caption}`}>
+              <img src={p.src} alt={p.alt} width={p.w} height={p.h} loading="lazy" decoding="async" />
+            </button>
+          </figure>
+        ))}
+      </div>
+      <div className="gx-row-text">
+        <h3>{group.title}</h3>
+        <p>{group.body}</p>
+        <AreaLine service={group.service} areas={group.areas} />
+        <span className="gx-block-meta">{n} photos · tap to enlarge</span>
+      </div>
+    </article>
+  );
+}
+
 /* ───────────── photos + lightbox ───────────── */
 
 function Lightbox({ photos, index, onClose, onIndex }: { photos: GalleryPhoto[]; index: number; onClose: () => void; onIndex: (i: number) => void }) {
@@ -278,10 +330,12 @@ function Lightbox({ photos, index, onClose, onIndex }: { photos: GalleryPhoto[];
 /* ───────────── a category section ───────────── */
 
 function CategorySection({ c }: { c: GalleryCategory }) {
-  const [all, setAll] = useState({ beforeAfter: false, videoPairs: false, videos: false, photos: false });
+  const [all, setAll] = useState({ beforeAfter: false, videoPairs: false, videos: false });
   const [lightbox, setLightbox] = useState<number | null>(null);
   const show = <T,>(list: T[], key: keyof typeof FIRST) => (all[key] ? list : list.slice(0, FIRST[key]));
   const open = (key: keyof typeof FIRST) => setAll((s) => ({ ...s, [key]: true }));
+  const photos = categoryPhotos(c);
+  const groupStart = c.photoGroups.map((_, gi) => c.photoGroups.slice(0, gi).reduce((sum, g) => sum + g.photos.length, 0));
 
   return (
     <section id={c.id} className="gx-section" data-screen-label={`gallery-${c.id}`}>
@@ -309,32 +363,23 @@ function CategorySection({ c }: { c: GalleryCategory }) {
         </>
       )}
 
-      <BlockHead label="Videos" meta={`${c.videos.length} clips`} />
-      <div className="gx-videos">
-        {show(c.videos, 'videos').map((vid) => (
-          <figure key={vid.mp4} className={`gx-card gx-vcard gx-${vid.orientation}`}>
-            <InViewVideo video={vid} />
-            <figcaption className="gx-cap"><span className="gx-cap-title gx-cap-sm">{vid.caption}</span></figcaption>
-          </figure>
+      <BlockHead label="Finished work on video" meta={`${c.videos.length} clips`} />
+      <div className="gx-rows">
+        {c.videos.map((row, i) => (
+          <VideoRowItem key={row.video.mp4} row={row} hidden={!all.videos && i >= FIRST.videos} />
         ))}
       </div>
       <ShowAll total={c.videos.length} shown={FIRST.videos} onClick={() => open('videos')} />
 
-      <BlockHead label="Photos" meta={`${c.photos.length} photos · tap to enlarge`} />
-      <div className="gx-masonry">
-        {show(c.photos, 'photos').map((p, i) => (
-          <figure key={p.src} className="gx-card gx-photo">
-            <button type="button" className="gx-photo-btn" onClick={() => setLightbox(i)} aria-label={`Open photo: ${p.caption}`}>
-              <img src={p.src} alt={p.alt} width={p.w} height={p.h} loading="lazy" decoding="async" />
-            </button>
-            <figcaption className="gx-cap"><span className="gx-cap-title gx-cap-sm">{p.caption}</span></figcaption>
-          </figure>
+      <BlockHead label="Photos" meta={`${photos.length} photos`} />
+      <div className="gx-rows">
+        {c.photoGroups.map((g, gi) => (
+          <PhotoGroupRow key={g.title} group={g} start={groupStart[gi]} onOpen={setLightbox} />
         ))}
       </div>
-      <ShowAll total={c.photos.length} shown={FIRST.photos} onClick={() => open('photos')} />
 
       {lightbox !== null && (
-        <Lightbox photos={c.photos} index={lightbox} onClose={() => setLightbox(null)} onIndex={setLightbox} />
+        <Lightbox photos={photos} index={lightbox} onClose={() => setLightbox(null)} onIndex={setLightbox} />
       )}
     </section>
   );
@@ -395,21 +440,25 @@ function ShowcaseFilm() {
 /* ───────────── page ───────────── */
 
 function videoSchema() {
-  const videos: GalleryVideo[] = GALLERY_CATEGORIES.flatMap((c) => [
-    ...c.videos,
-    ...c.videoPairs.flatMap((p) => [p.before, p.after]),
-  ]).filter((vid) => !vid.pendingReview);
+  const videos: { vid: GalleryVideo; name: string; description: string }[] = GALLERY_CATEGORIES.flatMap((c) => [
+    ...c.videos.map((r) => ({ vid: r.video, name: r.title, description: r.body })),
+    ...c.videoPairs.flatMap((p) => [p.before, p.after]).map((vid) => ({
+      vid,
+      name: vid.caption,
+      description: `${vid.caption}: marble and stone polishing by MarblePro UAE.`,
+    })),
+  ]).filter(({ vid }) => !vid.pendingReview);
   return {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'MarblePro marble polishing videos',
-    itemListElement: videos.map((vid, i) => ({
+    itemListElement: videos.map(({ vid, name, description }, i) => ({
       '@type': 'ListItem',
       position: i + 1,
       item: {
         '@type': 'VideoObject',
-        name: `${vid.caption} — MarblePro UAE`,
-        description: `${vid.caption}: marble and stone polishing by MarblePro UAE.`,
+        name: `${name} — MarblePro UAE`,
+        description,
         thumbnailUrl: `${SITE}${vid.poster}`,
         contentUrl: `${SITE}${vid.mp4}`,
         uploadDate: vid.uploadDate ?? '2026-10-25',

@@ -18,6 +18,17 @@ export interface GalleryVideo {
 }
 export interface VideoPair { before: GalleryVideo; after: GalleryVideo; caption: string; }
 
+/** The service page a row links to; `label` is read inside a sentence ("We offer {label} in …"). */
+export interface ServiceLink { slug: string; label: string; }
+/**
+ * One finished-work clip shown as a row with text beside it.
+ * `areas` are places we serve, not where this job was: the boss cannot say
+ * which job was where, so copy must never tie a clip to a place.
+ */
+export interface VideoRow { video: GalleryVideo; title: string; body: string; service: ServiceLink; areas: string[]; }
+/** Photos of one kind of work, shown together with text beside them. */
+export interface PhotoGroup { title: string; body: string; service: ServiceLink; areas: string[]; photos: GalleryPhoto[]; }
+
 export interface GalleryCategory {
   id: CategoryId;
   title: string;
@@ -25,8 +36,9 @@ export interface GalleryCategory {
   cover: string;
   beforeAfter: BeforeAfterPair[];
   videoPairs: VideoPair[];
-  videos: GalleryVideo[];
-  photos: GalleryPhoto[];
+  /** Finished work only. Before and in-progress clips live in the pairs above or on service pages. */
+  videos: VideoRow[];
+  photoGroups: PhotoGroup[];
 }
 
 const v = (name: string, caption: string, duration: string, orientation: GalleryVideo['orientation'], pendingReview?: boolean): GalleryVideo => ({
@@ -106,6 +118,196 @@ const TRAVERTINE_ENTRANCE = photo('travertine-entrance-floor-polishing-dubai', '
 const SHOWER_JOINT_1 = photo('travertine-shower-joint-repair-dubai-1', 'Dark joint in the corner of a travertine shower, before repair', 'Dark joint in a travertine shower corner', 720, 900);
 const SHOWER_JOINT_2 = photo('travertine-shower-joint-repair-dubai-2', 'Open joint between two travertine slabs in a shower, before repair', 'Open joint in travertine · before repair', 720, 900);
 
+const FLOOR_POLISHING: ServiceLink = { slug: 'floor-polishing-dubai', label: 'stone floor polishing' };
+const MARBLE_POLISHING: ServiceLink = { slug: 'marble-polishing-dubai', label: 'marble polishing' };
+const MOSAIC: ServiceLink = { slug: 'mosaic-floor-polishing-dubai', label: 'inlay and pattern floor polishing' };
+const COUNTERTOP: ServiceLink = { slug: 'marble-countertop-polishing', label: 'countertop and vanity polishing' };
+const TABLE: ServiceLink = { slug: 'marble-table-polishing-dubai', label: 'marble table polishing' };
+
+const ROWS_FLOORS: VideoRow[] = [
+  {
+    video: STRIPED_FLOOR_VIDEO,
+    title: 'Striped marble floor polishing',
+    body: 'A striped marble floor after polishing. The ceiling lights show as sharp points across the stone and the window reflects clearly, which is what an even polish looks like. Every tile has the same gloss, with no dull patches between them.',
+    service: FLOOR_POLISHING,
+    areas: ['Dubai Marina', 'JLT', 'Al Barsha', 'Sharjah'],
+  },
+  {
+    video: PATTERNED_FLOOR_VIDEO,
+    title: 'Patterned marble floor polishing',
+    body: 'This floor uses two shades of marble cut into a geometric pattern. After polishing, both shades have the same gloss, so the pattern looks crisp from one side of the room to the other.',
+    service: MOSAIC,
+    areas: ['Downtown Dubai', 'Business Bay', 'Al Majaz in Sharjah'],
+  },
+  {
+    video: v('beige-marble-floor-polishing-apartment-dubai', 'Beige marble floor · apartment walkthrough', '0:26', 'landscape'),
+    title: 'Beige marble apartment floor',
+    body: 'A walk through an apartment after its beige marble floor was polished. The gloss carries from the living area into the corridor and through each doorway, with no dull patches between rooms.',
+    service: MARBLE_POLISHING,
+    areas: ['Jumeirah Village Circle', 'Al Nahda', 'Ajman'],
+  },
+  {
+    video: BEIGE_FLOOR_VIDEO,
+    title: 'Marble corridor floor polishing',
+    body: 'Another view from the same apartment: the marble corridor. Corridors take the most foot traffic in a home, so they often lose their shine first. Here the lights reflect evenly along the full length.',
+    service: FLOOR_POLISHING,
+    areas: ['Mirdif', 'Al Qusais', 'Muwaileh in Sharjah'],
+  },
+  {
+    video: v('marble-polishing-results-dubai', 'Marble floor results · villa', '0:16', 'landscape'),
+    title: 'Villa marble floor with inlay border',
+    body: 'A villa floor of cream marble with a brown inlay border, after polishing. The windows and chandelier reflect in the stone, and the border shines as evenly as the main floor.',
+    service: MARBLE_POLISHING,
+    areas: ['Palm Jumeirah', 'Emirates Hills', 'Arabian Ranches'],
+  },
+  {
+    video: v('marble-floor-restoration-process', 'Grey striped marble floor · high gloss', '0:04', 'portrait'),
+    title: 'Grey striped marble floor',
+    body: 'A light grey marble floor with long dark stripes, after polishing. The room lights show as straight, sharp lines in the stone. On a floor this pale, any dull or scratched patch would stand out.',
+    service: FLOOR_POLISHING,
+    areas: ['Jumeirah', 'Al Khan in Sharjah', 'Al Nuaimiya in Ajman'],
+  },
+];
+
+const ROWS_COUNTERTOPS: VideoRow[] = [
+  {
+    video: GREY_VANITY_VIDEO,
+    title: 'Grey marble vanity polishing',
+    body: 'The finished vanity, after the white water marks around the basin were removed. Light now reflects evenly across the top, right up to the basin edge. Before and after photos of this vanity are in the before-and-after section above.',
+    service: COUNTERTOP,
+    areas: ['Dubai Marina', 'Al Barsha', 'Al Majaz in Sharjah'],
+  },
+  {
+    video: TRAVERTINE_BASIN_VIDEO,
+    title: 'Travertine basin cleaning',
+    body: 'This travertine basin had dark marks down the centre. Here it is after our work, clean and even in colour. The before photo is in the before-and-after section above.',
+    service: { slug: 'travertine-polishing-dubai', label: 'travertine polishing and cleaning' },
+    areas: ['Jumeirah', 'Mirdif', 'Ajman'],
+  },
+  {
+    video: WHITE_TABLE_VIDEO,
+    title: 'White marble table polishing',
+    body: 'A long white marble table top after polishing. Light runs cleanly across the surface and the grey veins stand out. White marble shows every ring and scratch, so an even finish matters more on light stone.',
+    service: TABLE,
+    areas: ['Downtown Dubai', 'Business Bay', 'Sharjah'],
+  },
+  {
+    video: ROUND_TABLE_VIDEO,
+    title: 'Round marble table close-up',
+    body: 'A close look at a round white marble table top after polishing. The line of light moves smoothly across the stone without breaking, which shows the surface is even.',
+    service: TABLE,
+    areas: ['Arabian Ranches', 'Jumeirah Village Circle', 'Ajman'],
+  },
+  {
+    video: v('quartz-countertop-polishing-dubai-process', 'Fusion quartzite countertop', '0:23', 'landscape'),
+    title: 'Fusion quartzite kitchen countertop',
+    body: 'A kitchen and island in Fusion quartzite, a stone with bold brown, blue and cream patterns. After polishing, the top reflects the room and the colours look deep and clear.',
+    service: COUNTERTOP,
+    areas: ['Palm Jumeirah', 'Emirates Hills', 'Al Barsha'],
+  },
+  {
+    video: v('volakas-marble-countertop-polishing-dubai-process', 'Volakas marble countertop', '0:19', 'portrait'),
+    title: 'Volakas marble kitchen top',
+    body: 'A white Volakas marble kitchen top and island after polishing. Kitchen marble loses its shine from daily use, and here the gloss is back across the whole top.',
+    service: { slug: 'kitchen-top-polishing', label: 'kitchen top polishing' },
+    areas: ['Dubai Marina', 'JLT', 'Al Nahda in Sharjah'],
+  },
+  {
+    video: v('corian-countertop-polishing-dubai-process', 'Corian countertop', '0:25', 'landscape'),
+    title: 'Corian countertop polishing',
+    body: 'A large Corian countertop after polishing, with the cabinets still wrapped in protective sheets. Corian is a man-made surface, so it is treated differently from natural stone. The finished top has a smooth, even sheen.',
+    service: { slug: 'corian-countertop-polishing', label: 'Corian countertop polishing' },
+    areas: ['Mirdif', 'Al Qusais', 'Sharjah'],
+  },
+  {
+    video: v('granite-countertop-polishing-dubai-process', 'Grey granite kitchen top', '0:13', 'landscape'),
+    title: 'Grey granite kitchen top',
+    body: 'A dark grey granite kitchen top after polishing. The bar stools and window reflect clearly in the surface, from the curved end to the corner by the sink.',
+    service: { slug: 'granite-polishing', label: 'granite polishing' },
+    areas: ['Business Bay', 'Jumeirah', 'Ajman'],
+  },
+];
+
+const PHOTOS_FLOORS: PhotoGroup[] = [
+  {
+    title: 'Cream marble floors with inlay borders',
+    body: 'Halls and rooms in cream and beige marble, with darker borders, curved inlays and a medallion. On these floors, the border and the main stone need the same gloss so the pattern looks clean.',
+    service: MOSAIC,
+    areas: ['Palm Jumeirah', 'Emirates Hills', 'Al Majaz in Sharjah'],
+    photos: [
+      { src: '/images/projects/decorative-marble-medallion-dubai-1.webp', alt: 'Decorative marble medallion inlay polished to a mirror finish by MarblePro', caption: 'Marble medallion inlay · entrance', w: 1050, h: 1400 },
+      floorPhoto(10, 1050, 1400),
+      { src: '/images/projects/decorative-marble-medallion-dubai-4.webp', alt: 'Polished marble hall with inlay border by MarblePro', caption: 'Marble hall with inlay border', w: 1050, h: 1400 },
+      floorPhoto(3, 1050, 1400),
+      floorPhoto(7, 1280, 960),
+      floorPhoto(6, 1050, 1400),
+      floorPhoto(8, 1050, 1400),
+      floorPhoto(9, 1050, 1400),
+      floorPhoto(12, 1050, 1400),
+    ],
+  },
+  {
+    title: 'Beige marble floors',
+    body: 'Plain beige marble in a bright room and a reception room, after polishing. Plain floors show every dull patch, so the gloss has to be even from wall to wall.',
+    service: MARBLE_POLISHING,
+    areas: ['Al Barsha', 'Mirdif', 'Ajman'],
+    photos: [floorPhoto(1, 1050, 1400), floorPhoto(2, 1050, 1400)],
+  },
+  {
+    title: 'Veined and dark marble floors',
+    body: 'White, grey and dark Emperador marble floors after polishing. A deep gloss brings out the veins, which is why these stones look best with a high polish.',
+    service: MARBLE_POLISHING,
+    areas: ['Downtown Dubai', 'Dubai Marina', 'Sharjah'],
+    photos: [
+      floorPhoto(13, 1400, 788),
+      floorPhoto(4, 1050, 1400),
+      floorPhoto(5, 960, 1280),
+      floorPhoto(11, 960, 1280),
+      { src: '/images/projects/dark-emperador-floor-polishing-dubai.jpg', alt: 'Dark Emperador marble floor polished to a deep gloss by MarblePro', caption: 'Dark Emperador floor · lounge', w: 414, h: 311 },
+    ],
+  },
+  {
+    title: 'Travertine floors',
+    body: 'Polished travertine next to dull stone on the same floor, so you can see the difference in one view. The polished part reflects the doors and lights; the rest has not been polished yet.',
+    service: { slug: 'travertine-polishing-dubai', label: 'travertine floor polishing' },
+    areas: ['Jumeirah', 'Arabian Ranches', 'Ajman'],
+    photos: [TRAVERTINE_HALLWAY, TRAVERTINE_ENTRANCE],
+  },
+];
+
+const PHOTOS_COUNTERTOPS: PhotoGroup[] = [
+  {
+    title: 'White marble dining tables',
+    body: 'White marble tables with grey veins, after polishing. Light runs across each top without dull rings or patches.',
+    service: TABLE,
+    areas: ['Dubai Marina', 'Business Bay', 'Sharjah'],
+    photos: [WHITE_TABLE_1, WHITE_TABLE_2, WHITE_TABLE_3],
+  },
+  {
+    title: 'Fusion quartz countertops',
+    body: 'A Fusion quartz kitchen island and vanity after polishing. The bold veins look clear again once the surface is even.',
+    service: COUNTERTOP,
+    areas: ['Palm Jumeirah', 'Al Barsha', 'Ajman'],
+    photos: [
+      { src: '/images/projects/fusion-quartz-countertop-polishing-dubai-1.jpg', alt: 'Fusion quartz kitchen island countertop polished by MarblePro', caption: 'Fusion quartz · kitchen island', w: 414, h: 311 },
+      { src: '/images/projects/fusion-quartz-countertop-polishing-dubai-2.jpg', alt: 'Fusion quartz countertop veining restored by MarblePro', caption: 'Fusion quartz · veining', w: 414, h: 311 },
+      { src: '/images/projects/fusion-quartz-countertop-polishing-dubai-3.jpg', alt: 'Fusion quartz bathroom vanity countertop polished by MarblePro', caption: 'Fusion quartz · vanity', w: 414, h: 311 },
+      { src: '/images/projects/fusion-quartz-countertop-polishing-dubai-4.jpg', alt: 'Fusion quartz kitchen countertop detail polished by MarblePro', caption: 'Fusion quartz · detail', w: 414, h: 311 },
+    ],
+  },
+  {
+    title: 'Vanities and kitchen tops',
+    body: 'A honey onyx vanity, a grey granite kitchen top and a dark marble bathroom ledge. Each stone needs its own method, and each top here has an even finish.',
+    service: COUNTERTOP,
+    areas: ['Emirates Hills', 'Mirdif', 'Al Nahda in Sharjah'],
+    photos: [
+      { src: '/images/projects/honey-onyx-bathroom-vanity-polishing-dubai.jpg', alt: 'Honey onyx bathroom vanity polished to a high-gloss finish by MarblePro', caption: 'Honey onyx bathroom vanity', w: 2040, h: 1530 },
+      { src: '/images/projects/granite-kitchen-countertop-polishing-dubai.jpg', alt: 'Dark grey granite kitchen countertop polished by MarblePro', caption: 'Grey granite kitchen top', w: 960, h: 1280 },
+      photo('dark-marble-bathroom-ledge-dubai', 'Dark marble bathroom ledge with white veins', 'Dark marble bathroom ledge', 1280, 450),
+    ],
+  },
+];
+
 export const GALLERY_CATEGORIES: GalleryCategory[] = [
   {
     id: 'floors',
@@ -138,45 +340,8 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
         after: v('crema-marfil-floor-polishing-after', 'Crema Marfil floor · after', '0:13', 'landscape'),
       },
     ],
-    videos: [
-      STRIPED_FLOOR_VIDEO,
-      PATTERNED_FLOOR_VIDEO,
-      BEIGE_FLOOR_VIDEO,
-      TRAVERTINE_FLOOR_VIDEO,
-      TRAVERTINE_STEP_VIDEO,
-      v('beige-marble-floor-polishing-apartment-dubai', 'Beige marble floor · apartment walkthrough', '0:26', 'landscape'),
-      v('onyx-marble-polishing-dubai-process', 'Onyx polishing', '1:30', 'portrait'),
-      v('marble-polishing-results-dubai', 'Marble floor results · villa', '0:16', 'landscape'),
-      v('marble-floor-restoration-process', 'Marble floor restoration', '0:04', 'portrait'),
-      v('marble-polishing-process-closeup-dubai', 'Polishing close-up', '0:10', 'landscape'),
-      v('crema-marfil-polishing-dubai-process', 'Crema Marfil floor with inlay', '0:24', 'landscape'),
-      v('calacatta-marble-polishing-dubai-process', 'Calacatta floor polishing', '0:05', 'landscape'),
-      v('travertine-polishing-dubai-process', 'Travertine floor', '1:06', 'landscape', true),
-      v('marble-polishing-process-dubai', 'Marble polishing process', '0:53', 'landscape', true),
-    ],
-    photos: [
-      TRAVERTINE_HALLWAY,
-      TRAVERTINE_ENTRANCE,
-      SHOWER_JOINT_2,
-      { src: '/images/projects/decorative-marble-medallion-dubai-1.webp', alt: 'Decorative marble medallion inlay polished to a mirror finish by MarblePro', caption: 'Marble medallion inlay · entrance', w: 1050, h: 1400 },
-      floorPhoto(10, 1050, 1400),
-      { src: '/images/projects/dark-emperador-floor-polishing-dubai.jpg', alt: 'Dark Emperador marble floor polished to a deep gloss by MarblePro', caption: 'Dark Emperador floor · lounge', w: 414, h: 311 },
-      floorPhoto(1, 1050, 1400),
-      floorPhoto(13, 1400, 788),
-      { src: '/images/projects/decorative-marble-medallion-dubai-4.webp', alt: 'Polished marble hall with inlay border by MarblePro', caption: 'Marble hall with inlay border', w: 1050, h: 1400 },
-      floorPhoto(2, 1050, 1400),
-      floorPhoto(7, 1280, 960),
-      floorPhoto(3, 1050, 1400),
-      { src: '/images/projects/crema-marfil-floor-polishing-apartment-dubai.jpg', alt: 'Crema Marfil marble floor being polished with a grinding machine by MarblePro', caption: 'Crema Marfil floor · polishing in progress', w: 1530, h: 2040 },
-      floorPhoto(4, 1050, 1400),
-      floorPhoto(5, 960, 1280),
-      floorPhoto(6, 1050, 1400),
-      floorPhoto(8, 1050, 1400),
-      floorPhoto(9, 1050, 1400),
-      floorPhoto(11, 960, 1280),
-      floorPhoto(12, 1050, 1400),
-      SHOWER_JOINT_1,
-    ],
+    videos: ROWS_FLOORS,
+    photoGroups: PHOTOS_FLOORS,
   },
   {
     id: 'countertops',
@@ -209,33 +374,8 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
         after: v('brown-marble-countertop-polishing-after', 'Brown marble countertop · after', '0:13', 'landscape'),
       },
     ],
-    videos: [
-      COFFEE_TABLE_VIDEO,
-      GREY_VANITY_VIDEO,
-      TRAVERTINE_BASIN_VIDEO,
-      WHITE_TABLE_VIDEO,
-      ROUND_TABLE_VIDEO,
-      v('kitchen-top-polishing-dubai-process', 'Kitchen top polishing & sealing', '1:15', 'portrait'),
-      v('quartz-countertop-polishing-dubai-process', 'Fusion quartzite countertop', '0:23', 'landscape'),
-      v('volakas-marble-countertop-polishing-dubai-process', 'Volakas marble countertop', '0:19', 'portrait'),
-      v('corian-countertop-polishing-dubai-process', 'Corian countertop', '0:25', 'landscape'),
-      v('granite-countertop-polishing-dubai-process', 'Grey granite kitchen top', '0:13', 'landscape'),
-    ],
-    photos: [
-      WHITE_TABLE_1,
-      WHITE_TABLE_2,
-      WHITE_TABLE_3,
-      photo('grey-marble-double-vanity-water-marks-dubai', 'Grey marble double vanity with white water marks around the basins, before polishing', 'Grey marble double vanity · before', 1280, 720),
-      photo('grey-marble-vanity-water-marks-dubai', 'Grey marble vanity with white water marks around the basin, before polishing', 'Grey marble vanity · water marks', 1180, 530),
-      photo('travertine-basin-dark-marks-dubai', 'Close view of dark marks inside a travertine basin, before cleaning', 'Travertine basin · dark marks', 720, 960),
-      photo('dark-marble-bathroom-ledge-dubai', 'Dark marble bathroom ledge with white veins', 'Dark marble bathroom ledge', 1280, 450),
-      { src: '/images/projects/fusion-quartz-countertop-polishing-dubai-1.jpg', alt: 'Fusion quartz kitchen island countertop polished by MarblePro', caption: 'Fusion quartz · kitchen island', w: 414, h: 311 },
-      { src: '/images/projects/honey-onyx-bathroom-vanity-polishing-dubai.jpg', alt: 'Honey onyx bathroom vanity polished to a high-gloss finish by MarblePro', caption: 'Honey onyx bathroom vanity', w: 2040, h: 1530 },
-      { src: '/images/projects/granite-kitchen-countertop-polishing-dubai.jpg', alt: 'Dark grey granite kitchen countertop polished by MarblePro', caption: 'Grey granite kitchen top', w: 960, h: 1280 },
-      { src: '/images/projects/fusion-quartz-countertop-polishing-dubai-2.jpg', alt: 'Fusion quartz countertop veining restored by MarblePro', caption: 'Fusion quartz · veining', w: 414, h: 311 },
-      { src: '/images/projects/fusion-quartz-countertop-polishing-dubai-3.jpg', alt: 'Fusion quartz bathroom vanity countertop polished by MarblePro', caption: 'Fusion quartz · vanity', w: 414, h: 311 },
-      { src: '/images/projects/fusion-quartz-countertop-polishing-dubai-4.jpg', alt: 'Fusion quartz kitchen countertop detail polished by MarblePro', caption: 'Fusion quartz · detail', w: 414, h: 311 },
-    ],
+    videos: ROWS_COUNTERTOPS,
+    photoGroups: PHOTOS_COUNTERTOPS,
   },
 ];
 
@@ -322,9 +462,19 @@ export const SERVICE_WORK: Record<string, ServiceWorkItem[]> = {
 /** Intro film shown large at the top of the gallery (not in the section grids). */
 export const SHOWCASE_VIDEO: GalleryVideo = v('marblepro-showcase-uae', 'MarblePro — marble polishing & floor restoration showcase', '1:29', 'landscape', true);
 
+/** Every photo in a category, in page order (the lightbox steps through this). */
+export function categoryPhotos(c: GalleryCategory): GalleryPhoto[] {
+  return c.photoGroups.flatMap((g) => g.photos);
+}
+
+/** "A, B and C" */
+export function joinAreas(areas: string[]): string {
+  return areas.length < 2 ? areas.join('') : `${areas.slice(0, -1).join(', ')} and ${areas[areas.length - 1]}`;
+}
+
 export function categoryCounts(c: GalleryCategory) {
   return {
-    photos: c.photos.length,
+    photos: categoryPhotos(c).length,
     beforeAfter: c.beforeAfter.length + c.videoPairs.length,
     videos: c.videos.length,
   };
