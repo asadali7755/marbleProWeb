@@ -515,7 +515,7 @@ export default function GalleryClient() {
       <section className="gx-areas" data-screen-label="gallery-areas">
         <div className="gx-wrap">
           <h2>Where we <em>work.</em></h2>
-          <p>Our office is in Sharjah, and our team works across the UAE. In Dubai, that includes Palm Jumeirah, Emirates Hills, Downtown, Dubai Marina, Business Bay, Jumeirah, Al Barsha, Mirdif and Arabian Ranches. The photos above show our work, but we do not name each customer&apos;s home.</p>
+          <p>Our office is in Sharjah, and our team works across the UAE. In Dubai, that includes Palm Jumeirah, Emirates Hills, Downtown, Dubai Marina, Business Bay, Jumeirah, Al Barsha, Mirdif and Arabian Ranches. Where the boss has confirmed a job&apos;s area, such as Dubai Creek Harbour or Marina Plaza in Dubai Marina, the caption names it; we never name a customer&apos;s home.</p>
           <div className="gx-areas-links">
             {EMIRATES.map((e) => (
               <Link key={e.slug} href={`/locations/${e.slug}`} className="area">Marble polishing {e.name}</Link>

@@ -58,7 +58,7 @@ const ba = (name: string, caption: string, note: string, pendingReview?: boolean
   ...(pendingReview ? { pendingReview } : {}),
 });
 
-/** What each floor photo shows. Places stay off captions unless the job's location is known. */
+/** What each floor photo shows. Places stay off captions unless the boss has confirmed the job's location. */
 const FLOOR_CAPTIONS: Record<number, string> = {1: 'Beige marble floor · bright room', 2: 'Beige marble floor · reception room', 3: 'Cream marble hall with brown inlay border', 4: 'Grey striped marble floor', 5: 'White marble with dark veins · glass-walled room', 6: 'Cream marble with inlay border · window bay', 7: 'Beige marble hall with black border', 8: 'Cream marble with brown border', 9: 'Cream marble hall · full view', 10: 'Cream marble with curved inlay border', 11: 'White marble with dark veins · full room', 12: 'Cream marble with patterned inlay panels', 13: 'White and grey veined marble floor'};
 
 const floorPhoto = (n: number, w: number, h: number): GalleryPhoto => ({
@@ -89,9 +89,9 @@ const photo = (name: string, alt: string, caption: string, w: number, h: number)
   h,
 });
 
-const COFFEE_TABLE_PAIR = sidePair('coffee-table-polishing-dubai', 'Dark stone coffee table', 'Water rings → high gloss',
-  'Dark stone coffee table with white water rings and dull patches, before polishing',
-  'Dark stone coffee table with a high-gloss finish after MarblePro polishing, plastic sheets covering the rug');
+const COFFEE_TABLE_PAIR = sidePair('coffee-table-polishing-dubai', 'Dark stone coffee table · Dubai Creek Harbour', 'Water rings → high gloss',
+  'Dark stone coffee table in Dubai Creek Harbour with white water rings and dull patches, before polishing',
+  'The same coffee table in Dubai Creek Harbour with a high-gloss finish after MarblePro polishing, plastic sheets covering the rug');
 const GREY_VANITY_PAIR = sidePair('grey-marble-vanity-polishing-dubai', 'Grey marble vanity', 'Water marks → clean gloss',
   'Grey marble vanity with white water marks beside the basin, before polishing',
   'Grey marble vanity with clean, glossy stone around the basin after MarblePro polishing');
@@ -99,7 +99,7 @@ const TRAVERTINE_BASIN_PAIR = sidePair('travertine-basin-polishing-dubai', 'Trav
   'Travertine bathroom basin with dark marks down the centre, before cleaning',
   'The travertine basin clean and even after the dark marks were removed by MarblePro');
 
-const COFFEE_TABLE_VIDEO = nv('coffee-table-polishing-dubai-before', 'Dark stone coffee table · before', '0:12', 'portrait');
+const COFFEE_TABLE_VIDEO = nv('coffee-table-polishing-dubai-before', 'Dark stone coffee table in Dubai Creek Harbour · before', '0:12', 'portrait');
 const GREY_VANITY_VIDEO = nv('grey-marble-vanity-polishing-dubai-after', 'Grey marble vanity · after', '0:14', 'portrait');
 const TRAVERTINE_BASIN_VIDEO = nv('travertine-basin-polishing-dubai-after', 'Travertine basin · after', '0:06', 'landscape');
 const WHITE_TABLE_VIDEO = nv('white-marble-table-polishing-dubai', 'White marble table · polished', '0:06', 'landscape');
@@ -113,8 +113,8 @@ const BEIGE_FLOOR_VIDEO = nv('beige-marble-corridor-floor-polishing-dubai', 'Bei
 const WHITE_TABLE_1 = photo('white-marble-dining-table-polished-dubai-1', 'Polished white marble dining table with grey veins, set with upholstered chairs', 'White marble dining table', 720, 900);
 const WHITE_TABLE_2 = photo('white-marble-dining-table-polished-dubai-2', 'Polished white marble table with grey veins on black legs', 'White marble table · black legs', 598, 747);
 const WHITE_TABLE_3 = photo('white-marble-dining-table-polished-dubai-3', 'Close view of a polished white marble table top with long grey veins', 'White marble table · veining', 598, 747);
-const TRAVERTINE_HALLWAY = photo('travertine-hallway-floor-polishing-dubai', 'Travertine hallway floor with a glossy polished section beyond a dull section', 'Travertine hallway · polished and dull sections', 720, 1280);
-const TRAVERTINE_ENTRANCE = photo('travertine-entrance-floor-polishing-dubai', 'Polished travertine entrance floor reflecting the glass doors, next to dull stone', 'Travertine entrance · polished section', 720, 1280);
+const TRAVERTINE_HALLWAY = photo('travertine-hallway-floor-polishing-dubai', 'Travertine hallway floor at Marina Plaza, Dubai Marina, with a glossy polished section beyond a dull section', 'Travertine hallway · Marina Plaza, Dubai Marina', 720, 1280);
+const TRAVERTINE_ENTRANCE = photo('travertine-entrance-floor-polishing-dubai', 'Polished travertine entrance floor at Marina Plaza, Dubai Marina, reflecting the glass doors, next to dull stone', 'Travertine entrance · Marina Plaza, Dubai Marina', 720, 1280);
 const SHOWER_JOINT_1 = photo('travertine-shower-joint-repair-dubai-1', 'Dark joint in the corner of a travertine shower, before repair', 'Dark joint in a travertine shower corner', 720, 900);
 const SHOWER_JOINT_2 = photo('travertine-shower-joint-repair-dubai-2', 'Open joint between two travertine slabs in a shower, before repair', 'Open joint in travertine · before repair', 720, 900);
 
@@ -268,9 +268,9 @@ const PHOTOS_FLOORS: PhotoGroup[] = [
   },
   {
     title: 'Travertine floors',
-    body: 'Polished travertine next to dull stone on the same floor, so you can see the difference in one view. The polished part reflects the doors and lights; the rest has not been polished yet.',
+    body: 'A travertine floor at Marina Plaza in Dubai Marina, with polished stone next to dull stone, so you can see the difference in one view. The polished part reflects the doors and lights; the rest had not been polished yet.',
     service: { slug: 'travertine-polishing-dubai', label: 'travertine floor polishing' },
-    areas: ['Jumeirah', 'Arabian Ranches', 'Ajman'],
+    areas: ['Dubai Marina', 'JLT', 'Jumeirah', 'Ajman'],
     photos: [TRAVERTINE_HALLWAY, TRAVERTINE_ENTRANCE],
   },
 ];
@@ -397,8 +397,8 @@ const pairShots = (p: BeforeAfterPair, beforeCaption: string, afterCaption: stri
 export const SERVICE_WORK: Record<string, ServiceWorkItem[]> = {
   'marble-table-polishing-dubai': [
     {
-      h2: 'Coffee table polishing: before and after',
-      body: 'This dark stone coffee table had white water rings and dull patches across its top. The video shows the marks up close. After polishing, the top has a high gloss that reflects the lights in the room.',
+      h2: 'Coffee table polishing in Dubai Creek Harbour',
+      body: 'This dark stone coffee table, in a home in Dubai Creek Harbour, had white water rings and dull patches across its top. The video shows the marks up close. After polishing, the top has a high gloss that reflects the lights in the room.',
       shots: pairShots(COFFEE_TABLE_PAIR, 'Water rings and dull patches', 'High-gloss finish'),
       videos: [{ video: COFFEE_TABLE_VIDEO, caption: 'Video: the marks up close', tag: 'Before' }],
     },
@@ -426,7 +426,7 @@ export const SERVICE_WORK: Record<string, ServiceWorkItem[]> = {
     },
     {
       h2: 'Travertine floors: polished beside dull stone',
-      body: 'These photos show glossy polished travertine next to dull stone, so you can see the difference on one floor. The video shows another travertine floor before polishing, with worn and dull areas.',
+      body: 'These photos are from a travertine floor at Marina Plaza in Dubai Marina. They show glossy polished travertine next to dull stone, so you can see the difference on one floor. The video shows another travertine floor before polishing, with worn and dull areas.',
       shots: [TRAVERTINE_HALLWAY, TRAVERTINE_ENTRANCE],
       videos: [{ video: TRAVERTINE_FLOOR_VIDEO, caption: 'Video: a worn floor', tag: 'Before' }],
     },
