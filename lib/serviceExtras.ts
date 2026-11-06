@@ -38,7 +38,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
         { label: 'Marble cleaning', href: '/services/marble-cleaning-dubai' },
         { label: '7 signs your floor needs restoration', href: '/blog/signs-marble-floor-needs-restoration' },
         { label: 'Marble floor restoration', href: '/services/marble-floor-restoration' },
-        { label: 'Yellow stain removing', href: '/services/yellow-stain-removing' },
+        { label: 'Yellow stain removal', href: '/services/yellow-stain-removing' },
       ],
     },
     {
@@ -140,6 +140,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
       ],
       links: [
         { label: 'Marble countertop polishing', href: '/services/marble-countertop-polishing' },
+        { label: 'Marble table polishing', href: '/services/marble-table-polishing-dubai' },
         { label: 'Marble floor restoration', href: '/services/marble-floor-restoration' },
       ],
     },
@@ -466,7 +467,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
   'yellow-stain-removing': [
     {
       eyebrow: 'What it is',
-      h2: 'Marble stain removal: why stains need the right treatment',
+      h2: 'Yellow stain removal: why stains need the right treatment',
       body: [
         'Marble is porous, so liquids can sink below the surface. That is why scrubbing often fails, and why bleach or acid can make things worse. Stain removal starts by working out what caused the mark, then using a treatment that draws it back out of the stone.',
         'Yellowing is the most common complaint on white marble. It may come from rust, oil, organic seepage, old wax or the wrong cleaning products, and each cause needs a different approach.',
@@ -555,7 +556,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
         { label: 'Marble cleaning', href: '/services/marble-cleaning-dubai' },
         { label: 'Marble floor restoration', href: '/services/marble-floor-restoration' },
         { label: 'Crystallization and sealing', href: '/services/crystallization-sealing' },
-        { label: 'Yellow stain removing', href: '/services/yellow-stain-removing' },
+        { label: 'Yellow stain removal', href: '/services/yellow-stain-removing' },
       ],
     },
   ],
@@ -628,7 +629,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
         { t: 'Marble polishing', d: 'Brings back the shine on dull and scratched floors.' },
         { t: 'Terrazzo restoration', d: 'Reveals the chips hidden by years of wear.' },
         { t: 'Marble repair', d: 'Fixes scratches, cracks and chips.' },
-        { t: 'Yellow stain removing', d: 'Treats yellowing and deep stains on pale marble.' },
+        { t: 'Yellow stain removal', d: 'Treats yellowing and deep stains on pale marble.' },
       ],
       links: [
         { label: 'Marble polishing', href: '/services/marble-polishing-dubai' },
@@ -706,7 +707,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
       ],
       links: [
         { label: 'Marble polishing Dubai', href: '/services/marble-polishing-dubai' },
-        { label: 'Yellow stain removing', href: '/services/yellow-stain-removing' },
+        { label: 'Yellow stain removal', href: '/services/yellow-stain-removing' },
         { label: 'Marble scratch and crack repair', href: '/services/marble-scratch-repair-dubai' },
       ],
     },
@@ -776,7 +777,10 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
         { t: 'Can I use a normal floor cleaner on marble?', d: 'Check the label first. Many household cleaners are too acidic or too harsh for marble.' },
         { t: 'How do I book?', d: 'Call or WhatsApp 054 556 77 99. We reply within 30 minutes and agree a visit time with you.' },
       ],
-      links: [{ label: 'How to remove yellow stains from marble', href: '/blog/how-to-remove-yellow-stains-from-marble' }],
+      links: [
+        { label: 'How to remove yellow stains from marble', href: '/blog/how-to-remove-yellow-stains-from-marble' },
+        { label: 'Marble table polishing', href: '/services/marble-table-polishing-dubai' },
+      ],
     },
   ],
   'floor-polishing-dubai': [
@@ -894,7 +898,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
         { t: 'Yellowed marble', d: 'Deep discolouration gets its own stain treatment before the final polish.' },
       ],
       links: [
-        { label: 'Yellow stain removing', href: '/services/yellow-stain-removing' },
+        { label: 'Yellow stain removal', href: '/services/yellow-stain-removing' },
         { label: '7 signs your floor needs restoration', href: '/blog/signs-marble-floor-needs-restoration' },
       ],
     },
@@ -949,7 +953,11 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
         { t: 'How long does restoration take?', d: 'It depends on the area and the amount of repair work. You get a clear timeline with your quote.' },
         { t: 'Does restoration stop the damage coming back?', d: 'It removes the existing damage, and sealing helps protect the floor, but marble still needs care. Wipe up acidic spills quickly and use pH-neutral cleaners.' },
       ],
-      links: [{ label: 'How often should marble be polished?', href: '/blog/how-often-polish-marble-floors-dubai' }],
+      links: [
+        { label: 'How often should marble be polished?', href: '/blog/how-often-polish-marble-floors-dubai' },
+        { label: 'Marble countertop polishing', href: '/services/marble-countertop-polishing' },
+        { label: 'Marble table polishing', href: '/services/marble-table-polishing-dubai' },
+      ],
     },
   ],
   'calacatta-marble-polishing-dubai': [
@@ -1212,7 +1220,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
   'marble-countertop-polishing': [
     {
       eyebrow: 'What it is',
-      h2: 'What countertop polishing can fix',
+      h2: 'What marble countertop polishing can fix',
       body: [
         'A marble countertop takes more daily punishment than a floor. Lemon, tomato, vinegar and wine can all etch it, leaving dull spots that look like water marks but do not wipe off. Oil can also soak in and leave a dark stain.',
         'We polish tops in place, so you do not have to remove anything. Our team protects the cabinets, sink and walls first, and we work by hand around taps and edges where a machine cannot reach.',

@@ -68,7 +68,7 @@ export const SERVICES: Service[] = [
   { num: "10", slug: "granite-polishing",                name: "Granite Polishing",         short: "Slip-safe granite gloss for villas, hotels & retail floors." },
   { num: "11", slug: "quartz-polishing",                 name: "Quartz Polishing",          short: "Engineered quartz buff & sealant — no etching, food-safe finishes." },
   { num: "12", slug: "corian-countertop-polishing",      name: "Corian Countertop Care",    short: "Hand-polished Corian seam repair, scratch removal & matte/gloss buff." },
-  { num: "13", slug: "yellow-stain-removing",            name: "Yellow Stain Removing",     short: "Deep-set yellowing, rust, watermarks & efflorescence — chemically lifted." },
+  { num: "13", slug: "yellow-stain-removing",            name: "Yellow Stain Removal",     short: "Deep-set yellowing, rust, watermarks & efflorescence — chemically lifted." },
   { num: "14", slug: "kitchen-top-polishing",            name: "Kitchen Top Polishing",     short: "Sealing & polishing for daily-use kitchen surfaces. Oil-resistant." },
   { num: "15", slug: "crystallization-sealing",          name: "Crystallization & Sealing", short: "Permanent shine via crystallizers — extends life of the stone." },
   { num: "16", slug: "floor-polishing-dubai",            name: "Floor Polishing Dubai",     short: "Marble, granite, terrazzo and travertine floors polished across Dubai." },

@@ -191,7 +191,7 @@ function Hero() {
 }
 
 function Marquee() {
-  const items = ['Marble Polishing Dubai','Terrazzo Restoration','Granite Polishing','Quartz Care','Yellow Stain Removing','Kitchen Top Polishing','Corian Repair'];
+  const items = ['Marble Polishing Dubai','Terrazzo Restoration','Granite Polishing','Quartz Care','Yellow Stain Removal','Kitchen Top Polishing','Corian Repair'];
   const row = items.flatMap((t, i) => [
     <span key={`t${i}`}>{t}</span>,
     <span key={`d${i}`} className="dot">✦</span>,
@@ -474,7 +474,7 @@ function Gallery() {
           <h2 className="sec-title">Real Marble Polishing Results Across Dubai &amp; UAE — <em>Before &amp; After.</em></h2>
         </div>
         <p className="sec-lead">
-          Real marble floor restoration, deep scratch removal and yellow stain removing results from
+          Real marble floor restoration, deep scratch removal and yellow stain removal results from
           Dubai, Abu Dhabi and Sharjah. Same stone, same lighting — only the finish has changed.
           Slide the handle to compare.
         </p>
@@ -632,7 +632,7 @@ function QuoteBand() {
             <span className="sec-eyebrow">08 — Quote request · all UAE emirates</span>
             <h2 className="cta-h">Affordable marble floor polishing and restoration services — <em>get your quote today.</em></h2>
             <p style={{ fontSize: 17, lineHeight: 1.55, opacity: 0.78, maxWidth: '42ch', marginTop: 22 }}>
-              As a marble polishing company in Dubai, we give you a clear, fixed-price quote after a free site visit. Italian marble polishing and crystallization, floor restoration, countertop polishing and yellow stain removing across all 7 UAE emirates.
+              As a marble polishing company in Dubai, we give you a clear, fixed-price quote after a free site visit. Italian marble polishing and crystallization, floor restoration, countertop polishing and yellow stain removal across all 7 UAE emirates.
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, marginTop: 24, fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase', opacity: 0.7 }}>
               <span>✦ Reply within 30 minutes</span>

@@ -68,7 +68,7 @@ const handWrittenGuides: Guide[] = [
     title: 'How to Remove Yellow Stains from Marble Floors (Dubai Guide) | MarblePro',
     h1: 'How to Remove Yellow Stains from Marble Floors',
     description: 'Why marble turns yellow and how professionals remove it. A practical Dubai guide to safe yellow-stain removal — and why bleach and acid make it worse.',
-    keywords: 'how to remove yellow stains from marble, yellow marble floor dubai, marble discolouration, yellow stain removing uae',
+    keywords: 'how to remove yellow stains from marble, yellow marble floor dubai, marble discolouration, yellow stain removal uae',
     date: '2026-06-13', readMins: 5, category: 'Stain Removal',
     excerpt: 'Why marble yellows in UAE homes, why DIY bleach makes it worse, and how professional poultice treatment draws the stain out for good.',
     intro: 'Yellowing is one of the most common marble problems in UAE homes — and one of the most misunderstood. The stain usually sits deep inside the stone, so surface cleaning does nothing and harsh chemicals only set it deeper. Here is what actually causes it and how it is properly removed.',
@@ -93,7 +93,7 @@ const handWrittenGuides: Guide[] = [
       { q: 'Will the treated spot match the rest of the floor?', a: 'Yes — we re-polish after treatment so the area blends seamlessly with the surrounding marble.' },
     ],
     related: [
-      { label: 'Yellow Stain Removing', href: '/services/yellow-stain-removing' },
+      { label: 'Yellow Stain Removal', href: '/services/yellow-stain-removing' },
       { label: 'Marble Floor Restoration', href: '/services/marble-floor-restoration' },
       { label: 'Book an inspection', href: '/contact' },
     ],
@@ -302,7 +302,7 @@ const handWrittenGuides: Guide[] = [
     ],
     related: [
       { label: 'Marble Floor Restoration', href: '/services/marble-floor-restoration' },
-      { label: 'Yellow Stain Removing', href: '/services/yellow-stain-removing' },
+      { label: 'Yellow Stain Removal', href: '/services/yellow-stain-removing' },
       { label: 'Book an inspection', href: '/contact' },
     ],
   },

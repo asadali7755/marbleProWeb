@@ -14,7 +14,7 @@ const FAQS = [
   },
   {
     q: 'Can you fix deep cracks or completely yellowed marble?',
-    a: 'Yes. Our marble floor restoration services include specialised colour-matched epoxy crack filling and advanced yellow stain removing procedures to repair deeply neglected natural stone — restoring it to better than new.',
+    a: 'Yes. Our marble floor restoration services include specialised colour-matched epoxy crack filling and advanced yellow stain removal procedures to repair deeply neglected natural stone — restoring it to better than new.',
   },
   {
     q: 'Why choose MarblePro for marble polishing in Dubai?',

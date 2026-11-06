@@ -146,7 +146,7 @@ const schemaOrg = {
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Premium Marble Countertop Polishing Dubai" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Terrazzo Floor Polishing Dubai" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Granite Polishing Services Dubai" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Professional Yellow Stain Removing UAE" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Yellow Stain Removal" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Deep Scratch Removal and Marble Crack Filling Dubai" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Corian Countertop Polishing and Scratch Repair Dubai" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Quartz Polishing and Stain Protection Abu Dhabi" } },
