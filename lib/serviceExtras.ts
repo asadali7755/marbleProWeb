@@ -517,7 +517,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
       h2: 'Choosing a marble polishing company in Dubai',
       body: [
         'Dubai has many companies offering marble polishing, and the results can vary a lot. A cheap coating can look good for a few weeks and then fade, while rough work can leave swirl marks on expensive stone. A good marble polishing company should inspect your floor first, explain the process and put the price in writing.',
-        'At MarblePro, the site visit is free, the quote is fixed for the agreed scope and our work comes with a 1-month written guarantee. We use diamond pads up to 3000 grit, Italian crystallization and a dust-free wet process.',
+        'MarblePro is a DED-licensed marble polishing company. The site visit is free, the quote is fixed for the agreed scope and our work comes with a 1-month written guarantee. We use diamond pads up to 3000 grit, Italian crystallization and a dust-free wet process.',
       ],
     },
     {

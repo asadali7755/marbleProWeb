@@ -16,7 +16,7 @@ const SITE = 'https://www.marblepro.ae';
 const bannerAlt = (slug: string, name: string) =>
   slug === 'dibba'
     ? 'Government building in Dibba, UAE, where MarblePro offers marble polishing'
-    : `Marble polishing in ${name}: an example of a polished marble floor by MarblePro`;
+    : `Marble polishing company in ${name}: an example of a polished marble floor by MarblePro`;
 
 export function generateStaticParams() {
   return LOCATIONS.map((l) => ({ slug: l.slug }));
