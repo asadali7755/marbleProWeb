@@ -30,13 +30,13 @@ const handWrittenGuides: Guide[] = [
     image: '/images/projects/polished-marble-floor-dubai-1.webp',
     title: 'How Much Does Marble Polishing Cost in Dubai? (2026 Price Guide) | MarblePro',
     h1: 'How Much Does Marble Polishing Cost in Dubai?',
-    description: 'Marble polishing in Dubai starts from AED 70 per square metre (AED 40 in Sharjah). What moves the price, what is included and how to get a fixed quote.',
+    description: 'Marble polishing cost in Dubai starts from AED 70 per m² (AED 40 in Sharjah). What moves the price, what a fair quote includes and how to avoid overpaying.',
     keywords: 'marble polishing cost dubai, marble polishing price uae, marble floor polishing cost, how much does marble polishing cost',
     date: '2026-06-13', readMins: 6, category: 'Pricing',
     excerpt: 'What marble polishing really costs in Dubai in 2026 — the factors that move the price, what should be included, and how to avoid surprise charges.',
-    intro: 'Marble polishing in Dubai starts from AED 70 per square metre, and from AED 40 per square metre in Sharjah. The final rate changes with the condition of your stone, the finish you want and the size of the job. This guide breaks down exactly what you are paying for so you can compare quotes fairly and avoid hidden charges.',
+    intro: 'Marble polishing cost in Dubai starts from AED 70 per square metre, and from AED 40 per square metre in Sharjah. The final rate changes with the condition of your stone, the finish you want and the size of the job. This guide breaks down exactly what you are paying for so you can compare quotes fairly and avoid hidden charges.',
     sections: [
-      { h2: 'What affects the price of marble polishing?', body: [
+      { h2: 'What affects marble polishing cost?', body: [
         'Five things move a marble polishing quote up or down: the <strong>area size</strong> (larger floors cost less per m²), the <strong>current condition</strong> (deep scratches, etching and lippage need more grinding), the <strong>type of stone</strong> (delicate stones like onyx and Calacatta need finer, slower work), the <strong>finish</strong> (a basic buff vs full diamond polishing with Italian crystallization), and <strong>access</strong> (furniture, occupied homes and high floors add time).',
         'This is why a trustworthy company always inspects the floor on site before quoting — a fair price cannot be given by phone alone.',
       ]},
@@ -49,6 +49,10 @@ const handWrittenGuides: Guide[] = [
       ]},
       { h2: 'How to avoid overpaying', body: [
         'Get at least two on-site quotes, make sure they cover the same scope, and be wary of prices that look far below the market — they often skip crystallization or use wax coatings that wear off in weeks. A fixed-price written quote protects you from surprise charges on the day.',
+      ]},
+      { h2: 'How to estimate your marble polishing cost', body: [
+        'Measure each room in square metres (length × width) and add them up. Multiply by the starting rate for your area to get the lowest likely figure: for example, 60 m² in Dubai at the AED 70 starting rate starts from AED 4,200. Deep scratches, cracks, lippage or a delicate stone add to that, so treat it as a starting point, not a quote. If you think in square feet, AED 70 per m² is about AED 6.50 per sq ft, and AED 40 per m² is about AED 3.70.',
+        'For a rough idea, send the measurements and a few clear photos on WhatsApp, then book the free site visit for a fixed price.',
       ]},
     ],
     faqs: [
@@ -71,7 +75,7 @@ const handWrittenGuides: Guide[] = [
     keywords: 'how to remove yellow stains from marble, yellow marble floor dubai, marble discolouration, yellow stain removal uae',
     date: '2026-06-13', readMins: 5, category: 'Stain Removal',
     excerpt: 'Why marble yellows in UAE homes, why DIY bleach makes it worse, and how professional poultice treatment draws the stain out for good.',
-    intro: 'Yellowing is one of the most common marble problems in UAE homes — and one of the most misunderstood. The stain usually sits deep inside the stone, so surface cleaning does nothing and harsh chemicals only set it deeper. Here is what actually causes it and how it is properly removed.',
+    intro: 'To remove yellow stains from marble safely, you first need to know what caused them. Yellowing is one of the most common marble problems in UAE homes — and one of the most misunderstood. The stain usually sits deep inside the stone, so surface cleaning does nothing and harsh chemicals only set it deeper. Here is what actually causes it and how it is properly removed.',
     sections: [
       { h2: 'Why does marble turn yellow?', body: [
         'There are four common causes: <strong>iron oxidation</strong> (natural iron in the stone rusting over time), <strong>trapped moisture</strong> from below the tile, <strong>wax and sealer build-up</strong> that ages and yellows, and <strong>improper cleaning chemicals</strong> that react with the marble. Each cause needs a different treatment — which is why diagnosis comes first.',
@@ -79,12 +83,15 @@ const handWrittenGuides: Guide[] = [
       { h2: 'Why bleach and acid make it worse', body: [
         'It is tempting to reach for bleach, vinegar or a strong acid cleaner. Don\'t. Acids etch and dull marble permanently, and bleach can drive organic stains deeper while leaving the yellowing untouched. Most "set-in" yellow stains we see were made harder to remove by DIY attempts.',
       ]},
-      { h2: 'How professionals remove yellow stains', body: [
+      { h2: 'How professionals remove yellow stains from marble', body: [
         'The professional method is a <strong>poultice</strong> — a paste matched to the stain type that is applied over the area and left for 24–48 hours. As it dries it draws the pigment up and out of the stone\'s pores, rather than bleaching it on the surface. Deep or old stains may need two cycles.',
         'Once the stain is lifted, the area is re-polished so the treated patch blends perfectly with the surrounding floor — you would never know it was there.',
       ]},
       { h2: 'Can every yellow stain be removed?', body: [
         'Most can be dramatically improved or fully removed. Iron-oxidation staining deep in the slab is the hardest case, but even then a colour-matched restoration can make it disappear visually. A quick inspection tells you exactly what is achievable before any work begins.',
+      ]},
+      { h2: 'How to stop marble turning yellow again', body: [
+        'Strip old wax properly instead of adding new coats, because wax yellows as it ages. Clean with a pH-neutral stone cleaner, never bleach or vinegar. Fix leaks under the floor or behind showers quickly, since water moving through the stone can carry iron to the surface. Reseal light-coloured marble when water stops beading on it.',
       ]},
     ],
     faqs: [
@@ -119,8 +126,11 @@ const handWrittenGuides: Guide[] = [
       { h2: 'Polishing differences', body: [
         'The two stones need different techniques. Marble responds to a diamond grit sequence finished with Italian crystallization for a deep mirror gloss. Granite is far harder and needs industrial-grade diamond discs — generic pads simply skid on it, which is why many cleaning companies avoid granite altogether.',
       ]},
-      { h2: 'Which should you choose?', body: [
+      { h2: 'Marble vs granite: which should you choose?', body: [
         'For a luxurious villa floor, bathroom or feature wall where looks lead, marble is hard to beat. For a busy kitchen counter or a commercial floor that must take punishment, granite is the safer pick. Many UAE homes use both — and we polish and maintain either to the same gloss standard.',
+      ]},
+      { h2: 'Marble vs granite in kitchens and bathrooms', body: [
+        'To tell them apart, look closely: granite shows speckles and grains, while marble shows flowing veins. As countertops, granite copes better with lemon juice, wine and hot pans, and it rarely etches. Marble can work in a kitchen if you accept a lived-in look, or choose a honed finish that hides etch marks. In bathrooms both stones work, but marble needs quicker wiping of soap, shampoo and hard-water spots, and both should be sealed.',
       ]},
     ],
     faqs: [
@@ -143,9 +153,9 @@ const handWrittenGuides: Guide[] = [
     keywords: 'how often polish marble floors, marble maintenance dubai, marble floor care uae, marble polishing frequency',
     date: '2026-06-13', readMins: 5, category: 'Maintenance',
     excerpt: 'How often villas, apartments and commercial floors actually need polishing in the UAE — and the daily habits that make the gloss last longer.',
-    intro: 'There is no single answer — it depends on foot traffic, the type of stone and how the floor is cleaned day to day. But there are clear rules of thumb for UAE properties, where desert sand is the biggest enemy of a glossy marble floor.',
+    intro: 'How often should you polish marble floors? There is no single answer — it depends on foot traffic, the type of stone and how the floor is cleaned day to day. But there are clear rules of thumb for UAE properties, where desert sand is the biggest enemy of a glossy marble floor.',
     sections: [
-      { h2: 'Recommended polishing frequency', body: [
+      { h2: 'How often to polish marble floors', body: [
         'As a guide: <strong>residential villas</strong> usually need professional marble polishing every <strong>1–2 years</strong>; <strong>high-traffic commercial spaces</strong> such as hotel lobbies and showrooms benefit from a refresh every <strong>6 months</strong>; and <strong>low-traffic areas</strong> like guest rooms can go longer. Crystallized floors hold their gloss noticeably longer than waxed ones.',
       ]},
       { h2: 'Why UAE floors dull faster', body: [
@@ -156,6 +166,10 @@ const handWrittenGuides: Guide[] = [
       ]},
       { h2: 'Signs it is time to re-polish', body: [
         'Book a polish when you notice loss of reflection, visible foot-traffic paths, dull or cloudy patches, or light scratches catching the light. Catching it early means a lighter, cheaper refresh rather than a full restoration later.',
+      ]},
+      { h2: 'How often to polish each room', body: [
+        'Entrances, hallways and kitchens take the most sand and traffic, so they usually dull first and may need attention every year. Living rooms and bedrooms often go two years or more. Bathrooms depend on how quickly spills and hard-water spots are wiped up.',
+        'You do not have to polish the whole house at once. Polishing only the worn areas is often enough, as long as the finish is matched to the rest of the floor.',
       ]},
     ],
     faqs: [
@@ -178,7 +192,7 @@ const handWrittenGuides: Guide[] = [
     keywords: 'marble polishing vs crystallization, what is marble crystallization, marble crystallization dubai, difference polishing crystallization',
     date: '2026-06-13', readMins: 5, category: 'Process',
     excerpt: 'Polishing and crystallization are often confused but do different jobs. Here is what each one is, when you need it, and why the combination lasts longest.',
-    intro: 'People often use "polishing" and "crystallization" to mean the same thing — but they are two separate steps. In short: polishing physically restores the surface, and crystallization chemically hardens and protects it. The best, longest-lasting results use both, in order.',
+    intro: 'Marble polishing vs crystallization is one of the most common questions about stone care. People often use "polishing" and "crystallization" to mean the same thing — but they are two separate steps. In short: polishing physically restores the surface, and crystallization chemically hardens and protects it. The best, longest-lasting results use both, in order.',
     sections: [
       { h2: 'What is marble polishing?', body: [
         'Polishing is a <strong>mechanical</strong> process. Diamond abrasives are worked across the marble through a sequence of grits (from coarse to very fine, typically 50 up to 3000), removing scratches, etch marks and dullness and gradually bringing the surface up to a smooth, reflective finish. It physically reshapes the top layer of the stone.',
@@ -186,11 +200,15 @@ const handWrittenGuides: Guide[] = [
       { h2: 'What is crystallization?', body: [
         'Crystallization is a <strong>chemical</strong> process applied after polishing. A crystallizing compound reacts with the calcium in the marble under a buffing pad, forming a thin, hardened, highly reflective layer that is chemically bonded into the stone — not sitting on top like a wax or coating. This is what gives that deep, mirror-like gloss and makes the finish far more durable.',
       ]},
-      { h2: 'Polishing vs crystallization — the key difference', body: [
+      { h2: 'Marble polishing vs crystallization: the key difference', body: [
         'Polishing <em>restores</em> the marble; crystallization <em>protects and intensifies</em> it. Polishing alone will look great but dull faster under foot traffic. Crystallization on un-restored marble cannot fix scratches or etching. That is why a quality job does both: grind and polish first, then crystallize and seal.',
       ]},
       { h2: 'Why not just use wax?', body: [
         'Cheap wax or acrylic coatings can fake a shine for a few weeks, then wear off in patches and trap dirt. Genuine Italian crystallization is a chemical bond, not a film — it is slip-resistant, holds its gloss for years, and does not yellow. If a quote is unusually cheap, ask whether they are crystallizing or just waxing.',
+      ]},
+      { h2: 'Do you need both polishing and crystallization?', body: [
+        'Not always. A floor with scratches or dull patches needs polishing first, because crystallization cannot remove damage; it only hardens the surface that is already there. A floor that is still smooth and shiny can sometimes be refreshed with crystallization alone.',
+        'If you can feel marks with a fingernail, plan for polishing. If the floor is only a little flat, ask whether crystallization on its own is enough.',
       ]},
     ],
     faqs: [
@@ -213,7 +231,7 @@ const handWrittenGuides: Guide[] = [
     keywords: 'marble floor care uae, how to clean marble dubai, marble maintenance, ph neutral cleaner marble',
     date: '2026-06-13', readMins: 6, category: 'Maintenance',
     excerpt: 'Sand, sun and hard water are tough on marble. A simple, UAE-specific routine to keep your floors glossy and avoid the mistakes that dull or etch them.',
-    intro: 'Marble is a stunning but sensitive stone, and the UAE climate is demanding — fine desert sand, strong sun and hard water all work against it. The good news: a simple daily-and-weekly routine keeps marble looking new and dramatically extends the time between professional polishes.',
+    intro: 'Knowing how to care for marble floors matters even more in the UAE. Marble is a stunning but sensitive stone, and the UAE climate is demanding — fine desert sand, strong sun and hard water all work against it. The good news: a simple daily-and-weekly routine keeps marble looking new and dramatically extends the time between professional polishes.',
     sections: [
       { h2: 'The single most important rule', body: [
         'Only ever clean marble with a <strong>pH-neutral stone cleaner</strong>. Never use vinegar, lemon, bleach or general acidic/abrasive cleaners — they etch the surface and leave permanent dull spots. This one habit prevents most of the marble damage we are called to repair.',
@@ -224,8 +242,12 @@ const handWrittenGuides: Guide[] = [
       { h2: 'Spills, sun and hard water', body: [
         'Wipe spills immediately — especially coffee, wine, citrus and oils, which stain and etch fast. In sunny rooms, rotate rugs and furniture occasionally so the floor ages evenly. For hard-water marks in bathrooms, use a stone-safe cleaner and dry surfaces after use rather than letting deposits build up.',
       ]},
-      { h2: 'A simple maintenance routine', body: [
+      { h2: 'A simple routine to care for marble floors', body: [
         '<strong>Daily:</strong> dust-mop and wipe spills. <strong>Weekly:</strong> damp-mop with a pH-neutral cleaner. <strong>Yearly (or 6 months for busy areas):</strong> professional polish and re-seal. A breathable impregnating sealer adds an extra layer of protection against stains and moisture between visits.',
+      ]},
+      { h2: 'What to keep in your marble care kit', body: [
+        'A soft dust mop or microfibre mop for daily sand, a pH-neutral stone cleaner, a few clean microfibre cloths for spills, and door mats at every entrance. Felt pads under chair and table legs stop the fine scratches that slowly dull a floor.',
+        'Leave out vinegar, lemon, bleach, strong glass cleaners and scouring pads. They either etch marble or scratch it. In marble showers, a quick squeegee after each use stops soap film and hard-water spots building up.',
       ]},
     ],
     faqs: [
@@ -250,7 +272,7 @@ const handWrittenGuides: Guide[] = [
     excerpt: 'Travertine and marble are often confused. How to tell them apart, why travertine needs void-filling, and how polishing differs for each.',
     intro: 'Travertine and marble are both natural stones and can look similar, but they are not the same — and they need different care. The biggest practical difference is that travertine has natural holes that must be filled before polishing. Here is how to tell them apart and what each needs.',
     sections: [
-      { h2: 'Are travertine and marble the same?', body: [
+      { h2: 'Travertine vs marble: are they the same?', body: [
         'No. Both form from calcium carbonate, but travertine is a type of limestone formed around mineral springs, while marble is metamorphic (formed under heat and pressure). The easiest visual giveaway: travertine has small natural <strong>holes and voids</strong> and a warm, banded look; marble has flowing veins and a denser, glossier surface.',
       ]},
       { h2: 'Why travertine needs void-filling', body: [
@@ -261,6 +283,10 @@ const handWrittenGuides: Guide[] = [
       ]},
       { h2: 'Which is better for UAE homes?', body: [
         'Travertine suits warm, natural, Mediterranean-style interiors and outdoor areas like pool surrounds (with the right sealer). Marble suits a more luxurious, high-gloss look. Both perform well when properly maintained — the choice is mostly about the look you want.',
+      ]},
+      { h2: 'Travertine vs marble: upkeep over the years', body: [
+        'Both stones are calcium-based, so both etch with acids and both need sealing. Travertine has one extra job: its filled holes can wear or drop out in busy areas and need topping up. Marble usually shows scratches and etch marks more clearly, especially in light colours.',
+        'Over the years the cost of upkeep is similar. What differs is the kind of care each one needs.',
       ]},
     ],
     faqs: [
@@ -285,7 +311,7 @@ const handWrittenGuides: Guide[] = [
     excerpt: 'Not sure if your marble just needs cleaning or full restoration? Seven clear signs to look for — and why catching them early saves money.',
     intro: 'Marble does not fail overnight — it declines gradually, so many owners do not notice until it looks badly worn. Catching the signs early means a lighter, cheaper refresh instead of a full restoration later. Here are seven clear signals that your floor needs professional attention.',
     sections: [
-      { h2: 'The 7 warning signs', body: [
+      { h2: '7 signs your marble floor needs restoration', body: [
         '<strong>1. Loss of reflection</strong> — the floor no longer mirrors light the way it used to. <strong>2. Traffic paths</strong> — visibly duller lanes where people walk most. <strong>3. Etch marks</strong> — dull, cloudy spots from spills like citrus, coffee or cleaners. <strong>4. Scratches</strong> that catch the light across the surface. <strong>5. Yellowing or discolouration</strong> spreading across tiles. <strong>6. Cracks or chips</strong> in the stone or along edges. <strong>7. Lippage</strong> — uneven tiles you can feel underfoot or that catch a heel.',
       ]},
       { h2: 'Cleaning vs restoration — what\'s the difference?', body: [
@@ -293,6 +319,10 @@ const handWrittenGuides: Guide[] = [
       ]},
       { h2: 'Why act early', body: [
         'Light dullness can be corrected with a quick polish. Left for years, the same floor may need full grinding, crack filling and stain treatment — more time and cost. An on-site inspection tells you exactly where your floor stands and the lightest fix that will work.',
+      ]},
+      { h2: 'What to do when you spot the signs', body: [
+        'Take clear photos of the problem areas in daylight and note when you first saw them. Check whether anything changed recently, such as a new cleaner, a leak or building work, and stop using acidic or abrasive products straight away.',
+        'Then have the floor inspected. Many early problems, like dull paths or light etching, need only polishing, while cracks, lippage and yellowing need restoration.',
       ]},
     ],
     faqs: [
