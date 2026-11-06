@@ -30,18 +30,18 @@ const handWrittenGuides: Guide[] = [
     image: '/images/projects/polished-marble-floor-dubai-1.webp',
     title: 'How Much Does Marble Polishing Cost in Dubai? (2026 Price Guide) | MarblePro',
     h1: 'How Much Does Marble Polishing Cost in Dubai?',
-    description: 'A clear 2026 guide to marble polishing prices in Dubai & UAE — what affects the cost per square metre, what is included, and how to get an accurate fixed quote.',
+    description: 'Marble polishing in Dubai starts from AED 70 per square metre (AED 40 in Sharjah). What moves the price, what is included and how to get a fixed quote.',
     keywords: 'marble polishing cost dubai, marble polishing price uae, marble floor polishing cost, how much does marble polishing cost',
     date: '2026-06-13', readMins: 6, category: 'Pricing',
     excerpt: 'What marble polishing really costs in Dubai in 2026 — the factors that move the price, what should be included, and how to avoid surprise charges.',
-    intro: 'The honest answer is: it depends. Marble polishing in Dubai is priced by the square metre, and the rate changes with the condition of your stone, the finish you want and the size of the job. This guide breaks down exactly what you are paying for so you can compare quotes fairly and avoid hidden charges.',
+    intro: 'Marble polishing in Dubai starts from AED 70 per square metre, and from AED 40 per square metre in Sharjah. The final rate changes with the condition of your stone, the finish you want and the size of the job. This guide breaks down exactly what you are paying for so you can compare quotes fairly and avoid hidden charges.',
     sections: [
       { h2: 'What affects the price of marble polishing?', body: [
         'Five things move a marble polishing quote up or down: the <strong>area size</strong> (larger floors cost less per m²), the <strong>current condition</strong> (deep scratches, etching and lippage need more grinding), the <strong>type of stone</strong> (delicate stones like onyx and Calacatta need finer, slower work), the <strong>finish</strong> (a basic buff vs full diamond polishing with Italian crystallization), and <strong>access</strong> (furniture, occupied homes and high floors add time).',
         'This is why a trustworthy company always inspects the floor on site before quoting — a fair price cannot be given by phone alone.',
       ]},
-      { h2: 'Typical price ranges in Dubai (indicative)', body: [
-        'As a rough guide for 2026, standard marble floor polishing in Dubai tends to fall in the lower-to-mid range per square metre, while full restoration (crack filling, lippage grinding, etch reversal) and premium stones sit higher. Crystallization and sealing are usually priced as an add-on or included in a premium package.',
+      { h2: 'MarblePro starting prices in the UAE', body: [
+        'Our stone services start from <strong>AED 70 per square metre in Dubai</strong> (including Jumeirah) and <strong>Abu Dhabi</strong>, and from <strong>AED 40 per square metre in Sharjah</strong>. For Ajman, Ras Al Khaimah, Umm Al Quwain and Fujairah, we give the rate in your quote. These are starting rates: full restoration (crack filling, lippage grinding, etch removal) and delicate stones such as onyx and Calacatta cost more.',
         'Treat any fixed online price with caution — a 30 m² etched bathroom and a 300 m² villa floor in good condition are completely different jobs. The only accurate number is a written quote after inspection.',
       ]},
       { h2: 'What should be included in the price?', body: [

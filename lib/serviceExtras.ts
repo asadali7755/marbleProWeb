@@ -88,7 +88,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
       eyebrow: 'Pricing',
       h2: 'How marble polishing is priced in Dubai',
       body: [
-        'Marble polishing in Dubai is priced by area, in square metres or square feet, and the rate depends on the job. The main factors are the area size, the condition of the stone, the finish you want and how much access the crew has. A small etched bathroom and a large villa floor in good condition are very different jobs, so we do not quote one flat rate for everything.',
+        'Marble polishing in Dubai is priced by area, in square metres or square feet, and the rate depends on the job. The main factors are the area size, the condition of the stone, the finish you want and how much access the crew has. A small etched bathroom and a large villa floor in good condition are very different jobs, so we do not quote one flat rate for everything. Prices start from AED 70 per square metre in Dubai and Abu Dhabi, and from AED 40 per square metre in Sharjah.',
         'The site visit is free and there is no obligation. You get a fixed price for the agreed scope, with no hidden charges. For a rough idea first, send a photo of the floor on WhatsApp.',
       ],
       links: [{ label: 'Full guide: marble polishing cost in Dubai', href: '/blog/marble-polishing-cost-dubai' }],
@@ -221,7 +221,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
       items: [
         { t: 'Do you grind granite and terrazzo too?', d: 'Yes. Granite and terrazzo floors can also be ground and polished, using machinery suited to each.' },
         { t: 'Is grinding safe for thin marble?', d: 'We check the condition of the floor first, and only grind as much as it needs.' },
-        { t: 'How is it priced?', d: 'By area and condition. The site visit is free, and you receive a fixed price.' },
+        { t: 'How is it priced?', d: 'By area and condition, from AED 70 per square metre in Dubai and Abu Dhabi and AED 40 in Sharjah. The site visit is free, and you receive a fixed price.' },
       ],
       links: [
         { label: 'Granite polishing', href: '/services/granite-polishing' },
@@ -758,7 +758,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
       eyebrow: 'Pricing',
       h2: 'How marble cleaning is priced',
       body: [
-        'The price depends on the size of the area, the condition of the stone and how easy it is to reach. A single bathroom and a full villa floor are very different jobs, so we do not quote one flat rate for everything. The site visit is free, and you get a fixed price for the agreed work before anything starts.',
+        'The price depends on the size of the area, the condition of the stone and how easy it is to reach. A single bathroom and a full villa floor are very different jobs, so we do not quote one flat rate for everything. Prices start from AED 70 per square metre in Dubai and Abu Dhabi, and from AED 40 per square metre in Sharjah. The site visit is free, and you get a fixed price for the agreed work before anything starts.',
       ],
     },
     {
@@ -865,7 +865,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
       eyebrow: 'Pricing',
       h2: 'Floor polishing price in Dubai',
       body: [
-        'Stone floor polishing is usually priced by the square metre. The rate depends on the stone, its condition, the area and the finish you want. That is why we check the floor first. The site visit is free, and your fixed price covers the agreed scope.',
+        'Stone floor polishing is usually priced by the square metre. Prices start from AED 70 per square metre in Dubai and Abu Dhabi, and from AED 40 per square metre in Sharjah. The rate depends on the stone, its condition, the area and the finish you want. That is why we check the floor first. The site visit is free, and your fixed price covers the agreed scope.',
       ],
       links: [{ label: 'Marble polishing cost guide', href: '/blog/marble-polishing-cost-dubai' }],
     },
@@ -930,7 +930,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
       eyebrow: 'Pricing',
       h2: 'What affects the cost of marble floor restoration in Dubai?',
       body: [
-        'Restoration costs more per square metre than a standard polish because there is more work in it. The price depends on the floor area, the number of cracks and chips, how much grinding the tiles need and the finish you want. That is why we inspect first instead of quoting blind.',
+        'Prices start from AED 70 per square metre in Dubai and Abu Dhabi, and from AED 40 per square metre in Sharjah. Restoration usually costs more per square metre than a standard polish because there is more work in it. The price depends on the floor area, the number of cracks and chips, how much grinding the tiles need and the finish you want. That is why we inspect first instead of quoting blind.',
         'The site visit is free, and you receive a fixed price for the agreed scope. Your restored floor is covered by a 1-month written guarantee.',
       ],
       links: [{ label: 'Marble polishing and restoration cost guide', href: '/blog/marble-polishing-cost-dubai' }],

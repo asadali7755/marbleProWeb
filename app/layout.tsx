@@ -103,7 +103,7 @@ const schemaOrg = {
   "url": "https://www.marblepro.ae",
   "telephone": "+971545567799",
   "email": "marbleprodxb@gmail.com",
-  "priceRange": "$$",
+  "priceRange": "From AED 40 per m²",
   "image": "https://www.marblepro.ae/raw/twittercard.jpg",
   "hasMap": "https://maps.google.com/?cid=9770771076887647238",
   "sameAs": [
