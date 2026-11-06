@@ -61,7 +61,7 @@ function ServicesHero() {
           <span className="eyebrow-pill"><span className="pulse" /> Services · across all 7 emirates</span>
           <h1>26 Specialised <em>Stone Polishing Services</em> in Dubai &amp; UAE — Marble, Terrazzo, Granite &amp; <em>More.</em></h1>
           <p className="lead">
-            Twenty-six specialised treatments. One specialist team. From Travertine and Onyx to Crema Marfil,
+            Twenty-six marble polishing services from one specialist team. From Travertine and Onyx to Crema Marfil,
             Calacatta and Emperador — every natural stone, every emirate, same diamond-grade process backed
             by a 1-month written guarantee.
           </p>
