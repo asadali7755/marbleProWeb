@@ -88,7 +88,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
       eyebrow: 'Pricing',
       h2: 'How marble polishing is priced in Dubai',
       body: [
-        'Marble polishing in Dubai is priced by the square metre, and the rate depends on the job. The main factors are the area size, the condition of the stone, the finish you want and how much access the crew has. A small etched bathroom and a large villa floor in good condition are very different jobs, so we do not quote one flat rate for everything.',
+        'Marble polishing in Dubai is priced by area, in square metres or square feet, and the rate depends on the job. The main factors are the area size, the condition of the stone, the finish you want and how much access the crew has. A small etched bathroom and a large villa floor in good condition are very different jobs, so we do not quote one flat rate for everything.',
         'The site visit is free and there is no obligation. You get a fixed price for the agreed scope, with no hidden charges. For a rough idea first, send a photo of the floor on WhatsApp.',
       ],
       links: [{ label: 'Full guide: marble polishing cost in Dubai', href: '/blog/marble-polishing-cost-dubai' }],
@@ -113,6 +113,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
         { t: 'Can you polish just one room?', d: 'Yes. We quote for the area you need. If it joins other rooms, we will show you how the finish will meet the rest of the floor.' },
         { t: 'Is the work guaranteed?', d: 'Yes. Our work comes with a 1-month written guarantee.' },
         { t: 'How do I keep the shine afterwards?', d: 'Use a pH-neutral cleaner, wipe up acidic spills quickly and put mats at the entrances to catch sand.' },
+        { t: 'Can I polish marble myself with polishing powder or a rented machine?', d: 'Polishing powder or paste can lift light dullness on a small area, such as a table top. On a floor, a rented buffing machine without the right diamond pads often leaves swirl marks or an uneven shine, and it cannot remove scratches or etching. For a whole floor, professional marble polishing gives an even result.' },
       ],
       links: [{ label: 'How to care for marble in the UAE climate', href: '/blog/how-to-care-for-marble-floors-uae' }],
     },
