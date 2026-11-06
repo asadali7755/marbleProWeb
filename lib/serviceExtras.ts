@@ -637,13 +637,6 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
       ],
     },
     {
-      eyebrow: 'How to book',
-      h2: 'How to book in Sharjah',
-      body: [
-        'Call or WhatsApp a photo of your floor. We then visit for free, confirm the stone and give you a fixed price for the agreed work. Our work comes with a 1-month written guarantee.',
-      ],
-    },
-    {
       eyebrow: 'Common jobs',
       h2: 'What Sharjah customers ask us for',
       items: [
@@ -665,7 +658,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
         { t: 'Call or WhatsApp us', d: 'Send your area and a photo if you can. We reply within 30 minutes.' },
         { t: 'Agree a time', d: 'We give you a visit time based on our schedule.' },
         { t: 'Free inspection', d: 'We check the stone and give you a fixed price for the agreed work.' },
-        { t: 'Work and aftercare', d: 'We finish the floor and show you how to keep it clean.' },
+        { t: 'Work and aftercare', d: 'We finish the floor, show you how to keep it clean, and the work has a 1-month written guarantee.' },
       ],
     },
     {
@@ -1308,7 +1301,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
   'location-ajman': [
     {
       eyebrow: 'Ajman homes',
-      h2: 'Stone care for Ajman towers and villas',
+      h2: 'Marble polishing in Ajman for towers and villas',
       body: [
         'Ajman has a mix of apartment towers along the Corniche and Al Rashidiya, newer communities such as Al Zorah and Helio, and older villas in areas such as Al Nuaimiya and Al Rumailah. Each of these brings different problems, so we start by looking at your stone and how you use the space.',
         'In tower lobbies and lift areas, the main issue is foot traffic and sand from outside. Close to the sea, humidity and salty air make floors feel dull sooner. In older homes, we often find terrazzo or marble under years of wax.',
@@ -1352,7 +1345,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
   'location-ras-al-khaimah': [
     {
       eyebrow: 'Ras Al Khaimah homes',
-      h2: 'Stone care for homes and holiday properties in RAK',
+      h2: 'Marble polishing in Ras Al Khaimah for homes and holiday properties',
       body: [
         'Many properties in Al Hamra Village, Mina Al Arab and Al Marjan Island are holiday homes or rentals. Floors in these homes can sit unused for weeks, then take heavy use from guests. Sand, sun cream and pool water all end up on the stone.',
         'Further inland, in areas such as Khuzam and Al Nakheel, family villas often have marble or granite that has lost its shine over many years. We look at each floor first, because a holiday flat and a family villa rarely need the same work.',
@@ -1396,7 +1389,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
   'location-umm-al-quwain': [
     {
       eyebrow: 'Umm Al Quwain homes',
-      h2: 'Stone care for older homes and lagoon villas',
+      h2: 'Marble polishing in Umm Al Quwain for older homes and lagoon villas',
       body: [
         'Umm Al Quwain has a quieter mix of older family homes around the Old Town and newer villas near UAQ Marina. In older homes, terrazzo and marble have often been waxed many times. That wax yellows and hides the stone beneath it.',
         'We prefer a gentle approach on these floors. We test a small area first, remove the old coating, and then decide how much polishing the floor needs. On newer villas near the water, the work is usually about bringing back shine and protecting the stone from humidity.',
@@ -1440,7 +1433,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
   'location-fujairah': [
     {
       eyebrow: 'Fujairah properties',
-      h2: 'Stone care on the east coast',
+      h2: 'Marble polishing in Fujairah and the east coast',
       body: [
         'Fujairah properties range from family homes in Fujairah City and Sakamkam to hotels and villas along the coast at Al Faseel and Khor Fakkan. Air from the sea brings humidity and salt, which can leave stone looking tired, especially near doors and windows.',
         'Homes close to the mountains deal with more dust, which scratches a polished floor in the same way as desert sand. So the plan for each property depends on where it is, what the stone is, and how many people walk on it.',
@@ -1484,7 +1477,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
   'location-dibba': [
     {
       eyebrow: 'Dibba homes',
-      h2: 'Stone care for Dibba villas and beach homes',
+      h2: 'Marble polishing in Dibba for villas and beach homes',
       body: [
         'Dibba sits between the mountains and the sea, and it covers Dibba Al-Fujairah and Dibba Al-Hisn, along with beach properties towards Al Aqah. Many homes here are villas or weekend houses, and they take in a lot of sand, salt and damp air.',
         'Stone near pools and terraces often loses its shine first. Indoors, sand from the beach scratches the floor along the main walkways. For homes used only at weekends, we also see water marks and dull patches from long gaps between cleaning.',
