@@ -4,14 +4,14 @@ import Link from '@/components/marble/Link';
 import { useRequestCall } from '@/components/marble/RequestCallModal';
 import { PHONE_DISPLAY, PHONE_TEL, WA_LINK, CITY_IMG, CITY_GRAD, SERVICES } from '@/components/marble/constants';
 import { PageFaqCta } from '@/components/marble/FaqCta';
-import { LOCATIONS, type Location } from '@/lib/locationsData';
+import { LOCATIONS, locationBannerAlt, type Location } from '@/lib/locationsData';
 
 function LocationSection({ loc, idx }: { loc: Location; idx: number }) {
   const { open } = useRequestCall();
   return (
     <section className="loc-section" id={loc.slug} data-screen-label={`location-${loc.slug}`}>
       <div className="loc-banner" style={{ background: CITY_GRAD[loc.slug] }}>
-        <div style={{ position: 'absolute', inset: 0, zIndex: -2, backgroundImage: `url("${CITY_IMG[loc.slug]}")`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.55 }} />
+        <img src={CITY_IMG[loc.slug]} alt={locationBannerAlt(loc.slug, loc.name)} loading={idx === 0 ? 'eager' : 'lazy'} decoding="async" style={{ position: 'absolute', inset: 0, zIndex: -2, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: 0.55 }} />
         <div className="loc-banner-inner">
           <div>
             <span className="meta">{loc.eyebrow} · {loc.ar}</span>
@@ -94,12 +94,12 @@ export default function LocationsClient() {
     <>
       <section className="loc-intro" data-screen-label="locations-intro" style={{ paddingTop: 150 }}>
         <span className="eyebrow-pill"><span className="pulse" /> Live coverage · all 7 emirates</span>
-        <h1>Affordable marble floor polishing across the UAE — <em>all 7 emirates covered.</em></h1>
+        <h1>Marble polishing in the UAE — <em>all 7 emirates covered.</em></h1>
         <p className="lead">
-          MarblePro has its office in Sharjah and a team working across all 7 emirates.
-          We offer commercial granite polishing services, terrazzo polishing
-          and restoration, and urgent marble floor restoration for homes, with the visit time
-          based on our schedule. Same team, same machinery, same gloss standard everywhere.
+          MarblePro offers marble polishing across the UAE, from Dubai and Abu Dhabi to Fujairah.
+          Our office is in Sharjah, and the same team polishes marble, granite and terrazzo floors
+          and restores worn stone in homes and businesses in every emirate. We agree the visit
+          time with you, based on our schedule.
         </p>
       </section>
       <Rail />
@@ -110,7 +110,7 @@ export default function LocationsClient() {
         <div style={{ maxWidth: 900, margin: '0 auto', position: 'relative' }}>
           <span className="sec-eyebrow" style={{ color: 'var(--paper)', opacity: 0.7 }}>— Whichever emirate</span>
           <h2 style={{ fontFamily: 'var(--display)', fontWeight: 320, fontSize: 'clamp(40px, 6vw, 88px)', lineHeight: 0.95, letterSpacing: '-0.03em', margin: '14px 0 22px' }}>
-            Affordable Marble Floor Polishing Services — <em style={{ color: 'var(--gold-deep)', fontStyle: 'italic' }}>Stone Care Across All 7 Emirates.</em>
+            Marble Polishing Anywhere in the UAE — <em style={{ color: 'var(--gold-deep)', fontStyle: 'italic' }}>Stone Care Across All 7 Emirates.</em>
           </h2>
           <p style={{ fontSize: 17, lineHeight: 1.6, opacity: 0.78, maxWidth: '54ch', margin: '0 auto 30px' }}>
             Free on-site inspection anywhere in the UAE. We reply within 30 minutes and agree a visit time with you.

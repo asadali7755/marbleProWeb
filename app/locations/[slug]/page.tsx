@@ -6,17 +6,12 @@ import Footer from '@/components/marble/Footer';
 import Fab from '@/components/marble/Fab';
 import { PageFaqCta } from '@/components/marble/FaqCta';
 import { PHONE_DISPLAY, PHONE_TEL, CITY_IMG, CITY_GRAD, SERVICES } from '@/components/marble/constants';
-import { LOCATIONS, getLocation } from '@/lib/locationsData';
+import { LOCATIONS, getLocation, locationBannerAlt } from '@/lib/locationsData';
 import { fitDescription, fitTitle } from '@/lib/seo';
 import ServiceExtra from '@/components/marble/ServiceExtra';
 import ExternalRef from '@/components/marble/ExternalRef';
 
 const SITE = 'https://www.marblepro.ae';
-
-const bannerAlt = (slug: string, name: string) =>
-  slug === 'dibba'
-    ? 'Government building in Dibba, UAE, where MarblePro offers marble polishing'
-    : `Marble polishing company in ${name}: an example of a polished marble floor by MarblePro`;
 
 export function generateStaticParams() {
   return LOCATIONS.map((l) => ({ slug: l.slug }));
@@ -90,7 +85,7 @@ export default async function LocationPage(
         <section className="loc-section" data-screen-label={`location-${l.slug}`} style={{ paddingTop: 0 }}>
           <div className="loc-banner" style={{ background: CITY_GRAD[l.slug], marginTop: 70 }}>
             {/* A real <img>, so the banner has alt text. The photos are examples of our work, not jobs in this city. */}
-            <img src={CITY_IMG[l.slug]} alt={bannerAlt(l.slug, l.name)} fetchPriority="high" decoding="async" style={{ position: 'absolute', inset: 0, zIndex: -2, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: 0.55 }} />
+            <img src={CITY_IMG[l.slug]} alt={locationBannerAlt(l.slug, l.name)} fetchPriority="high" decoding="async" style={{ position: 'absolute', inset: 0, zIndex: -2, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: 0.55 }} />
             <div className="loc-banner-inner">
               <div>
                 <nav aria-label="Breadcrumb" style={{ fontSize: 13, opacity: 0.85, marginBottom: 14, display: 'flex', gap: 8, flexWrap: 'wrap' }}>

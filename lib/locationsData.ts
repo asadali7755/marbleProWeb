@@ -53,3 +53,9 @@ export const LOCATIONS: Location[] = [
 export function getLocation(slug: string): Location | undefined {
   return LOCATIONS.find((l) => l.slug === slug);
 }
+
+/** Banner alt text. The photos are examples of our work, not jobs in that city. */
+export const locationBannerAlt = (slug: string, name: string) =>
+  slug === 'dibba'
+    ? 'Government building in Dibba, UAE, where MarblePro offers marble polishing'
+    : `Marble polishing company in ${name}: an example of a polished marble floor by MarblePro`;
