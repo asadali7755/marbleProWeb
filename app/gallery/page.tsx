@@ -3,6 +3,7 @@ import Nav from '@/components/marble/Nav';
 import Footer from '@/components/marble/Footer';
 import Fab from '@/components/marble/Fab';
 import GalleryClient from '@/components/sections/gallery/GalleryClient';
+import ExternalRef from '@/components/marble/ExternalRef';
 
 export const metadata: Metadata = {
   title: 'Marble Polishing Before and After Gallery | MarblePro',
@@ -25,6 +26,7 @@ export default function GalleryPage() {
       <Nav active="gallery" />
       <main>
         <GalleryClient />
+        <ExternalRef path="/gallery" />
       </main>
       <Footer />
       <Fab />

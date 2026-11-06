@@ -4,6 +4,7 @@ import Link from '@/components/marble/Link';
 import Nav from '@/components/marble/Nav';
 import Footer from '@/components/marble/Footer';
 import Fab from '@/components/marble/Fab';
+import ExternalRef from '@/components/marble/ExternalRef';
 import { PHONE_DISPLAY, PHONE_TEL } from '@/components/marble/constants';
 import { GUIDES, getGuide } from '@/lib/guidesData';
 import { fitDescription, fitFullTitle } from '@/lib/seo';
@@ -50,8 +51,9 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
     '@type': 'Article',
     headline: g.h1,
     description: g.description,
-    datePublished: g.date,
-    dateModified: g.date,
+    // Full datetime with the UAE offset; a bare date fails Google's Article check.
+    datePublished: `${g.date}T09:00:00+04:00`,
+    dateModified: `${g.date}T09:00:00+04:00`,
     mainEntityOfPage: url,
     image: g.image ? `${SITE}${g.image}` : `${SITE}/raw/twittercard.jpg`,
     author: { '@type': 'Organization', name: 'MarblePro UAE', url: SITE },
@@ -106,6 +108,8 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
               ))}
             </section>
           ))}
+
+          <ExternalRef path={`/blog/${g.slug}`} plain />
 
           <div className="blog-cta-box">
             <h3>Want an exact price for your floor?</h3>

@@ -3,6 +3,7 @@ import Nav from '@/components/marble/Nav';
 import Footer from '@/components/marble/Footer';
 import Fab from '@/components/marble/Fab';
 import LocationsClient from '@/components/sections/locations/LocationsClient';
+import ExternalRef from '@/components/marble/ExternalRef';
 
 export const metadata: Metadata = {
   title: 'Marble Polishing in Dubai, Abu Dhabi & All UAE | MarblePro',
@@ -25,6 +26,7 @@ export default function LocationsPage() {
       <Nav active="locations" />
       <main>
         <LocationsClient />
+        <ExternalRef path="/locations" />
       </main>
       <Footer />
       <Fab />

@@ -3,6 +3,7 @@ import Nav from '@/components/marble/Nav';
 import Footer from '@/components/marble/Footer';
 import Fab from '@/components/marble/Fab';
 import ServicesClient from '@/components/sections/services/ServicesClient';
+import ExternalRef from '@/components/marble/ExternalRef';
 
 export const metadata: Metadata = {
   title: 'Marble & Stone Polishing Services Dubai & UAE | MarblePro',
@@ -25,6 +26,7 @@ export default function ServicesPage() {
       <Nav active="services" />
       <main>
         <ServicesClient />
+        <ExternalRef path="/services" />
       </main>
       <Footer />
       <Fab />

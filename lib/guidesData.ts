@@ -27,6 +27,7 @@ import generatedGuides from './generated-blog-posts.json'
 const handWrittenGuides: Guide[] = [
   {
     slug: 'marble-polishing-cost-dubai',
+    image: '/images/projects/polished-marble-floor-dubai-1.webp',
     title: 'How Much Does Marble Polishing Cost in Dubai? (2026 Price Guide) | MarblePro',
     h1: 'How Much Does Marble Polishing Cost in Dubai?',
     description: 'A clear 2026 guide to marble polishing prices in Dubai & UAE — what affects the cost per square metre, what is included, and how to get an accurate fixed quote.',
@@ -63,6 +64,7 @@ const handWrittenGuides: Guide[] = [
   },
   {
     slug: 'how-to-remove-yellow-stains-from-marble',
+    image: '/images/projects/polished-marble-floor-dubai-13.webp',
     title: 'How to Remove Yellow Stains from Marble Floors (Dubai Guide) | MarblePro',
     h1: 'How to Remove Yellow Stains from Marble Floors',
     description: 'Why marble turns yellow and how professionals remove it. A practical Dubai guide to safe yellow-stain removal — and why bleach and acid make it worse.',
@@ -98,6 +100,7 @@ const handWrittenGuides: Guide[] = [
   },
   {
     slug: 'marble-vs-granite-uae-homes',
+    image: '/images/projects/granite-kitchen-countertop-polishing-dubai.jpg',
     title: 'Marble vs Granite: Which Is Better for UAE Homes? | MarblePro',
     h1: 'Marble vs Granite: Which Is Better for UAE Homes?',
     description: 'Marble or granite for your Dubai villa? A clear comparison of looks, durability, maintenance and polishing for the UAE climate — and how to care for each.',
@@ -133,6 +136,7 @@ const handWrittenGuides: Guide[] = [
   },
   {
     slug: 'how-often-polish-marble-floors-dubai',
+    image: '/images/projects/polished-marble-floor-dubai-9.webp',
     title: 'How Often Should You Polish Marble Floors in Dubai? | MarblePro',
     h1: 'How Often Should You Polish Marble Floors in Dubai?',
     description: 'How often marble floors need professional polishing in the UAE — for villas, apartments and commercial spaces — plus simple care tips to make the shine last.',
@@ -167,6 +171,7 @@ const handWrittenGuides: Guide[] = [
   },
   {
     slug: 'marble-polishing-vs-crystallization',
+    image: '/images/projects/polished-marble-floor-dubai-10.webp',
     title: 'Marble Polishing vs Crystallization: What\'s the Difference? | MarblePro',
     h1: 'Marble Polishing vs Crystallization: What\'s the Difference?',
     description: 'Marble polishing and crystallization are not the same thing. A clear explanation of how each works, when you need which, and why crystallization makes the shine last.',
@@ -201,6 +206,7 @@ const handWrittenGuides: Guide[] = [
   },
   {
     slug: 'how-to-care-for-marble-floors-uae',
+    image: '/images/projects/polished-marble-floor-dubai-2.webp',
     title: 'How to Care for Marble Floors in the UAE Climate | MarblePro',
     h1: 'How to Care for Marble Floors in the UAE Climate',
     description: 'Practical marble floor care for Dubai and the UAE — the right cleaner, what to avoid, dealing with sand, sun and hard water, and a simple maintenance routine.',
@@ -235,6 +241,7 @@ const handWrittenGuides: Guide[] = [
   },
   {
     slug: 'travertine-vs-marble',
+    image: '/images/projects/travertine-entrance-floor-polishing-dubai.webp',
     title: 'Travertine vs Marble: Care & Polishing Differences | MarblePro',
     h1: 'Travertine vs Marble: What\'s the Difference?',
     description: 'Travertine and marble look similar but behave differently. How to tell them apart, how care and polishing differ, and what each needs in the UAE.',
@@ -269,6 +276,7 @@ const handWrittenGuides: Guide[] = [
   },
   {
     slug: 'signs-marble-floor-needs-restoration',
+    image: '/images/projects/polished-marble-floor-dubai-3.webp',
     title: '7 Signs Your Marble Floor Needs Professional Restoration | MarblePro',
     h1: '7 Signs Your Marble Floor Needs Professional Restoration',
     description: 'How to know when your marble floor needs more than cleaning. Seven clear signs — dullness, etching, cracks, yellowing, lippage — and what restoration fixes.',

@@ -7,6 +7,7 @@ import Fab from '@/components/marble/Fab';
 import { PageFaqCta } from '@/components/marble/FaqCta';
 import ServiceExtra from '@/components/marble/ServiceExtra';
 import ServiceWork from '@/components/marble/ServiceWork';
+import ExternalRef from '@/components/marble/ExternalRef';
 import { PHONE_DISPLAY, PHONE_TEL, EMIRATES } from '@/components/marble/constants';
 import { SERVICE_DETAIL, SVC_DETAIL_IMGS, getServiceDetail, serviceImgAlt } from '@/lib/servicesData';
 import { fitDescription, fitTitle } from '@/lib/seo';
@@ -69,14 +70,8 @@ export default async function ServicePage(
       caption: serviceImgAlt(s),
       representativeOfPage: true,
     },
-    provider: {
-      '@type': 'LocalBusiness',
-      name: 'MarblePro UAE',
-      telephone: PHONE_TEL,
-      url: SITE,
-      priceRange: '$$',
-      areaServed: EMIRATES.map((e) => e.name),
-    },
+    // The full business (with address) is in the root layout.
+    provider: { '@id': `${SITE}/#business` },
     areaServed: EMIRATES.map((e) => ({ '@type': 'City', name: e.name })),
     offers: { '@type': 'Offer', priceCurrency: 'AED', availability: 'https://schema.org/InStock' },
   };
@@ -169,6 +164,8 @@ export default async function ServicePage(
         <ServiceWork slug={s.slug} />
 
         <ServiceExtra slug={s.slug} />
+
+        <ExternalRef path={`/services/${s.slug}`} />
 
         {guides.length > 0 && (
           <section className="sec" style={{ padding: '60px 36px', maxWidth: 'none' }} data-screen-label="service-guides">

@@ -96,6 +96,8 @@ export const metadata: Metadata = {
 const schemaOrg = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  // Service schema on other pages points here as its provider.
+  "@id": "https://www.marblepro.ae/#business",
   "name": "MarblePro UAE",
   "description": "Marble polishing company in Dubai offering affordable marble floor polishing across the UAE. Italian marble polishing and crystallization, emergency residential marble floor restoration, premium marble countertop polishing, terrazzo floor polishing, commercial granite polishing.",
   "url": "https://www.marblepro.ae",

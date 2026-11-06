@@ -9,8 +9,14 @@ import { PHONE_DISPLAY, PHONE_TEL, CITY_IMG, CITY_GRAD, SERVICES } from '@/compo
 import { LOCATIONS, getLocation } from '@/lib/locationsData';
 import { fitDescription, fitTitle } from '@/lib/seo';
 import ServiceExtra from '@/components/marble/ServiceExtra';
+import ExternalRef from '@/components/marble/ExternalRef';
 
 const SITE = 'https://www.marblepro.ae';
+
+const bannerAlt = (slug: string, name: string) =>
+  slug === 'dibba'
+    ? 'Government building in Dibba, UAE, where MarblePro offers marble polishing'
+    : `Marble polishing in ${name}: an example of a polished marble floor by MarblePro`;
 
 export function generateStaticParams() {
   return LOCATIONS.map((l) => ({ slug: l.slug }));
@@ -59,14 +65,8 @@ export default async function LocationPage(
     url,
     image: `${SITE}/raw/twittercard.jpg`,
     areaServed: { '@type': 'City', name: l.name },
-    provider: {
-      '@type': 'LocalBusiness',
-      name: 'MarblePro UAE',
-      telephone: PHONE_TEL,
-      url: SITE,
-      priceRange: '$$',
-      image: `${SITE}/raw/twittercard.jpg`,
-    },
+    // The full business (with address) is in the root layout.
+    provider: { '@id': `${SITE}/#business` },
   };
 
   const breadcrumbSchema = {
@@ -84,15 +84,13 @@ export default async function LocationPage(
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      {/* The banner photo is a CSS background, which the browser finds late. */}
-      <link rel="preload" as="image" href={CITY_IMG[l.slug]} fetchPriority="high" />
-
       <Nav active="locations" />
 
       <main>
         <section className="loc-section" data-screen-label={`location-${l.slug}`} style={{ paddingTop: 0 }}>
           <div className="loc-banner" style={{ background: CITY_GRAD[l.slug], marginTop: 70 }}>
-            <div style={{ position: 'absolute', inset: 0, zIndex: -2, backgroundImage: `url("${CITY_IMG[l.slug]}")`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.55 }} />
+            {/* A real <img>, so the banner has alt text. The photos are examples of our work, not jobs in this city. */}
+            <img src={CITY_IMG[l.slug]} alt={bannerAlt(l.slug, l.name)} fetchPriority="high" decoding="async" style={{ position: 'absolute', inset: 0, zIndex: -2, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: 0.55 }} />
             <div className="loc-banner-inner">
               <div>
                 <nav aria-label="Breadcrumb" style={{ fontSize: 13, opacity: 0.85, marginBottom: 14, display: 'flex', gap: 8, flexWrap: 'wrap' }}>
@@ -152,6 +150,8 @@ export default async function LocationPage(
         </section>
 
         <ServiceExtra slug={`location-${l.slug}`} />
+
+        <ExternalRef path={`/locations/${l.slug}`} />
 
         {/* All services in this city — internal links */}
         <section className="sec" style={{ padding: '60px 36px', background: 'var(--paper2)' }} data-screen-label="city-services">
