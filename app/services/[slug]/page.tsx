@@ -40,6 +40,7 @@ export async function generateMetadata(
       url,
       images: [{ url: img, width: 1200, height: 630, alt: `${s.name} — MarblePro Dubai UAE` }],
     },
+    twitter: { card: 'summary_large_image', title, description, images: [img] },
   };
 }
 

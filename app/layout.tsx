@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     siteName: 'MarblePro UAE',
     title: 'Marble Polishing Company in Dubai | MarblePro UAE',
     description:
-      'MarblePro — marble polishing company in Dubai. Affordable marble floor polishing across the UAE, Italian marble polishing and crystallization, emergency residential marble floor restoration, terrazzo, granite & quartz polishing across all 7 emirates.',
+      'MarblePro is a marble polishing company in Dubai: marble polishing, crystallization and floor restoration, plus terrazzo, granite and quartz polishing across all 7 emirates.',
     images: [
       {
         url: OG_IMAGE,
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Marble Polishing Company in Dubai | MarblePro UAE',
     description:
-      'MarblePro — marble polishing company in Dubai. Affordable marble floor polishing across the UAE, Italian marble polishing and crystallization, emergency residential marble floor restoration.',
+      'MarblePro is a marble polishing company in Dubai: marble polishing, crystallization and floor restoration across all 7 emirates.',
     images: [OG_IMAGE],
   },
 };

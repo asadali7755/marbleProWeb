@@ -14,23 +14,23 @@ const FAQS = [
   },
   {
     q: 'Can you fix deep cracks or completely yellowed marble?',
-    a: 'Yes. Our marble floor restoration services include specialised colour-matched epoxy crack filling and advanced yellow stain removal procedures to repair deeply neglected natural stone — restoring it to better than new.',
+    a: 'Yes. Our marble floor restoration services include specialised colour-matched epoxy crack filling and advanced yellow stain removal procedures to repair deeply neglected natural stone — restoring it as close to its original look as the stone allows.',
   },
   {
     q: 'Why choose MarblePro for marble polishing in Dubai?',
     a: 'MarblePro uses Italian diamond crystallization technology. Every job comes with a 1-month written guarantee and a fixed-price quote after a free inspection.',
   },
   {
-    q: 'Do you offer emergency residential marble floor restoration services in Dubai?',
+    q: 'Can you come urgently?',
     a: 'Yes. Tell us it is urgent and we will give you the earliest visit time on our schedule. We reply within 30 minutes. We are available 24 hours, 7 days a week.',
   },
   {
     q: 'What is the price for terrazzo floor polishing in Dubai?',
-    a: 'The price of terrazzo floor polishing in Dubai depends on the area size, current condition and finish required. We offer free on-site assessments with no-obligation fixed quotes. We price fairly with no hidden charges.',
+    a: 'Terrazzo floor polishing starts from AED 70 per square metre in Dubai and Abu Dhabi, and from AED 40 in Sharjah. The final price depends on the area, the condition and the finish, and you get a fixed quote after a free site visit, with no hidden charges.',
   },
   {
-    q: 'Do you offer premium marble countertop polishing and Corian repair?',
-    a: 'Yes. We offer premium marble countertop polishing in Dubai, kitchen top polishing and sealing across the UAE, Corian polishing and scratch repair in Dubai, and quartz polishing and stain protection in Abu Dhabi — all with food-safe sealers.',
+    q: 'Do you polish countertops and repair Corian?',
+    a: 'Yes. We polish marble, granite and quartz countertops and kitchen tops, and repair and polish Corian, across the UAE, using food-safe sealers on kitchen surfaces.',
   },
   {
     q: 'Which emirates do you cover?',

@@ -37,6 +37,7 @@ export async function generateMetadata(
       url,
       images: [{ url: '/raw/twittercard.jpg', width: 1200, height: 630, alt: `Marble Polishing ${l.name} — MarblePro` }],
     },
+    twitter: { card: 'summary_large_image', title, description, images: ['/raw/twittercard.jpg'] },
   };
 }
 
