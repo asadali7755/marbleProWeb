@@ -4,6 +4,7 @@ import Nav from '@/components/marble/Nav';
 import Footer from '@/components/marble/Footer';
 import Fab from '@/components/marble/Fab';
 import { GUIDES } from '@/lib/guidesData';
+import ExternalRef from '@/components/marble/ExternalRef';
 
 const SITE = 'https://www.marblepro.ae';
 
@@ -72,6 +73,7 @@ export default function BlogHub() {
             ))}
           </div>
         </section>
+        <ExternalRef path="/blog" />
       </main>
       <Footer />
       <Fab />

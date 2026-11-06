@@ -275,7 +275,7 @@ function ResponseTimes() {
       </div>
       <div className="c-resp-grid">
         {EMIRATE_RESPONSE.map((e, i) => (
-          <Link key={e.slug} href={`/locations#${e.slug}`} className="c-resp-card">
+          <Link key={e.slug} href={`/locations/${e.slug}`} className="c-resp-card">
             <div className="c-img" style={{ backgroundImage: `url("${CITY_IMG[e.slug]}")` }} />
             <div className="c-overlay" />
             <div className="c-content">

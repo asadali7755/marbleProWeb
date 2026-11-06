@@ -425,7 +425,7 @@ function ShowcaseFilm() {
           <source src={SHOWCASE_VIDEO.mp4} type="video/mp4" />
         </video>
       ) : (
-        <img src={SHOWCASE_VIDEO.poster} alt="" fetchPriority="high" decoding="async" />
+        <img src={SHOWCASE_VIDEO.poster} alt="MarblePro marble polishing showcase film, before and after" fetchPriority="high" decoding="async" />
       )}
       {!playing && (
         <button type="button" className="gx-film-play" onClick={() => setPlaying(true)} aria-label="Play the MarblePro intro film">
@@ -479,7 +479,7 @@ export default function GalleryClient() {
           <div className="gx-hero-top">
             <h1>Before &amp; after <em>marble polishing</em> — floors &amp; countertops.</h1>
             <div className="gx-hero-side">
-              <p>Polishing, restoration and crystallization for villas, apartments, hotels and restaurants — marble, granite, onyx, quartz and Corian.</p>
+              <p>Marble polishing before and after photos and videos: polishing, restoration and crystallization for villas, apartments, hotels and restaurants, on marble, granite, onyx, quartz and Corian.</p>
               <div className="gx-hero-ctas">
                 <a className="btn btn-wa" href={WA_HREF} target="_blank" rel="noopener noreferrer">WhatsApp us</a>
                 <button type="button" className="btn gx-btn-ghost" onClick={open}>Get a quote</button>
@@ -492,7 +492,7 @@ export default function GalleryClient() {
               const n = categoryCounts(c);
               return (
                 <a key={c.id} href={`#${c.id}`} className="gx-cat">
-                  <img src={c.cover} alt="" loading="lazy" decoding="async" />
+                  <img src={c.cover} alt={`${c.title}: marble polishing before and after`} loading="lazy" decoding="async" />
                   <span className="gx-cat-shade" aria-hidden="true" />
                   <span className="gx-cat-text">
                     <span className="gx-cat-title">{c.title}</span>
@@ -526,7 +526,7 @@ export default function GalleryClient() {
 
       <section className="gx-cta" data-screen-label="gallery-cta">
         <div className="gx-wrap gx-cta-inner">
-          <h2>Your floor or countertop <em>could be next.</em></h2>
+          <h2>Your floor could be our next <em>marble polishing before and after.</em></h2>
           <div>
             <p>Send us a photo on WhatsApp and we&apos;ll tell you what&apos;s possible. Site visit is free.</p>
             <div className="gx-hero-ctas">

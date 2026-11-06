@@ -137,9 +137,9 @@ function Hero() {
           in Dubai &amp; UAE.
         </h1>
         <p className="hero-sub">
-          Restore the timeless brilliance of your floors. MarblePro delivers premium stone polishing,
-          deep scratch removal, and diamond crystallization for luxury villas, commercial spaces,
-          and apartments across the UAE.
+          Bring back the shine on your floors. MarblePro offers marble polishing, deep scratch
+          removal and diamond crystallization for villas, apartments and commercial spaces
+          across Dubai and the UAE.
         </p>
         <div className="hero-cta-row">
           <a className="btn btn-primary" href="#quote">
@@ -440,7 +440,7 @@ function Process() {
         <div className="sec-head">
           <div>
             <span className="sec-eyebrow" style={{ opacity: 0.7, color: 'var(--paper)' }}>03 — Our 5-stage system</span>
-            <h2 className="sec-title" style={{ color: 'var(--paper)' }}>How we restore <em>floor restoration services</em> — zero mess, one polished result.</h2>
+            <h2 className="sec-title" style={{ color: 'var(--paper)' }}>How our <em>marble floor restoration</em> works — zero mess, one polished result.</h2>
           </div>
           <p className="sec-lead" style={{ color: 'var(--muted-d)' }}>
             Most jobs are completed in a single day. We work around your furniture, your family
@@ -630,7 +630,7 @@ function QuoteBand() {
         <div className="cta-inner">
           <div>
             <span className="sec-eyebrow">08 — Quote request · all UAE emirates</span>
-            <h2 className="cta-h">Affordable marble floor polishing and restoration services — <em>get your quote today.</em></h2>
+            <h2 className="cta-h">Marble polishing and floor restoration — <em>get your quote today.</em></h2>
             <p style={{ fontSize: 17, lineHeight: 1.55, opacity: 0.78, maxWidth: '42ch', marginTop: 22 }}>
               As a marble polishing company in Dubai, we give you a clear, fixed-price quote after a free site visit. Italian marble polishing and crystallization, floor restoration, countertop polishing and yellow stain removal across all 7 UAE emirates.
             </p>

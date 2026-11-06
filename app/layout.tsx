@@ -86,9 +86,6 @@ export const metadata: Metadata = {
   // Twitter / X card
   twitter: {
     card: 'summary_large_image',
-    title: 'Marble Polishing Company in Dubai | MarblePro UAE',
-    description:
-      'MarblePro is a marble polishing company in Dubai: marble polishing, crystallization and floor restoration across all 7 emirates.',
     images: [OG_IMAGE],
   },
 };

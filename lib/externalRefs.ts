@@ -13,6 +13,7 @@ export const EXTERNAL_REFS: Record<string, ExternalRef> = {
   '/services': MARBLE,
   '/locations': wiki('Emirates_of_the_United_Arab_Emirates', 'The seven emirates of the UAE'),
   '/gallery': wiki('Polishing'),
+  '/blog': MARBLE,
 
   '/services/marble-polishing-dubai': MARBLE,
   '/services/marble-floor-restoration': MARBLE,

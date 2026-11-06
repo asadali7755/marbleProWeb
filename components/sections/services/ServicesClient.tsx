@@ -157,7 +157,7 @@ function OnyxFeature() {
           <div className="onyx-img" style={{ backgroundImage: 'url("/images/services/onyx-marble-polishing-dubai.webp")' }} />
           <div className="onyx-img-overlay" />
           <div className="onyx-badge">
-            <span className="onyx-badge-label">Ultra-Premium</span>
+            <span className="onyx-badge-label">Delicate stone</span>
             <span className="onyx-badge-num">Onyx</span>
             <span className="onyx-badge-sub">Most delicate stone in UAE</span>
           </div>
@@ -167,7 +167,7 @@ function OnyxFeature() {
         </div>
 
         <div className="fs-top">
-          <span className="sec-eyebrow" style={{ color: 'var(--gold)', opacity: 1 }}>— Ultra-Premium · Handle with Expertise</span>
+          <span className="sec-eyebrow" style={{ color: 'var(--gold)', opacity: 1 }}>— Delicate stone · Handle with care</span>
           <h2 className="onyx-h2">Onyx Marble Polishing &amp;<br/><em>Restoration in Dubai &amp; UAE.</em></h2>
           <p className="onyx-intro">Onyx is the rarest, most visually dramatic — and most delicate — natural stone used in UAE luxury interiors. A single wrong pass with an abrasive can permanently damage its translucent surface. MarblePro&apos;s technicians deliver <strong>onyx marble polishing in Dubai</strong> with surgical precision: the right grit, the right pressure, and zero shortcuts.</p>
           <p style={{ fontSize: 15, lineHeight: 1.7, opacity: 0.82, marginTop: 16 }}>Found in backlit feature walls, luxury bathroom vanities, reception counters and statement staircases, onyx demands specialist knowledge at every stage. Our <strong>onyx restoration</strong> process addresses micro-scratches, etch marks and dull patches without removing the stone&apos;s signature translucency. From <strong>onyx polishing in Abu Dhabi</strong> palace interiors to <strong>onyx marble care Sharjah</strong> boutique hotels and <strong>onyx stone polishing in Ajman</strong> private residences — we treat every onyx surface as the investment piece it is.</p>
@@ -276,9 +276,9 @@ function CalacattaFeature() {
         </div>
 
         <div className="fs-top">
-          <span className="sec-eyebrow" style={{ color: 'var(--gold-text)', opacity: 1 }}>— Italian Premium · Bold Veining</span>
+          <span className="sec-eyebrow" style={{ color: 'var(--gold-text)', opacity: 1 }}>— Italian marble · Bold veining</span>
           <h2 className="cala-h2">Calacatta Marble Polishing &amp;<br/><em>Restoration in Dubai &amp; UAE.</em></h2>
-          <p className="cala-intro">Calacatta marble is the pinnacle of Italian stone — pure white with bold, dramatic grey and gold veining that makes every slab a work of art. Found in UAE&apos;s most prestigious villas, five-star hotel lobbies and luxury apartment feature walls, Calacatta commands the highest value per square metre of any stone. MarblePro&apos;s specialists deliver <strong>Calacatta marble polishing in Dubai</strong> with the precision and respect this stone demands.</p>
+          <p className="cala-intro">Calacatta is an Italian marble with a bright white background and bold grey and gold veining. It is used in villa floors, hotel lobbies and apartment feature walls across the UAE, and it is one of the most valuable marbles you can have at home. MarblePro&apos;s specialists deliver <strong>Calacatta marble polishing in Dubai</strong> with the precision and respect this stone demands.</p>
           <p style={{ fontSize: 15, lineHeight: 1.7, opacity: 0.82, marginTop: 16 }}>Calacatta is highly sensitive to acids, heat and abrasion — and its bright white background makes every scratch, etch and stain immediately visible. Our <strong>Calacatta marble restoration</strong> uses ultra-fine diamond sequences to erase damage without disturbing the stone&apos;s iconic bold vein patterns. From <strong>Calacatta marble cleaning in Abu Dhabi</strong> penthouse kitchens to <strong>Calacatta polishing in Sharjah</strong> luxury bathroom walls, <strong>Calacatta marble sealing in Ajman</strong> feature slabs and full <strong>Calacatta restoration in Dubai</strong> villa floors — we handle Italy&apos;s finest stone with the care it deserves.</p>
         </div>
         <div className="fs-bot">
@@ -287,7 +287,7 @@ function CalacattaFeature() {
               { t: 'White tone restoration',        d: "Yellowing, graying and dull patches on Calacatta's white background removed — pure bright white returns." },
               { t: 'Vein pattern preserved',         d: 'Bold grey and gold veining untouched by our polishing process — we work around the veins, not through them.' },
               { t: 'Etch & ring mark removal',       d: 'Water rings, citrus marks and glass hazes removed from the sensitive white surface without re-etching.' },
-              { t: 'Anti-stain impregnation',        d: "Premium breathable sealer penetrates deep into Calacatta's pores — blocks oil, wine and coffee permanently." },
+              { t: 'Anti-stain impregnation',        d: "A breathable sealer goes deep into Calacatta's pores and helps keep oil, wine and coffee out." },
               { t: 'Feature wall & book-match care', d: 'Bookmatched Calacatta panels and feature slabs polished as a unit — veining alignment maintained across joints.' },
               { t: 'Luxury-property protocols',      d: "White-glove setup on every job — no risk to adjacent finishes, fittings or the stone's irreplaceable surface." },
             ].map((f) => (
@@ -366,10 +366,10 @@ function EmperadorFeature() {
 
 const CORE_SERVICES = [
   {
-    group: 'Premium Marble Polishing & Restoration',
+    group: 'Marble Polishing & Restoration',
     icon: '✦',
     items: [
-      { name: 'Marble Polishing Dubai', desc: 'Over time, heavy foot traffic and desert sand cause marble to lose its lustre. Our multi-stage diamond polishing process restores a high-gloss, premium reflective finish.' },
+      { name: 'Marble Polishing Dubai', desc: 'Heavy foot traffic and desert sand slowly dull marble floors. Our multi-stage diamond polishing brings back a high-gloss finish.' },
       { name: 'Marble Floor Restoration Services', desc: 'From deep scratch removal to seamless crack filling and joint levelling, we completely rejuvenate old or damaged natural stone.' },
       { name: 'Terrazzo Floor Polishing Dubai', desc: 'We specialise in classic terrazzo polishing in Dubai, bringing out the vibrant glass and marble chips embedded in your terrazzo surfaces.' },
     ],
@@ -398,12 +398,11 @@ function Welcome() {
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         <span className="sec-eyebrow">02 — Our core services</span>
         <h2 className="sec-title" style={{ marginTop: 14, maxWidth: '28ch' }}>
-          Premium Stone Care Services — <em>Every Surface, Every Emirate.</em>
+          Marble Polishing Services — <em>Every Surface, Every Emirate.</em>
         </h2>
         <p style={{ marginTop: 20, fontSize: 17, lineHeight: 1.65, opacity: 0.75, maxWidth: '62ch' }}>
-          From affordable marble floor polishing to emergency residential marble floor restoration
-          services in Dubai — our technicians use diamond grinding machinery
-          to bring back the shine on floors across the UAE.
+          From marble floor polishing to full floor restoration, our marble polishing services
+          use diamond grinding machinery to bring back the shine on floors across Dubai and the UAE.
         </p>
 
         <div style={{ marginTop: 60, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32 }}>
@@ -462,7 +461,7 @@ const WHY_GRADS = [
 function WhyUs() {
   const items = [
     { num: '01', h: 'UAE-Wide',         em: 'Coverage',        p: 'Our office is in Sharjah and our teams work across Dubai, Abu Dhabi, Ajman and all northern emirates — visit times are agreed with you, based on our schedule.' },
-    { num: '02', h: 'Advanced Diamond Grinding &', em: 'Crystallization', p: "We don't just use cheap wax coatings that wear off. We utilise true mechanical diamond abrasives followed by premium Italian crystallization for long-lasting protection." },
+    { num: '02', h: 'Advanced Diamond Grinding &', em: 'Crystallization', p: "We don't just use cheap wax coatings that wear off. We utilise true mechanical diamond abrasives followed by Italian crystallization for long-lasting protection." },
     { num: '03', h: 'Tailored',         em: 'Stone Solutions',  p: 'From Italian Carrara marble to technical quartz, we understand the specific chemistry of every material — the right technique for every stone type.' },
     { num: '04', h: 'Transparent',      em: 'Pricing',          p: 'No hidden fees. We offer free on-site evaluations to give a precise quotation tailored to your floor\'s exact condition and size.' },
     { num: '05', h: 'Dust-Free',        em: 'Process',          p: 'Furniture is covered, edges masked, and our wet process keeps the air clear so your home or office stays completely liveable throughout the job.' },
@@ -478,8 +477,8 @@ function WhyUs() {
           </div>
           <p className="sec-lead">
             We&apos;re not a generic cleaning crew with a polishing add-on. We&apos;re stone
-            specialists — affordable marble floor polishing across the UAE, backed by Italian
-            diamond technology and a 1-month written guarantee on every job.
+            specialists, polishing marble across the UAE with diamond tools and a 1-month
+            written guarantee on every job.
           </p>
         </div>
         <div className="why-grid">
@@ -527,7 +526,7 @@ function Commercial() {
           <h4>Ask about our Annual Maintenance Contracts (AMC).</h4>
           <p style={{ fontSize: 14, lineHeight: 1.65, opacity: 0.8, margin: '0 0 22px' }}>
             We keep your commercial floors looking good all year with scheduled, cost-effective
-            quarterly buffering and crystallization. Predictable budgeting, premium results.
+            quarterly buffing and crystallization. Predictable budgeting, consistent results.
           </p>
           <Link href="/#quote" className="btn btn-secondary on-dark" style={{ width: '100%', justifyContent: 'center' }}>
             Get an AMC quote
