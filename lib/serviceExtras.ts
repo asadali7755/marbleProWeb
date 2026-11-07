@@ -1002,7 +1002,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
         { t: 'Will sealing stop etch marks?', d: 'No sealer fully stops acid from etching marble. It slows stains, so you still need to wipe spills quickly.' },
         { t: 'Should I choose a polished or honed finish?', d: 'Polished Calacatta looks brighter. A honed finish hides light marks better, which helps in busy kitchens.' },
       ],
-      links: [{ label: 'How to care for Calacatta at home', href: '/blog/calacatta-marble-polishing-dubai' }],
+      links: [{ label: 'How to care for Calacatta at home', href: '/blog/how-to-care-for-calacatta-marble' }],
     },
   ],
   'crema-marfil-polishing-dubai': [
@@ -1047,7 +1047,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
         { t: 'Do you polish single rooms?', d: 'Yes. The shine may differ slightly from the rooms next door, so we discuss that with you first.' },
         { t: 'Is the work dusty?', d: 'We use a wet process, which keeps stone dust out of the air.' },
       ],
-      links: [{ label: 'Why Crema Marfil turns dull or patchy', href: '/blog/crema-marfil-marble-polishing-dubai' }],
+      links: [{ label: 'Why Crema Marfil turns dull or patchy', href: '/blog/crema-marfil-dull-or-patchy' }],
     },
   ],
   'emperador-marble-polishing-dubai': [
@@ -1089,7 +1089,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
         { t: 'Can you polish Emperador in a shower?', d: 'Yes. We check the joints and any water damage first.' },
         { t: 'Will polishing darken the stone?', d: 'It usually brings back the deeper brown you lost to wear. A colour-enhancing sealer can deepen it further if you want that.' },
       ],
-      links: [{ label: 'Why Emperador shows every mark', href: '/blog/emperador-marble-polishing-dubai' }],
+      links: [{ label: 'Why Emperador shows every mark', href: '/blog/emperador-marble-care' }],
     },
   ],
   'onyx-marble-polishing-dubai': [
@@ -1130,7 +1130,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
         { t: 'Can all scratches come out?', d: 'Light scratches usually can. Deep damage may stay visible, and we tell you that at the inspection.' },
         { t: 'Which cleaner is safe for onyx?', d: 'Use a soft cloth and a pH-neutral stone cleaner. Avoid vinegar, lemon and bathroom sprays.' },
       ],
-      links: [{ label: 'Onyx care at home', href: '/blog/onyx-marble-polishing-dubai' }],
+      links: [{ label: 'Onyx care at home', href: '/blog/onyx-care-guide' }],
     },
   ],
   'quartz-polishing': [
@@ -1172,7 +1172,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
         { t: 'Does quartz etch like marble?', d: 'No. Normal food acids do not etch it, but strong chemicals and bleach can damage the surface.' },
         { t: 'How should I clean quartz?', d: 'Use a soft cloth, warm water and mild soap. Avoid abrasive pads.' },
       ],
-      links: [{ label: 'Can quartz be polished?', href: '/blog/quartz-polishing-dubai' }],
+      links: [{ label: 'Can quartz be polished?', href: '/blog/can-quartz-be-polished' }],
     },
   ],
   'travertine-polishing-dubai': [
@@ -1214,7 +1214,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
         { t: 'Will the filler match my floor?', d: 'We colour-match it to the stone. Small differences are normal, because no two tiles are the same.' },
         { t: 'Can you work on pool areas?', d: 'Yes. We usually suggest a finish with more grip outdoors.' },
       ],
-      links: [{ label: 'Filled or unfilled travertine', href: '/blog/travertine-polishing-dubai' }],
+      links: [{ label: 'Filled or unfilled travertine', href: '/blog/travertine-floors-filled-or-unfilled' }],
     },
   ],
   'marble-countertop-polishing': [
@@ -1256,7 +1256,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
         { t: 'How often should I reseal?', d: 'It depends on use. If water stops beading on the surface, it is time to reseal.' },
         { t: 'Can you fix a chipped edge?', d: 'Usually, yes. We fill the chip and blend it into the edge.' },
       ],
-      links: [{ label: 'Etch marks on marble countertops', href: '/blog/marble-countertop-polishing-dubai' }],
+      links: [{ label: 'Etch marks on marble countertops', href: '/blog/etch-marks-on-marble-countertops' }],
     },
   ],
   'kitchen-top-polishing': [
@@ -1303,7 +1303,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
         { t: 'Is the sealer safe for food areas?', d: 'We use a food-safe sealer on stone kitchen tops.' },
         { t: 'Can you polish only one section?', d: 'Sometimes, but the repair can show. We usually suggest polishing the full run so the shine stays even.' },
       ],
-      links: [{ label: 'Which kitchen tops can be polished?', href: '/blog/kitchen-top-polishing-dubai' }],
+      links: [{ label: 'Which kitchen tops can be polished?', href: '/blog/which-kitchen-tops-can-be-polished' }],
     },
   ],
   'location-ajman': [
@@ -1667,7 +1667,7 @@ export const SERVICE_EXTRAS: Record<string, ExtraSection[]> = {
       ],
       links: [
         { label: 'Marble countertop polishing', href: '/services/marble-countertop-polishing' },
-        { label: 'Etch marks explained', href: '/blog/marble-countertop-polishing-dubai' },
+        { label: 'Etch marks explained', href: '/blog/etch-marks-on-marble-countertops' },
       ],
     },
     {
