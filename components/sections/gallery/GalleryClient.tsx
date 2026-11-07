@@ -426,7 +426,7 @@ function ShowcaseFilm() {
           <source src={SHOWCASE_VIDEO.mp4} type="video/mp4" />
         </video>
       ) : (
-        <img src={SHOWCASE_VIDEO.poster} alt="MarblePro marble polishing showcase film, before and after" fetchPriority="high" decoding="async" />
+        <img src="/videos/marblepro-showcase-uae-poster-1280.webp" srcSet="/videos/marblepro-showcase-uae-poster-640.webp 640w, /videos/marblepro-showcase-uae-poster-1280.webp 1280w" sizes="(max-width: 760px) 100vw, 1100px" width={1280} height={720} alt="MarblePro marble polishing showcase film, before and after" fetchPriority="high" decoding="async" />
       )}
       {!playing && (
         <button type="button" className="gx-film-play" onClick={() => setPlaying(true)}>
