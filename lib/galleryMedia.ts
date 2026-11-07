@@ -15,6 +15,8 @@ export interface BeforeAfterPair { before: string; after: string; caption: strin
 export interface GalleryVideo {
   mp4: string; poster: string; caption: string; duration: string;
   orientation: 'portrait' | 'landscape'; pendingReview?: boolean; uploadDate?: string;
+  /** The file has an audio track; every other clip is silent. */
+  hasSound?: boolean;
 }
 export interface VideoPair { before: GalleryVideo; after: GalleryVideo; caption: string; }
 
@@ -154,7 +156,7 @@ const ROWS_FLOORS: VideoRow[] = [
     areas: ['Mirdif', 'Al Qusais', 'Muwaileh in Sharjah'],
   },
   {
-    video: v('marble-polishing-results-dubai', 'Marble floor results · villa', '0:16', 'landscape'),
+    video: { ...v('marble-polishing-results-dubai', 'Marble floor results · villa', '0:16', 'landscape'), hasSound: true },
     title: 'Villa marble floor with inlay border',
     body: 'A villa floor of cream marble with a brown inlay border, after polishing. The windows and chandelier reflect in the stone, and the border shines as evenly as the main floor.',
     service: MARBLE_POLISHING,

@@ -46,6 +46,7 @@ function WorkSection({ work }: { work: ServiceWorkItem }) {
                 <div className="gx-shot">
                   <video controls muted playsInline preload="none" poster={video.poster} width={portrait ? 540 : 854} height={portrait ? 960 : 480} aria-label={video.caption}>
                     <source src={video.mp4} type="video/mp4" />
+                    <track kind="captions" src="/videos/silent.vtt" srcLang="en" label="English" />
                   </video>
                   <Tag tag={tag} />
                 </div>

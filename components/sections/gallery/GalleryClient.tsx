@@ -117,6 +117,7 @@ function InViewVideo({ video, className, label }: { video: GalleryVideo; classNa
     <div className={`gx-video ${className ?? ''}`}>
       <video ref={ref} muted playsInline loop preload="none" poster={near ? video.poster : undefined} aria-label={video.caption}>
         {near && <source src={video.mp4} type="video/mp4" />}
+        {!video.hasSound && <track kind="captions" src="/videos/silent.vtt" srcLang="en" label="English" />}
       </video>
       {label && <span className={`gx-tag ${label === 'After' ? 'gx-tag-after' : ''}`}>{label}</span>}
       {!withSound && (
@@ -428,7 +429,7 @@ function ShowcaseFilm() {
         <img src={SHOWCASE_VIDEO.poster} alt="MarblePro marble polishing showcase film, before and after" fetchPriority="high" decoding="async" />
       )}
       {!playing && (
-        <button type="button" className="gx-film-play" onClick={() => setPlaying(true)} aria-label="Play the MarblePro intro film">
+        <button type="button" className="gx-film-play" onClick={() => setPlaying(true)}>
           <span className="gx-film-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg></span>
           <span className="gx-film-text">Watch the intro film <span>{SHOWCASE_VIDEO.duration}</span></span>
         </button>

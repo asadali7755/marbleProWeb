@@ -6,7 +6,7 @@ export default function ExternalRef({ path, plain }: { path: string; plain?: boo
   if (!ref) return null;
 
   const line = (
-    <p style={{ fontSize: 15, lineHeight: 1.7, opacity: 0.8, maxWidth: '68ch', margin: plain ? '24px 0 0' : 0 }}>
+    <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--muted-p)', maxWidth: '68ch', margin: plain ? '24px 0 0' : 0 }}>
       Further reading:{' '}
       <a href={ref.url} target="_blank" rel="noopener" style={{ color: 'var(--gold-text)', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 3 }}>{ref.label}</a>
       {' '}on Wikipedia.
