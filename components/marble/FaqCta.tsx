@@ -26,7 +26,7 @@ const FAQS = [
   },
   {
     q: 'What is the price for terrazzo floor polishing in Dubai?',
-    a: 'Terrazzo floor polishing starts from AED 70 per square metre in Dubai and Abu Dhabi, and from AED 40 in Sharjah. The final price depends on the area, the condition and the finish, and you get a fixed quote after a free site visit, with no hidden charges.',
+    a: 'Terrazzo floor polishing starts from AED 70 per square metre in Dubai and Abu Dhabi, and from AED 40 in Sharjah, Ajman, Ras Al Khaimah, Umm Al Quwain and Fujairah. The final price depends on the area, the condition and the finish, and you get a fixed quote after a free site visit, with no hidden charges.',
   },
   {
     q: 'Do you polish countertops and repair Corian?',
