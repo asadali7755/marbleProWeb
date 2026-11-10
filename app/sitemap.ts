@@ -3,9 +3,6 @@ import { SERVICE_DETAIL } from '@/lib/servicesData';
 import { LOCATIONS } from '@/lib/locationsData';
 import { GUIDES } from '@/lib/guidesData';
 
-// Generated once at build time (static export for Cloudflare Pages).
-export const dynamic = 'force-static';
-
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.marblepro.ae';
   const now = new Date();

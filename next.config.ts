@@ -2,11 +2,9 @@ import type { NextConfig } from "next";
 import path from "path";
 
 const nextConfig: NextConfig = {
-  // Static export for Cloudflare Pages. The lead form and the old WordPress
-  // 410s run as Pages Functions (functions/); redirects below are turned into
-  // public/_redirects by scripts/cf-redirects.mjs.
-  output: 'export',
-  images: { unoptimized: true },
+  // Hostinger shared hosting caps how many processes a build may start, so
+  // keep the build to one worker.
+  experimental: { cpus: 1 },
   reactCompiler: true,
   trailingSlash: false,
   poweredByHeader: false,
