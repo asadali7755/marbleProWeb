@@ -1,7 +1,12 @@
-import type { NextConfig } from "next";
-import path from "path";
+// Plain JavaScript on purpose; do not rename back to next.config.ts.
+// Hostinger's build server has glibc < 2.29, too old for the native SWC
+// binary of next >= 16.4.5, so Next falls back to WASM SWC. Hostinger wraps
+// this file in a generated config that imports it, and WASM SWC cannot
+// transpile a wrapped .ts config (ERR_MODULE_NOT_FOUND). Keep it free of
+// imports of local .ts files and of __dirname.
 
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   // Hostinger shared hosting caps how many processes a build may start, so
   // keep the build to one worker.
   experimental: { cpus: 1 },
@@ -9,7 +14,7 @@ const nextConfig: NextConfig = {
   trailingSlash: false,
   poweredByHeader: false,
   turbopack: {
-    root: path.resolve(__dirname),
+    root: process.cwd(),
   },
   async redirects() {
     return [
