@@ -120,6 +120,22 @@ const TRAVERTINE_ENTRANCE = photo('travertine-entrance-floor-polishing-dubai', '
 const SHOWER_JOINT_1 = photo('travertine-shower-joint-repair-dubai-1', 'Dark joint in the corner of a travertine shower, before repair', 'Dark joint in a travertine shower corner', 720, 900);
 const SHOWER_JOINT_2 = photo('travertine-shower-joint-repair-dubai-2', 'Open joint between two travertine slabs in a shower, before repair', 'Open joint in travertine · before repair', 720, 900);
 
+/** Black granite villa entrance stairs and landing, sent by the boss on 24 Nov 2026 (place not given). */
+const STAIRS_NAME = 'black-granite-entrance-stairs-polishing-dubai';
+const stairsShot = (n: number, alt: string, caption: string): GalleryPhoto => photo(`${STAIRS_NAME}-before-${n}`, alt, caption, 720, 960);
+const STAIRS_BEFORE_1 = stairsShot(1, 'Black granite villa entrance stairs, dull and covered in shoe marks and white residue before polishing', 'Black granite entrance stairs · before');
+const STAIRS_BEFORE_2 = stairsShot(2, 'Close view of black granite steps with dusty footprints and a dull surface before polishing', 'Footprints on the granite treads');
+const STAIRS_BEFORE_3 = stairsShot(3, 'Black granite stair treads with shoe prints, scuffs and white marks before polishing', 'Scuffed granite treads · before');
+const STAIRS_BEFORE_4 = stairsShot(4, 'Black granite landing by the front door with circular scratches and a dull, dusty finish before polishing', 'Scratched granite landing · before');
+const STAIRS_AFTER = photo(`${STAIRS_NAME}-after`, 'The same black granite entrance stairs and landing after MarblePro polishing, with the wooden door reflecting in the gloss', 'Black granite entrance stairs · after polishing', 1024, 768);
+const stairsVideo = (n: number, caption: string, duration: string): GalleryVideo => ({
+  ...v(`${STAIRS_NAME}-after-${n}`, caption, duration, 'portrait'),
+  uploadDate: '2026-11-24',
+});
+const STAIRS_VIDEO_1 = stairsVideo(1, 'Black granite entrance stairs · after polishing', '0:09');
+const STAIRS_VIDEO_2 = stairsVideo(2, 'Black granite steps and landing · mirror finish', '0:07');
+const STAIRS: ServiceLink = { slug: 'marble-stairs-polishing-dubai', label: 'stairs polishing' };
+
 const FLOOR_POLISHING: ServiceLink = { slug: 'floor-polishing-dubai', label: 'stone floor polishing' };
 const MARBLE_POLISHING: ServiceLink = { slug: 'marble-polishing-dubai', label: 'marble polishing' };
 const MOSAIC: ServiceLink = { slug: 'mosaic-floor-polishing-dubai', label: 'inlay and pattern floor polishing' };
@@ -127,6 +143,13 @@ const COUNTERTOP: ServiceLink = { slug: 'marble-countertop-polishing', label: 'c
 const TABLE: ServiceLink = { slug: 'marble-table-polishing-dubai', label: 'marble table polishing' };
 
 const ROWS_FLOORS: VideoRow[] = [
+  {
+    video: STAIRS_VIDEO_1,
+    title: 'Black granite entrance stairs polishing',
+    body: 'Black granite stairs and a landing at a villa entrance, after polishing. The treads were dull and covered in shoe prints before; now the front door and the walls reflect in every step, and the risers have the same gloss as the treads.',
+    service: STAIRS,
+    areas: ['Arabian Ranches', 'Mirdif', 'Sharjah', 'Ajman'],
+  },
   {
     video: STRIPED_FLOOR_VIDEO,
     title: 'Striped marble floor polishing',
@@ -231,6 +254,13 @@ const ROWS_COUNTERTOPS: VideoRow[] = [
 ];
 
 const PHOTOS_FLOORS: PhotoGroup[] = [
+  {
+    title: 'Black granite entrance stairs',
+    body: 'A villa entrance in black granite, before and after polishing. Before, the steps were dull, with shoe prints, white residue on the risers and circular scratches on the landing. After, the whole staircase has a deep, even gloss.',
+    service: STAIRS,
+    areas: ['Arabian Ranches', 'Mirdif', 'Sharjah', 'Ajman'],
+    photos: [STAIRS_BEFORE_1, STAIRS_BEFORE_2, STAIRS_BEFORE_4, STAIRS_AFTER],
+  },
   {
     title: 'Cream marble floors with inlay borders',
     body: 'Halls and rooms in cream and beige marble, with darker borders, curved inlays and a medallion. On these floors, the border and the main stone need the same gloss so the pattern looks clean.',
@@ -435,9 +465,34 @@ export const SERVICE_WORK: Record<string, ServiceWorkItem[]> = {
   ],
   'marble-stairs-polishing-dubai': [
     {
+      h2: 'Black granite entrance stairs: before and after',
+      body: 'This villa entrance had black granite stairs and a landing that had gone dull, with shoe prints, white residue on the risers and circular scratches by the door. After polishing, the treads, risers and landing have a deep, even gloss, and the wooden front door reflects in the stone. The videos show the finished stairs.',
+      shots: [
+        { ...STAIRS_BEFORE_1, tag: 'Before' },
+        { ...STAIRS_BEFORE_3, tag: 'Before' },
+        { ...STAIRS_BEFORE_4, tag: 'Before' },
+        { ...STAIRS_AFTER, tag: 'After' },
+      ],
+      videos: [
+        { video: STAIRS_VIDEO_1, caption: 'Video: the polished stairs', tag: 'After' },
+        { video: STAIRS_VIDEO_2, caption: 'Video: steps and landing', tag: 'After' },
+      ],
+    },
+    {
       h2: 'Chipped stone steps before repair',
       body: 'Steps take more wear than flat floors, and the front edge often chips first. This video shows chips along the edge of a travertine step and holes in the stone beside it. We check damage like this at the site visit and tell you what repair can do.',
       videos: [{ video: TRAVERTINE_STEP_VIDEO, caption: 'Video: chips on a step edge', tag: 'Before' }],
+    },
+  ],
+  'granite-polishing': [
+    {
+      h2: 'Granite stairs polishing: before and after',
+      body: 'Granite is hard, but it still dulls under daily foot traffic. These black granite entrance stairs had lost their shine and were covered in shoe prints. After polishing, the gloss is back on every tread and riser.',
+      shots: [
+        { ...STAIRS_BEFORE_3, tag: 'Before' },
+        { ...STAIRS_AFTER, tag: 'After' },
+      ],
+      videos: [{ video: STAIRS_VIDEO_2, caption: 'Video: the finished granite', tag: 'After' }],
     },
   ],
   'grout-joint-repair-dubai': [
