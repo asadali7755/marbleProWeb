@@ -57,8 +57,12 @@ Write plainly: short sentences, no filler ("ensure", "comprehensive",
    editing. Make the smallest change that does the task well. One page per run
    (a new page may also add one or two internal links to it from related pages
    and must appear in the sitemap).
-3. Check your text against the content rules above (search your diff for the
-   banned words).
+3. Tell Google the page changed: in `lib/pageUpdates.ts` add or update the line
+   for every page path you changed or added (for example
+   `'/locations/al-wasl': 'YYYY-MM-DD'`, today's date). The sitemap uses these
+   dates as lastmod, and a daily job resubmits the sitemap to Google Search
+   Console. Check your text against the content rules above (search your diff
+   for the banned words).
 4. `npm ci` (first time), then `npx tsc --noEmit`, then
    `NEXT_TEST_WASM=1 npx next build --webpack`. Both must pass.
 5. If anything fails and you cannot fix it within the same item, revert your
